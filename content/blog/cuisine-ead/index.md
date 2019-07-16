@@ -6,6 +6,8 @@ description: Tool for batch editing xml-ead files in browser.
 
 [cuisine-ead](https://cuisine-ead.netlify.com) is a tool for batch editing xml-ead files in-browser.
 
+<small>(At the moment, it is available in french only.)</small>
+
 ## The problem
 
 __[EAD](https://www.wikiwand.com/en/Encoded_Archival_Description) is a schema traditionally used by archives and libraries to encode metadata regarding
