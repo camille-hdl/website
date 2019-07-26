@@ -7,7 +7,7 @@ description: An animation library for paper.js
 An animation library for paper.js. 
 
 * [examples](http://camille-hdl.github.io/animatePaper.js/) and [API documentation](http://camille-hdl.github.io/animatePaper.js/doc/)
-* [demo](https://jsbin.com/nadanon/1/edit?js,output)
+* [demo](https://jsbin.com/didoramunu/edit?js,output)
 * [repo](https://github.com/camille-hdl/animatePaper.js)
 * [npm](https://www.npmjs.com/package/paper-animate) `npm install --save paper-animate`
 
