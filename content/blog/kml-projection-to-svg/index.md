@@ -25,10 +25,10 @@ The implementations can be found [here](https://github.com/camille-hdl/kml-polyg
 
 ## 2. Simplification
 
-We have our polygons properly flattened, but we can't yet ship them to our users.  
-As the source KML files are too precise for our needs, so are our KML files.  
+Our polygons are now properly flattened, but we can't ship them to our users yet.  
+As the KML source files are too precise for our needs, so is our SVG output.  
 
-Fortunately, the field of geometry is full of interesting algorithms ready to solve our problems, so picking a simplification algorithm
+Fortunately, the field of geometry is full of interesting algorithms ready to solve our problems. Picking a simplification algorithm
 was as easy as 2 google searches:  
 
 * one for the algorithm itself: [Ramer-Douglas-Peucker](https://www.wikiwand.com/en/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm)
