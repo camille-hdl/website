@@ -7,10 +7,10 @@ PHP 7.4 was released with support for arrow functions, as defined in [this RFC](
 To paraphrase it, the goal is to provide a concise syntax for closures performing simple tasks.  
 Basically, we're avoiding many redundant `use` imports.
 
-In the context of this RFC, __"simple task" means a single statement returning a value__.  
+In the context of this RFC,  
+__"simple task" means a single statement returning a value__.  
 
-If you come from the JavaScript world, be wary of a few key differences in semantics, including but not limited to:
-
+If you're coming from the JavaScript world, be wary of a few key differences in semantics, including but not limited to:
 * variables in the outer scope are implicitly captured __by-value__.
 The implication is that if you mutate them in the closure, the outer variable won't change.
 ```php
