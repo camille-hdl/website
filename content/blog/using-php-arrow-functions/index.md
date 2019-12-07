@@ -21,11 +21,11 @@ assertEquals(2, $outer);  // false
 ```
 * multi-statement bodies are not supported at this time. Note that you can still write _multiline_ single-statements.
 
-That said, there are still many use cases.
+Despite those constraints, there are still many use cases.
 
 ## Simple tasks: `array_` functions
 
-The `fn()` syntax obviously works well for simple tasks such as mapping over, reducing or filtering an array:
+The `fn()` is obviously very expressive for simple tasks such as mapping over, reducing or filtering an array:
 ```php
 $users = [
     ["id" => 123, "authorized" => true],
@@ -40,6 +40,8 @@ $getAuthorized = fn() =>
 ;
 assertEquals(1, count($getAuthorized())); // true
 ```
+
+The meaningful words count to boilerplate ratio is a lot better than with the old `function() use() { return; }` syntax.
 
 ## Mutation in objects
 
