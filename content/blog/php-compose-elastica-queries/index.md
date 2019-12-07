@@ -1,24 +1,26 @@
 ---
 title: Compose Elastica queries in PHP
-date: "2019-12-02T21:43:00.000Z"
+date: "2019-12-07T16:57:00.000Z"
 description: "Embrace the multi-paradigm"
 ---
 
 [Elastica](https://elastica.io/api/latest/) is an Elasticsearch client library for PHP.  
-It handles transport and provides a class-based abstraction over the transiting JSON objects.  
+Among other things, it handles transport and provides a class-based abstraction over the transiting JSON objects.  
 While Elastica can be used for other tasks such as bulk indexing documents, this post will focus on the Query API.  
 
 ## Query building
 
 As long as you're building queries whose general structure doesn't change much, the API is straightforward.  
 However, I find that when dealing with more complex search techniques such as [faceted search](https://en.wikipedia.org/wiki/Faceted_search),
+where fields and operators change according to user input, 
 the code can get awkward if written in an imperative way.
 
-As an example, imagine the following schema describing an index of movies:
+As an example, imagine the following index type describing movies:
 
 ```php
 /**
-* This is an oversimplification of an actual Elasticsearch mapping
+* This is an oversimplification of
+* an actual Elasticsearch mapping
 */
 $mapping = [
     "title" => "text",
@@ -82,11 +84,11 @@ function getQuery($request): AbstractQuery {
 
 ```
 
-As you can imagine, as you add new searchable fields or new types of fields, this can get difficult to read and maintain.
+As you can imagine, as you add new searchable fields or field types, it can get difficult to read and maintain.
 
 ## A touch of functional flavor
 
-Let's refactor this to something more manageable using closures.  
+Let's refactor this code to something more manageable using closures.  
 
 First, we create a helper for the usual operators AND, OR and NOT.
 
@@ -95,6 +97,8 @@ use \Elastica\Query\BoolQuery;
 
 function getOperatorFn(string $operator): callable {
     $defaultOperator = "AND";
+    // one could declare a function for each operator
+    // to be more "declarative"
     $operatorFunctions = [
         "AND" => function (BoolQuery $query, array $subQueries): BoolQuery {
             if (count($subQueries) <= 0) {
@@ -126,7 +130,7 @@ function getOperatorFn(string $operator): callable {
 }
 ```
 
-Then, we need to figure out what Query to build for a given field:
+Then, we need to figure out what kind of Query to build for a given field:
 
 ```php
 use \Elastica\Query\SimpleQueryString;
@@ -185,4 +189,4 @@ function getQuery(array $request, array $mapping): AbstractQuery {
 }
 ```
 
-You can of course use the built-in `array_*` functions, however I don't really care for their inconsistent API so I'd rather use something like [functional-php](https://github.com/lstrojny/functional-php).
+> You can of course use the built-in `array_*` functions instead of [functional-php](https://github.com/lstrojny/functional-php).
