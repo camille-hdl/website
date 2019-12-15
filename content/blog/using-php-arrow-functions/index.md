@@ -25,7 +25,7 @@ Despite those constraints, there are still many use cases.
 
 ## Simple tasks: `array_` functions
 
-The `fn()` is obviously very expressive for simple tasks such as mapping over, reducing or filtering an array:
+The `fn()` syntax is obviously very expressive for simple tasks such as mapping over, reducing or filtering an array:
 ```php
 $users = [
     ["id" => 123, "authorized" => true],
@@ -95,5 +95,5 @@ $glueThreeValues = curry(
 assertEquals("1-2-3", $glueThreeValues("-")(1)(2)(3));
 ```
 
-I'll let the reader decide if the benefit is worth the relative ugliness.  
+The reader will decide if the benefit is worth the relative ugliness.  
 Use responsibly!
