@@ -1,10 +1,10 @@
 ---
-title: Senior/Lead Full Stack Developer, JavaScript & PHP
+title: Senior / Lead Full Stack Developer, JavaScript & PHP
 date: "2020-03-08T10:20:00.000Z"
 description: Resume
 lang: en
 ---
-[french](/cv/)  
+[Français](/cv/)  
 
 ###__I'm a passionate problem-solver, invested in the projects I work on and the people I work with__.  
 
@@ -120,6 +120,7 @@ Specialty in mathematics
 
 * [Cuisine-ead](https://cuisine-ead.netlify.com/), Domain-specific XML processing tool. [Blog post](/cuisine-ead)
 * [Initiative Rocks!](https://initiative.rocks/), D&D combat tracker. [Blog post](/initiative-rocks)
+* [This blog](/)
 
 ## Languages
 
@@ -133,5 +134,6 @@ Specialty in mathematics
 * Travels: favorite destinations so far are Iceland, New Zealand and California.
 * [Photography](https://flickr.com/people/camille_hodoul/)
 * [Reading](https://www.goodreads.com/user/show/18835095-camille-hodoul)
+* [Music](https://open.spotify.com/user/11487860)
 * D&D
 * Videogames

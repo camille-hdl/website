@@ -1,10 +1,10 @@
 ---
-title: Senior/Lead Développeur Full Stack, JavaScript & PHP
+title: Senior / Lead Développeur Full Stack, JavaScript & PHP
 date: "2020-03-08T10:20:00.000Z"
 description: C.V.
 lang: fr
 ---
-[english](/resume/)
+[English](/resume/)
 
 ###__Solutionneur passionné, je suis investi dans les projets et les gens avec qui je travaille__
 
@@ -121,6 +121,7 @@ Support, configuration réseau, maintenance de serveurs Windows et postes de tra
 
 * [Cuisine-ead](https://cuisine-ead.netlify.com/), Outil de traitement de fichiers XML-EAD, spécifiques au secteur des archives. [Blog](/cuisine-ead)
 * [Initiative Rocks!](https://initiative.rocks/), D&D combat tracker. [Blog](/initiative-rocks)
+* [Ce blog](/)
 
 ## Langues
 
@@ -134,5 +135,6 @@ Support, configuration réseau, maintenance de serveurs Windows et postes de tra
 * Voyage : mes destinations préférées sont pour l'instant l'Islande, la Nouvelle Zélande et la Californie.
 * [Photographie](https://flickr.com/people/camille_hodoul/)
 * [Lecture](https://www.goodreads.com/user/show/18835095-camille-hodoul)
+* [Musique](https://open.spotify.com/user/11487860)
 * D&D
 * Jeux vidéos
