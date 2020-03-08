@@ -14,7 +14,7 @@ Je suis moteur dans la réflexion autour de problématiques complexes et acteur 
 __J'optimise pour la réussite de l'équipe et du projet.__
 
 Je m'efforce de suivre les principes d'ingénierie et les bonnes pratiques du secteur telles que les tests, l'accessibilité, la RGPD, la performance, l'intégration continue, le refactor et la code review.  
-Je suis à l'aise dans les paradigmes orienté objet et fonctionnel, et utilise souvent les deux dans mes projets.  
+Je suis à l'aise dans les paradigmes orienté objet et fonctionnel; les deux sont souvent utilisés dans mes projets.  
 Curieux de nature, je concentre mes efforts continus d'apprentissage sur des sujets pertinents pour mon projet en cours, tout en gardant une vue d'ensemble de l'industrie.  
 
 ### Compétences techniques
@@ -23,7 +23,7 @@ Curieux de nature, je concentre mes efforts continus d'apprentissage sur des suj
 * Avancé : MySQL, ElasticSearch, HTML/CSS, IIIF2, Rollup, Flow, A11y, Bitbucket Pipelines
 * Intermédiaire : Docker, Bash, Git, nginx, Apache, SEO, Linux, Node.js, Cypress
 * Novice : GraphQL, Clojurescript, Typescript, memcached, Svelte, simulateur d'ascenseur
-* Curieux de : AWS, Kubernetes, Presto, Kafka, React Native, WASM, Clojure, Datomic
+* Curieux de : AWS, Kubernetes, Presto, Kafka, React Native, WASM, Clojure, Datomic, Next.js
 
 ### "Soft" skills
 
@@ -32,7 +32,7 @@ Curieux de nature, je concentre mes efforts continus d'apprentissage sur des suj
 * Feedback détaillé en code review
 * Animation de réunions internes ou avec des clients
 * Attention portée à la gestion de projet : échéances, livrables...
-* [Suivi](https://github.com/rollup/rollup/issues/2715) [des](https://github.com/rollup/rollup/issues/2285) [projets](https://github.com/alex3165/react-mapbox-gl/issues/795) opensource externes critiques
+* [Suivi](https://github.com/rollup/rollup/issues/2715) [des](https://github.com/rollup/rollup/issues/2285) [projets](https://github.com/alex3165/react-mapbox-gl/issues/795) open-source externes critiques
 * Maintient du bus factor le plus haut possible.
 
 ## Expériences professionnelles

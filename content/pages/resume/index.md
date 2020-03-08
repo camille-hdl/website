@@ -23,7 +23,7 @@ Always curious, I focus my learning efforts on subjects relevant to my current p
 * Advanced: MySQL, ElasticSearch, HTML/CSS, IIIF2, Rollup, Flow, A11y, Bitbucket Pipelines
 * Intermediate: Docker, Bash, Git, nginx, Apache, SEO, Linux, Node.js, Cypress
 * Novice: GraphQL, Clojurescript, Typescript, memcached, Svelte, elevator simulation
-* Curious about: AWS, Kubernetes, Presto, Kafka, React Native, WASM, Clojure, Datomic
+* Curious about: AWS, Kubernetes, Presto, Kafka, React Native, WASM, Clojure, Datomic, Next.js
 
 ### "Soft" skills
 
@@ -32,7 +32,7 @@ Always curious, I focus my learning efforts on subjects relevant to my current p
 * Providing detailed feedback during code reviews
 * Running meetings internally or with clients
 * Attention to project management : deadlines, deliverables...
-* [Keeping](https://github.com/rollup/rollup/issues/2285) [up](https://github.com/rollup/rollup/issues/2715) [with](https://github.com/alex3165/react-mapbox-gl/issues/795) critical external opensource projects
+* [Keeping](https://github.com/rollup/rollup/issues/2285) [up](https://github.com/rollup/rollup/issues/2715) [with](https://github.com/alex3165/react-mapbox-gl/issues/795) critical external open source projects
 * Keeping the bus factor as high as possible
 
 ## Work experiences
