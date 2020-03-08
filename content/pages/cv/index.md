@@ -6,22 +6,22 @@ lang: fr
 ---
 [english](/resume)
 
-###__Solutionneur passioné, je suis investi dans les projets et les gens avec qui je travaille__
+###__Solutionneur passionné, je suis investi dans les projets et les gens avec qui je travaille__
 
-J'ai 9 ans d'expérience à travailler sur des applications web à destination du public et des progiciels.  
+J'ai 9 ans d'expérience dans le développement d'applications web à destination du public et de progiciels.  
 Je suis impliqué dans la reflexion autour du problème,  l'architecture puis l'implémentation de sa solution.
 
 __J'optimise pour la réussite de l'équipe et du projet.__
 
-Je m'efforce de suivre les principes d'ingénierie et les bonnes pratiques du secteur telles que les tests, l'accessibilité, la performance, l'intégration continue, le refactor et la code review.  
+Je m'efforce de suivre les principes d'ingénierie et les bonnes pratiques du secteur telles que les tests, l'accessibilité, la RGPD, la performance, l'intégration continue, le refactor et la code review.  
 Je suis à l'aise dans les paradigmes orienté objet et fonctionnel, et utilise souvent les deux dans mes projets.  
-Curieux de nature, je concentre mes efforts d'apprentissage continu sur des sujets pertinents pour mon projet en cours, tout en gardant une vue d'ensemble de l'industrie.  
+Curieux de nature, je concentre mes efforts continus d'apprentissage sur des sujets pertinents pour mon projet en cours, tout en gardant une vue d'ensemble de l'industrie.  
 
 ### Compétences techniques
 
-* Accompli : __JavaScript (React-DOM), PHP (Symfony)__
+* Accompli : __JavaScript, PHP, React, Symfony__
 * Avancé : MySQL, ElasticSearch, HTML/CSS, IIIF2, Rollup, Flow, A11y
-* Intermédiaire : Docker, Bash, Git, nginx, Apache, SEO
+* Intermédiaire : Docker, Bash, Git, nginx, Apache, SEO, Linux, Node.js
 * Novice : GraphQL, Clojurescript, Typescript, memcached
 * Curieux de : AWS, Kubernetes, Presto, Kafka, React Native, WASM, Clojure, Datomic
 
@@ -30,7 +30,7 @@ Curieux de nature, je concentre mes efforts d'apprentissage continu sur des suje
 
 * J'encourage, enseigne et applique les bonnes pratiques,
 * fais du mentorat et forme mes collègues,
-* m'efforce de maintenir ma connaissance domaine et opérationnelle à jour afin de prendre des décisions techniques pertinentes,
+* m'efforce de maintenir ma connaissance du domaine et opérationnelle à jour afin de prendre des décisions techniques pertinentes,
 * suis en relation avec les experts domaine des clients ou partenaires,
 * fournis des retours détaillés à mes collègues en code review,
 * fournis des retours sur les échéances et les livrables aux décideurs,
@@ -50,7 +50,7 @@ Rôles : Architecture logicielle générale, intégration continue, tooling, par
 
 Utilise : Symfony 4, MySQL, ElasticSearch, Cantaloupe Server, React/Redux, Rollup, Mapbox, RxJS, Dynamic imports, Docker, Bash.  
 
-Challenges : cache, sécurité, performance, SEO, SSR, grands volumes, media HD, schémas flexibles, compatibilité avec les navigateurs, authentification.
+Challenges : cache, sécurité, performance, SEO, SSR, grands volumes, media HD, schémas flexibles, compatibilité avec les navigateurs, authentification, migration.
 
 Exemple : https://www.dispositif-reponses.org/, https://archives-loiret.fr/, https://celester.org/
 
@@ -74,7 +74,7 @@ Rôles : développeur front-end senior, code review, analyse et conseil au clien
 
 Utilise : Symfony 4, MySQL, Elasticsearch, React/Redux, Mapbox, Paper.js.  
 
-Challenges : security, data cleaning and analysis, statistics, geographical data.
+Challenges : sécurité, nettoyage et analyse de données, statistiques, données géographiques.
 
 https://www.oscarsante.org/
 
@@ -86,6 +86,7 @@ Rôles : développeur junior, puis développeur.
 Utilise : jQuery, React, MySQL, canvas.  
 
 Challenges : hébergement par le client, grand volume, traffic important.  
+
 Exemple: https://www.memoiredeshommes.sga.defense.gouv.fr/, http://www.archives43.fr/, https://www.hopital-saint-joseph.fr/
 
 #### Autres projets
@@ -119,7 +120,7 @@ Support, configuration réseau, maintenance de serveurs Windows et postes de tra
 
 ## Projets personnels actifs
 
-* [Cuisine-ead](https://cuisine-ead.netlify.com/), Outil de traitement de fichiers XML, spécifique au secteur des archives. [Blog](/cuisine-ead)
+* [Cuisine-ead](https://cuisine-ead.netlify.com/), Outil de traitement de fichiers XML-EAD, spécifiques au secteur des archives. [Blog](/cuisine-ead)
 * [Initiative Rocks!](https://initiative.rocks/), D&D combat tracker. [Blog](/initiative-rocks)
 
 ## Autres intérets

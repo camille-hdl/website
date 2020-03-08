@@ -13,15 +13,15 @@ I'm involved in the definition of the problem, the architecture and the implemen
 
 __I optimise for the success of the team and of the project.__  
 
-I strive to follow engineering principles and industry good practices such as testing, accessibility, performance, continuous integration, refactoring and code review.  
+I strive to follow engineering principles and industry good practices such as testing, accessibility, GDPR, performance, continuous integration, refactoring and code review.  
 I'm comfortable with object-oriented and functional paradigms and often use both in my projects.  
 Always curious, I focus my learning efforts on subjects relevant to my current project while keeping a bird's eye view of the industry.  
 
 ### Technical skills
 
-* Accomplished: __JavaScript (React-DOM), PHP (Symfony)__
+* Accomplished: __JavaScript, PHP, React, Symfony__
 * Advanced: MySQL, ElasticSearch, HTML/CSS, IIIF2, Rollup, Flow, A11y
-* Intermediate: Docker, Bash, Git, nginx, Apache, SEO, Linux
+* Intermediate: Docker, Bash, Git, nginx, Apache, SEO, Linux, Node.js
 * Novice: GraphQL, Clojurescript, Typescript, memcached
 * Curious about: AWS, Kubernetes, Presto, Kafka, React Native, WASM, Clojure, Datomic
 
@@ -49,7 +49,7 @@ Roles: general software architecture, CI Pipelines, tooling, consulting on hosti
 
 Utilizes: Symfony 4, MySQL, ElasticSearch, Cantaloupe Server, React/Redux, Rollup, Mapbox, RxJS, Dynamic imports, Docker, Bash.  
 
-Challenges: caching, security, performance, SEO, SSR, high volumes, HD media, flexible schemas, browser compatibility, authentication.
+Challenges: caching, security, performance, SEO, SSR, high volumes, HD media, flexible schemas, browser compatibility, authentication, migration.
 
 Examples: https://www.dispositif-reponses.org/, https://archives-loiret.fr/, https://celester.org/
 
@@ -80,10 +80,12 @@ https://www.oscarsante.org/
 #### Arkothèque - old version
 
 Team of 3  
-Roles: junior developper, then developper.  
+Roles: junior developer, then developer.  
 
-Utilizes: jQuery, React, MySQL, canvas.
+Utilizes: jQuery, React, MySQL, canvas.  
+
 Challenges: on-premise hosting, high volumes, high traffic.  
+
 Examples: https://www.memoiredeshommes.sga.defense.gouv.fr/, http://www.archives43.fr/, https://www.hopital-saint-joseph.fr/
 
 #### Other projects
@@ -107,7 +109,7 @@ Helpdesk, network configuration, Windows server and workstations maintenance.
 ### BTS Informatique de Gestion, Lycée Dominique Villars, 2009 - 2011
 
 * Application Developer
-* internship at Conseil Départemental des Hautes Alpes. I developped a log processing tool for a proxy server using PHP & Perl.
+* Internship at Conseil Départemental des Hautes Alpes. I made a log processing tool for a proxy server using PHP & Perl.
 * Highest ranking in class, 2nd highest in the district ("académie").
 
 ### Bac Sciences Economiques et Sociales, Lycée Dominique Villars, 2009
