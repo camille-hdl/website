@@ -20,8 +20,8 @@ Curieux de nature, je concentre mes efforts continus d'apprentissage sur des suj
 ### Compétences techniques
 
 * Accompli : __JavaScript, PHP, React, Symfony__
-* Avancé : MySQL, ElasticSearch, HTML/CSS, IIIF2, Rollup, Flow, A11y
-* Intermédiaire : Docker, Bash, Git, nginx, Apache, SEO, Linux, Node.js
+* Avancé : MySQL, ElasticSearch, HTML/CSS, IIIF2, Rollup, Flow, A11y, Bitbucket Pipelines
+* Intermédiaire : Docker, Bash, Git, nginx, Apache, SEO, Linux, Node.js, Cypress
 * Novice : GraphQL, Clojurescript, Typescript, memcached
 * Curieux de : AWS, Kubernetes, Presto, Kafka, React Native, WASM, Clojure, Datomic
 
@@ -48,7 +48,7 @@ La nouvelle version du produit est maintenant en production.
 
 Rôles : Architecture logicielle générale, intégration continue, tooling, participation à la mise en place de l'infrastructure d'hébergement, code review, qualité, développement.  
 
-Utilise : Symfony 4, MySQL, ElasticSearch, Cantaloupe Server, React/Redux, Rollup, Mapbox, RxJS, Dynamic imports, Docker, Bash.  
+Utilise : Symfony 4, MySQL, ElasticSearch, Cantaloupe Server, React/Redux, Rollup, Mapbox, RxJS, Dynamic imports, Docker, Bash, Bitbucket Pipelines, Cypress, Jest, PHPUnit.  
 
 Challenges : cache, sécurité, performance, SEO, SSR, grands volumes, media HD, schémas flexibles, compatibilité avec les navigateurs, authentification, migration.
 
@@ -61,7 +61,7 @@ Equipe de 5 développeurs.
 
 Rôles : développeur sénior, code review, analyse et conseil auprès des clients, architecture logicielle de certaines parties de l'application.
 
-Utilise : Symfony 2, MySQL, ElasticSearch, React/Redux.  
+Utilise : Symfony 2, MySQL, ElasticSearch, React/Redux, Jest, PHPUnit, Cypress.  
 
 Challenges : sécurité, grands volumes, compatibilité avec des standards spécifique au secteur, hébergement par le client.  
 
@@ -72,7 +72,7 @@ Outil de reporting et visualisation de données d'actions de santé.
 Equipe de 4 personnes  
 Rôles : développeur front-end senior, code review, analyse et conseil au client, architecture de certaines parties de application.
 
-Utilise : Symfony 4, MySQL, Elasticsearch, React/Redux, Mapbox, Paper.js.  
+Utilise : Symfony 4, MySQL, Elasticsearch, React/Redux, Mapbox, Paper.js, PHPUnit.  
 
 Challenges : sécurité, nettoyage et analyse de données, statistiques, données géographiques.
 
@@ -126,7 +126,7 @@ Support, configuration réseau, maintenance de serveurs Windows et postes de tra
 ## Autres intérets
 
 * Sport : particulièrement la randonnée et le ski.
-* Voyage: mes destinations préférées sont pour l'instant l'Islande, la Nouvelle Zélande et la Californie.
+* Voyage : mes destinations préférées sont pour l'instant l'Islande, la Nouvelle Zélande et la Californie.
 * [Photographie](https://flickr.com/people/camille_hodoul/)
 * [Lecture](https://www.goodreads.com/user/show/18835095-camille-hodoul)
 * D&D

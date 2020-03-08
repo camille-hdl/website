@@ -20,8 +20,8 @@ Always curious, I focus my learning efforts on subjects relevant to my current p
 ### Technical skills
 
 * Accomplished: __JavaScript, PHP, React, Symfony__
-* Advanced: MySQL, ElasticSearch, HTML/CSS, IIIF2, Rollup, Flow, A11y
-* Intermediate: Docker, Bash, Git, nginx, Apache, SEO, Linux, Node.js
+* Advanced: MySQL, ElasticSearch, HTML/CSS, IIIF2, Rollup, Flow, A11y, Bitbucket Pipelines
+* Intermediate: Docker, Bash, Git, nginx, Apache, SEO, Linux, Node.js, Cypress
 * Novice: GraphQL, Clojurescript, Typescript, memcached
 * Curious about: AWS, Kubernetes, Presto, Kafka, React Native, WASM, Clojure, Datomic
 
@@ -47,7 +47,7 @@ The new product is now successfully in production.
 
 Roles: general software architecture, CI Pipelines, tooling, consulting on hosting infrastructure, code review, QA, programming.
 
-Utilizes: Symfony 4, MySQL, ElasticSearch, Cantaloupe Server, React/Redux, Rollup, Mapbox, RxJS, Dynamic imports, Docker, Bash.  
+Utilizes: Symfony 4, MySQL, ElasticSearch, Cantaloupe Server, React/Redux, Rollup, Mapbox, RxJS, Dynamic imports, Docker, Bash, Bitbucket Pipelines, Cypress, Jest, PHPUnit.  
 
 Challenges: caching, security, performance, SEO, SSR, high volumes, HD media, flexible schemas, browser compatibility, authentication, migration.
 
@@ -60,7 +60,7 @@ Team of 5 developers.
 
 Roles: senior developer, code review, consulting with clients, architecture of parts of the application.
 
-Utilizes: Symfony 2, MySQL, ElasticSearch, React/Redux.  
+Utilizes: Symfony 2, MySQL, ElasticSearch, React/Redux, Jest, PHPUnit, Cypress.  
 
 Challenges: security, high volumes, domain-specific standards compatibility, on-premise hosting.
 
@@ -71,7 +71,7 @@ Reporting and dataviz tool for local health-related actions.
 Team of 4  
 Roles: senior front-end developer, code review, consulting with clients, architecture of parts of the application.
 
-Utilizes: Symfony 4, MySQL, Elasticsearch, React/Redux, Mapbox, Paper.js.  
+Utilizes: Symfony 4, MySQL, Elasticsearch, React/Redux, Mapbox, Paper.js, PHPUnit.  
 
 Challenges: security, data cleaning and analysis, statistics, geographical data.
 
