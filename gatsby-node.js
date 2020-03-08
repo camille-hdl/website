@@ -5,10 +5,11 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  return graphql(
+  const blogPromise = graphql(
     `
       {
         allMarkdownRemark(
+          filter: { fileAbsolutePath: { glob: "**/content/blog/**" } }
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
@@ -49,7 +50,50 @@ exports.createPages = ({ graphql, actions }) => {
     })
 
     return null
+  });
+  const pageTemplate = path.resolve(`./src/templates/page.js`);
+  const pagesPromise = graphql(
+    `
+      {
+        allMarkdownRemark(
+          filter: { fileAbsolutePath: { glob: "**/content/pages/**" } }
+          sort: { fields: [frontmatter___date], order: DESC }
+          limit: 1000
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+              }
+            }
+          }
+        }
+      }
+    `
+  ).then(result => {
+    if (result.errors) {
+      throw result.errors
+    }
+
+    // Create separate pages
+    const pages = result.data.allMarkdownRemark.edges
+
+    pages.forEach((page, index) => {
+      createPage({
+        path: page.node.fields.slug,
+        component: pageTemplate,
+        context: {
+          slug: page.node.fields.slug,
+        },
+      })
+    })
+
+    return null
   })
+  return Promise.all([blogPromise, pagesPromise]);
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

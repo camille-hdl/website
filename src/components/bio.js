@@ -6,7 +6,7 @@
  */
 
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import Image from "gatsby-image"
 
 import { rhythm } from "../utils/typography"
@@ -66,7 +66,10 @@ const Bio = () => {
         </a>,{" "}
         <a href={`https://flickr.com/people/${social.flickr}/`}>
           Flickr
-        </a>
+        </a>,{" "}
+        <Link to="/resume">
+          resume
+        </Link>
       </p>
     </div>
   )
