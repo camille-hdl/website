@@ -4,7 +4,7 @@ date: "2020-03-08T10:20:00.000Z"
 description: Resume
 lang: en
 ---
-[french](/cv)  
+[french](/cv/)  
 
 ###__I'm a passionate problem-solver, invested in the projects I work on and the people I work with__.  
 
@@ -13,7 +13,7 @@ I'm involved in the definition of the problem, the architecture and the implemen
 
 __I optimise for the success of the team and of the project.__  
 
-I strive to follow engineering principles and industry good practices such as testing, accessibility, GDPR, performance, continuous integration, refactoring and code review.  
+I strive to follow engineering principles and industry best practices such as testing, accessibility, GDPR, performance, continuous integration, refactoring and code review.  
 I'm comfortable with object-oriented and functional paradigms and often use both in my projects.  
 Always curious, I focus my learning efforts on subjects relevant to my current project while keeping a bird's eye view of the industry.  
 
@@ -22,18 +22,18 @@ Always curious, I focus my learning efforts on subjects relevant to my current p
 * Accomplished: __JavaScript, PHP, React, Symfony__
 * Advanced: MySQL, ElasticSearch, HTML/CSS, IIIF2, Rollup, Flow, A11y, Bitbucket Pipelines
 * Intermediate: Docker, Bash, Git, nginx, Apache, SEO, Linux, Node.js, Cypress
-* Novice: GraphQL, Clojurescript, Typescript, memcached
+* Novice: GraphQL, Clojurescript, Typescript, memcached, Svelte, elevator simulation
 * Curious about: AWS, Kubernetes, Presto, Kafka, React Native, WASM, Clojure, Datomic
 
 ### "Soft" skills
 
-* I encourage, teach, and apply good practices,
-* mentor and train my peers,
-* stay informed on business knowledge to make relevant technical decisions,
-* interface with domain experts from clients or partners,
-* provide detailed feedback to my peers in code reviews,
-* provide feedback on deadlines and deliverables to stakeholders,
-* try and keep the bus factor as high as possible through knowledge sharing and documentation.
+* Being available and communicating with peers, stakeholders and clients
+* Mentoring, [training](/rollup-dev-environment/), teaching best practices: accessibility, security, tests, documentation
+* Providing detailed feedback during code reviews
+* Running meetings internally or with clients
+* Attention to project management : deadlines, deliverables...
+* [Keeping](https://github.com/rollup/rollup/issues/2285) [up](https://github.com/rollup/rollup/issues/2715) [with](https://github.com/alex3165/react-mapbox-gl/issues/795) critical external opensource projects
+* Keeping the bus factor as high as possible
 
 ## Work experiences
 
@@ -120,6 +120,12 @@ Specialty in mathematics
 
 * [Cuisine-ead](https://cuisine-ead.netlify.com/), Domain-specific XML processing tool. [Blog post](/cuisine-ead)
 * [Initiative Rocks!](https://initiative.rocks/), D&D combat tracker. [Blog post](/initiative-rocks)
+
+## Languages
+
+* French 🤙
+* English ✌️
+* ~~Italian~~ 🤦‍♂️
 
 ## Other interests
 

@@ -4,12 +4,12 @@ date: "2020-03-08T10:20:00.000Z"
 description: C.V.
 lang: fr
 ---
-[english](/resume)
+[english](/resume/)
 
 ###__Solutionneur passionné, je suis investi dans les projets et les gens avec qui je travaille__
 
-J'ai 9 ans d'expérience dans le développement d'applications web à destination du public et de progiciels.  
-Je suis impliqué dans la reflexion autour du problème,  l'architecture puis l'implémentation de sa solution.
+J'ai plus de 9 ans d'expérience dans le développement d'applications web à destination du public et de progiciels.  
+Je suis moteur dans la réflexion autour de problématiques complexes et acteur de la conception d'architecture ainsi que de son implémentation.
 
 __J'optimise pour la réussite de l'équipe et du projet.__
 
@@ -22,19 +22,18 @@ Curieux de nature, je concentre mes efforts continus d'apprentissage sur des suj
 * Accompli : __JavaScript, PHP, React, Symfony__
 * Avancé : MySQL, ElasticSearch, HTML/CSS, IIIF2, Rollup, Flow, A11y, Bitbucket Pipelines
 * Intermédiaire : Docker, Bash, Git, nginx, Apache, SEO, Linux, Node.js, Cypress
-* Novice : GraphQL, Clojurescript, Typescript, memcached
+* Novice : GraphQL, Clojurescript, Typescript, memcached, Svelte, simulateur d'ascenseur
 * Curieux de : AWS, Kubernetes, Presto, Kafka, React Native, WASM, Clojure, Datomic
-
 
 ### "Soft" skills
 
-* J'encourage, enseigne et applique les bonnes pratiques,
-* fais du mentorat et forme mes collègues,
-* m'efforce de maintenir ma connaissance du domaine et opérationnelle à jour afin de prendre des décisions techniques pertinentes,
-* suis en relation avec les experts domaine des clients ou partenaires,
-* fournis des retours détaillés à mes collègues en code review,
-* fournis des retours sur les échéances et les livrables aux décideurs,
-* essaie de maintenir le bus factor le plus haut possible par le partage de connaissance et la documentation.
+* Ecoute et communication avec les collaborateurs, décideurs et clients
+* Mentorat, [formation](/rollup-dev-environment/) aux bonnes pratiques : accessibilité, sécurité, tests, documentation
+* Feedback détaillé en code review
+* Animation de réunions internes ou avec des clients
+* Attention portée à la gestion de projet : échéances, livrables...
+* [Suivi](https://github.com/rollup/rollup/issues/2715) [des](https://github.com/rollup/rollup/issues/2285) [projets](https://github.com/alex3165/react-mapbox-gl/issues/795) opensource externes critiques
+* Maintient du bus factor le plus haut possible.
 
 ## Expériences professionnelles
 
@@ -122,6 +121,12 @@ Support, configuration réseau, maintenance de serveurs Windows et postes de tra
 
 * [Cuisine-ead](https://cuisine-ead.netlify.com/), Outil de traitement de fichiers XML-EAD, spécifiques au secteur des archives. [Blog](/cuisine-ead)
 * [Initiative Rocks!](https://initiative.rocks/), D&D combat tracker. [Blog](/initiative-rocks)
+
+## Langues
+
+* Français 🤙
+* Anglais ✌️
+* ~~Italien~~ 🤦‍♂️
 
 ## Autres intérets
 
