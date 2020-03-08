@@ -55,4 +55,4 @@ A (hopefuly up-to-date) compilation of places I go to to keep in touch with the 
 
 ## Twitter
 
-[List of Twitter accounts](https://twitter.com/i/lists/1236794434081218560/members)
+[List of Twitter accounts](https://twitter.com/i/lists/1236794434081218560?s=20)
