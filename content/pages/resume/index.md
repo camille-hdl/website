@@ -15,7 +15,7 @@ __I optimise for the success of the team and of the project.__
 
 I strive to follow engineering principles and industry best practices such as testing, accessibility, GDPR, performance, continuous integration, refactoring and code review.  
 I'm comfortable with object-oriented and functional paradigms and often use both in my projects.  
-Always curious, I focus my learning efforts on subjects relevant to my current project while keeping a bird's eye view of the industry.  
+Always curious, I focus my [learning efforts](/learning-resources/) on subjects relevant to my current project while keeping a bird's eye view of the industry.  
 
 ### Technical skills
 

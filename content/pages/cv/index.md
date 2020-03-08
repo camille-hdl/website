@@ -15,7 +15,7 @@ __J'optimise pour la réussite de l'équipe et du projet.__
 
 Je m'efforce de suivre les principes d'ingénierie et les bonnes pratiques du secteur telles que les tests, l'accessibilité, la RGPD, la performance, l'intégration continue, le refactor et la code review.  
 Je suis à l'aise dans les paradigmes orienté objet et fonctionnel; les deux sont souvent utilisés dans mes projets.  
-Curieux de nature, je concentre mes efforts continus d'apprentissage sur des sujets pertinents pour mon projet en cours, tout en gardant une vue d'ensemble de l'industrie.  
+Curieux de nature, je concentre [mes efforts continus d'apprentissage](/learning-resources/) sur des sujets pertinents pour mon projet en cours, tout en gardant une vue d'ensemble de l'industrie.  
 
 ### Compétences techniques
 
@@ -41,7 +41,7 @@ Curieux de nature, je concentre mes efforts continus d'apprentissage sur des suj
 
 #### Arkothèque
 
-Je mène depuis 2 ans la refonte complète (de zéro) du produit principal de la société, le CMS [Arkothèque](https://arkotheque.fr).  
+Je mène depuis 2 ans la refonte complète du produit principal de la société, le CMS [Arkothèque](https://arkotheque.fr).  
 Equipe de 5 personnes composée de 4 développeurs et 1 designer.  
 La nouvelle version du produit est maintenant en production.  
 
