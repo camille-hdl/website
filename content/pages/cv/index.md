@@ -4,7 +4,7 @@ date: "2020-03-08T10:20:00.000Z"
 description: C.V.
 lang: fr
 ---
-[English](/resume/)
+[English](/resume/) - <a href="camille-hodoul.pdf" target="_blank" download>pdf</a>
 
 ###__Solutionneur passionné, je suis investi dans les projets et les gens avec qui je travaille__
 
