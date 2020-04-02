@@ -52,6 +52,7 @@ A (hopefuly up-to-date) compilation of places I go to to keep in touch with the 
 * https://hacks.mozilla.org/
 * https://blog.codinghorror.com/
 * https://css-tricks.com/
+* https://understandlegacycode.com/
 
 ## Twitter
 
