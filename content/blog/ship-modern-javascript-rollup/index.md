@@ -24,6 +24,8 @@ The steps we need to take to achieve this are:
     2. configure terser to output ES2017
 3. load each bundle in the correct browsers.
 
+You can see a working example [in this repo](https://github.com/camille-hdl/rollup-react-example).
+
 ## Bundling
 
 If you're using Rollup, you can already output ES modules or a fallback out-of-the-box.  
