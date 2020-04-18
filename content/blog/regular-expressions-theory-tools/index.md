@@ -81,4 +81,4 @@ Learn more on [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ----
 
-![Batman slaps Robin](meme.jpg "Regex are useful")
+![Batman slaps Robin](meme.jpg "Regexes are useful")
