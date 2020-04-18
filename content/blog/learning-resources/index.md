@@ -21,6 +21,7 @@ A (hopefuly up-to-date) compilation of places I go to to keep in touch with the 
 * An Elegant Puzzle: Systems of Engineering Management - W. Larson
 * Thinking in Systems - D.H. Meadows
 * Thinking, Fast and Slow - D. Kahneman
+* Data & Reality - W. Kent
 
 ## Podcasts
 
