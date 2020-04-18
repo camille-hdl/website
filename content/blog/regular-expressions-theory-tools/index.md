@@ -43,7 +43,7 @@ For example PCRE (Perl-Compatible Regular Expressions) has features like asserti
 
 ## In practise
 
-Virtually every programming environment has some kind of regex support. Here are some example.
+Virtually every programming environment has some kind of regex support. Here are some examples.
 
 ### Unix
 
@@ -68,14 +68,14 @@ Learn more on [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### Websites
 
-* [iHateRegex](https://ihateregex.io/) lets ou visualize your regex as a graph, which illustrates well its automaton origin.
+* [iHateRegex](https://ihateregex.io/) lets you visualize your regex as a graph, which illustrates well its automaton origin.
 * [regex101](https://regex101.com/) is an interactive regex editor which does a good job explaining what your expression does, and lets you choose your engine (PCRE, JavaScript, and more).
 * [regular-expressions.info](https://www.regular-expressions.info/) provides useful documentation.
 
 ## A bit of History
 
 * [Stephen Kleene](https://en.wikipedia.org/wiki/Stephen_Cole_Kleene) seems to be generally considered the inventor of Regular Expressions, in the early 1950s.
-* Also in the 50s, Chomsky introduced his [hierarchy of languages](https://en.wikipedia.org/wiki/Chomsky_hierarchy), regular languages being "Type-3".
+* Also in the 50s, Chomsky introduced his [hierarchy of languages](https://en.wikipedia.org/wiki/Chomsky_hierarchy), with regular languages being "Type-3".
 * One of the first usage in a program is attributed to [Ken Thompson's ED text editor](https://en.wikipedia.org/wiki/Ed_(text_editor)) (and, also, one of the first examples of just-in-time compilation), in the late 60s.
 * In the 80s, [Perl](https://en.wikipedia.org/wiki/Regular_expression#Perl_and_PCRE) introduced even more powerful implementations.
 
