@@ -1,6 +1,6 @@
 ---
 title: Reading "Data & Reality" by William Kent
-date: "2020-04-18T14:33:00.000Z"
+date: "2020-04-19T15:20:00.000Z"
 description: Notes and highlights
 ---
 
