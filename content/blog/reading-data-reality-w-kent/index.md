@@ -8,22 +8,22 @@ description: Notes and highlights
 
 I've recently finished the 3rd edition of this book, with commentary from Steve Hoberman, published in 2012 (the first edition was published back in  1978).  
 
-This is almost as much about metaphysics as it is about data modeling.  
+This book is almost as much about metaphysics as it is about data modeling.  
 While it does not dig very deep in technical details on either subject, it does bring useful insights and its share of "aha" moments.  
 
 On multiple occasions, the author managed to challenge my certitudes on topics as varied as my own identity as a living creature or database keys.
 
-What follows are excerpts from the text reorganised by topic, as well as my own comments. Your mileage may vary.
+What follows are excerpts from the text rearranged by topic, as well as my own comments. Your mileage may vary.
 
 ![cover of the audiobook version of "Data & Reality" by William Kent](cover.jpg "Cover of \"Data & Reality\" by William Kent")
 
 > A map simplifies a complex geographic landscape in the same way that a data model simplifies a complex information landscape.
 
-Through inductive~ish logic, the author argues throughout the book that the "real world" is incredibly difficult (if not impossible) to model, and therefore **any choice made to model it is just that : an arbitrary choice**.
+Through inductive~ish logic, the author argues throughout the book that the "real world" is arduous –if not impossible– to model and therefore **any decision made during the modeling process is just that : an arbitrary choice**.
 
 > A model is the basic system of constructs used in describing reality.
 
-It follows then that the Data Model shouldn't try to be an exact model of reality but merely a pragmatic tool : **a reconciliation of the "mental realities" of the users**, in order to achieve a specific purpose (whatever business the users do).
+It follows, then, that the data Model shouldn't bother trying to be an exact model of reality but merely a pragmatic tool : **a reconciliation of the "mental realities" of the users**, in order to achieve a specific purpose (whatever business the users do).
 
 > "The map is not the territory" - Hayakawa
 
@@ -32,13 +32,13 @@ It follows then that the Data Model shouldn't try to be an exact model of realit
 > \[...\] most attempts at modeling the entire organization fall short because they fail to acknowledge the many different perceptions.
 > \[...\] we also need to "map" each of the concepts on this holistic model to each of the different perspectives.
 
-The model facilitates communication of information between the users.
+The model facilitates communication between the users.
 
 > There is a flow of ideas from mind to mind; there are translations along the way, from concept to natural languages to formal languages and back again.
 
 > context plays a role in scope, abstraction, terminology, and definitions. It also plays a role in readability.
 
-It is essential, however, that the Data Model be **built from the business, not from the tools**:
+A fundamental prerequisite to a successful model is that it should be **informed by the business, not by the existing tools**:
 
 > Tainted thinking means that some business professionals equate how they do their jobs to the software they use.
 
@@ -56,8 +56,8 @@ Later chapters of the book describe how the concept of "records" in databases of
 
 ### Conceptual, logical and physical data models
 
-The author argues that each level of abstraction of the information system has its uses, but that the physical model is the most ephemeral in that it is tied to the technologies of the day.  
-The logical model, however, being closer to the mental model of the users, is easier to maintain, will outlive any single implementation and can be re-used.
+Each level of abstraction of the information system has its uses, but the physical model is ephemeral because it is tied to the technologies of the day.  
+The logical model, however, is closer to the mental model of the users, making it easier to maintain. It will outlive any technical implementation and can be re-used in the future.
 
 > The conceptual data model captures the business scope of the problem, the logical the business solution, and the physical the technical solution.
 
@@ -83,7 +83,7 @@ Names are ambiguous, so we should be careful not to confuse them with surrogates
 
 ### Relationships
 
-The "reason" of the relationship is at least as important as the objects involved.
+The "reason" of the relationship is at least as important as the entities involved.
 
 > A relationship is an association among several things, with that association having a particular significance.
 
