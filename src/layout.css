@@ -1,0 +1,26 @@
+body {
+  background-color: rgb(255, 241, 229);
+}
+code.language-text {
+  padding-left: 0.5em !important;
+  padding-right: 0.5em !important;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: rgb(1, 22, 39);
+    color: rgb(214, 222, 235);
+  }
+  blockquote {
+      color: rgb(163, 187, 207);
+  }
+  a {
+    color: rgb(173, 219, 103);
+  }
+  img {
+    opacity: 0.85!important;
+    transition: opacity 0.5s ease-in-out;
+  }
+  img:hover {
+    opacity: 1;
+  }
+}

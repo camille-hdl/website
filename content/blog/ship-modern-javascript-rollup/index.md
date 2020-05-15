@@ -220,7 +220,7 @@ module.exports = function(api) {
 ```
 We didn't use the .mjs alternative because it only works when babel is loaded asynchonously.  
 
-`preset-modules` will transpile less code than `present-env`. Read [the documentation](https://github.com/babel/preset-modules) to understand why.
+`preset-modules` will transpile less code than `preset-env`. Read [the documentation](https://github.com/babel/preset-modules) to understand why.
 
 Now that we have our bundles, we need a way to load them in their targets.
 
