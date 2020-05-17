@@ -6,9 +6,10 @@ lang: fr
 ---
 [English](/resume/) - <a href="camille-hodoul.pdf" target="_blank" download>pdf</a>
 
-###__Solutionneur passionné, je suis investi dans les projets et les gens avec qui je travaille__
+###__J'aime les problèmes, et surtout les résoudre__
 
 J'ai plus de 9 ans d'expérience dans le développement d'applications web à destination du public et de progiciels.  
+Je suis investi dans les projets et les gens avec qui je travaille.  
 Je suis moteur dans la réflexion autour de problématiques complexes et acteur de la conception d'architecture ainsi que de son implémentation.
 
 __J'optimise pour la réussite de l'équipe et du projet.__
