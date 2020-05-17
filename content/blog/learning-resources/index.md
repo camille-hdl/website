@@ -12,16 +12,31 @@ A (hopefuly up-to-date) compilation of places I go to to keep in touch with the 
 
 ## Books
 
+### Computer Science
+
 * Structure and Interpretation of Computer Programs -  Sussman and Abelson
 * The Art of Computer Programming - D. Knuth
-* Domain-Driven Design Distilled - V. Vaughn
+* Data & Reality - W. Kent ([read my notes](/reading-data-reality-w-kent/))
+
+### Software Engineering
+
 * You Don't Know JS - K. Simpson
+* Domain-Driven Design Distilled - V. Vaughn
 * Working Effectively with Legacy Code - M.C. Feathers
 * Clean Code - R.C. Martin
+* Accelerate - N. Forsgren, J. Humble, G. Kim
+
+### Project & Team Management
+
 * An Elegant Puzzle: Systems of Engineering Management - W. Larson
+* Predicting the Unpredictable: Pragmatic Approaches to Estimating Cost or Schedule - J. Rothman
+
+### Others
+
+* The Design of Everyday Things - D. Norman
 * Thinking in Systems - D.H. Meadows
 * Thinking, Fast and Slow - D. Kahneman
-* Data & Reality - W. Kent ([read my notes](/reading-data-reality-w-kent/))
+* Scale - G. West
 
 ## Podcasts
 
@@ -36,6 +51,7 @@ A (hopefuly up-to-date) compilation of places I go to to keep in touch with the 
 * [Syntax](https://syntax.fm/)
 * [The Undefined](https://undefined.fm/)
 * [Chats with Kent](https://kentcdodds.com/chats-with-kent-podcast/)
+* [Full Stack Radio](http://www.fullstackradio.com/)
 
 ## Blogs & websites
 
@@ -54,6 +70,7 @@ A (hopefuly up-to-date) compilation of places I go to to keep in touch with the 
 * https://blog.codinghorror.com/
 * https://css-tricks.com/
 * https://understandlegacycode.com/
+* https://macwright.org/
 
 ## Twitter
 
