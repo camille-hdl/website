@@ -6,7 +6,7 @@ lang: fr
 ---
 [English](/resume/) - <a href="camille-hodoul.pdf" target="_blank" download>pdf</a>
 
-###__J'aime les problèmes, et surtout les résoudre__
+###__J'aime (résoudre) les problèmes__
 
 J'ai plus de 9 ans d'expérience dans le développement d'applications web à destination du public et de progiciels.  
 Je suis investi dans les projets et les gens avec qui je travaille.  
