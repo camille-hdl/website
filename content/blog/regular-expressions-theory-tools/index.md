@@ -70,6 +70,7 @@ Learn more on [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 * [iHateRegex](https://ihateregex.io/) lets you visualize your regex as a graph, which illustrates well its automaton origin.
 * [regex101](https://regex101.com/) is an interactive regex editor which does a good job explaining what your expression does, and lets you choose your engine (PCRE, JavaScript, and more).
+* [extendsclass](https://extendsclass.com/regex-tester.html) has a regexp tester and visualizer.
 * [regular-expressions.info](https://www.regular-expressions.info/) provides useful documentation.
 
 ## A bit of History
