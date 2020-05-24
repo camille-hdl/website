@@ -25,6 +25,7 @@ A (hopefuly up-to-date) compilation of places I go to to keep in touch with the 
 * Working Effectively with Legacy Code - M.C. Feathers
 * Clean Code - R.C. Martin
 * Accelerate - N. Forsgren, J. Humble, G. Kim
+* Smalltalk Best Practise Patterns - K. Beck ([blog series](/tactical-php/))
 
 ### Project & Team Management
 
