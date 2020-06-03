@@ -84,5 +84,15 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-fathom',
+      options: {
+        siteId: 'UZQVEGYQ',
+        whitelistHostnames: [
+          'camillehdl.dev',
+          'www.camillehdl.dev'
+        ]
+      }
+    }
   ],
 }
