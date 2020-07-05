@@ -4,11 +4,11 @@ date: "2020-07-05T23:00:00.000Z"
 description: Avoid using a property as a temporary variable
 ---
 
-Why shouldn't we use class member variables (aka *properties* or *instance variables*) as temporary variables?  
+Why are class member variables (aka *properties* or *instance variables*) different from temporary variables?  
 
-Ideally, a property is a representative for a characteristic or a relationship of an object of your model. It's a way of communicating something about your domain (the part of the real world your program cares about). It is about modeling, not coding, and should stay relevant in any technical implementation of your model.
+Ideally, a property is a representative for a characteristic or a relationship of an object of your model. It communicates something about your domain (the part of the real world your program cares about). It is about modeling, not coding, and should stay relevant in any technical implementation of your model.
 
-By contrast, a temporary variable is a pure artifact of coding: you may need it because of the constraints of your current programming environment, because of performance reasons, because you want to communicate something about your algorithm to your coworkers, or any other reason unrelated to your domain.
+By contrast, a temporary variable is a pure artifact of coding: you may need it because of the constraints of your current programming environment, because of performance reasons, because you want to communicate something about your algorithm to your coworkers or any other reason unrelated to your domain.
 
 But what if, during refactoring, you want to divide the logic of a method into smaller methods and aggregate the result? You now need something to store the intermediate results.  
 
