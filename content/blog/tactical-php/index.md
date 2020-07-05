@@ -10,6 +10,7 @@ description: Bits of old-school Object-Oriented Programming, applied to PHP
 
 * [Pluggable Behavior](/tactical-php/pluggable-behavior)
 * [Execute Around Method](/tactical-php/execute-around-method)
+* [Collecting Parameter](/tactical-php/collecting-parameter)
 
 ## Introduction
 
