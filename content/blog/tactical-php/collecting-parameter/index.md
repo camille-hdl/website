@@ -32,9 +32,9 @@ class Ebook {
         $this->addBookmarksTo($result);
         return $result;
     }
-    protected function addNotesTo(&array $result)
+    protected function addNotesTo(array &$result)
     { /** ... **/ }
-    protected function addBookmarksTo(&array $result)
+    protected function addBookmarksTo(array &$result)
     { /** ... **/ }
 }
 ```
