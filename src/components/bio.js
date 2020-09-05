@@ -56,7 +56,7 @@ const Bio = () => {
         }}
       />
       <p>
-        I'm a JavaScript and PHP developer living in Marseille, France.
+        I'm a JavaScript and PHP developer living in Grenoble, France.
         <br />
         <a href={`https://twitter.com/${social.twitter}`} target="_blank" rel="noopener noreferrer">
           Twitter
