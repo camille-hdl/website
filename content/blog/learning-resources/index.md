@@ -4,6 +4,8 @@ date: "2020-03-09T00:50:00.000Z"
 description: Curated list of multimedia resources on Computer Science and tech in general
 ---
 
+Updated: 2020-11-10
+
 A (hopefuly up-to-date) compilation of places I go to to keep in touch with the industry.
 
 ## Videos
@@ -23,7 +25,6 @@ A (hopefuly up-to-date) compilation of places I go to to keep in touch with the 
 * You Don't Know JS - K. Simpson
 * Domain-Driven Design Distilled - V. Vaughn
 * Working Effectively with Legacy Code - M.C. Feathers
-* Clean Code - R.C. Martin
 * Accelerate - N. Forsgren, J. Humble, G. Kim
 * Smalltalk Best Practise Patterns - K. Beck ([blog series](/tactical-php/))
 
@@ -31,6 +32,7 @@ A (hopefuly up-to-date) compilation of places I go to to keep in touch with the 
 
 * An Elegant Puzzle: Systems of Engineering Management - W. Larson
 * Predicting the Unpredictable: Pragmatic Approaches to Estimating Cost or Schedule - J. Rothman
+* Debugging Teams: Better Productivity Through Collaboration - B. Collins-Sussman, B. Fitzpatrick
 
 ### Others
 
@@ -38,6 +40,7 @@ A (hopefuly up-to-date) compilation of places I go to to keep in touch with the 
 * Thinking in Systems - D.H. Meadows
 * Thinking, Fast and Slow - D. Kahneman
 * Scale - G. West
+* Books by C. Alexander (Notes on the Synthesis of Form, The Timeless Way of Building...)
 
 ## Podcasts
 
@@ -45,7 +48,6 @@ A (hopefuly up-to-date) compilation of places I go to to keep in touch with the 
 * [Soft Skills Engineering](https://softskills.audio/)
 * [CaSE](https://www.case-podcast.org/)
 * [The Changelog](https://changelog.com/podcast)
-* [Rework](https://rework.fm/)
 * [Babel podcast](https://podcast.babeljs.io/)
 * [React podcast](https://reactpodcast.simplecast.fm/)
 * [Software Engineering Radio](https://www.se-radio.net/)
@@ -72,7 +74,3 @@ A (hopefuly up-to-date) compilation of places I go to to keep in touch with the 
 * https://css-tricks.com/
 * https://understandlegacycode.com/
 * https://macwright.org/
-
-## Twitter
-
-[List of Twitter accounts](https://twitter.com/i/lists/1236794434081218560?s=20)
