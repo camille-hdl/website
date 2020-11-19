@@ -4,13 +4,13 @@ date: "2020-11-14T07:30:00.000Z"
 description: When to run tests, linters, static analysis...
 ---
 
-Here are three of the things I typically may want to run on my codebase:
+On my codebases, I may want to run:
 
 * a linter,
 * static analysis,
 * tests.
 
-While I can run them manually, I find it easier for everyone involved if it just happens on its own.
+While I can run them manually, I find it easier for everyone involved if it happens on its own.
 
 It's about **getting feedback as soon as possible without breaking the flow of work**.
 
@@ -28,12 +28,13 @@ It's about **getting feedback as soon as possible without breaking the flow of w
 |pre-push|late|sometimes|locally|
 |pre-merge|later|rarely|CI|
 
-The right answer will depend on the execution time of each task. 
+My advice is that the correct answer for a given task will depend on the "lost" time [perceived](https://en.wikipedia.org/wiki/Time_perception) by the developer. Perceived lost time ~= runtime + time to correct the code, if the task is blocking.
 
-**The slower the task, the later it should run.**
+**The slower the task, the later and less often it should run.**
 
 If something *feels* slow, it will get in the way and people (me included) *will* work around it.  
-If I have to wait a long time before knowing if my tests pass or not, I probably will switch to another task and waste time.
+If I have to wait a long time before knowing if my tests pass or not, I probably will switch to another task and waste time.  
+If the task itself can correct the code instead of rejecting the commit (e.g. linters), make it so.
 
 Here is my rule of thumb, to be adapted to your needs:
 
@@ -47,19 +48,19 @@ Here is my rule of thumb, to be adapted to your needs:
 
 ## Fine-tuning
 
-Every team is different, what works for one won't necessarily work for others.
+To state the obvious : every team, every codebase, every workflow is different. What works for one won't necessarily work for others.
 
 The tools we use give us even more options to choose when to run what, according to our preferences:
 
 * IDE Integrations,
 * manual or conditional tasks on CI,
-* third party tools integrating with our cvs...
+* third party tools integrating with our version control system
 
-For instance, I choose to run linters on pre-commit, and not on save even if it's fast, because I find it distracting to have code jumping around on the screen.
+For instance, I choose to run linters on pre-commit, not on save, even if it's fast, because I find it distracting to have code jumping around on the screen.
 
-I run unit tests pre-merge, but trigger end-to-end tests manually because they are very slow, and would delay feedback too much.
+I run unit tests pre-merge but trigger end-to-end tests manually because they are very slow, and would delay feedback too much.
 
-Experiment is key.
+Experiment and gather feedback.
 
 ## External links
 
