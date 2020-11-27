@@ -6,11 +6,18 @@ Wordpress2016.overrideThemeStyles = () => {
     "a.gatsby-resp-image-link": {
       boxShadow: `none`,
     },
+    "li": {
+      marginBottom: "0",
+    },
+    "ul, ol": {
+      marginLeft: "1rem",
+    }
   }
 }
 
 delete Wordpress2016.googleFonts
-
+Wordpress2016.baseFontSize = "18px";
+Wordpress2016.baseLineHeight = 2;
 const typography = new Typography(Wordpress2016)
 
 // Hot reload typography in development.
