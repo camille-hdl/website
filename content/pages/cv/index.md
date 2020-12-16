@@ -23,7 +23,7 @@ Curieux de nature, je concentre [mes efforts continus d'apprentissage](/learning
 * Accompli : __JavaScript, PHP, React, Symfony__
 * Avancé : MySQL, ElasticSearch, HTML/CSS, IIIF2, Rollup, Flow, A11y, Bitbucket Pipelines
 * Intermédiaire : Docker, Bash, Git, nginx, Apache, SEO, Linux, Node.js, Cypress
-* Novice : GraphQL, Clojurescript, Typescript, memcached, Svelte, simulateur d'ascenseur
+* Novice : GraphQL, Clojurescript, Typescript, memcached, Svelte, R
 * Curieux de : AWS, Kubernetes, Presto, Kafka, React Native, WASM, Clojure, Datomic, Next.js
 
 ### "Soft" skills
