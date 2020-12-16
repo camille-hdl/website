@@ -4,11 +4,10 @@ date: "2020-12-16T14:10:00.000Z"
 description: Building a Github-like mosaic from pull-requests data
 ---
 
-I've been discovering R and Rstudio recently, and I was looking for a dataset to play with it.
+I've been discovering R and Rstudio recently, and I was looking for a dataset to play with.
 
-Let's build a github-like activity mozaic from pull-requests activity on a bitbucket repo.
-
-This is what it looks like :
+Let's build a github-like activity mozaic from pull-requests activity on a bitbucket repo.  
+It looks like this :
 
 ![Box chart showing pull request activity per day](pull-request-activity-per-day.png)
 
