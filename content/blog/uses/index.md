@@ -19,11 +19,15 @@ description: Productivity, Software development, Note-taking...
 * Adobe Fill & Sign
 * iCloud Drive
 * Reminders
+* iTerm2
+* fish -- <small>shell -- [settings](https://github.com/camille-hdl/configFiles/blob/master/config.fish)</small>
 
 ## Research / thinking about things
 * Kindle -- <small>to ctrl-f in books</small>
 * Noteshelf -- <small>searchable handwritten notes</small>
 * Pocket -- <small>bookmarking app</small>
+* Rstudio -- <small>computational notebook</small>
+* Dictionary -- <small>to find names for things</small>
 
 ## Software development
 * VScode -- <small>code editor -- [settings](https://github.com/camille-hdl/configFiles/blob/master/vscode-settings.json)</small>
@@ -34,10 +38,9 @@ description: Productivity, Software development, Note-taking...
 * Github -- <small>git repository & continuous integration</small>
 * Google Chrome Canary -- <small>webapp development</small>
 * Cyberduck -- <small>sftp client</small>
-* Dictionary -- <small>to find names for things</small>
-* fish -- <small>shell -- [settings](https://github.com/camille-hdl/configFiles/blob/master/config.fish)</small>
 * homebrew -- <small>package installer -- [presets](https://github.com/camille-hdl/configFiles/blob/master/brew.sh)</small>
 * mailhog -- <small>local email server</small>
+* Dash -- <small>documentation</small>
 * pre-commit
 * Docker
 
