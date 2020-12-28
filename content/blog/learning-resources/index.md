@@ -8,10 +8,6 @@ Updated: 2020-11-10
 
 A (hopefuly up-to-date) compilation of places I go to to keep in touch with the industry.
 
-## Videos
-
-[Youtube playlist of keynotes and tech-related videos](https://www.youtube.com/playlist?list=PLcldjAlolht8bMuptUNTuVuzNQtvYac4r)
-
 ## Books
 
 ### Computer Science
@@ -27,6 +23,7 @@ A (hopefuly up-to-date) compilation of places I go to to keep in touch with the 
 * Working Effectively with Legacy Code - M.C. Feathers
 * Accelerate - N. Forsgren, J. Humble, G. Kim
 * Smalltalk Best Practise Patterns - K. Beck ([blog series](/tactical-php/))
+* The Phoenix Project - G. Kim, G. Spafford, and K. Behr
 
 ### Project & Team Management
 
@@ -34,13 +31,17 @@ A (hopefuly up-to-date) compilation of places I go to to keep in touch with the 
 * Predicting the Unpredictable: Pragmatic Approaches to Estimating Cost or Schedule - J. Rothman
 * Debugging Teams: Better Productivity Through Collaboration - B. Collins-Sussman, B. Fitzpatrick
 
-### Others
+## Design
 
 * The Design of Everyday Things - D. Norman
+* Books by C. Alexander (Notes on the Synthesis of Form, The Timeless Way of Building...)
+* Shape Up - R. Singer
+
+### Others
+
 * Thinking in Systems - D.H. Meadows
 * Thinking, Fast and Slow - D. Kahneman
 * Scale - G. West
-* Books by C. Alexander (Notes on the Synthesis of Form, The Timeless Way of Building...)
 
 ## Podcasts
 
@@ -53,7 +54,6 @@ A (hopefuly up-to-date) compilation of places I go to to keep in touch with the 
 * [Software Engineering Radio](https://www.se-radio.net/)
 * [Syntax](https://syntax.fm/)
 * [The Undefined](https://undefined.fm/)
-* [Chats with Kent](https://kentcdodds.com/chats-with-kent-podcast/)
 * [Full Stack Radio](http://www.fullstackradio.com/)
 
 ## Blogs & websites
@@ -72,5 +72,8 @@ A (hopefuly up-to-date) compilation of places I go to to keep in touch with the 
 * https://hacks.mozilla.org/
 * https://blog.codinghorror.com/
 * https://css-tricks.com/
-* https://understandlegacycode.com/
 * https://macwright.org/
+
+## Videos
+
+[Youtube playlist of keynotes and tech-related videos](https://www.youtube.com/playlist?list=PLcldjAlolht8bMuptUNTuVuzNQtvYac4r)
