@@ -4,7 +4,7 @@ date: "2020-03-09T00:50:00.000Z"
 description: Curated list of multimedia resources on Computer Science and tech in general
 ---
 
-Updated: 2020-12-28
+Updated: 2021-01-03
 
 A (hopefuly up-to-date) compilation of places I go to to keep in touch with the industry.
 
