@@ -31,7 +31,7 @@ A (hopefuly up-to-date) compilation of places I go to to keep in touch with the 
 * Predicting the Unpredictable: Pragmatic Approaches to Estimating Cost or Schedule - J. Rothman
 * Debugging Teams: Better Productivity Through Collaboration - B. Collins-Sussman, B. Fitzpatrick
 
-## Design
+### Design
 
 * The Design of Everyday Things - D. Norman
 * Books by C. Alexander (Notes on the Synthesis of Form, The Timeless Way of Building...)
@@ -42,6 +42,7 @@ A (hopefuly up-to-date) compilation of places I go to to keep in touch with the 
 * Thinking in Systems - D.H. Meadows
 * Thinking, Fast and Slow - D. Kahneman
 * Scale - G. West
+* Antifragile - N.N. Taleb
 
 ## Podcasts
 
