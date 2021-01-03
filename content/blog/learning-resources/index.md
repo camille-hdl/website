@@ -19,7 +19,6 @@ A (hopefuly up-to-date) compilation of places I go to to keep in touch with the 
 ### Software Engineering
 
 * You Don't Know JS - K. Simpson
-* Domain-Driven Design Distilled - V. Vaughn
 * Working Effectively with Legacy Code - M.C. Feathers
 * Accelerate - N. Forsgren, J. Humble, G. Kim
 * Smalltalk Best Practise Patterns - K. Beck ([blog series](/tactical-php/))
