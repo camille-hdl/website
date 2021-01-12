@@ -14,6 +14,7 @@ description: Productivity, Software development, Note-taking...
 * Lastpass -- <small>password management</small>
 * Basecamp -- <small>project management</small>
 * Drafts -- <small>quick notes</small>
+* Focus
 * Safari
 * PDF Expert
 * Adobe Fill & Sign
