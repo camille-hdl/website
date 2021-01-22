@@ -33,7 +33,7 @@ Your mental model is the following:
 Suddenly, B starts to slow down. This causes A to keep many open connections to C, eventually causing it to drop new incoming connections. When A can't open new connections to C, it starts failing as well.  
 You have discovered a hidden relationship between B and C. Your new mental model is:  
 
-![A system with 3 components](postmortems-illustration-2.svg "A system with 3 components")
+![A system with 3 components](postmortems-illustration-2.svg "A system with 3 components and a hidden relationship")
 
 Your ideal postmortem would produce a document that describes how to change the system to prevent the problem from happening again.  
 Otherwise, if it does happen again, explain how to reduce the impact and get to a resolution faster.
@@ -96,3 +96,11 @@ Remember that the objective is to help yourself and your organization learn:
 * make your postmortem documents **searchable**,
 * widely **available**, 
 * **understandable** by the audience (engineers, stakeholders, users, ...).
+
+## Inspiration
+
+Here is a list of public (and verbose) incident postmortem documents:
+
+* [Summary of the Amazon Kinesis Event in the Northern Virginia (US-EAST-1) Region](https://aws.amazon.com/message/11201/)
+* [Google Cloud Networking Incident #19009](https://status.cloud.google.com/incident/cloud-networking/19009)
+* [Stripe - Root cause analysis: significantly elevated error rates on 2019‑07‑10](https://stripe.com/rcas/2019-07-10)
