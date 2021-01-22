@@ -82,7 +82,7 @@ Pay attention to **information flow, feedbacks, and delays** to communication:
 > Changing the length of a delay may make a large change in the behavior of the system.  
 > <u>Thinking in Systems</u>, Donella H. Meadows (2008)
 
-## Don't do
+## Don't
 
 ### Blame people
 If you start naming and shaming, [people will have an incentive to hide information](https://codeascraft.com/2012/05/22/blameless-postmortems/), which undermines the whole process.
