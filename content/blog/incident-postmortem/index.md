@@ -41,7 +41,7 @@ Otherwise, if it does happen again, explain how to reduce the impact and get to 
 ## When to run a postmortem?
 
 When your system suffers an incident that hurts you enough.  
-In theory, you should do it for *every* incident. In practise, you probably don't have infinite resources allocated to this, so you could **start by focusing on incidents impacting directly customers** and/or stakeholders.  
+In theory, you should do it for *every* incident. In practice, you probably don't have infinite resources allocated to this, so you could **start by focusing on incidents impacting directly customers** and/or stakeholders.  
 
 You should run it as temporally close as possible to the incident, maybe even start during its resolution, so that everybody's memory is still fresh.
 
