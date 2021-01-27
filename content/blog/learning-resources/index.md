@@ -29,6 +29,7 @@ A (hopefuly up-to-date) compilation of places I go to to keep in touch with the 
 * An Elegant Puzzle: Systems of Engineering Management - W. Larson
 * Predicting the Unpredictable: Pragmatic Approaches to Estimating Cost or Schedule - J. Rothman
 * Debugging Teams: Better Productivity Through Collaboration - B. Collins-Sussman, B. Fitzpatrick
+* The Effective Manager - M. Horstman
 
 ### Design
 
