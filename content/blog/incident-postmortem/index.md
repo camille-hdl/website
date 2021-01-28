@@ -36,7 +36,7 @@ You have discovered a hidden relationship between B and C. Your new mental model
 ![A system with 3 components](postmortems-illustration-2.svg "A system with 3 components and a hidden relationship")
 
 Your ideal postmortem would produce a document that describes how to change the system to prevent the problem from happening again.  
-Otherwise, if it does happen again, explain how to reduce the impact and get to a resolution faster.
+Otherwise, if it does happen again, explain how to reduce the impact and get to a faster resolution.
 
 ## When to run a postmortem?
 
@@ -94,8 +94,8 @@ The is no real boundary between your system and the rest of the world. It is a c
 
 Remember that the objective is to help yourself and your organization learn:
 * make your postmortem documents **searchable**,
-* widely **available**, 
-* **understandable** by the audience (engineers, stakeholders, users, ...).
+* as widely **available** as possible (without compromising sensitive information), 
+* **understandable** by the intended audience (engineers, stakeholders, users, ...).
 
 ## Inspiration
 
