@@ -93,6 +93,7 @@ module.exports = {
           'www.camillehdl.dev'
         ]
       }
-    }
+    },
+    "gatsby-plugin-sitemap"
   ],
 }
