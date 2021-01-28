@@ -10,7 +10,7 @@ its resolution and what could be done to prevent it from happening again.
 ## Why run a postmortem?
 
 Your system is much more than your IT system. It includes parts of the real world: yourself, your fellow engineers, your boss, your users, your vendors, space, and the worst of all: time.  
-This complexity makes it difficult to predict, let alone prevent, failures.  
+This complexity makes it difficult to predict, let alone to prevent, failures.  
 
 **Incidents will certainly happen: you want to benefit, not be harmed, from them.** 
 
@@ -84,10 +84,10 @@ Pay attention to **information flow, feedbacks, and delays** to communication:
 
 ## Don't
 
-### Blame people
+### Don't blame people
 If you start naming and shaming, [people will have an incentive to hide information](https://codeascraft.com/2012/05/22/blameless-postmortems/), which undermines the whole process.
 
-### Dig too deep
+### Don't dig too deep
 The is no real boundary between your system and the rest of the world. It is a continuum. In your quest for the root cause, you may be tempted to reach far into territory you have no control over, which has rapidly diminishing returns.
 
 ## What to do with the document?
