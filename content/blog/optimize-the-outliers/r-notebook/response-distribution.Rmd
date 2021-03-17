@@ -1,0 +1,120 @@
+---
+title: "response distribution"
+output: html_document
+---
+## Response time distribution
+```{r setup, include=FALSE, echo=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("httr")
+library("tidyverse")
+library("ggplot2")
+library("viridis")
+library("purrr")
+library("dplyr")
+
+## Generate a random sample
+
+days <- c(1, 2, 3, 4, 5, 6, 7)
+requestsPerDay <- 300
+responseTimePerceptions <- c(   "very.fast", "fast", "usual", "slow", "very.slow", "extremely.slow", "is.this.even.working")
+probabilities <- c(0.225,   0.225,  0.230,   0.225,    0.03,          0.02,              0.01)
+probabilitiesAfterOptimisation <- c(0.225,   0.225,  0.230,   0.225,    0.059,          0.0001,              0.00)
+timeRanges <- data.frame(
+  "very.fast" = c(50, 100),
+  "fast" = c(101, 200),
+  "usual" = c(201, 500),
+  "slow" = c(501, 700),
+  "very.slow" = c(701, 1000),
+  "extremely.slow" = c(1001, 10000),
+  "is.this.even.working" = c(10001, 40000)
+)
+
+getResponseTime <- function(perception) {
+  timeRange <- as_vector(timeRanges[perception])
+  time <- runif(1, min=timeRange[1], max=timeRange[2])[1]
+  return(time)
+}
+
+getResponses <- function(day) {
+  responses <- sample(
+    x = responseTimePerceptions,
+    size = requestsPerDay,
+    replace = TRUE,
+    prob = probabilities
+  ) %>% map(getResponseTime) %>% as_vector
+  return(data.frame(
+    day=day,
+    time=responses
+  ))
+}
+
+getResponsesAfterOptimisation <- function(day) {
+  responses <- sample(
+    x = responseTimePerceptions,
+    size = requestsPerDay,
+    replace = TRUE,
+    prob = probabilitiesAfterOptimisation
+  ) %>% map(getResponseTime) %>% as_vector
+  return(data.frame(
+    day=day,
+    time=responses
+  ))
+}
+
+```
+## Before the optimisation
+
+```{r, echo=FALSE, message=FALSE}
+week <- days %>% map(getResponses)
+requestsOfTheWeek <- do.call(rbind, week)
+average <- requestsOfTheWeek %>% summarize(mean=round(mean(time), 0)) %>% ungroup()
+
+
+ggplot(requestsOfTheWeek, aes(x=" ", y=time, fill="aze")) +
+    geom_boxplot(outlier.color="red") +
+  coord_flip() +
+  geom_text(data=average, mapping=aes(label=mean), nudge_y=-0.5, color="blue")+
+    geom_jitter(size=0.4) +
+    scale_fill_viridis(discrete=TRUE, begin=1, end=0) +
+    theme(
+      legend.position="none",
+      plot.title = element_text(size=11),
+      axis.text.y = element_text(),
+    ) + labs(
+      title = "Response time distribution",
+      caption = "Randomly generated sample. Mean in blue, outliers in red",
+       x = "",
+       y = "Milliseconds (log scale)"
+    ) + scale_y_log10()
+
+
+```
+
+## After the optimisation
+
+```{r, echo=FALSE, message=FALSE}
+week <- days %>% map(getResponsesAfterOptimisation)
+requestsOfTheWeek <- do.call(rbind, week)
+average <- requestsOfTheWeek %>% summarize(mean=round(mean(time), 0)) %>% ungroup()
+
+
+ggplot(requestsOfTheWeek, aes(x=" ", y=time, fill="aze")) +
+    geom_boxplot() +
+  coord_flip() +
+  geom_text(data=average, mapping=aes(label=mean), nudge_y=-100, color="blue")+
+    geom_jitter(size=0.4) +
+    scale_fill_viridis(discrete=TRUE, begin=1, end=0) +
+    theme(
+      legend.position="none",
+      plot.title = element_text(size=11),
+      axis.text.y = element_text(),
+    ) + labs(
+      title = "Response time distribution (after optimisation)",
+      caption = "Randomly generated sample. Mean in blue",
+       x = "",
+       y = "Milliseconds (linear scale)"
+    )
+
+
+```
+
