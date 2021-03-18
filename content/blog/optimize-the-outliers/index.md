@@ -58,7 +58,7 @@ To get the mean down, we have 2 options:
 
 Suggested heuristic:
 
-* If you don't have fat tail, maybe focusing on the hot path is the way to go.
+* No fat tail? Maybe focusing on the hot path is the way to go.
 * If you do spot a fat tail : maybe focus on the outliers first, the hot path later.
 
 With some luck, your plot will soon look like this (notice the change of scale):
@@ -68,7 +68,7 @@ With some luck, your plot will soon look like this (notice the change of scale):
 ## Tracking response time distribution over time
 
 Other types of charts can help you track distribution over time.  
-E.g. in Kibana, you can build a line chart with percentiles on top of a logstash index (this is a real example, by the way):
+E.g. in Kibana, you can build a line chart with percentiles on top of a logstash index to see your optimization efforts pay off (this is a real example, by the way):
 
 ![Evolution of response time with percentiles. There are very bad outliers on the left of the chart that improve over time](kibana-performance.png "Evolution of response time with percentiles. There are very bad outliers on the left of the chart that improve over time")
 
