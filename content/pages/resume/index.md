@@ -1,14 +1,14 @@
 ---
 title: Senior / Lead Full Stack Developer, JavaScript & PHP
-date: "2020-03-08T10:20:00.000Z"
+date: "2021-05-17T01:20:00.000Z"
 description: Resume
 lang: en
 ---
 [Français](/cv/)  
 
-###__I'm a passionate problem-solver, invested in the projects I work on and the people I work with__.  
+__I'm a passionate problem-solver, invested in the projects I work on and the people I work with__.  
 
-9 years of experience working on web applications, public-facing or otherwise.  
+10 years of experience working on web applications, public-facing or otherwise.  
 I'm involved in the definition of the problem, the architecture and the implementation of the solution.  
 
 __I optimise for the success of the team and of the project.__  
@@ -20,9 +20,9 @@ Always curious, I focus my [learning efforts](/learning-resources/) on subjects 
 ### Technical skills
 
 * Accomplished: __JavaScript, PHP, React, Symfony__
-* Advanced: MySQL, ElasticSearch, HTML/CSS, IIIF2, Rollup, Flow, A11y, Bitbucket Pipelines
-* Intermediate: Docker, Bash, Git, nginx, Apache, SEO, Linux, Node.js, Cypress
-* Novice: GraphQL, Clojurescript, Typescript, memcached, Svelte, R
+* Advanced: MySQL, ElasticSearch, HTML/CSS, IIIF2, Rollup, Flow
+* Intermediate: Docker, Bash, Git, SEO, Linux, Node.js, Cypress
+* Novice: GraphQL, Clojurescript, Typescript, Svelte, R
 * Curious about: AWS, Kubernetes, Presto, Kafka, React Native, WASM, Clojure, Datomic, Next.js
 
 ### "Soft" skills
@@ -41,17 +41,17 @@ Always curious, I focus my [learning efforts](/learning-resources/) on subjects 
 
 #### Arkothèque
 
-For 2 years, I've lead the full rewrite (from scratch) of the company's main product, [Arkothèque CMS](https://arkotheque.fr).  
+For 3 years, I've lead the full rewrite of the company's main product, [Arkothèque CMS](https://arkotheque.fr).  
 Team of 5 consisting of 4 developers and 1 designer.  
-The new product is now successfully in production.
+The new product now successfully runs in production for clients, while still receiving new features and updates.
 
 Roles: general software architecture, CI Pipelines, tooling, consulting on hosting infrastructure, code review, QA, programming.
 
-Utilizes: Symfony 4, MySQL, ElasticSearch, Cantaloupe Server, React/Redux, Rollup, Mapbox, RxJS, Dynamic imports, Docker, Bash, Bitbucket Pipelines, Cypress, Jest, PHPUnit.  
+Stack: Symfony 5, MySQL, ElasticSearch, Cantaloupe Server, React/Redux, Rollup, Mapbox, RxJS, Dynamic imports, Docker, Bash, Bitbucket Pipelines, Cypress, Jest, PHPUnit.  
 
 Challenges: caching, security, performance, SEO, SSR, high volumes, HD media, flexible schemas, browser compatibility, authentication, migration.
 
-Examples: https://www.dispositif-reponses.org/, https://archives-loiret.fr/, https://celester.org/
+Examples: https://archives.allier.fr, https://archives-loiret.fr/, https://celester.org/,  https://archives.centreculturelirlandais.com
 
 #### Arkothèque Gestion
 
@@ -60,18 +60,18 @@ Team of 5 developers.
 
 Roles: senior developer, code review, consulting with clients, architecture of parts of the application.
 
-Utilizes: Symfony 2, MySQL, ElasticSearch, React/Redux, Jest, PHPUnit, Cypress.  
+Stack: Symfony 4, MySQL, ElasticSearch, React/Redux, Jest, PHPUnit, Cypress.  
 
 Challenges: security, high volumes, domain-specific standards compatibility, on-premise hosting.
 
 #### Oscarsante
 
-Reporting and dataviz tool for local health-related actions.
+Reporting and dataviz tool for local health authorities.
 
 Team of 4  
 Roles: senior front-end developer, code review, consulting with clients, architecture of parts of the application.
 
-Utilizes: Symfony 4, MySQL, Elasticsearch, React/Redux, Mapbox, Paper.js, PHPUnit.  
+Stack: Symfony 4, MySQL, Elasticsearch, React/Redux, Mapbox, Paper.js, PHPUnit.  
 
 Challenges: security, data cleaning and analysis, statistics, geographical data.
 
@@ -82,7 +82,7 @@ https://www.oscarsante.org/
 Team of 3  
 Roles: junior developer, then developer.  
 
-Utilizes: jQuery, React, MySQL, canvas.  
+Stack: jQuery, React, MySQL, canvas.  
 
 Challenges: on-premise hosting, high volumes, high traffic.  
 
@@ -130,8 +130,8 @@ Specialty in mathematics
 
 ## Other interests
 
-* Sports: hiking and skiing in particular.
-* Travels: favorite destinations so far are Iceland, New Zealand and California.
+* Sports: hiking and skiing in particular
+* Travels: 🇮🇸 🇳🇿 🇺🇸 🏴󠁧󠁢󠁥󠁮󠁧󠁿 🏴󠁧󠁢󠁳󠁣󠁴󠁿 🇪🇸 🇮🇹 🇳🇴 🇸🇪 🇮🇪
 * [Photography](https://flickr.com/people/camille_hodoul/)
 * [Reading](https://www.goodreads.com/user/show/18835095-camille-hodoul)
 * [Music](https://open.spotify.com/user/11487860)

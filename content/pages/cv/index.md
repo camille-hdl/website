@@ -1,6 +1,6 @@
 ---
 title: Senior / Lead Développeur Full Stack, JavaScript & PHP
-date: "2020-03-08T10:20:00.000Z"
+date: "2021-05-17T01:20:00.000Z"
 description: C.V.
 lang: fr
 ---
@@ -8,7 +8,7 @@ lang: fr
 
 ###__J'aime (résoudre) les problèmes__
 
-J'ai plus de 9 ans d'expérience dans le développement d'applications web à destination du public et de progiciels.  
+J'ai 10 ans d'expérience dans le développement d'applications web à destination du public et de progiciels.  
 Je suis investi dans les projets et les gens avec qui je travaille.  
 Je suis moteur dans la réflexion autour de problématiques complexes et acteur de la conception d'architecture ainsi que de son implémentation.
 
@@ -16,14 +16,14 @@ __J'optimise pour la réussite de l'équipe et du projet.__
 
 Je m'efforce de suivre les principes d'ingénierie et les bonnes pratiques du secteur telles que les tests, l'accessibilité, la RGPD, la performance, l'intégration continue, le refactor et la code review.  
 Je suis à l'aise dans les paradigmes orienté objet et fonctionnel; les deux sont souvent utilisés dans mes projets.  
-Curieux de nature, je concentre [mes efforts continus d'apprentissage](/learning-resources/) sur des sujets pertinents pour mon projet en cours, tout en gardant une vue d'ensemble de l'industrie.  
+Je concentre [mes efforts continus d'apprentissage](/learning-resources/) sur des sujets pertinents pour mon projet en cours, tout en gardant une vue d'ensemble de l'industrie.  
 
 ### Compétences techniques
 
 * Accompli : __JavaScript, PHP, React, Symfony__
-* Avancé : MySQL, ElasticSearch, HTML/CSS, IIIF2, Rollup, Flow, A11y, Bitbucket Pipelines
-* Intermédiaire : Docker, Bash, Git, nginx, Apache, SEO, Linux, Node.js, Cypress
-* Novice : GraphQL, Clojurescript, Typescript, memcached, Svelte, R
+* Avancé : MySQL, ElasticSearch, HTML/CSS, IIIF2, Rollup, Flow
+* Intermédiaire : Docker, Bash, Git, SEO, Linux, Node.js, Cypress
+* Novice : GraphQL, Clojurescript, Typescript, Svelte, R
 * Curieux de : AWS, Kubernetes, Presto, Kafka, React Native, WASM, Clojure, Datomic, Next.js
 
 ### "Soft" skills
@@ -42,17 +42,17 @@ Curieux de nature, je concentre [mes efforts continus d'apprentissage](/learning
 
 #### Arkothèque
 
-Je mène depuis 2 ans la refonte complète du produit principal de la société, le CMS [Arkothèque](https://arkotheque.fr).  
+Je mène depuis 3 ans la refonte complète du produit principal de la société, le CMS [Arkothèque](https://arkotheque.fr).  
 Equipe de 5 personnes composée de 4 développeurs et 1 designer.  
 La nouvelle version du produit est maintenant en production.  
 
 Rôles : Architecture logicielle générale, intégration continue, tooling, participation à la mise en place de l'infrastructure d'hébergement, code review, qualité, développement.  
 
-Utilise : Symfony 4, MySQL, ElasticSearch, Cantaloupe Server, React/Redux, Rollup, Mapbox, RxJS, Dynamic imports, Docker, Bash, Bitbucket Pipelines, Cypress, Jest, PHPUnit.  
+Stack : Symfony 4, MySQL, ElasticSearch, Cantaloupe Server, React/Redux, Rollup, Mapbox, RxJS, Dynamic imports, Docker, Bash, Bitbucket Pipelines, Cypress, Jest, PHPUnit.  
 
 Challenges : cache, sécurité, performance, SEO, SSR, grands volumes, media HD, schémas flexibles, compatibilité avec les navigateurs, authentification, migration.
 
-Exemple : https://www.dispositif-reponses.org/, https://archives-loiret.fr/, https://celester.org/
+Exemple : https://archives.allier.fr, https://archives-loiret.fr/, https://celester.org/,  https://archives.centreculturelirlandais.com
 
 #### Arkothèque Gestion
 
@@ -61,7 +61,7 @@ Equipe de 5 développeurs.
 
 Rôles : développeur sénior, code review, analyse et conseil auprès des clients, architecture logicielle de certaines parties de l'application.
 
-Utilise : Symfony 2, MySQL, ElasticSearch, React/Redux, Jest, PHPUnit, Cypress.  
+Stack : Symfony 2, MySQL, ElasticSearch, React/Redux, Jest, PHPUnit, Cypress.  
 
 Challenges : sécurité, grands volumes, compatibilité avec des standards spécifique au secteur, hébergement par le client.  
 
@@ -72,7 +72,7 @@ Outil de reporting et visualisation de données d'actions de santé.
 Equipe de 4 personnes  
 Rôles : développeur front-end senior, code review, analyse et conseil au client, architecture de certaines parties de application.
 
-Utilise : Symfony 4, MySQL, Elasticsearch, React/Redux, Mapbox, Paper.js, PHPUnit.  
+Stack : Symfony 4, MySQL, Elasticsearch, React/Redux, Mapbox, Paper.js, PHPUnit.  
 
 Challenges : sécurité, nettoyage et analyse de données, statistiques, données géographiques.
 
@@ -83,7 +83,7 @@ https://www.oscarsante.org/
 Equipe de 3   
 Rôles : développeur junior, puis développeur.  
 
-Utilise : jQuery, React, MySQL, canvas.  
+Stack : jQuery, React, MySQL, canvas.  
 
 Challenges : hébergement par le client, grand volume, traffic important.  
 
@@ -133,7 +133,7 @@ Support, configuration réseau, maintenance de serveurs Windows et postes de tra
 ## Autres intérets
 
 * Sport : particulièrement la randonnée et le ski.
-* Voyage : mes destinations préférées sont pour l'instant l'Islande, la Nouvelle Zélande et la Californie.
+* Voyage : 🇮🇸 🇳🇿 🇺🇸 🏴󠁧󠁢󠁥󠁮󠁧󠁿 🏴󠁧󠁢󠁳󠁣󠁴󠁿 🇪🇸 🇮🇹 🇳🇴 🇸🇪 🇮🇪
 * [Photographie](https://flickr.com/people/camille_hodoul/)
 * [Lecture](https://www.goodreads.com/user/show/18835095-camille-hodoul)
 * [Musique](https://open.spotify.com/user/11487860)
