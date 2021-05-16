@@ -46,7 +46,6 @@ description: Productivity, Software development, Note-taking...
 * Paw -- <small>API client</small>
 * pre-commit
 * Docker
-
 ### analytics
 * Fathom - [affiliate link](https://usefathom.com/ref/HV9NG1)
 
@@ -55,6 +54,8 @@ description: Productivity, Software development, Note-taking...
 * Night Owl
 * GitLens
 * TabNine Autocomplete
+
+![VSCode and iTerm2](vscode_and_iterm.png)
 
 ## Media
 * imgOptim -- <small>better image compression</small>
