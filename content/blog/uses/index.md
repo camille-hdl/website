@@ -1,6 +1,6 @@
 ---
 title: Software and hardware I use
-date: "2020-11-22T23:00:00.000Z"
+date: "2021-05-17T00:01:00.000Z"
 description: Productivity, Software development, Note-taking...
 ---
 
@@ -10,10 +10,11 @@ description: Productivity, Software development, Note-taking...
 * Toggl Timer -- <small>time tracking</small>
 * Hey -- <small>email client</small>
 * Gmail -- <small>work email client</small>
-* Spectacle -- <small>window management</small>
+* Hookshot -- <small>window management</small>
 * Lastpass -- <small>password management</small>
 * Basecamp -- <small>project management</small>
-* Drafts -- <small>quick notes</small>
+* Drafts -- <small>short term notes</small>
+* Obsidian -- <small>long term notes</small>
 * Focus
 * Safari
 * PDF Expert
@@ -42,8 +43,12 @@ description: Productivity, Software development, Note-taking...
 * homebrew -- <small>package installer -- [presets](https://github.com/camille-hdl/configFiles/blob/master/brew.sh)</small>
 * mailhog -- <small>local email server</small>
 * Dash -- <small>documentation</small>
+* Paw -- <small>API client</small>
 * pre-commit
 * Docker
+
+### analytics
+* Fathom - [affiliate link](https://usefathom.com/ref/HV9NG1)
 
 ### Notable VScode extensions
 * Better PHPUnit
@@ -54,7 +59,6 @@ description: Productivity, Software development, Note-taking...
 ## Media
 * imgOptim -- <small>better image compression</small>
 * Quicktime -- <small>to record stuff on my screen</small>
-* iMovie -- <small>to edit the recorded stuff when necessary</small>
 * Spotify -- <small>music</small>
 * Qobuz -- <small>good music</small>
 * Overcast -- <small>podcasts</small>
@@ -71,6 +75,8 @@ description: Productivity, Software development, Note-taking...
 * Deliveries -- <small>track amazon packages</small>
 * Rocket 🚀 -- <small>emoji</small>
 * Authy -- <small>2FA</small>
+* GrandPerspective -- <small>disk usage analysis</small>
+* Shadow -- <small>gaming</small>
 
 ## Fonts
 * Merriweather -- <small>for writing</small>
@@ -89,5 +95,7 @@ description: Productivity, Software development, Note-taking...
 * RØDE Podcaster -- <small>microphone</small>
 * Sennheiser HD650 -- <small>headphones</small>
 * Fiio E10K -- <small>USB DAC</small>
+* Amazonbasics monitor arm - <small>B00MIBN16O</small>
+* Quntis monitor light
 
 See other `/uses` pages here : https://uses.tech
