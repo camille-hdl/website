@@ -1,10 +1,10 @@
 ---
-title: Install the latest version of many npm dependencies at once
+title: Update to the latest version of many npm dependencies at once
 date: "2021-05-17T02:00:00.000Z"
 description: Shell + awk snippet
 ---
 
-I couldn't find a `npm` command to update a subset of my npm dependencies to their latest version at once, based on a pattern, so here's a one-liner to do it with pipes and `awk` (to be modified for your needs).  
+I couldn't find a `npm` command to update a subset of my dependencies to their latest version based on a name pattern, so here's a one-liner to do it with pipes and `awk` (to be modified for your needs).  
 
 In this case, I want to update all the dependencies containing the string "babel".
 
