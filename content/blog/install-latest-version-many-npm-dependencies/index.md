@@ -1,6 +1,6 @@
 ---
 title: Install the latest version of many npm dependencies at once
-date: "2021-04-17T02:00:00.000Z"
+date: "2021-05-17T02:00:00.000Z"
 description: Shell + awk snippet
 ---
 
