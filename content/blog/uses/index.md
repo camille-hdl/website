@@ -4,6 +4,7 @@ date: "2021-05-17T00:01:00.000Z"
 description: Productivity, Software development, Note-taking...
 ---
 
+![My desk](desk.jpeg)
 ## Productivity
 * Alfred -- <small>better Spotlight</small>
 * Fantastical -- <small>calendar</small>
