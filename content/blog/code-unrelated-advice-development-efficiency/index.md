@@ -87,7 +87,7 @@ See: [The Art of Command Line](https://github.com/jlevy/the-art-of-command-line)
 
 ## Conclusion
 
-I'm aware that my way of working may not be suited to yours, which is fine. It's the process that matters.  
+My way of working may not be suited to yours, which is fine. It's the process that matters.  
 As developers, depending on our seniority, we have more or less control over the "software development system" of our team. Never the whole system, but always more than just strictly coding.  
 It pays off to take a step back, be conscious of the sub-system on which we can act, and experiment. See what works with your team, and improve, just like we would optimize code.
 
