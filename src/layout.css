@@ -5,7 +5,7 @@ code.language-text {
   padding-left: 0.5em !important;
   padding-right: 0.5em !important;
 }
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   body {
     background-color: rgb(1, 22, 39);
     color: rgb(214, 222, 235);
@@ -23,4 +23,4 @@ code.language-text {
   img:hover {
     opacity: 1;
   }
-}
+} */
