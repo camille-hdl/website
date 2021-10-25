@@ -4,7 +4,7 @@ date: "2021-10-25T19:05:00.000Z"
 description: Things I now do that I wish I did earlier
 ---
 
-What follows are a few techniques and tools that have helped me release software faster in the small team I am a part of. You won't find a comprehensive methodology nor universal wisdom here, just advices I wish I'd given myself earlier.
+What follows are a few techniques and tools that have helped me release software faster in the small team I am a part of (more on this at the end). You won't find a comprehensive methodology nor universal wisdom here, just advices I wish I'd given myself earlier.
 
 This is a very rough summary of my typical feature development workflow:
 
@@ -90,3 +90,7 @@ See: [The Art of Command Line](https://github.com/jlevy/the-art-of-command-line)
 I'm aware that my way of working may not be suited to yours, which is fine. It's the process that matters.  
 As developers, depending on our seniority, we have more or less control over the "software development system" of our team. Never the whole system, but always more than just strictly coding.  
 It pays off to take a step back, be conscious of the sub-system on which we can act, and experiment. See what works with your team, and improve, just like we would optimize code.
+
+> Some context about me:  
+> I'm part of a company/team of 6, 3 of which are developers (including me).  
+> I mainly work on two products, each with a ~5 years old PHP/JS codebase, which are our main sources of revenue.
