@@ -10,9 +10,7 @@ This is a very rough summary of my typical feature development workflow:
 
 ![Feature development workflow](code-loop.svg "Feature development workflow")
 
-Optimizing this would mean to reach step « 4. Done » faster without sacrificing quality at step « 3. Good enough? ».
-
-To achieve this, I have a few options:
+In order to reach step « 4. Done » faster without sacrificing quality at step « 3. Good enough? », I have a few options:
 
 1. get better at coding,
 2. get better at the rest,
