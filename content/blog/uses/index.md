@@ -54,7 +54,7 @@ description: Productivity, Software development, Note-taking...
 * Better PHPUnit
 * Night Owl
 * GitLens
-* TabNine Autocomplete
+* Github Copilot
 
 ![VSCode and iTerm2](vscode_and_iterm.png)
 
