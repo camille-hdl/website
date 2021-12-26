@@ -1,143 +1,99 @@
 ---
 title: Senior / Lead Développeur Full Stack, JavaScript & PHP
-date: "2021-05-17T01:20:00.000Z"
+date: "2021-12-26T18:20:00.000Z"
 description: C.V.
 lang: fr
 ---
-[English](/resume/) - <a href="camille-hodoul.pdf" target="_blank" download>pdf</a>
+[English](/resume/) - <a href="camille-hodoul.pdf" target="_blank" download>pdf</a> - camilleh@hey.com
 
-###__J'aime (résoudre) les problèmes__
-
-J'ai 10 ans d'expérience dans le développement d'applications web à destination du public et de progiciels.  
-Je suis investi dans les projets et les gens avec qui je travaille.  
-Je suis moteur dans la réflexion autour de problématiques complexes et acteur de la conception d'architecture ainsi que de son implémentation.
-
-__J'optimise pour la réussite de l'équipe et du projet.__
-
-Je m'efforce de suivre les principes d'ingénierie et les bonnes pratiques du secteur telles que les tests, l'accessibilité, la RGPD, la performance, l'intégration continue, le refactor et la code review.  
-Je suis à l'aise dans les paradigmes orienté objet et fonctionnel; les deux sont souvent utilisés dans mes projets.  
-Je concentre [mes efforts continus d'apprentissage](/learning-resources/) sur des sujets pertinents pour mon projet en cours, tout en gardant une vue d'ensemble de l'industrie.  
-
-### Compétences techniques
-
-* Accompli : __JavaScript, PHP, React, Symfony__
-* Avancé : MySQL, ElasticSearch, HTML/CSS, IIIF2, Rollup, Flow
-* Intermédiaire : Docker, Bash, Git, SEO, Linux, Node.js, Cypress
-* Novice : GraphQL, Clojurescript, Typescript, Svelte, R
-* Curieux de : AWS, Kubernetes, Presto, Kafka, React Native, WASM, Clojure, Datomic, Next.js
-
-### "Soft" skills
-
-* Ecoute et communication avec les collaborateurs, décideurs et clients
-* Mentorat, [formation](/rollup-dev-environment/) aux bonnes pratiques : accessibilité, sécurité, tests, documentation
-* Feedback détaillé en code review
-* Animation de réunions internes ou avec des clients
-* Attention portée à la gestion de projet : échéances, livrables...
-* [Suivi](https://github.com/rollup/rollup/issues/2715) [des](https://github.com/rollup/rollup/issues/2285) [projets](https://github.com/alex3165/react-mapbox-gl/issues/795) open-source externes critiques
-* Maintient du bus factor le plus haut possible.
+## Langages & Technologies
+<table class="resume-table">
+    <tbody>
+        <tr>
+            <th scope="row">Langages :</th>
+            <td>PHP, JavaScript, SQL, Bash</td>
+        </tr>
+        <tr>
+            <th scope="row">Frameworks :</th>
+            <td>Symfony, React</td>
+        </tr>
+        <tr>
+            <th scope="row">Bases de données :</th>
+            <td>MySQL, Elasticsearch</td>
+        </tr>
+        <tr>
+            <th scope="row">Test :</th>
+            <td>PHPUnit, Jest, Cypress</td>
+        </tr>
+        <tr>
+            <th scope="row">Autres :</th>
+            <td>Docker, Linux, Type systems, RStudio, Plesk</td>
+        </tr>
+    </tbody>
+</table>			
 
 ## Expériences professionnelles
 
-### Lead développeur full stack, 1egal2, 2012 - *actuel*
+<h3 class="resume-heading">
+    <span>Lead développeur full stack, 1egal2, télétravail</span>
+    <span>2016 - 2021</span>
+</h3>
 
-#### Arkothèque
+* Mené le projet de refonte [Arkothèque CMS](https://arkotheque.fr) jusqu'à sa finalisation avec une équipe composée d'1 à 4 développeurs, 1 webdesigner et 1 expert domaine. Un monolithe utilisant PHP 7, Symfony, React.js, MySQL et ElasticSearch. Utilisé sur des sites tels que [Archives de l'Allier](https://archives.allier.fr) ou [Archives du cher](https://archives18.fr/). Notre infrastructure d'hébergement répond à des dizaines de milliers de requêtes de recherche et des centaines de milliers de requêtes de traitement d'images HD par jour, réparties sur les ~30 sites web utilisant Arkothèque.
+* En tant que lead, j'ai conçu l'architecture des systèmes fondamentaux et maintenu les outils de développement et de documentation
+* Contribué individuellement environ 60% du code survivant
+* Changé les procédures de déploiement, qui étaient des étapes manuelles risquées réservées au personnel technique, en un process intégralement automatisé utilisant des scripts Bash et des outils d'intégration continue, déclenché par un clic de n'importe quel membre de l'équipe, accomplissant jusqu'à 15 déploiements par jour sur plusieurs sites sans incident de déploiement durant l'année passée
+* Adapté l'application et les procédures à plusieurs environnements de déploiement possibles : VPS et plesk ou containers avec Docker-compose, sur notre infrastructure ou dans le SI des clients
+* Mis en place l'intégration continue et la parallelisation de tests sur Bitbucket Pipelines
+* Fait adopter par l'équipe la revue de code, la programmation en binôme, les "blameless postmortems" et l'utilisation d'une base de connaissance organisationnelle
+* Généralisé les tests unitaires, d'intégration et end-to-end par PHPUnit, Jest et Cypress
+* Mis en place les journaux applicatifs et l'observabilité des applications par ELK
+* Présenté et fait adopter Kanban pour la gestion de projets et la planification des développements, rendant le travail visible
+* Monitoré et optimisé les performances, divisant le temps de chargement de composants essentiels par 2 alors que les requêtes ont été multipliées par 10 durant l'année passée
+* Mené les efforts de conformité RGPD
+* Créé des outils internes pour aider l'équipe à administrer l'application ainsi que faire de l'ETL vers ses bases de données, en utilisant Bash et d'autres outils en lignes de commandes
+* Créé [Cuisine EAD](https://cuisine-ead.netlify.app), un outil open-source de traitement de fichiers XML/EAD, d'abord comme un projet personnel puis professionnel du moment que des clients et collègues ont commencé à l'utiliser. C'est une Progressive Web App sans backend utilisant React, des Web Workers, de l'intégration continue sur Travis et du déploiement continu sur Netlify
+* Aggrégé et analysé des métriques de différents outils: dépôts de code, tableaux Kanban et time trackers, en utilisant R et RStudio
+* Animé des réunions avec des clients et partenaires tiers pour des intégrations avec d'autres systèmes ou des lancements de projets
+* Animé des interviews d'utilisateurs dans le cadre du design ou re-design de fonctionnalités
+* Développement front-end et visualisation de données avec React, Mapbox et paper.js (pour lequel j'ai écris [une API d'animation](https://github.com/camille-hdl/animatePaper.js)) pour [Oscars Santé](https://www.oscarsante.org/)
+* Architecture de systèmes et contributions individuelles sur Arkothèque Gestion
 
-Je mène depuis 3 ans la refonte complète du produit principal de la société, le CMS [Arkothèque](https://arkotheque.fr).  
-Equipe de 5 personnes composée de 4 développeurs et 1 designer.  
-La nouvelle version du produit est maintenant en production.  
+<h3 class="resume-heading">
+    <span>Développeur front-end, 1egal2, Marseille</span>
+    <span>2012 - 2016</span>
+</h3>
 
-Rôles : Architecture logicielle générale, intégration continue, tooling, participation à la mise en place de l'infrastructure d'hébergement, code review, qualité, développement.  
+* Maintenu et développé de nouvelles fonctionnalités pour les anciennes versions d'Arkothèque CMS, à l'époque une application PHP 4, Flash, Javascript et MySQL. Ce logiciel est toujours utilisé par des milliers de visiteurs quotidiens sur quelques sites, comme [Mémoire des Hommes](https://www.memoiredeshommes.sga.defense.gouv.fr/). Déployé sur un stack LAMP sur serveurs dédiés.
+* Ré-écrit des fonctionnalités cruciales depuis Flash vers HTML5, JavaScript et jQuery, comme la [visionneuse d'images](https://www.memoiredeshommes.sga.defense.gouv.fr/fr/ark:/40699/m00523ac7d3d2856/5242c6eab9ed9)
+* Travaillé sur le front-end d'[Archiphone](https://www.1egal2.com/a/525/archiphone/), un projet multi-média utilisant ffmpeg, JavaScript, PHP et MySQL
+* Fait adopter git à l'équipe de 4 (1 webdesigner, 1 chef de projet et 1 développeur sénior)
 
-Stack : Symfony 4, MySQL, ElasticSearch, Cantaloupe Server, React/Redux, Rollup, Mapbox, RxJS, Dynamic imports, Docker, Bash, Bitbucket Pipelines, Cypress, Jest, PHPUnit.  
+<h3 class="resume-heading">
+    <span>Developpeur junior, Global Product Service, Trets</span>
+    <span>2011 - 2012</span>
+</h3>
 
-Challenges : cache, sécurité, performance, SEO, SSR, grands volumes, media HD, schémas flexibles, compatibilité avec les navigateurs, authentification, migration.
-
-Exemple : https://archives.allier.fr, https://archives-loiret.fr/, https://celester.org/,  https://archives.centreculturelirlandais.com
-
-#### Arkothèque Gestion
-
-Solution de gestion de service d'archives publiques.  
-Equipe de 5 développeurs.  
-
-Rôles : développeur sénior, code review, analyse et conseil auprès des clients, architecture logicielle de certaines parties de l'application.
-
-Stack : Symfony 2, MySQL, ElasticSearch, React/Redux, Jest, PHPUnit, Cypress.  
-
-Challenges : sécurité, grands volumes, compatibilité avec des standards spécifique au secteur, hébergement par le client.  
-
-#### Oscarsante
-
-Outil de reporting et visualisation de données d'actions de santé.
-
-Equipe de 4 personnes  
-Rôles : développeur front-end senior, code review, analyse et conseil au client, architecture de certaines parties de application.
-
-Stack : Symfony 4, MySQL, Elasticsearch, React/Redux, Mapbox, Paper.js, PHPUnit.  
-
-Challenges : sécurité, nettoyage et analyse de données, statistiques, données géographiques.
-
-https://www.oscarsante.org/
-
-#### Arkothèque - ancienne version
-
-Equipe de 3   
-Rôles : développeur junior, puis développeur.  
-
-Stack : jQuery, React, MySQL, canvas.  
-
-Challenges : hébergement par le client, grand volume, traffic important.  
-
-Exemple: https://www.memoiredeshommes.sga.defense.gouv.fr/, http://www.archives43.fr/, https://www.hopital-saint-joseph.fr/
-
-#### Autres projets
-
-* [Outils de formation pour l'Hôpital Saint-Joseph](https://www.hopital-saint-joseph.fr/r/251/les-conferences-ecni/) - Développeur
-* Gestion de planning pour l'Hôpital Saint-Joseph - Développeur
-* [Archiphone](https://www.1egal2.com/a/525/archiphone/) - Développeur Front-end
-
-### Développeur Junior, Global Product Service, 2011 - 2012
-
-* Application web B2B pour mettre en ligne des produits sur des grandes marketplaces (pixmania, amazon...). CakePHP, jQuery, MySQL, Rest, SOAP.
-* B2B plateforme de dropshipping. CakePHP, jQuery, MySQL.
-* B2C site ecommerce. CakePHP, jQuery, MySQL.
-
-### Technicien Informatique, Conseil Département des Hautes Alpes, été 2011
-
-Support, configuration réseau, maintenance de serveurs Windows et postes de travail.
+* Intégré des applications avec les webservices Rest et SOAP de marketplaces (pixmania, amazon, ...)
+* Développement d'interfaces utilisateur internes avec CakePHP, jQuery et MySQL
 
 ## Scolarité
 
-### BTS Informatique de Gestion, Lycée Dominique Villars, 2009 - 2011
+<h3 class="resume-heading">
+    <span>BTS Informatique de Gestion, Lycée Dominique Villars, Gap</span>
+    <span>2009 - 2011</span>
+</h3>
 
-* Spécialité "Développeur d'applications"
-* Stage au Conseil Départemental des Hautes Alpes, où j'ai développé un outil de traitement et de consultation de logs du serveur proxy, en PHP et Perl.
-* Major de promotion, vice-major académique.
+Spécialité "Développeur d'applications". Major de promotion, vice-major académique.
 
-### Bac Sciences Economiques et Sociales, Lycée Dominique Villars, 2009
+<h3 class="resume-heading">
+    <span>Bac Sciences Economiques et Sociales, Lycée Dominique Villars, Gap</span>
+    <span>2009</span>
+</h3>
 
-* Spécialité : Mathématiques
-* Mention : Bien
+Spécialité Mathématiques, mention Bien
+## Projets personnels notables
 
-## Projets personnels actifs
-
-* [Cuisine-ead](https://cuisine-ead.netlify.com/), Outil de traitement de fichiers XML-EAD, spécifiques au secteur des archives. [Blog](/cuisine-ead)
-* [Initiative Rocks!](https://initiative.rocks/), D&D combat tracker. [Blog](/initiative-rocks)
-* [Ce blog](/)
-
-## Langues
-
-* Français 🤙
-* Anglais ✌️
-* ~~Italien~~ 🤦‍♂️
-
-## Autres intérets
-
-* Sport : particulièrement la randonnée et le ski.
-* Voyage : 🇮🇸 🇳🇿 🇺🇸 🏴󠁧󠁢󠁥󠁮󠁧󠁿 🏴󠁧󠁢󠁳󠁣󠁴󠁿 🇪🇸 🇮🇹 🇳🇴 🇸🇪 🇮🇪
-* [Photographie](https://flickr.com/people/camille_hodoul/)
-* [Lecture](https://www.goodreads.com/user/show/18835095-camille-hodoul)
-* [Musique](https://open.spotify.com/user/11487860)
-* D&D
-* Jeux vidéos
-
-camilleh@hey.com
+* [Cuisine-ead](https://github.com/camille-hdl/cuisine-ead), outil de traitement de fichiers XML/EAD. PWA sans backend déployée sur Netlify. [En savoir plus (en anglais)](/cuisine-ead)
+* Mon blog technique en anglais, fait avec Gatsby. Parmis les articles les plus lus : [Ship modern JS with Rollup](/ship-modern-javascript-rollup/) et [Incident postmortem](/incident-postmortem/)
+* [Lazy-lists](https://libraries.io/packagist/camille-hdl%2Flazy-lists), une bibliothèque expérimentale d'exploration des transducers en PHP

@@ -4,20 +4,42 @@ date: "2021-12-23T17:06:00.000Z"
 description: Resume
 lang: en
 ---
-[Français](/cv/)  
-
-Contact: camilleh@hey.com
+[Français](/cv/) - camilleh@hey.com
 
 ## Languages & Technologies
-* Languages:    PHP, JavaScript, SQL, Bash
-* Frameworks:   Symfony, React
-* Databases:    MySQL, Elasticsearch
-* Testing:      PHPUnit, Jest, Cypress
-* Other:        Docker, Linux, Type systems, RStudio, Plesk
+<table class="resume-table">
+    <tbody>
+        <tr>
+            <th scope="row">Languages:</th>
+            <td>PHP, JavaScript, SQL, Bash</td>
+        </tr>
+        <tr>
+            <th scope="row">Frameworks:</th>
+            <td>Symfony, React</td>
+        </tr>
+        <tr>
+            <th scope="row">Databases:</th>
+            <td>MySQL, Elasticsearch</td>
+        </tr>
+        <tr>
+            <th scope="row">Testing:</th>
+            <td>PHPUnit, Jest, Cypress</td>
+        </tr>
+        <tr>
+            <th scope="row">Other:</th>
+            <td>Docker, Linux, Type systems, RStudio, Plesk</td>
+        </tr>
+    </tbody>
+</table>	
 
 ## Work experiences
-### <small>2016 - 2021</small> Lead full stack developer, 1egal2, Remote
-* Lead the complete rewrite of [Arkothèque CMS](https://arkotheque.fr) to successfull completion with a team of 1 to 4 developers over the course of the project, 1 webdesigner and 1 project manager. A monolith using PHP 7, Symfony, React.js, MySQL and ElasticSearch. Used on websites such as [Archives de l'Allier](https://archives.allier.fr) or [Archives du cher](https://archives18.fr/). Our infrastructure handles 10,000s of search requests and 100,000s of HD image processing requests per day, across ~30 websites using Arkothèque.
+
+<h3 class="resume-heading">
+    <span>Lead full stack developer, 1egal2, Remote</span>
+    <span>2016 - 2021</span>
+</h3>
+
+* Lead the complete rewrite of [Arkothèque CMS](https://arkotheque.fr) to successfull completion with a team of 1 to 4 developers over the course of the project, 1 webdesigner and 1 domain expert. A monolith using PHP 7, Symfony, React.js, MySQL and ElasticSearch. Used on websites such as [Archives de l'Allier](https://archives.allier.fr) or [Archives du cher](https://archives18.fr/). Our infrastructure handles 10,000s of search requests and 100,000s of HD image processing requests per day, across ~30 websites using Arkothèque.
 * As lead, I designed the architecture of the core systems, supported developer tooling and documentation
 * As an individual contributor, I own 60% of the surviving code
 * Changed deployment procedures from manual steps performed only by technical people to a completely automated process using bash scripts and CI tools, triggered from a UI by anyone on the team, achieving up to 15 deployments per day on multiple websites with near-zero deployment incidents in the last year
@@ -37,18 +59,39 @@ Contact: camilleh@hey.com
 * Front-end development and dataviz using React, Mapbox and paper.js (for which I wrote [an animation library](https://github.com/camille-hdl/animatePaper.js)) for [Oscars Santé](https://www.oscarsante.org/)
 * System design and individual contributions on Arkothèque Gestion
 
-### <small>2012 - 2016</small> Font-end developer, 1egal2, Marseille
+<h3 class="resume-heading">
+    <span>Font-end developer, 1egal2, Marseille</span>
+    <span>2012 - 2016</span>
+</h3>
+
 * Maintained and developed new features on older versions of Arkothèque CMS, then a PHP 4, Flash, JavaScript & MySQL application. This software is still used by thousands of visitors daily on a few websites, such as [Mémoire des Hommes](https://www.memoiredeshommes.sga.defense.gouv.fr/). Deployed on dedicated servers.
 * Rewrote core features from Flash to HTML5 + JavaScript & jQuery, such as [the image viewer](https://www.memoiredeshommes.sga.defense.gouv.fr/fr/ark:/40699/m00523ac7d3d2856/5242c6eab9ed9)
 * Worked on the front-end of [Archiphone](https://www.1egal2.com/a/525/archiphone/), a multi-media project using ffmpeg, JavaScript, PHP & MySQL
 * Introduced the team of 4 (1 graphic designer, 1 project manager and 1 other developer) to version control and git
-### <small>2011 - 2012</small> Junior developer, Global Product Service, Trets
+
+
+<h3 class="resume-heading">
+    <span>Junior developer, Global Product Service, Trets</span>
+    <span>2011 - 2012</span>
+</h3>
+
 * Integrated APIs with marketplace webservices (pixmania, amazon...) and internal user interfaces using CakePHP, jQuery, MySQL, Rest & SOAP
 
 ## Education
-### <small>2009 - 2011</small> BTS Informatique de Gestion, Lycée Dominique Villars, Gap
+
+
+<h3 class="resume-heading">
+    <span>BTS Informatique de Gestion, Lycée Dominique Villars, Gap</span>
+    <span>2009 - 2011</span>
+</h3>
+
 Application Developer specialization. Highest ranking in class, 2nd highest in the "académie"
-### <small>2009</small> Bac Sciences Economiques et Sociales (mathematics), Lycée Dominique Villars, Gap
+
+<h3 class="resume-heading">
+    <span>Bac Sciences Economiques et Sociales (mathematics), Lycée Dominique Villars, Gap</span>
+    <span>2009</span>
+</h3>
+
 ## Notable side projects
 
 * [Cuisine-ead](https://github.com/camille-hdl/cuisine-ead), Domain-specific XML processing tool. PWA without a backend hosted on Netlify. [Read more](/cuisine-ead)
