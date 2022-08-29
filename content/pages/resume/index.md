@@ -39,7 +39,7 @@ lang: en
     <span>2016 - 2021</span>
 </h3>
 
-* Lead the complete rewrite of [Arkothèque CMS](https://arkotheque.fr) to successfull completion with a team of 1 to 4 developers over the course of the project, 1 webdesigner and 1 domain expert. A monolith using PHP 7, Symfony, React.js, MySQL and ElasticSearch. Used on websites such as [Archives de l'Allier](https://archives.allier.fr) or [Archives du cher](https://archives18.fr/). Our infrastructure handles 10,000s of search requests and 100,000s of HD image processing requests per day, across ~30 websites using Arkothèque.
+* Lead the complete rewrite of [Arkothèque CMS](https://arkotheque.fr) to successfull completion with a team of 1 to 4 developers over the course of the project, 1 webdesigner and 1 domain expert. A monolith using PHP 8, Symfony, React.js, MySQL and ElasticSearch. Used on websites such as [Archives de l'Allier](https://archives.allier.fr) or [Archives du cher](https://archives18.fr/). Our infrastructure handles 10,000s of search requests and 100,000s of HD image processing requests per day, across ~30 websites using Arkothèque.
 * As lead, I designed the architecture of the core systems, supported developer tooling and documentation
 * As an individual contributor, I own 60% of the surviving code
 * Changed deployment procedures from manual steps performed only by technical people to a completely automated process using bash scripts and CI tools, triggered from a UI by anyone on the team, achieving up to 15 deployments per day on multiple websites with near-zero deployment incidents in the last year
