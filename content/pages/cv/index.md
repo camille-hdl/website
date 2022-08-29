@@ -1,6 +1,6 @@
 ---
 title: Senior / Lead Développeur Full Stack, JavaScript & PHP
-date: "2021-12-26T18:20:00.000Z"
+date: "2021-08-29T10:55:00.000Z"
 description: C.V.
 lang: fr
 ---
