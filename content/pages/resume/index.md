@@ -1,6 +1,6 @@
 ---
 title: Senior / Lead Full Stack Developer, JavaScript & PHP
-date: "2021-12-23T17:06:00.000Z"
+date: "2022-08-29T10:55:00.000Z"
 description: Resume
 lang: en
 ---
