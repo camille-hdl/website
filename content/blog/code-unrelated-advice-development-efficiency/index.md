@@ -4,19 +4,19 @@ date: "2021-10-25T19:05:00.000Z"
 description: Things I now do that I wish I did earlier
 ---
 
-What follows are a few techniques and tools that have helped me release software faster in the small team I am a part of (more on this at the end). You won't find a comprehensive methodology nor universal wisdom here, just advices I wish I'd given myself earlier.
+What follows are a few techniques and tools that helped me release software faster in the small team I am a part of (more on this at the end). You won't find a comprehensive methodology nor universal wisdom here, just humble advices.
 
-This is a very rough summary of my typical feature development workflow:
+This is a rough summary of my typical feature development workflow:
 
 ![Feature development workflow](code-loop.svg "Feature development workflow")
 
-In order to reach step « 4. Done » faster without sacrificing quality at step « 3. Good enough? », I have a few options:
+In order to reach step « 4. Done » faster without sacrificing quality at step 3, I have a few options:
 
 1. get better at coding,
 2. get better at the rest,
 3. have less things to code.
 
-The following suggestions have almost nothing to do with coding itself, but everything to do with getting better feedback, requiring less iterations and better understanding the work so that I don't waist coding time. 
+The following suggestions have almost nothing to do with coding itself, but everything to do with getting better feedback, requiring less iterations and  understanding the work better so that I don't waste coding time. 
 
 ## Before coding: sketch
 
@@ -28,12 +28,12 @@ See also: [Fat marker sketches in Shape-up](https://basecamp.com/shapeup/1.3-cha
 
 If I'm working on a back-end feature such as a new API, I can get a similar benefit by sketching a sequence of requests and responses.
 
-## Use screen capture in pull requests descriptions
+## Include screen capture in pull requests descriptions
 
 It is unfortunately common that getting feedback on pull requests can be difficult, for a wide range of reasons.  
 I found that taking the time to record my screen while I'm using the new feature, grab a few screenshots of the most important UI elements, and adding that at the top of the pull request description __greatly increased both the quantity and the diversity of the feedback__ I received, which resulted in a better feature.  
 
-There are people in any team that may not have the time, will or technical background to review code, but anyone can watch a short video and contribute some feedback.  
+There are people in any team that may not have the time, will or technical background to review code, but anyone can watch a short video and comment.  
 Doing this also gives more context to my fellow developers doing the actual code review.
 
 ## Use a personal "feature document" instead of a shared to-do list
@@ -68,7 +68,7 @@ The shared to-do list stays relevant as a space where I can request for precisio
 
 ## Know common CLI programs enough to be ~~dangerous~~ productive
 
-Some may consider it code, but I think of them more as tools. I reach for them when I need them usually without caring for long-term maintenance.
+Some may consider it code, but I think of them more as disposable tools. I reach for them when I need them, usually without caring for long-term maintenance.
 
 I cannot give an exhaustive list of the times `grep`, `awk` or `xargs` made my work easier in one way or another, but I can select a few:
 
@@ -78,8 +78,8 @@ I cannot give an exhaustive list of the times `grep`, `awk` or `xargs` made my w
 - [dependency management](/update-latest-version-many-npm-dependencies)
 - ...
 
-Some of these programs, such as `awk`, do have a relatively high skill floor, but also an incredibly high skill ceiling. Time invested in learning them will pay off.  
-You don't need to know their man pages by heart, you don't need to write the cleanest, cleverest one-liners out there: you just need to know enough of what they can do to glue them together and get work done. Each time, you can do a bit more.
+Some of these programs, such as `awk`, do have a relatively high skill floor, but also an impossibly high skill ceiling. Time invested in learning them will pay off.  
+You don't need to know their man pages by heart, you don't need to write the cleanest, cleverest one-liners out there: you just need to know enough of what they can do to glue them together and get work done. Next time, you can do a bit more.
 
 See: [The Art of Command Line](https://github.com/jlevy/the-art-of-command-line)
 
