@@ -1,5 +1,9 @@
 body {
   background-color: rgb(255, 241, 229);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-text-size-adjust: 100%;
 }
 code.language-text {
   padding-left: 0.5em !important;
