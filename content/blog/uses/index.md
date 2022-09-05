@@ -4,7 +4,7 @@ date: "2022-09-05T00:01:00.000Z"
 description: Productivity, Software development, Note-taking...
 ---
 
-![My desk](desk.jpeg)
+![My desk](desk2022.jpg)
 ## Productivity
 * Alfred -- <small>better Spotlight</small>
 * Fantastical -- <small>calendar</small>
@@ -49,8 +49,7 @@ description: Productivity, Software development, Note-taking...
 * pre-commit
 * Docker
 * Monodraw -- <small>Make ASCII diagrams in your code comments</small>
-### analytics
-* Fathom - [affiliate link](https://usefathom.com/ref/HV9NG1)
+* Fathom -- <small>analytics [affiliate link](https://usefathom.com/ref/HV9NG1)</small>
 
 ### Notable VScode extensions
 * Night Owl
@@ -102,6 +101,7 @@ description: Productivity, Software development, Note-taking...
 * Asus ROG PG279Q -- <small>external display</small>
 * SATECHI USB-C adapters
 * 10' iPad pro + pencil
+* Kindle paperwhite
 * Cooler Master MK730 -- <small>cherry red switches</small>
 * HyperX wrist rest
 * Nikon D7500 + elgato cam link -- <small>overkill webcam</small>
@@ -112,5 +112,7 @@ description: Productivity, Software development, Note-taking...
 * RØDE PSA1 -- <small>studio boom arm</small>
 * Amazonbasics monitor arm - <small>B00MIBN16O</small>
 * Quntis monitor light
+* Kensington SoleMate foot rest
+* Incase INMB100335 flight nylon laptop sleeve
 
 See other `/uses` pages here : https://uses.tech
