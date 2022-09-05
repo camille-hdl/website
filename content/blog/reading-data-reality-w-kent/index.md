@@ -6,9 +6,9 @@ description: Notes and highlights
 
 > There is an important difference between truth and utility.
 
-I've recently finished the 3rd edition of this book, with commentary from Steve Hoberman, published in 2012 (the first edition was published back in  1978).  
+I recently finished the 3rd edition of this book, with commentary from Steve Hoberman, published in 2012 (the first edition was published back in  1978).  
 
-This book is almost as much about metaphysics as it is about data modeling.  
+This book is presented as being about data modeling, but it really is about empathy for the user and humility when evaluating your mental representation of the world.  
 While it does not dig very deep in technical details on either subject, it does bring useful insights and its share of "aha" moments.  
 
 On multiple occasions, the author managed to challenge my certitudes on topics as varied as my own identity as a living creature or database keys.
