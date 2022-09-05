@@ -103,6 +103,7 @@ description: Productivity, Software development, Note-taking...
 * SATECHI USB-C adapters
 * 10' iPad pro + pencil
 * Cooler Master MK730 -- <small>cherry red switches</small>
+* HyperX wrist rest
 * Nikon D7500 + elgato cam link -- <small>overkill webcam</small>
 * Sennheiser HD650 -- <small>headphones</small>
 * Shure SM7B -- <small>microphone</small>
