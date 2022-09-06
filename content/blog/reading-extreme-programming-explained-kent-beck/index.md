@@ -8,7 +8,7 @@ Kent Beck attempts the difficult task of transferring tacit knowledge about soft
 
 Drawing mostly from his own experience and from the Agile movement, Beck outlines a process, "XP", which reflects how he thinks a software development effort ought to be run. The content barely mentions any specific technology and is structured around "Values, Principles and Practices", making it still valuable decades after its publication.  
 
-While I wouldn't apply everything mentionned in the book, I learned a lot from it and would recommend it to other programmers.
+While I wouldn't apply everything mentioned in the book, I learned a lot from it and would recommend it to other programmers.
 
 The text tries very hard to compress its message into simple, marketable terms such as "economics" or "flow" which, to me, are too generic to be useful, but the author is fortunately too smart to help himself from getting into nuances.  
 This is precisely why I think this book compares favorably to other competitors of the same category (veterans who want to tell you how to do your job): the advices it give have nuances, depend on the context to which they are applied, and don't hide the uncertainty or tradeoffs inherent to the subject matter.
