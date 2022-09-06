@@ -11,7 +11,7 @@ Drawing mostly from his own experience and from the Agile movement, Beck outline
 While I wouldn't apply everything mentionned in the book, I learned a lot from it and would recommend it to other programmers.
 
 The text tries very hard to compress its message into simple, marketable terms such as "economics" or "flow" which, to me, are too generic to be useful, but the author is fortunately too smart to help himself from getting into nuances.  
-This is precisely why I think this book compares favorably to other competitors of the same category (veterans who want to tell you how to do your job): the advices it give have nuances, depend on the context to which they are applied, and don't hide complexity or tradeoffs.
+This is precisely why I think this book compares favorably to other competitors of the same category (veterans who want to tell you how to do your job): the advices it give have nuances, depend on the context to which they are applied, and don't hide the uncertainty or tradeoffs inherent to the subject matter.
 
 I don't recall any instance of "You should do X in any context, because it's the right thing to do" in its pages (with the possible exception of TDD), which I appreciate.
 
