@@ -5,9 +5,9 @@ description: Using a windows AZERTY keyboard on macOS
 ---
 
 I recently purchased this keyboard to replace my TKL because I sometimes need F* keys.  
-The keyboard itself is pretty well build, but I had to go through some loops to get it to work as expected on macOS.
+The keyboard itself is pretty well built, but I had to go through some hoops to get it to work as expected on macOS.
 
-First, the provided USB cable is a USB type A, which my macbook doesn't have. When I tried to replace it with a (powered) type C cable, the keyboard wasn't recognized, so I opted for an adapter from SATECHI instead.
+First, the provided USB cable is type A, which my macbook doesn't have. When I tried to replace it with a (powered) type C cable, the keyboard wasn't recognized, so I opted for an adapter from SATECHI instead.
 
 Second, my muscle memory conflicted with the layout when doing some key combinations, so I removed the keycap of the key immediately to the right of the space bar in order to stop hitting it by mistake.  
 
