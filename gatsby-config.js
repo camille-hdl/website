@@ -71,7 +71,7 @@ module.exports = {
         short_name: `camille-hdl`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: '#007acc',
+        theme_color: '#fff1e5',
         display: `minimal-ui`,
         icon: `content/assets/apple-touch-icon.png`,
       },
