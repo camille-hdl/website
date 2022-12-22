@@ -52,7 +52,7 @@ lang: en
 * Monitored and optimized performance, dividing average critical path load time by 2 while queries multiplied by 10 in the last year
 * Lead the GDPR compliance effort
 * Created internal tooling to help the team monitor, operate and perform ETL into the application, using bash scripts and other CLI tools
-* Created [Cuisine EAD](https://cuisine-ead.netlify.app), an open-source tool for XML/EAD processing, at first as a side project but worked on it professionally as it is used by unknown users but also clients and colleagues. This is a static Progressive Web App using React.js and Web Workers, CI on Travis and continuously deployed on Netlify.
+* Created [Cuisine EAD](https://cuisine-ead.netlify.app), an open-source tool for XML/EAD processing, at first as a side project but worked on it professionally as it is used by unknown users but also clients and colleagues. This is a static Progressive Web App using React.js and Web Workers, CI with Github Workflows and continuously deployed on Netlify.
 * Aggregated and analyzed metrics from different tools, from code repositories to time trackers and kanban boards, using R and RStudio
 * Ran meetings with clients and third parties about integrations with other systems or project kick-offs
 * Ran interviews with users for feature design or re-design
