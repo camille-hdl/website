@@ -114,5 +114,7 @@ description: Productivity, Software development, Note-taking...
 * Quntis monitor light
 * Kensington SoleMate foot rest
 * Incase INMB100335 flight nylon laptop sleeve
+* Eaton Ellipse ECO 500 FR Off-Line UPS -- <small>Offline UPS</small>
+* APC Power-Saving Back-UPS PRO BR900G-FR 900VA -- <small>Line-interactive UPS</small>
 
 See other `/uses` pages here : https://uses.tech
