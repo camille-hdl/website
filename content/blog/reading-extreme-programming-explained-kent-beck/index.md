@@ -1,4 +1,4 @@
-ce---
+---
 title: Reading "Extreme Programming Explained" by Kent Beck, 2nd edition, 2005
 date: "2022-09-06T02:35:00.000Z"
 description: Comments and highlights
