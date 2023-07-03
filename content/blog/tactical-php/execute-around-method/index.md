@@ -44,5 +44,9 @@ $file->openDuring(function() {
 While this pattern produces very flexible code, it also makes it harder to analyse statically. Nobody can read the `openDuring()` method and understand everything it can do : only the constraints it enforces.  
 To limit the negative effect on code readablity, we should pay special attention to the naming of such a method.  
 
-> In [Tactical PHP](/tactical-php/) I briefly introduce an object-oriented pattern, the use cases in which it can be useful, and the inevitable tradeoffs.  
-> I draw most of the inspiration for this series from "Smalltalk Best Practise Patterns", by Kent Beck.
+<aside class="my-comment">
+<p>
+In <a href="/tactical-php/">Tactical PHP</a> I briefly introduce an object-oriented pattern, the use cases in which it can be useful, and the inevitable tradeoffs.<br />
+I draw most of the inspiration for this series from "Smalltalk Best Practise Patterns", by Kent Beck.
+</p>
+</aside>

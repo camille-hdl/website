@@ -35,7 +35,11 @@ We are looking for a distribution that looks like this:
 
 ![Distribution of response times on a boxplot. There are few outliers with catastrophic performance.](r-notebook/before.png "Distribution of response times on a boxplot. There are few outliers with catastrophic performance.")
 
-> Perplexed? [How to read a boxplot](https://www.data-to-viz.com/caveat/boxplot.html)
+<aside class="my-comment">
+<p>
+Perplexed? <a target="_blank" rel="noopener noreferrer" href="https://www.data-to-viz.com/caveat/boxplot.html">How to read a boxplot</a>
+</p>
+</aside>
 
 My sample, which is a bit extreme to emphasize my point, has the following probability distribution:
 

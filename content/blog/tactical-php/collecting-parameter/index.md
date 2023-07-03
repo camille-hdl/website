@@ -46,5 +46,9 @@ There is no hidden mutation here, and the model isn't compromised by implementat
 * Adding an extra parameter may be undesirable if your methods already have many.  
 * Some might prefer returning the result instead of mutating it by reference, but then, what do you do if you have multiple results?
 
-> In [Tactical PHP](/tactical-php/) I briefly introduce an object-oriented pattern, the use cases in which it can be useful, and the inevitable tradeoffs.  
-> I draw most of the inspiration for this series from "Smalltalk Best Practise Patterns", by Kent Beck.
+<aside class="my-comment">
+<p>
+In <a href="/tactical-php/">Tactical PHP</a> I briefly introduce an object-oriented pattern, the use cases in which it can be useful, and the inevitable tradeoffs.<br />
+I draw most of the inspiration for this series from "Smalltalk Best Practise Patterns", by Kent Beck.
+</p>
+</aside>

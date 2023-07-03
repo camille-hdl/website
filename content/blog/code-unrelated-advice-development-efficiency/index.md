@@ -89,6 +89,10 @@ My way of working may not be suited to yours, which is fine. It's the process th
 As developers, depending on our seniority, we have more or less control over the "software development system" of our team. Never the whole system, but always more than just strictly coding.  
 It pays off to take a step back, be conscious of the sub-system on which we can act, and experiment. See what works with your team, and improve, just like we would optimize code.
 
-> Some context about me:  
-> I'm part of a company/team of 6, 3 of which are developers (including me).  
-> I mainly work on two products, each with a ~5 years old PHP/JS codebase, which are our main sources of revenue.
+<aside class="my-comment">
+<p>
+Some context about me:<br />  
+I'm part of a company of 6, 2 of which are developers (including me).<br />  
+I mainly work on two products, each with a ~5 years old PHP/JS codebase, which are our main sources of revenue.
+</p>
+</aside>

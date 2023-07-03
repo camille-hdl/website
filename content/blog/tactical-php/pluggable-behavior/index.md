@@ -52,5 +52,9 @@ A closure could reference completely unrelated objects (UUID libraries for insta
 As always when using arbitrary `callable`s: there is no way for a reader of the User class to statically understand what `setIdGenerator` does exactly. You have to choose your evil between a potentially unnecessary subclass, adding complexity in your main class or using black-box closures.  
 It is also difficult to store a closure in a database or a file (and if you do, it comes with a completely new set of problems). In our example, only the ID needs to be stored, the code used to create it is irrelevant.
 
-> In [Tactical PHP](/tactical-php/) I briefly introduce an object-oriented pattern, the use cases in which it can be useful, and the inevitable tradeoffs.  
-> I draw most of the inspiration for this series from "Smalltalk Best Practise Patterns", by Kent Beck.
+<aside class="my-comment">
+<p>
+In <a href="/tactical-php/">Tactical PHP</a> I briefly introduce an object-oriented pattern, the use cases in which it can be useful, and the inevitable tradeoffs.<br />
+I draw most of the inspiration for this series from "Smalltalk Best Practise Patterns", by Kent Beck.
+</p>
+</aside>

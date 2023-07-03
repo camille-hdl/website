@@ -15,7 +15,7 @@ This complexity makes it difficult to predict, let alone to prevent, failures.
 **Incidents will certainly happen: you want to benefit, not be harmed, from them.** 
 
 > "Antifragile systems benefit (to some degree) from [uncertainty, disorder, error, time...]"  
-> <u>Antifragile</u>, Nassim Nicholas Taleb (2012)
+> <cite><u>Antifragile</u>, Nassim Nicholas Taleb (2012)</cite>
 
 Incident postmortems are a way to increase organisational knowledge through incident resolution. After each incident, your system should be stronger than before.
 
@@ -61,12 +61,12 @@ Try to find the **root cause**, insofar as it is actionable:
 * document how you got to the root cause
 
 > There is an important difference between truth and utility.  
-> <u>Data & Reality</u>, William Kent (1978)
+> <cite><u>Data & Reality</u>, William Kent (1978)</cite>
 
 Involve the whole team if you can, so that you have as much brainpower as possible, everybody learns, and you will hopefully resolve the incident before it cascades downstream.
 
 > Problems are **swarmed** and solved, resulting in quick construction of new knowledge.  
-> <u>The DevOps Handbook</u>, Gene Kim, Jez Humble, Patrick Debois, John Willis (2006)
+> <cite><u>The DevOps Handbook</u>, Gene Kim, Jez Humble, Patrick Debois, John Willis (2006)</cite>
 
 ### Suggest improvements to the system
 
@@ -80,7 +80,7 @@ Pay attention to **information flow, feedbacks, and delays** to communication:
 * did the right sub-systems (e.g. autoscaling) get the right feedback?
 
 > Changing the length of a delay may make a large change in the behavior of the system.  
-> <u>Thinking in Systems</u>, Donella H. Meadows (2008)
+> <cite><u>Thinking in Systems</u>, Donella H. Meadows (2008)</cite>
 
 ## Don't
 
