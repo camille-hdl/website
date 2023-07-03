@@ -48,7 +48,7 @@ class BlogIndex extends React.Component {
           it.</p>
           <p>No good thing is pleasant to possess, without friends to
           share it.</p>
-          <cite>Letters From a Stoic,
+          <cite><u>Letters From a Stoic</u>,
             Lucius Annaeus Seneca</cite>
           </blockquote>
 
