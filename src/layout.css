@@ -24,6 +24,41 @@ h3.resume-heading {
   justify-content: space-between;
 }
 
+blockquote {
+  margin: 2em 20px;
+  padding: 2em 20px;
+  border-left: 8px solid #999999;
+  background-color: rgb(250, 246, 242);
+  font-family: 'Merriweather', serif;
+  font-size: 1.1em; /* Adjusted to make the text slightly smaller */
+  line-height: 1.6;
+  color: #222222; /* Adjusted to make the text slightly darker */
+  quotes: "\201C""\201D""\2018""\2019";
+  position: relative;
+}
+
+blockquote:before {
+  color: #999999;
+  content: open-quote;
+  font-size: 4em;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+  line-height: 0.1em;
+}
+
+blockquote:after {
+  content: none;
+}
+
+blockquote p {
+  margin: 0;
+  padding: 0;
+  font-style: normal; /* Adjusted to get rid of the italics */
+}
+
+
+
 /* @media (prefers-color-scheme: dark) {
   body {
     background-color: rgb(1, 22, 39);
