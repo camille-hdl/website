@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import { rhythm } from "../utils/typography"
 
 class BlogIndex extends React.Component {
@@ -14,31 +14,43 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All posts" />
+        <Seo title="All posts" />
         <Bio />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </div>
-          )
-        })}
-        <section id="seneca-quote">
+        <ol style={{ listStyle: `none`, marginLeft: 0 }}>
+          {posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
+            return (
+              <li key={node.fields.slug}>
+                <article
+                  className="post-list-item"
+                  itemScope
+                  itemType="http://schema.org/Article"
+                >
+                <header>
+                  <h3
+                    style={{
+                      marginBottom: rhythm(1 / 4),
+                    }}
+                  >
+                    <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                      {title}
+                    </Link>
+                  </h3>
+                <small>{node.frontmatter.date}</small>
+                </header>
+                <section>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.frontmatter.description || node.excerpt,
+                  }}
+                />
+                </section>
+                </article>
+              </li>
+            )
+          })}
+        </ol>
+        <aside id="seneca-quote">
           <blockquote>
           <p>Nothing will ever please me, no matter how excellent or
           beneficial, if I must retain the knowledge of it to myself.
@@ -52,13 +64,14 @@ class BlogIndex extends React.Component {
             Lucius Annaeus Seneca</cite>
           </blockquote>
 
-        </section>
+        </aside>
       </Layout>
     )
   }
 }
 
 export default BlogIndex
+
 
 export const pageQuery = graphql`
   query {
@@ -69,7 +82,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       filter: {fileAbsolutePath: {glob: "**/content/blog/**"}}
-      sort: { fields: [frontmatter___date], order: DESC }) 
+      sort: {frontmatter: {date: DESC}}) 
       {
         edges {
           node {

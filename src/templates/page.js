@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
 class PageTemplate extends React.Component {
@@ -14,35 +14,39 @@ class PageTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO
+        <Seo
           title={page.frontmatter.title}
           lang={page.frontmatter.lang || "en"}
           description={page.frontmatter.description || page.excerpt}
         />
-        <h1
-          style={{
-            marginTop: rhythm(1),
-            marginBottom: 0,
-          }}
-        >
-          {page.frontmatter.title}
-        </h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: `block`,
-            marginBottom: rhythm(1),
-          }}
-        >
-          {page.frontmatter.date}
-        </p>
-        <div dangerouslySetInnerHTML={{ __html: page.html }} />
+        <header>
+          <h1
+            style={{
+              marginTop: rhythm(1),
+              marginBottom: 0,
+            }}
+          >
+            {page.frontmatter.title}
+          </h1>
+          <p
+            style={{
+              ...scale(-1 / 5),
+              display: `block`,
+              marginBottom: rhythm(1),
+            }}
+          >
+            {page.frontmatter.date}
+          </p>
+        </header>
+        <section itemProp="articleBody" dangerouslySetInnerHTML={{ __html: page.html }} />
         <hr
           style={{
             marginBottom: rhythm(1),
           }}
         />
-        <Bio />
+        <footer>
+          <Bio />
+        </footer>
       </Layout>
     )
   }
@@ -51,21 +55,21 @@ class PageTemplate extends React.Component {
 export default PageTemplate
 
 export const pageQuery = graphql`
-  query PagePostBySlug($slug: String!) {
+  query BlogPostBySlug(
+    $id: String!
+  ) {
     site {
       siteMetadata {
         title
-        author
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    markdownRemark(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)
       html
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        lang
         description
       }
     }
