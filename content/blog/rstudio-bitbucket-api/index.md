@@ -20,7 +20,7 @@ Basic auth with an [app password](https://support.atlassian.com/bitbucket-cloud/
 
 Code contributions aren't the only things I want to consider in my chart. I will take comments and approvals into account as well.
 
-```r
+```r{numberLines: true}
 library("httr")
 library("jsonlite")
 library("tidyverse")
@@ -90,7 +90,7 @@ while(!is.null(jsonPayload$`next`)) {
 
 I want to sort PRs chronologically and format the dates. Also, I'm only interested in data from 2020.
 
-```r
+```r{numberLines: true}
 prs <- rev(prs)
 prs$created_on <- as.Date(prs$created_on)
 prs$updated_on <- as.Date(prs$updated_on)
@@ -115,7 +115,7 @@ comments2020 <- comments %>% filter(year == "2020")
 
 The only property of interest in any event I want to consider for this chart is its date.  
 
-```r
+```r{numberLines: true}
 datesApprovals <- approvals2020$created_on
 datesComments <- comments2020$created_on
 datesPRs <- c(prs2020$created_on, prs2020$updated_on)
@@ -128,7 +128,7 @@ events = data.frame(
 
 I count how many events occurred each day of each week.
 
-```r
+```r{numberLines: true}
 events$dayOfWeek = format(events$date, "%A")
 events$week = format(events$date, "%V")
 eventsPerDayOfWeek <- events %>% group_by(week, dayOfWeek) %>% tally()
@@ -136,7 +136,7 @@ eventsPerDayOfWeek <- events %>% group_by(week, dayOfWeek) %>% tally()
 
 Finally, I want the days of the week to be displayed in an expected order on the chart.
 
-```r
+```r{numberLines: true}
 eventsPerDayOfWeek <- eventsPerDayOfWeek %>% mutate(
   dayOfWeek = factor(
     dayOfWeek,
@@ -151,7 +151,7 @@ eventsPerDayOfWeek <- eventsPerDayOfWeek %>% mutate(
 
 
 
-```r
+```r{numberLines: true}
 ggplot(
         eventsPerDayOfWeek,
         aes(x=week, y=dayOfWeek, fill= n)

@@ -69,6 +69,7 @@ description: Productivity, Software development, Note-taking...
 * Gifski -- <small>Convert videos to gifs for easy embedding in PR descriptions</small>
 * Photoshop CC
 * Lightroom CC
+* AudioHijack, Loopback -- <small>virtual devices, mic noise filter and overall audio management</small>
 
 ## Communication
 * Slack -- <small>for work</small>
@@ -87,11 +88,12 @@ description: Productivity, Software development, Note-taking...
 * GrandPerspective -- <small>disk usage analysis</small>
 * Shadow -- <small>gaming</small>
 * Karabiner -- <small>keyboard remapping</small>
+* Backblaze -- <small>backup</small>
 
 ## Fonts
 * Merriweather -- <small>for writing</small>
 * Open Sans -- <small>for titles</small>
-* Fire Code -- <small>for code</small>
+* Fira Code -- <small>for code</small>
 
 ## Hardware
 * 2020 13' Macbook Pro  -- <small>[.macos](https://github.com/camille-hdl/configFiles/blob/master/.macos)</small>
@@ -105,6 +107,7 @@ description: Productivity, Software development, Note-taking...
 * [Cooler Master MK730](/cooler-master-mk730-keyboard-on-macos) -- <small>cherry red switches</small>
 * HyperX wrist rest
 * Nikon D7500 + elgato cam link -- <small>overkill webcam</small>
+* NiSi polarising filter -- <small>helps with glare on my glasses</small>
 * Sennheiser HD650 -- <small>headphones</small>
 * Shure SM7B -- <small>microphone</small>
 * Focusrite Scarlett 2i2 3rd gen -- <small>audio Interface</small>
