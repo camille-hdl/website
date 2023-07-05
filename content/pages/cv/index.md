@@ -36,7 +36,7 @@ lang: fr
 
 <h3 class="resume-heading">
     <span>Lead développeur full stack, 1egal2, télétravail</span>
-    <span>2016 - 2021</span>
+    <span>2016 - actuel</span>
 </h3>
 
 * Mené le projet de refonte [Arkothèque CMS](https://arkotheque.fr) jusqu'à sa finalisation avec une équipe composée d'1 à 4 développeurs, 1 webdesigner et 1 expert domaine. Un monolithe utilisant PHP 8, Symfony, React.js, MySQL et ElasticSearch. Utilisé sur des sites tels que [Archives de l'Allier](https://archives.allier.fr) ou [Archives du cher](https://archives18.fr/). Notre infrastructure d'hébergement répond à des dizaines de milliers de requêtes de recherche et des centaines de milliers de requêtes de traitement d'images HD par jour, réparties sur les ~30 sites web utilisant Arkothèque.

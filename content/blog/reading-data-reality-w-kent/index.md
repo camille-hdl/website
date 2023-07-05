@@ -2,6 +2,7 @@
 title: Reading "Data & Reality" by William Kent
 date: "2020-04-19T15:20:00.000Z"
 description: Notes and highlights
+image: cover.png
 ---
 
 > There is an important difference between truth and utility.

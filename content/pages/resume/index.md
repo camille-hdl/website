@@ -36,7 +36,7 @@ lang: en
 
 <h3 class="resume-heading">
     <span>Lead full stack developer, 1egal2, Remote</span>
-    <span>2016 - 2021</span>
+    <span> 2016 - current</span>
 </h3>
 
 * Lead the complete rewrite of [Arkothèque CMS](https://arkotheque.fr) to successfull completion with a team of 1 to 4 developers over the course of the project, 1 webdesigner and 1 domain expert. A monolith using PHP 8, Symfony, React.js, MySQL and ElasticSearch. Used on websites such as [Archives de l'Allier](https://archives.allier.fr) or [Archives du cher](https://archives18.fr/). Our infrastructure handles 10,000s of search requests and 100,000s of HD image processing requests per day, across ~30 websites using Arkothèque.
