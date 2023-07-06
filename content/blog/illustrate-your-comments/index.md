@@ -1,13 +1,13 @@
 ---
-title: Illustrate your code comments
+title: Illustrate your comments
 date: "2023-07-06T18:00:00.000Z"
-description: Add plaintext diagrams and drawings to your code comments with Monodraw
+description: Add plaintext diagrams and drawings to your comments with Monodraw
 image: monodraw-example.jpg
 ---
 
-Code comments are communication: they explain an abstraction, an implementation, or give context to complex technical problems. They are the documentation closest to the code, where we need it most.  
+Comments in code are communication tools: they explain an abstraction, an implementation, or give context to complex technical problems. They are the documentation closest to the code, where we need it most.  
 
-An image is a powerful tool to communicate relationships between objects, distance, size, time, all of which are relevant in a program.
+An image is a powerful way to communicate relationships between objects, distance, size, time, all of which are relevant in a program.
 
 ![Unflattening, Nick Sousanis](unflattening-relationships.png "In “Unflattening”, Nick Sousanis illustrates how shape, distance, repetition, separation, negative space and other visual tools can communicate relationships by tapping into a common experience of the world.")
 
