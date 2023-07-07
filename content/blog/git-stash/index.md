@@ -1,10 +1,10 @@
 ---
 title: git stash
 date: "2023-05-22T16:00:00.000Z"
-description: Setting changes aside without committing
+description: Put changes aside without committing
 ---
 
-When my work on a repository is interrupted, `git stash` helps set my work aside safely without having to create an actual commit.
+When my work is interrupted, `git stash` helps set my work aside safely without having to create an actual commit.
 
 Lets say I am on branch `feature/A` and have unstaged changes and new files in the `src/` subdirectory. The following command will push all changes under `src/` to a stash entry named `my_work_on_feature_a`:
 
