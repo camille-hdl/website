@@ -47,7 +47,11 @@ Text-based diagrams are, to me, a good compromise. Look at this example:
 └──────────┘  └──────────┘    └──────────┘  └──────────┘
 ```
 
-I generated this diagram with [monodraw](https://monodraw.helftone.com) a paid (but not expensive) macos app, which can export text-based drawings with options to easily paste into common comment formats.  
+I generated this with [monodraw](https://monodraw.helftone.com) a paid (but not expensive) macos app, which can export text-based drawings with options to easily paste into common comment formats.  
+
+We should pay attention not to draw huge diagrams, or to put one in every other comment in a file, which would be more annoying that useful. A drawing in comments, because it is done in such an awkward medium, should stay small and simple.
+
+If you feel that an illustration is too big to fit in a comment, you can still link to an external knowledge base or a dedicated file somewhere else in the repository.
 
 ![Monodraw text export menu](monodraw-export.png "A list of common comment formats in the monodraw export menu.")
 
