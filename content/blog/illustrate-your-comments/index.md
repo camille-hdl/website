@@ -5,17 +5,20 @@ description: Add plaintext diagrams and drawings to your comments with Monodraw
 image: monodraw-example.jpg
 ---
 
-Comments in code are communication tools: they explain an abstraction, an implementation, or give context to complex technical problems. They are the documentation closest to the code, where we need it most.  
+I remember the first time structural sharing in data structures "clicked" for me. It was explained with a drawing of boxes and arrows.
 
 An image is a powerful way to communicate relationships between objects, distance, size, time, all of which are relevant in a program.
 
 ![Unflattening, Nick Sousanis](unflattening-relationships.png "In “Unflattening”, Nick Sousanis illustrates how shape, distance, repetition, separation, negative space and other visual tools can communicate relationships by tapping into a common experience of the world.")
 
-I think we should use images in comments more often.   
+Comments in code are communication tools: they explain an abstraction, an implementation, or give context to complex technical problems. They are the documentation closest to the code, where we need it most.  
+
+We should use images in comments more often.   
+
 We should not, however, lose the convenience of plain text: it can be checked in version control, shows up in diffs and works out-of-the-box in any text editor.   
 Nor should we entirely remove sentences, because phrases can be searched for in a search engine and can be read by accessibility tools or people who don't like visual communication.
 
-Text-based diagrams are, to me, a good compromise. See this comment I wrote recently, to explain something about structural sharing:
+Text-based diagrams are, to me, a good compromise. Look at this example:
 
 ```
 
