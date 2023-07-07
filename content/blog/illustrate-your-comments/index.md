@@ -5,7 +5,7 @@ description: Add plaintext diagrams and drawings to your comments with Monodraw
 image: monodraw-example.jpg
 ---
 
-I remember the first time structural sharing in data structures "clicked" for me. It was explained with a drawing of boxes and arrows.
+I remember the day structural sharing in data structures "clicked" for me. It was illustrated by a drawing of boxes and arrows.
 
 An image is a powerful way to communicate relationships between objects, distance, size, time, all of which are relevant in a program.
 
@@ -51,7 +51,7 @@ I generated this diagram with [monodraw](https://monodraw.helftone.com) a paid (
 
 ![Monodraw text export menu](monodraw-export.png "A list of common comment formats in the monodraw export menu.")
 
-Communicating ideas with pictures seems to be obvious everywhere, from art to education and marketing. Lets use it in code comments.
+Communicating ideas with pictures seems to be obvious everywhere, from art to education and marketing. Why not use it in comments?
 
 > Meaning is thus conveyed not only by what's depicted, but through structure:
 > the size, shape, placement, and relationship of components - what they're next to, and what they're not, matters.
