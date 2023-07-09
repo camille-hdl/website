@@ -70,7 +70,10 @@ const Bio = () => {
         </a>,{" "}
         <Link to="/resume">
           resume
-        </Link>
+        </Link>,{" "}
+        <a href={`https://programmation-orientee-sieste.dev/`} target="_blank" rel="noopener noreferrer">
+          blog in french
+        </a>
       </p>
     </div>
   )
