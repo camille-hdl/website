@@ -5,7 +5,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -ms-text-size-adjust: 100%;
 }
-main p img {
+main p img, main p .gatsby-resp-image-background-image {
   border-radius: 16px;
 }
 
