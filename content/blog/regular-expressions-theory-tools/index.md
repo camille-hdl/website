@@ -25,6 +25,7 @@ Here are some non-exhaustive examples of good and bad applications.
 * simple pattern-based string validation (*"Is this a well-formed ISO8601 date?"*)
 * extracting simple and finite components of strings (*"What is the hostname of this URL?"*)
 * advanced search and replace
+* generating mock data in a specific format
 
 ### What are regexes bad at?
 
