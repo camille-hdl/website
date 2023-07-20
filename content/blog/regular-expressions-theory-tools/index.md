@@ -23,12 +23,12 @@ Here are some non-exhaustive examples of good and bad applications.
 
 * looking for simple information in a text (*"Find all the phone numbers in this paragraph"*)
 * simple pattern-based string validation (*"Is this a well-formed ISO8601 date?"*)
-* tokenization (*"Is this a reserved word?"*)
+* extracting simple and finite components of strings (*"What is the hostname of this URL?"*)
 * advanced search and replace
 
 ### What are regexes bad at?
 
-* parsing languages with any kind of limitless nesting (programming languages with `()`, `{}`, XML `<>`, etc.)
+* parsing languages with any kind of limitless nesting (programming languages, markup languages, etc.)
 * complex string validation (*"Is this a valid email?"*)
 * natural language processing (*"Who is the subject in this sentence?"*)
 
@@ -54,7 +54,7 @@ Famous programs such as `grep` and `awk` heavily use regular expressions.
 All the `preg_`-[prefixed functions](https://www.php.net/manual/en/ref.pcre.php) are based on PCRE.  
 Notable particularities include the `preg_match_all` function that effectively replaces the `g` flag.
 
-You can find a few interesting examples in the [league/uri](https://github.com/thephpleague/uri/blob/master/src/Uri.php) codebase.
+You can find a few interesting examples in the [league/uri](https://github.com/thephpleague/uri/blob/master/Uri.php) codebase.
 
 
 ### JavaScript
@@ -79,7 +79,3 @@ Learn more on [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 * Also in the 50s, Chomsky introduced his [hierarchy of languages](https://en.wikipedia.org/wiki/Chomsky_hierarchy), with regular languages being "Type-3".
 * One of the first usage in a program is attributed to [Ken Thompson's ED text editor](https://en.wikipedia.org/wiki/Ed_(text_editor)) (and, also, one of the first examples of just-in-time compilation), in the late 60s.
 * In the 80s, [Perl](https://en.wikipedia.org/wiki/Regular_expression#Perl_and_PCRE) introduced even more powerful implementations.
-
-----
-
-![Batman slaps Robin](meme.jpg "Regexes are useful")
