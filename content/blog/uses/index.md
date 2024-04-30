@@ -60,7 +60,9 @@ description: Productivity, Software development, Note-taking...
 
 ## Media
 * imgOptim -- <small>better image compression</small>
-* OBS -- <small>to record stuff on my screen</small>
+* QuickTime -- <small>screen recording</small>
+* OBS -- <small>when quicktime isn't enough</small>
+* FloatingHead -- <small>webcam on screen</small>
 * Spotify -- <small>music</small>
 * Qobuz -- <small>good music</small>
 * Overcast -- <small>podcasts</small>
