@@ -98,7 +98,7 @@ description: Productivity, Software development, Note-taking...
 * Fira Code -- <small>for code</small>
 
 ## Hardware
-* 2020 13' Macbook Pro  -- <small>[.macos](https://github.com/camille-hdl/configFiles/blob/master/.macos)</small>
+* 2023 14' Macbook Pro M3 -- <small>[.macos](https://github.com/camille-hdl/configFiles/blob/master/.macos)</small>
 * Magic mouse
 * Razer Naga X
 * Roccat Taito xl mouse pad
