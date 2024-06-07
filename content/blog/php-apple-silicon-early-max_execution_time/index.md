@@ -30,3 +30,7 @@ For more information, see:
 
 - https://github.com/php/php-src/issues/12814
 - https://github.com/php/php-src/pull/13567/files
+
+## Update
+
+The PHP 8.1 [homebrew shivammathur formula](https://github.com/shivammathur/homebrew-php/issues/2732) has been patched to include the fix, since it won't be merged upstream in php itself.
