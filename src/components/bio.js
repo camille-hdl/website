@@ -20,11 +20,6 @@ const Bio = () => {
             name
             summary
           }
-          social {
-            twitter,
-            github,
-            flickr
-          }
         }
       }
     }
@@ -32,7 +27,6 @@ const Bio = () => {
 
   // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = data.site.siteMetadata?.author;
-  const social = data.site.siteMetadata?.social;
   return (
     <div
       style={{
@@ -59,21 +53,9 @@ const Bio = () => {
       <p>
         I'm a JavaScript and PHP developer living in Grenoble, France.
         <br />
-        <a href={`https://twitter.com/${social.twitter}`} target="_blank" rel="noopener noreferrer">
-          Twitter
-        </a>,{" "}
-        <a href={`https://github.com/${social.github}`} target="_blank" rel="noopener noreferrer">
-          Github
-        </a>,{" "}
-        <a href={`https://flickr.com/people/${social.flickr}/`} target="_blank" rel="noopener noreferrer">
-          Flickr
-        </a>,{" "}
-        <Link to="/resume">
-          resume
-        </Link>,{" "}
-        <a href={`https://programmation-orientee-sieste.dev/`} target="_blank" rel="noopener noreferrer">
-          blog in french
-        </a>
+        <Link to="/links">
+          Links
+        </Link>
       </p>
     </div>
   )
