@@ -18,7 +18,7 @@ In consequence, upon ssh login as `myrealuser@myserver`, you don't know ahead of
 This is only the first problem. Consider:  
 
 - Each user can have a *different* crontab,
-- Each user can have a *different* home directory, which means
+- Each user can have a *different* value for `~` BUT the same `$HOME`, which means
 - Any script or executable that depends on something being in `~` (such as `git` or `ssh`) will behave unpredictably.
 
 It is completely possible to ssh as a random user, edit a random crontab that will run scripts that don't know which directory `~` will be.
