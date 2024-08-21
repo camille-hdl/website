@@ -1,6 +1,6 @@
 ---
 title: Software and hardware I use
-date: "2022-09-05T00:01:00.000Z"
+date: "2024-08-21T00:01:00.000Z"
 description: Productivity, Software development, Note-taking...
 ---
 
@@ -11,12 +11,11 @@ description: Productivity, Software development, Note-taking...
 * Hey -- <small>email client</small>
 * Clockify -- <small>time tracking</small>
 * Gmail -- <small>work email client</small>
-* Lastpass -- <small>password management</small>
+* Bitwarden -- <small>password management</small>
 * Basecamp -- <small>task management for my side projects</small>
 * Airtable -- <small>project management for work</small>
 * Drafts -- <small>short term notes</small>
 * Obsidian -- <small>long term notes</small>
-* Focus
 * Safari
 * PDF Expert
 * Adobe Fill & Sign
@@ -24,27 +23,25 @@ description: Productivity, Software development, Note-taking...
 * Reminders
 * iTerm2
 * fish -- <small>shell -- [settings](https://github.com/camille-hdl/configFiles/blob/master/config.fish)</small>
+* ChatGPT
 
 ## Research / thinking about things
 * Kindle -- <small>to ctrl-f in books</small>
-* Readwise -- <small>daily refreshers about books I've read</small>
 * Noteshelf -- <small>searchable handwritten notes</small>
-* Pocket -- <small>bookmarking app</small>
 * Rstudio -- <small>computational notebook</small>
 * Dictionary -- <small>to find names for things</small>
 
 ## Software development
 * VScode -- <small>code editor -- [settings](https://github.com/camille-hdl/configFiles/blob/master/vscode-settings.json)</small>
 * Querious -- <small>mysql client</small>
-* Pages -- <small>to shape work</small>
+* Pages -- <small>to write design docs</small>
 * Bitbucket -- <small>git repository & continuous integration</small>
-* Confluence -- <small>documentation</small>
 * Github -- <small>git repository & continuous integration</small>
-* Google Chrome -- <small>webapp development</small>
+* Confluence -- <small>documentation</small>
+* Google Chrome -- <small>devtools</small>
 * Cyberduck -- <small>sftp client</small>
 * homebrew -- <small>package installer -- [presets](https://github.com/camille-hdl/configFiles/blob/master/brew.sh)</small>
 * mailhog -- <small>local email server</small>
-* Dash -- <small>documentation</small>
 * Paw -- <small>API client</small>
 * pre-commit
 * Docker
@@ -60,11 +57,10 @@ description: Productivity, Software development, Note-taking...
 
 ## Media
 * imgOptim -- <small>better image compression</small>
-* QuickTime -- <small>screen recording</small>
-* OBS -- <small>when quicktime isn't enough</small>
+* CleanShot X -- <small>Screen recording and screenshots</small>
 * FloatingHead -- <small>webcam on screen</small>
+* OBS -- <small>when CleanShot X isn't enough</small>
 * Spotify -- <small>music</small>
-* Qobuz -- <small>good music</small>
 * Overcast -- <small>podcasts</small>
 * Audible -- <small>audiobooks</small>
 * HandBrake -- <small>video encoding</small>
@@ -79,7 +75,6 @@ description: Productivity, Software development, Note-taking...
 * Signal
 * Zoom
 * Discord
-* WhatsApp
 
 ## Other
 * Rectangle Pro -- <small>window management</small>
@@ -88,7 +83,6 @@ description: Productivity, Software development, Note-taking...
 * Rocket 🚀 -- <small>emoji</small>
 * Authy -- <small>2FA</small>
 * GrandPerspective -- <small>disk usage analysis</small>
-* Shadow -- <small>gaming</small>
 * Karabiner -- <small>keyboard remapping</small>
 * Backblaze -- <small>backup</small>
 
@@ -96,6 +90,7 @@ description: Productivity, Software development, Note-taking...
 * Merriweather -- <small>for writing</small>
 * Open Sans -- <small>for titles</small>
 * Fira Code -- <small>for code</small>
+* EB Garamond -- <small>for fantasy</small>
 
 ## Hardware
 * 2023 14' Macbook Pro M3 -- <small>[.macos](https://github.com/camille-hdl/configFiles/blob/master/.macos)</small>
@@ -121,5 +116,7 @@ description: Productivity, Software development, Note-taking...
 * Incase INMB100335 flight nylon laptop sleeve
 * Eaton Ellipse ECO 500 FR Off-Line UPS -- <small>Offline UPS</small>
 * APC Power-Saving Back-UPS PRO BR900G-FR 900VA -- <small>Line-interactive UPS</small>
+* WD_BLACK P40 -- <small>NVMe external drive</small>
+* UGREEN Nexode 140W 25000mAh -- <small>Power Bank</small>
 
 See other `/uses` pages here : https://uses.tech
