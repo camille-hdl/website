@@ -10,7 +10,7 @@ lang: en
             Github
         </a></li>
         <li><a href="https://programmation-orientee-sieste.dev/" target="_blank" rel="noopener noreferrer">
-            blog in french
+            Tech blog in french
         </a></li>
         <li><a href="https://flickr.com/camille_hodoul" target="_blank" rel="noopener noreferrer">
             Flickr
@@ -23,6 +23,9 @@ lang: en
         </a></li>
         <li><a href="https://www.youtube.com/@camille-hdl" target="_blank" rel="noopener noreferrer">
             YouTube
+        </a></li>
+        <li><a href="https://hobby.camillehdl.dev" target="_blank" rel="noopener noreferrer">
+            Hobby blog
         </a></li>
     </ul>
 </nav>
