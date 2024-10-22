@@ -1,6 +1,6 @@
 ---
 title: Software and hardware I use
-date: "2024-08-21T00:01:00.000Z"
+date: "2024-10-22T00:01:00.000Z"
 description: Productivity, Software development, Note-taking...
 ---
 
@@ -44,7 +44,7 @@ description: Productivity, Software development, Note-taking...
 * mailhog -- <small>local email server</small>
 * Paw -- <small>API client</small>
 * pre-commit
-* Docker
+* Podman
 * Monodraw -- <small>Make ASCII diagrams in your code comments</small>
 * Fathom -- <small>analytics [affiliate link](https://usefathom.com/ref/HV9NG1)</small>
 
@@ -64,17 +64,19 @@ description: Productivity, Software development, Note-taking...
 * Overcast -- <small>podcasts</small>
 * Audible -- <small>audiobooks</small>
 * HandBrake -- <small>video encoding</small>
-* Gifski -- <small>Convert videos to gifs for easy embedding in PR descriptions</small>
+* DaVinci Resolve -- <small>video editing</small>
+* Gifski -- <small>convert videos to gifs for easy embedding in PR descriptions</small>
 * Photoshop CC
 * Lightroom CC
 * AudioHijack, Loopback -- <small>virtual devices, mic noise filter and overall audio management</small>
+* Adapter -- <small>bulk format conversion</small>
 
 ## Communication
-* Slack -- <small>for work</small>
 * Messages
 * Signal
 * Zoom
 * Discord
+* Teams -- <small>when I have no other choice</small>
 
 ## Other
 * Rectangle Pro -- <small>window management</small>
@@ -85,6 +87,7 @@ description: Productivity, Software development, Note-taking...
 * GrandPerspective -- <small>disk usage analysis</small>
 * Karabiner -- <small>keyboard remapping</small>
 * Backblaze -- <small>backup</small>
+* PurePaste -- <small>clear formatting from clipboard</small>
 
 ## Fonts
 * Merriweather -- <small>for writing</small>
