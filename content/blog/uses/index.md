@@ -44,9 +44,15 @@ description: Productivity, Software development, Note-taking...
 * mailhog -- <small>local email server</small>
 * Paw -- <small>API client</small>
 * pre-commit
-* Podman
+* Podman -- <small>containers that support systemd</small>
 * Monodraw -- <small>Make ASCII diagrams in your code comments</small>
 * Fathom -- <small>analytics [affiliate link](https://usefathom.com/ref/HV9NG1)</small>
+
+## System administration
+* lnav -- <small>log exploration</small>
+* Debian -- <small>base OS</small>
+* Ansible -- <small>deployment</small>
+* monit -- <small>service monitoring and auto-restart, alerts</small>
 
 ### Notable VScode extensions
 * Night Owl
