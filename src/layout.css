@@ -149,6 +149,34 @@ aside.my-comment p {
   font-style: normal;
 }
 
+section.warning {
+  margin: 2em -27px;
+  padding: 2em 20px;
+  border-left: 8px solid #b32f0c;
+  background-color: #fcdbd2;
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #222222;
+  position: relative;
+  border-radius: 10px;
+}
+
+section.warning:before {
+  color: #b32f0c;
+  content: "⚠";
+  font-size: 3em;
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  line-height: 0.1em;
+}
+
+section.warning p {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+}
+
 
 /**
  SPECIFIC
