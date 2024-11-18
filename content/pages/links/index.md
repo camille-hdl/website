@@ -15,8 +15,8 @@ lang: en
         <li><a href="https://flickr.com/camille_hodoul" target="_blank" rel="noopener noreferrer">
             Flickr
         </a></li>
-        <li><a href="https://x.com/camille_hdl" target="_blank" rel="noopener noreferrer">
-            X / Twitter
+        <li><a href="https://bsky.app/profile/camillehdl.dev" target="_blank" rel="noopener noreferrer">
+            Bluesky
         </a></li>
         <li><a href="https://www.instagram.com/eartz/" target="_blank" rel="noopener noreferrer">
             Instagram
