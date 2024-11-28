@@ -8,6 +8,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "@atproto/api": "^0.13.18",
     "core-js": "^3.31.0",
     "gatsby": "^5.11.0",
     "gatsby-plugin-feed": "^5.11.0",
@@ -34,6 +35,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-typography": "^0.16.23",
+    "sharp": "^0.33.4",
     "typeface-fira-code": "^1.1.13",
     "typeface-merriweather": "^1.1.13",
     "typeface-montserrat": "^1.1.13",

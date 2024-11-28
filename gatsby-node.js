@@ -152,6 +152,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Frontmatter {
       title: String
       description: String
+      blueskyLink: String
       date: Date @dateformat
       image: File @fileByRelativePath
     }
