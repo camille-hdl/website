@@ -3,6 +3,7 @@ title: Software and hardware I use
 date: "2024-10-22T00:01:00.000Z"
 description: Productivity, Software development, Note-taking...
 image: desk2022.jpg
+blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3lbzdtflqc225
 ---
 
 ![My desk](desk2022.jpg)
