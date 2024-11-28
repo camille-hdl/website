@@ -2,6 +2,7 @@
 title: Software and hardware I use
 date: "2024-10-22T00:01:00.000Z"
 description: Productivity, Software development, Note-taking...
+image: desk2022.jpg
 ---
 
 ![My desk](desk2022.jpg)

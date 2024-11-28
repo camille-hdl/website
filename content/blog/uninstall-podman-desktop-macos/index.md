@@ -1,6 +1,7 @@
 ---
 title: How to uninstall Podman Desktop on macos
 date: "2024-05-07T12:00:00.000Z"
+image: thumbnail.jpg
 ---
 
 After an update, my podman machine stopped working and I didn't manage to fix it without a full reinstall.  

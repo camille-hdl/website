@@ -1,6 +1,7 @@
 ---
 title: How to fix podman machine stuck on "Currently starting"
 date: "2024-05-10T09:00:00.000Z"
+image: podman_machine.png
 ---
 
 If `podman machine list` (or Podman Desktop) shows your machine "Currently starting" but it never actually starts, this might help you.  

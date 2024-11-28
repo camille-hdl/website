@@ -2,6 +2,7 @@
 title: An Ansible lab with Podman on macos
 date: "2024-11-13T18:00:00.000Z"
 description: Use Podman containers to emulate "normal" virtual machines to try out Ansible playbooks
+blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3latt3j2u4k2d
 ---
 
 By "Ansible laboratory", I mean a collection of virtual servers on which you can test your ansible playbooks.  

@@ -3,6 +3,7 @@ title: Illustrate your comments
 date: "2023-07-06T18:00:00.000Z"
 description: Add plaintext diagrams and drawings to your comments with Monodraw
 image: monodraw-example.jpg
+blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3k4e53rjhy625
 ---
 
 I remember the day structural sharing in data structures "clicked" for me. It was illustrated by a drawing of boxes and arrows.

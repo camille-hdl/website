@@ -1,19 +1,20 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import BlueskyComments from "../components/BlueskyComments"
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.data;
-
+export default function BlogPostTemplate(props) {
+    const post = props.data.markdownRemark
+    const siteTitle = props.data.site.siteMetadata.title
+    const { previous, next } = props.data;
+    const blueskyLink = typeof post.frontmatter.blueskyLink !== "undefined" && post.frontmatter.blueskyLink ? post.frontmatter.blueskyLink : null;
+    
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={props.location} title={siteTitle}>
         <Seo
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
@@ -39,6 +40,11 @@ class BlogPostTemplate extends React.Component {
           </p>
         </header>
         <section itemProp="articleBody" dangerouslySetInnerHTML={{ __html: post.html }} />
+        {blueskyLink && (
+          <>
+            <BlueskyComments uri={blueskyLink} />
+          </>
+        )}
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -75,10 +81,7 @@ class BlogPostTemplate extends React.Component {
         </nav>
       </Layout>
     )
-  }
 }
-
-export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug(
@@ -99,6 +102,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        blueskyLink
         image {
           childImageSharp {
               gatsbyImageData(width: 800)
