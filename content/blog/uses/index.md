@@ -1,6 +1,6 @@
 ---
 title: Software and hardware I use
-date: "2024-10-22T00:01:00.000Z"
+date: "2025-07-04T00:12:00.000Z"
 description: Productivity, Software development, Note-taking...
 image: desk2022.jpg
 blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3lbzdtflqc225
@@ -48,6 +48,7 @@ blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3lbzdtflqc225
 * pre-commit
 * Podman -- <small>containers that support systemd</small>
 * Monodraw -- <small>Make ASCII diagrams in your code comments</small>
+* JuxtaText - <small>diff tool</small>
 * Fathom -- <small>analytics [affiliate link](https://usefathom.com/ref/HV9NG1)</small>
 
 ## System administration
@@ -82,20 +83,21 @@ blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3lbzdtflqc225
 ## Communication
 * Messages
 * Signal
-* Zoom
 * Discord
+* Zoom
 * Teams -- <small>when I have no other choice</small>
 
 ## Other
 * Rectangle Pro -- <small>window management</small>
 * Amphetamine -- <small>mac doesn't go to sleep</small>
-* Deliveries -- <small>track amazon packages</small>
+* Deliveries -- <small>track packages</small>
 * Rocket 🚀 -- <small>emoji</small>
 * Authy -- <small>2FA</small>
 * GrandPerspective -- <small>disk usage analysis</small>
 * Karabiner -- <small>keyboard remapping</small>
 * Backblaze -- <small>backup</small>
 * PurePaste -- <small>clear formatting from clipboard</small>
+* BetterDisplay -- <small>monitor configuration</small>
 
 ## Fonts
 * Merriweather -- <small>for writing</small>
@@ -108,7 +110,8 @@ blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3lbzdtflqc225
 * Magic mouse
 * Razer Naga X
 * Roccat Taito xl mouse pad
-* Asus ROG PG279Q -- <small>external display</small>
+* MSI MAG323UPF -- <small>4k external display</small>
+* Asus ROG PG279Q -- <small>1440p external display</small>
 * SATECHI USB-C adapters
 * 10' iPad pro + pencil
 * Kindle paperwhite
@@ -129,5 +132,6 @@ blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3lbzdtflqc225
 * APC Power-Saving Back-UPS PRO BR900G-FR 900VA -- <small>Line-interactive UPS</small>
 * WD_BLACK P40 -- <small>NVMe external drive</small>
 * UGREEN Nexode 140W 25000mAh -- <small>Power Bank</small>
+* UGREEN Cables (Thunderbolt 4 to displayport, etc.)
 
 See other `/uses` pages here : https://uses.tech
