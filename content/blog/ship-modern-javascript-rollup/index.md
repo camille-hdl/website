@@ -4,6 +4,9 @@ date: "2020-04-07T08:10:00.000Z"
 description: preset-modules, module/nomodule pattern and other techniques to ship modern syntax to evergreen browsers while supporting IE11 with a legacy build.
 ---
 
+⚠️ This article is now (thankfully) out-of-date. If you are using babel 8, you can safely use `@babel/preset-env` [configured with](https://babeljs.io/docs/assumptions#migrating-from-babelpreset-envs-loose-and-spec-modes) `assumptions` and `bugfixes: true`, as explained [here](https://babeljs.io/docs/babel-preset-env). You don't need `preset-modules` anymore. Moreover, unless you wish to support IE11, you don't need the systemjs fallback.
+---
+
 Using ES2017 (and newer) syntax in our codebase is one thing, sending it to our users is another.  
 
 Chances are, if we have to support IE11 and/or use `@babel/preset-env` and/or ship a single bundle (even with code-splitting), we're probably sending ES5 to everybody, even if their browser is perfectly capable of understanding [classes](https://caniuse.com/#feat=es6-class) or [async/await](https://caniuse.com/#feat=mdn-javascript_operators_await).  
