@@ -3,9 +3,18 @@ title: Ship modern JavaScript with Rollup
 date: "2020-04-07T08:10:00.000Z"
 description: preset-modules, module/nomodule pattern and other techniques to ship modern syntax to evergreen browsers while supporting IE11 with a legacy build.
 ---
-
-⚠️ This article is now (thankfully) out-of-date. If you are using babel 8, you can safely use `@babel/preset-env` [configured with](https://babeljs.io/docs/assumptions#migrating-from-babelpreset-envs-loose-and-spec-modes) `assumptions` and `bugfixes: true`, as explained [here](https://babeljs.io/docs/babel-preset-env). You don't need `preset-modules` anymore. Moreover, unless you wish to support IE11, you don't need the systemjs fallback.
----
+<section class="warning">
+<p>
+    This article is now (thankfully) out-of-date.<br>
+    If you are using babel 8, you can safely use <code>@babel/preset-env</code> configured with <code>assumptions</code> and <code>bugfixes: true</code>. You don't need <code>preset-modules</code> anymore.<br>
+    Moreover, unless you wish to support IE11, you don't need the systemjs fallback.<br>
+    See:<br>
+    <ul>
+        <li><a href="https://babeljs.io/docs/assumptions#migrating-from-babelpreset-envs-loose-and-spec-modes" rel="noopener noreferrer" target="_blank">https://babeljs.io/docs/assumptions#migrating-from-babelpreset-envs-loose-and-spec-modes</a></li>
+        <li><a href="https://babeljs.io/docs/babel-preset-env" rel="noopener noreferrer" target="_blank">https://babeljs.io/docs/babel-preset-env</a></li>
+    </ul>
+</p>
+</section>
 
 Using ES2017 (and newer) syntax in our codebase is one thing, sending it to our users is another.  
 
