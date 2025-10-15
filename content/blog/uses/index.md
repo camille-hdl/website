@@ -85,7 +85,6 @@ blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3lbzdtflqc225
 * Signal
 * Discord
 * Zoom
-* Teams -- <small>when I have no other choice</small>
 
 ## Other
 * Rectangle Pro -- <small>window management</small>
@@ -98,6 +97,7 @@ blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3lbzdtflqc225
 * Backblaze -- <small>backup</small>
 * PurePaste -- <small>clear formatting from clipboard</small>
 * BetterDisplay -- <small>monitor configuration</small>
+* Ice -- <small>Menu bar configuration</small>
 
 ## Fonts
 * Merriweather -- <small>for writing</small>
