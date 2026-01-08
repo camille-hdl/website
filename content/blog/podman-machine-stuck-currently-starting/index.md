@@ -5,9 +5,13 @@ image: podman_machine.png
 blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3lbzdcvbfec25
 ---
 
-If `podman machine list` (or Podman Desktop) shows your machine "Currently starting" but it never actually starts, this might help you.  
+If `podman machine list` (or Podman Desktop) shows your machine "Currently starting" but it never actually starts, this might help you.
 
+For MacOS: 
 Find the file `~/.config/containers/podman/machine/applehv/<your podman machine name>.json` (in my case, `~/.config/containers/podman/machine/applehv/podman-machine-default.json`) and edit it.  
+
+For Windows:
+Find the file `%UserProfile%\.config\containers\podman\machine\wsl\<your podman machine name>.json` (by default this is `%UserProfile%\.config\containers\podman\machine\wsl\podman-machine-default.json`)
 
 Near the end of the file, change `"Starting":true` to `"Starting":false`.
 
