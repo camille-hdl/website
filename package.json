@@ -8,38 +8,35 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
-    "@atproto/api": "^0.13.18",
-    "core-js": "^3.31.0",
-    "gatsby": "^5.11.0",
-    "gatsby-plugin-feed": "^5.11.0",
-    "gatsby-plugin-image": "^3.11.0",
-    "gatsby-plugin-manifest": "^5.11.0",
-    "gatsby-plugin-netlify": "^5.1.0",
-    "gatsby-plugin-offline": "^6.11.0",
-    "gatsby-plugin-react-helmet": "^6.11.0",
-    "gatsby-plugin-sharp": "^5.11.0",
-    "gatsby-plugin-sitemap": "^6.11.0",
-    "gatsby-plugin-typography": "^5.11.0",
-    "gatsby-remark-copy-linked-files": "^6.11.0",
+    "@atproto/api": "^0.20.42",
+    "core-js": "^3.50.0",
+    "gatsby": "^5.16.1",
+    "gatsby-plugin-feed": "^5.16.0",
+    "gatsby-plugin-image": "^3.16.0",
+    "gatsby-plugin-manifest": "^5.16.0",
+    "gatsby-plugin-netlify": "^5.1.1",
+    "gatsby-plugin-offline": "^6.16.0",
+    "gatsby-plugin-sharp": "^5.16.0",
+    "gatsby-plugin-sitemap": "^6.16.0",
+    "gatsby-plugin-typography": "^5.16.0",
+    "gatsby-remark-copy-linked-files": "^6.16.0",
     "gatsby-remark-external-links": "0.0.4",
-    "gatsby-remark-images": "^7.11.0",
-    "gatsby-remark-prismjs": "^7.11.0",
-    "gatsby-remark-responsive-iframe": "^6.11.1",
-    "gatsby-remark-smartypants": "^6.11.0",
-    "gatsby-source-filesystem": "^5.11.0",
-    "gatsby-transformer-remark": "^6.11.0",
-    "gatsby-transformer-sharp": "^5.11.0",
-    "npm": "^9.8.0",
-    "prettier": "^3.0.0",
-    "prismjs": "^1.29.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "gatsby-remark-images": "^7.16.0",
+    "gatsby-remark-prismjs": "^7.16.0",
+    "gatsby-remark-responsive-iframe": "^6.16.0",
+    "gatsby-remark-smartypants": "^6.16.0",
+    "gatsby-source-filesystem": "^5.16.0",
+    "gatsby-transformer-remark": "^6.16.0",
+    "gatsby-transformer-sharp": "^5.16.0",
+    "prismjs": "^1.30.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-typography": "^0.16.23",
-    "sharp": "^0.33.4",
+    "sharp": "^0.35.4",
     "typeface-fira-code": "^1.1.13",
     "typeface-merriweather": "^1.1.13",
     "typeface-montserrat": "^1.1.13",
-    "typography": "^0.16.21",
+    "typography": "^0.16.24",
     "typography-theme-wordpress-2016": "^0.16.19"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
@@ -60,5 +57,27 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "devDependencies": {
+    "prettier": "^3.9.6"
+  },
+  "engines": {
+    "node": ">=24.20.0 <25"
+  },
+  "overrides": {
+    "sharp": "$sharp",
+    "@ardatan/relay-compiler": {
+      "immutable": "^4.3.9"
+    },
+    "lodash@~4.17.0": "^4.18.1",
+    "path-to-regexp@0.1.12": "0.1.13",
+    "qs@~6.15.1": "^6.16.0",
+    "serialize-javascript": "^7.1.1",
+    "gatsby": {
+      "webpack": "^5.110.3",
+      "cookie": "^0.7.2",
+      "uuid": "^11.1.1"
+    },
+    "tmp": "^0.2.7"
   }
 }
