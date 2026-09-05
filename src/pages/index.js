@@ -14,7 +14,6 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <Seo title="All posts" />
         <Bio />
         <ol style={{ listStyle: `none`, marginLeft: 0 }}>
           {posts.map(({ node }) => {
@@ -71,6 +70,8 @@ class BlogIndex extends React.Component {
 }
 
 export default BlogIndex
+
+export const Head = () => <Seo title="All posts" />
 
 
 export const pageQuery = graphql`

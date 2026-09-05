@@ -39,6 +39,7 @@ const Bio = () => {
         className="bio-avatar"
         alt={author.name}
         layout="fixed"
+        loading="eager"
         formats={["auto", "webp", "avif"]}
         style={{
           marginRight: rhythm(1 / 2),

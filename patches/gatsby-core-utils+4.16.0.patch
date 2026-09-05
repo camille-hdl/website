@@ -1,0 +1,22 @@
+diff --git a/node_modules/gatsby-core-utils/dist/fetch-remote-file.js b/node_modules/gatsby-core-utils/dist/fetch-remote-file.js
+index 2653211..ba4b3d4 100644
+--- a/node_modules/gatsby-core-utils/dist/fetch-remote-file.js
++++ b/node_modules/gatsby-core-utils/dist/fetch-remote-file.js
+@@ -3,7 +3,7 @@
+ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+ exports.__esModule = true;
+ exports.fetchRemoteFile = fetchRemoteFile;
+-var _fileType = _interopRequireDefault(require("file-type"));
++var _fileType = require("file-type");
+ var _path = _interopRequireDefault(require("path"));
+ var _fsExtra = _interopRequireDefault(require("fs-extra"));
+ var _fastq = _interopRequireDefault(require("fastq"));
+@@ -172,7 +172,7 @@ async function fetchFile({
+       // If the user did not provide an extension and we couldn't get one from remote file, try and guess one
+       if (!ext) {
+         // if this is fresh response - try to guess extension and cache result for future
+-        const filetype = await _fileType.default.fromFile(tmpFilename);
++        const filetype = await _fileType.fileTypeFromFile(tmpFilename);
+         if (filetype) {
+           ext = `.${filetype.ext}`;
+           filename += ext;

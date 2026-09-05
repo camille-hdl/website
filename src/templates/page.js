@@ -14,11 +14,6 @@ class PageTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <Seo
-          title={page.frontmatter.title}
-          lang={page.frontmatter.lang || "en"}
-          description={page.frontmatter.description || page.excerpt}
-        />
         <header>
           <h1
             style={{
@@ -53,6 +48,17 @@ class PageTemplate extends React.Component {
 }
 
 export default PageTemplate
+
+export const Head = ({ data }) => {
+  const page = data.markdownRemark
+  return (
+    <Seo
+      title={page.frontmatter.title}
+      lang={page.frontmatter.lang || "en"}
+      description={page.frontmatter.description || page.excerpt}
+    />
+  )
+}
 
 export const pageQuery = graphql`
   query BlogPostBySlug(

@@ -15,11 +15,6 @@ export default function BlogPostTemplate(props) {
     
     return (
       <Layout location={props.location} title={siteTitle}>
-        <Seo
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
-          image={post.frontmatter?.image}
-        />
         <header>
           <h1
             style={{
@@ -81,6 +76,17 @@ export default function BlogPostTemplate(props) {
         </nav>
       </Layout>
     )
+}
+
+export const Head = ({ data }) => {
+  const post = data.markdownRemark
+  return (
+    <Seo
+      title={post.frontmatter.title}
+      description={post.frontmatter.description || post.excerpt}
+      image={post.frontmatter.image}
+    />
+  )
 }
 
 export const pageQuery = graphql`

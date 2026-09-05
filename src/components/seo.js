@@ -46,12 +46,11 @@ function Seo({ description, title, children, image = null, lang = "en" }) {
   } else if (ogImageDefault) {
     ogImage = getSrc(ogImageDefault?.childImageSharp?.gatsbyImageData);
   }
-  console.log(image, ogImageDefault, ogImage);
   return (
     <>
       <html lang={lang} />
       <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
-      <meta name="description" content={"tesT"} />
+      <meta name="description" content={metaDescription} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />

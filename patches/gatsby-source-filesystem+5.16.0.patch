@@ -1,0 +1,13 @@
+diff --git a/node_modules/gatsby-source-filesystem/create-file-node-from-buffer.js b/node_modules/gatsby-source-filesystem/create-file-node-from-buffer.js
+index 57b1e44..367e130 100644
+--- a/node_modules/gatsby-source-filesystem/create-file-node-from-buffer.js
++++ b/node_modules/gatsby-source-filesystem/create-file-node-from-buffer.js
+@@ -74,7 +74,7 @@ async function processBufferNode({
+     // If the user did not provide an extension and we couldn't get
+     // one from remote file, try and guess one
+     if (typeof ext === `undefined`) {
+-      const filetype = await fileType.fromBuffer(buffer);
++      const filetype = await fileType.fileTypeFromBuffer(buffer);
+       ext = filetype ? `.${filetype.ext}` : `.bin`;
+     }
+     filename = createFilePath(path.join(pluginCacheDir, hash), name, ext);

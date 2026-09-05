@@ -5,6 +5,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -ms-text-size-adjust: 100%;
 }
+/* Keep page-heading margins inside main when metadata is rendered in Head. */
+main::before {
+  content: "";
+  display: table;
+}
 main p img, main p .gatsby-resp-image-background-image {
   border-radius: 16px;
 }
@@ -217,4 +222,3 @@ h3.resume-heading {
     opacity: 1;
   }
 } */
-
