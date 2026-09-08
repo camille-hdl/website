@@ -1,6 +1,6 @@
 ---
 title: Software and hardware I use
-date: "2025-07-04T00:12:00.000Z"
+date: "2026-09-08T00:12:00.000Z"
 description: Productivity, Software development, Note-taking...
 image: desk2022.jpg
 blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3lbzdtflqc225
@@ -23,9 +23,16 @@ blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3lbzdtflqc225
 * Adobe Fill & Sign
 * iCloud Drive
 * Reminders
-* iTerm2
+* Ghostty
 * fish -- <small>shell -- [settings](https://github.com/camille-hdl/configFiles/blob/master/config.fish)</small>
 * ChatGPT
+* LocalSend
+
+## CLI tools
+* eza
+* btop
+* tldr
+* herdr
 
 ## Research / thinking about things
 * Kindle -- <small>to ctrl-f in books</small>
