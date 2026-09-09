@@ -6,6 +6,7 @@ lang: en
 
 <nav>
     <ul>
+        <li><a href="/artifacts/">Artifacts — configuration files to download</a></li>
         <li><a href="https://github.com/camille-hdl" target="_blank" rel="noopener noreferrer">
             Github
         </a></li>

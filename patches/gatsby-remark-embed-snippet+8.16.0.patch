@@ -1,0 +1,33 @@
+diff --git a/node_modules/gatsby-remark-embed-snippet/index.js b/node_modules/gatsby-remark-embed-snippet/index.js
+--- a/node_modules/gatsby-remark-embed-snippet/index.js
++++ b/node_modules/gatsby-remark-embed-snippet/index.js
+@@ -31,7 +31,9 @@
+ };
+ module.exports = function (_ref, _temp) {
+   var markdownAST = _ref.markdownAST,
+-    markdownNode = _ref.markdownNode;
++    markdownNode = _ref.markdownNode,
++    getRemarkFileDependency = _ref.getRemarkFileDependency;
++  var dependencies = [];
+   var _ref2 = _temp === void 0 ? {} : _temp,
+     directory = _ref2.directory;
+   if (!directory) {
+@@ -82,6 +84,11 @@
+       if (!fs.existsSync(snippetPath)) {
+         throw Error("Invalid snippet specified; no such file \"" + snippetPath + "\"");
+       }
++      if (getRemarkFileDependency) {
++        dependencies.push(getRemarkFileDependency({
++          absolutePath: { eq: snippetPath }
++        }));
++      }
+       var code = fs.readFileSync(snippetPath, "utf8").trim();
+       if (lines.length) {
+         code = code.split("\n").filter(function (_, lineNumber) {
+@@ -116,5 +123,5 @@
+       node.lang = language;
+     }
+   });
+-  return markdownAST;
++  return Promise.all(dependencies).then(function () { return markdownAST; });
+ };

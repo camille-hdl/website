@@ -28,11 +28,11 @@ blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3lbzdtflqc225
 * ChatGPT
 * LocalSend
 
-## CLI tools
-* eza
-* btop
-* tldr
-* herdr
+## Homebrew packages
+
+Packages from my [Brewfile](/artifacts/homebrew/Brewfile), also available on the [artifacts page](/artifacts/).
+
+`embed:homebrew/Brewfile`
 
 ## Research / thinking about things
 * Kindle -- <small>to ctrl-f in books</small>
@@ -49,7 +49,7 @@ blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3lbzdtflqc225
 * Confluence -- <small>documentation</small>
 * Google Chrome -- <small>devtools</small>
 * Cyberduck -- <small>sftp client</small>
-* homebrew -- <small>package installer -- [presets](https://github.com/camille-hdl/configFiles/blob/master/brew.sh)</small>
+* Homebrew -- <small>package installer -- [Brewfile](/artifacts/homebrew/Brewfile)</small>
 * mailhog -- <small>local email server</small>
 * Paw -- <small>API client</small>
 * pre-commit
