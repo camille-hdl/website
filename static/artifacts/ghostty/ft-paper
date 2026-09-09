@@ -1,0 +1,37 @@
+# ft-paper — palette claire inspirée de ft.com
+# Couleurs issues de la palette officielle Financial Times (Origami o-colors).
+# Fond « paper » (#fff1e5), texte « slate ». Toutes les couleurs normales (0-7)
+# ont un contraste >= 4.8:1 sur le fond (sauf 7, gris clair par convention ANSI).
+
+background = #fff1e5
+foreground = #262a33
+
+cursor-color = #990f3d
+cursor-text = #fff1e5
+
+selection-background = #f2dfce
+selection-foreground = #262a33
+
+# Normales — tons FT assombris pour rester lisibles sur le papier
+# 0 slate / 1 claret / 2 jade foncé / 3 mandarin foncé
+palette = 0=#262a33
+palette = 1=#990f3d
+palette = 2=#00733a
+palette = 3=#99521f
+# 4 oxford / 5 velvet / 6 teal / 7 gris chaud
+palette = 4=#0f5499
+palette = 5=#593380
+palette = 6=#0d7680
+palette = 7=#b8afa5
+
+# Vives — couleurs de marque FT
+# 8 gris chaud / 9 crimson / 10 jade / 11 mandarin
+palette = 8=#8a827a
+palette = 9=#cc0000
+palette = 10=#00994d
+palette = 11=#bf6626
+# 12 oxford clair / 13 candy / 14 teal clair / 15 papier
+palette = 12=#1e6ec4
+palette = 13=#bf5f80
+palette = 14=#009aa8
+palette = 15=#fff9f2

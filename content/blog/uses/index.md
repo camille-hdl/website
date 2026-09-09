@@ -23,7 +23,7 @@ blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3lbzdtflqc225
 * Adobe Fill & Sign
 * iCloud Drive
 * Reminders
-* Ghostty
+* Ghostty -- <small>[ft-paper theme](/artifacts/ghostty/ft-paper)</small>
 * fish -- <small>shell -- [settings](https://github.com/camille-hdl/configFiles/blob/master/config.fish)</small>
 * ChatGPT
 * LocalSend
