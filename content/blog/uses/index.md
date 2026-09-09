@@ -28,11 +28,13 @@ blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3lbzdtflqc225
 * ChatGPT
 * LocalSend
 
-## Homebrew packages
+## CLI tools
+* eza
+* btop
+* tldr
+* herdr
 
-Packages from my [Brewfile](/artifacts/homebrew/Brewfile), also available on the [artifacts page](/artifacts/).
-
-`embed:homebrew/Brewfile`
+See my [Artifacts page](/artifacts/) or [download the Brewfile](/artifacts/homebrew/Brewfile).
 
 ## Research / thinking about things
 * Kindle -- <small>to ctrl-f in books</small>

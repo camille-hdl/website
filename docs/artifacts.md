@@ -25,6 +25,6 @@ an article needs a frozen example.
 article HTML. The existing `postinstall` command applies the patch.
 
 When upgrading the plugin, build once, change only the Brewfile, and build again
-without running `gatsby clean`. Both `/artifacts/` and `/uses/` must show the new
+without running `gatsby clean`. The excerpt on `/artifacts/` must show the new
 content, and the downloaded file must match the source. Restore the temporary
 change and rebuild afterward.
