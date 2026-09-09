@@ -32,7 +32,7 @@ blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3lbzdtflqc225
 * eza
 * btop
 * tldr
-* herdr
+* herdr -- <small>[ft-paper theme](/artifacts/herdr/ft-paper.toml)</small>
 
 See my [Artifacts page](/artifacts/) or [download the Brewfile](/artifacts/homebrew/Brewfile).
 

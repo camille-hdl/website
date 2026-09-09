@@ -1,0 +1,58 @@
+# ft-paper for Herdr — a light UI to match the ft-paper terminal theme.
+#
+# Herdr has no theme files: it only takes a built-in theme name plus token
+# overrides. Paste these sections into ~/.config/herdr/config.toml, then run
+# `herdr server reload-config` (or press prefix+q).
+#
+# Pair it with the ft-paper terminal theme, available at
+# https://camillehdl.dev/artifacts/ghostty/ft-paper — the "terminal" base theme
+# below takes its pane background and ANSI palette from the host terminal.
+
+[theme]
+# "terminal" keeps the pane background and ANSI palette of the host terminal.
+name = "terminal"
+
+# The overrides below are tuned for the light ft-paper palette, so don't let
+# Herdr swap themes with the host's light/dark appearance.
+auto_switch = false
+
+[theme.custom]
+# The "terminal" base theme only inherits background/foreground and the 16 ANSI
+# colors; every other UI token still comes from a dark built-in palette, which is
+# why menus, popups and the tab bar are unreadable on ft-paper's paper ground.
+# These map Herdr's tokens onto the ft-paper palette.
+
+# Paper surfaces, stacking from the #fff1e5 pane background downwards.
+# panel_bg is the tab bar / popup ground, and doubles both as the active tab's
+# text color over the accent background and as the sidebar's section rules, so
+# it has to stay light but one step deeper than sidebar_bg.
+panel_bg      = "#efdcca"
+sidebar_bg    = "#f7e7d8"
+surface_dim   = "#f7e7d8"
+surface0      = "#f2dfce"
+surface1      = "#efdcca"
+active_row_bg = "#f2dfce"
+selection_bg  = "#efdcca"
+
+# Slate ink. overlay0/overlay1 are dim *text* (sidebar section labels, hints),
+# not separators, so they are darkened versions of the palette's dim foreground
+# rather than the muted #b8afa5, which only reaches 1.5:1 on paper.
+text     = "#262a33"
+subtext0 = "#4a4f59"
+overlay1 = "#6b6259"  # ~4.9:1 on paper
+overlay0 = "#7d746b"  # ~3.8:1 on paper
+
+# ft.com claret accent, plus status colors dark enough to read on paper.
+accent = "#990f3d"
+red    = "#cc0000"
+green  = "#00733a"
+yellow = "#99521f"
+peach  = "#bf6626"
+blue   = "#0f5499"
+teal   = "#0d7680"
+mauve  = "#593380"
+
+# Merge this key into your existing [ui] section if you already have one.
+[ui]
+# Same claret as the terminal cursor, used for status indicators and the sidebar.
+accent = "#990f3d"
