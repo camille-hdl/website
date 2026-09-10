@@ -104,3 +104,32 @@ test(
     )
   }
 )
+
+test("External links keep their target and rel attributes", () => {
+  const externalLinks = require("../plugins/gatsby-remark-external-links")
+  const link = (url) => ({ type: "link", url, children: [] })
+  const markdownAST = {
+    type: "root",
+    children: [
+      link("https://example.com/post"),
+      link("mailto:hello@example.com"),
+      link("/internal"),
+      link("#anchor"),
+      { type: "definition", identifier: "ref", url: "https://example.com" },
+      { type: "linkReference", identifier: "ref", children: [] },
+    ],
+  }
+  externalLinks(
+    { markdownAST },
+    { target: `_blank`, rel: [`noopener`, `noreferrer`] }
+  )
+  const properties = markdownAST.children.map(
+    (node) => node.data && node.data.hProperties
+  )
+  const external = { target: `_blank`, rel: [`noopener`, `noreferrer`] }
+  assert.deepEqual(properties[0], external, "absolute URL")
+  assert.deepEqual(properties[1], external, "mailto URL")
+  assert.equal(properties[2], undefined, "root-relative URL stays untouched")
+  assert.equal(properties[3], undefined, "anchor stays untouched")
+  assert.deepEqual(properties[5], external, "link reference follows definition")
+})

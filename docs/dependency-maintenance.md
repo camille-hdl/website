@@ -1,6 +1,100 @@
-# Dependency maintenance — 2026-09-05
+# Dependency maintenance
 
-## Changes
+## 2026-09-10
+
+### Changes
+
+- Refreshed the lockfile with `npm update`. React and React DOM moved to
+  19.3.0; the rest of the tree took the newest releases its existing ranges
+  allow. `npm outdated` is empty afterwards.
+- Replaced `gatsby-remark-external-links`, last published in 2019, with a local
+  plugin in `plugins/gatsby-remark-external-links`. It has no dependencies,
+  where the published one pulled in `babel-runtime` and two abandoned unist
+  helpers.
+- Replaced the three abandoned `typeface-*` packages by vendoring their
+  `@font-face` rules and font files into `src/fonts`. Only the weights the site
+  renders are kept — Merriweather 400/700/900 with italics, Montserrat
+  400/700/900, Fira Code 400/700 — so the unused declarations those packages
+  shipped are gone.
+
+### Preserving the external-link markup
+
+The local plugin reproduces the original exactly, including link references and
+the `is-absolute-url@2` rule it resolved, which is lowercase-only and leaves
+protocol-relative `//host` URLs alone. Run side by side with the published
+plugin over 19 URL shapes and four option shapes, the two produce identical
+syntax trees. The built HTML keeps all 193 `target` and 177 `rel` attributes,
+and every page's body markup is byte-identical to the previous build.
+
+### Why the fonts are vendored rather than moved to Fontsource
+
+Fontsource is the successor the Typeface project points to, so it was measured
+first. It does not preserve this site's rendering:
+
+| Approach | Result against the reference screenshots |
+| --- | ---: |
+| Fontsource for all three families | 6 400–301 241 pixels differ; the desktop home page shortens from 8142px to 7984px |
+| Fontsource for Montserrat and Fira Code only | 1–5 pixels differ |
+| Vendored files, `local()` hints dropped | 1–2 338 pixels differ, no reflow |
+| Vendored declarations verbatim | 0 pixels differ |
+
+The `typeface-*` stylesheets list `local()` sources before their web fonts, so a
+machine with these families installed renders the installed copy. That is why
+dropping the hints still moves pixels, and it means the reference screenshots
+describe this machine: a visitor without Merriweather installed already sees the
+packaged web font. Vendoring the declarations verbatim keeps both paths exactly
+as they were. The font files are frozen either way, since the packages that
+supplied them are no longer maintained.
+
+### Security results
+
+`npm audit` reports zero vulnerabilities before and after, including build
+dependencies. No direct dependency is deprecated. The deprecation warnings
+`npm ci` prints — `eslint@7`, `core-js@2`, `glob@7`, `rimraf@3`, `@hapi/joi`,
+`@builder.io/partytown` and others — all come from `gatsby@5.16.1` and
+`gatsby-plugin-offline@6.16.0`, which are the current releases. They cannot be
+resolved from this repository.
+
+### Kept deliberately
+
+- `typography` and `typography-theme-wordpress-2016` are unmaintained but carry
+  no advisories. They are woven through every component via `rhythm()` and are
+  pinned by an exact-CSS snapshot test. Replacing them is a redesign, not
+  maintenance.
+- The overrides and the four patches are unchanged. Every patch target still
+  resolves to the version its patch names, so `postinstall` still succeeds.
+
+### Node
+
+Unchanged, as requested: `engines` still requires `>=24.20.0 <25` and
+`.node-version` still selects 24.20.0 for Netlify. This pass was validated on
+the local Node 24.9.0, which makes npm print an `EBADENGINE` warning; npm is not
+in engine-strict mode, so installs and builds proceed normally.
+
+### Validation
+
+Run on Node 24.9.0:
+
+- `npm ci` from an empty `node_modules` applied all four patches.
+- All five dependency compatibility tests passed, including a new one
+  covering the local external-links plugin.
+- A clean production build generated 49 pages.
+- All 16 Playwright tests passed, including the twelve `maxDiffPixels: 0`
+  screenshot comparisons and the generated Typography CSS comparison. No
+  reference screenshot was regenerated.
+- Every `@font-face` URL in the built stylesheet resolves to an emitted file
+  (28 of 28), so the vendored fonts are served rather than silently falling
+  back to a system family.
+- The development server compiled and served the site. Its GraphQL endpoint
+  returned 44 Markdown records whose rendered HTML carries the same 193
+  `target` and 177 `rel` attributes as the production build, so the local
+  plugin behaves identically on that code path.
+- `npm audit` reports zero vulnerabilities; `npm outdated` is empty and
+  `npm ls --depth=0` succeeds.
+
+## 2026-09-05
+
+### Changes
 
 - Updated Gatsby to 5.16.1 and its plugins to their current stable releases.
 - Updated the Bluesky SDK to 0.20.42, Sharp to 0.35.4, Prism to 1.30.0,
@@ -16,7 +110,7 @@
   moved Prettier to development dependencies.
 - Regenerated `package-lock.json` with npm 11, using lockfile format 3.
 
-## Security results
+### Security results
 
 Results from `npm audit`, including dependencies used by the build tools:
 
@@ -32,7 +126,7 @@ The first security pass left 32 moderate findings from three advisories;
 this update also resolves those. These counts describe affected packages,
 including build tools, in the npm advisory database at the time of the check.
 
-## Why the overrides exist
+### Why the overrides exist
 
 Gatsby and some of its dependencies constrain versions below the security
 fixes. Keep the overrides in `package.json` until the parent packages accept
@@ -52,7 +146,7 @@ an override or updating these dependencies again.
 | Gatsby's `uuid` → 11.1.1+ | Apply buffer bounds checks while retaining a CommonJS-compatible release. |
 | `tmp` → 0.2.7+ | Fix temporary-file path traversal, including the CLI editor's older copy. |
 
-## Compatibility adaptations
+### Compatibility adaptations
 
 The final three advisories required upgrading consumers together with their
 dependencies:
@@ -74,7 +168,7 @@ suite. The 2.8.5 and 2.9.4 native bindings crashed during local Node 24/macOS
 validation; 2.5.3 passed the configuration compilation and clean site build.
 Revalidate both before changing this pin.
 
-## Rendering preservation
+### Rendering preservation
 
 Browser testing exposed invalid document metadata inside the page body,
 which caused React hydration errors even in the pre-upgrade build. Each page
@@ -89,7 +183,7 @@ articles with comments, images and code, at desktop and mobile sizes. All
 comparisons pass with `maxDiffPixels: 0`; the generated Typography CSS also
 matches the original text exactly.
 
-## Validation
+### Validation
 
 - A fresh `npm ci` succeeded under Node 24.20.0 and applied all three patches.
 - All four dependency compatibility tests passed after that fresh install.

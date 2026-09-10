@@ -76,7 +76,8 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-external-links`,
+            // Local plugin: the published one was abandoned in 2019.
+            resolve: require.resolve(`./plugins/gatsby-remark-external-links`),
             options: {
               target: `_blank`,
               rel: [`noopener`, `noreferrer`]

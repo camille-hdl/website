@@ -1,0 +1,30 @@
+/* fira-code: vendored verbatim from typeface-fira-code 1.1.13 (latin subset).
+   The published package was abandoned; these declarations and font
+   files are byte-for-byte the ones it shipped, so rendering is
+   unchanged. Only the weights this site uses are kept. */
+
+/* fira-code-400normal - latin */
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Fira Code Regular '),
+    local('Fira Code-Regular'),
+    url('./files/fira-code-latin-400.woff2') format('woff2'), /* Super Modern Browsers */
+    url('./files/fira-code-latin-400.woff') format('woff'); /* Modern Browsers */
+}
+
+/* fira-code-700normal - latin */
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Fira Code Bold '),
+    local('Fira Code-Bold'),
+    url('./files/fira-code-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+    url('./files/fira-code-latin-700.woff') format('woff'); /* Modern Browsers */
+}
