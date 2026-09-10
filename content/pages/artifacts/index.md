@@ -26,8 +26,6 @@ Herdr has no theme files: it reads a built-in theme name plus token overrides fr
 
 The `terminal` base theme takes the pane background and the ANSI palette from the host terminal, so pair this with the Ghostty theme above.
 
-`embed:herdr/ft-paper.toml`
-
 ## btop: ft-paper
 
 A matching theme for [btop](https://github.com/aristocratos/btop), the resource monitor. It ships a good number of light themes, but none on this palette, and its default one washes out on the paper background.
@@ -52,5 +50,3 @@ curl --fail --location \
   --output Brewfile
 brew bundle install --file=./Brewfile
 ```
-
-`embed:homebrew/Brewfile`
