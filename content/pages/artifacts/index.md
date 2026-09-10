@@ -6,6 +6,10 @@ description: Configuration files and tools I use, ready to download and reuse.
 
 Configuration files from [my setup](/uses/), ready to download and reuse.
 
+## ft-paper
+
+The palette the themes below are built from, and the one this site uses: [see every swatch](/palette/), with its role, hex, rgb and contrast ratio.
+
 ## Ghostty: ft-paper
 
 A light terminal theme inspired by the Financial Times, with a paper background and slate text.

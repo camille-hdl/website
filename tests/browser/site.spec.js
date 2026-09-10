@@ -36,6 +36,7 @@ const pages = [
   ["comments", "/uninstall-podman-desktop-macos/"],
   ["images", "/cooler-master-mk730-keyboard-on-macos/"],
   ["code", "/ship-modern-javascript-rollup/"],
+  ["palette", "/palette/"],
 ]
 
 for (const [name, path] of pages) {

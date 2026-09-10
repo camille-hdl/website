@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 
 class PageTemplate extends React.Component {
   render() {
@@ -24,8 +24,8 @@ class PageTemplate extends React.Component {
             {page.frontmatter.title}
           </h1>
           <p
+            className="post-date"
             style={{
-              ...scale(-1 / 5),
               display: `block`,
               marginBottom: rhythm(1),
             }}

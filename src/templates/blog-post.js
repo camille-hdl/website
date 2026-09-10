@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 import BlueskyComments from "../components/BlueskyComments"
 
 export default function BlogPostTemplate(props) {
@@ -25,8 +25,8 @@ export default function BlogPostTemplate(props) {
             {post.frontmatter.title}
           </h1>
           <p
+            className="post-date"
             style={{
-              ...scale(-1 / 5),
               display: `block`,
               marginBottom: rhythm(1),
             }}

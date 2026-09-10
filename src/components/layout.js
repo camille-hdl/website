@@ -2,7 +2,11 @@ import React from "react"
 import { Link } from "gatsby"
 import "../layout.css"
 
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
+
+// The blog title keeps the exact color it has always rendered at, independent
+// of the body ink.
+const mastheadColor = `hsla(0,0%,0%,0.9)`
 
 class Layout extends React.Component {
   render() {
@@ -13,8 +17,8 @@ class Layout extends React.Component {
     if (location.pathname === rootPath) {
       header = (
         <h1
+          className="site-title"
           style={{
-            ...scale(1.5),
             marginBottom: rhythm(1.5),
             marginTop: 0,
           }}
@@ -23,7 +27,7 @@ class Layout extends React.Component {
             style={{
               boxShadow: `none`,
               textDecoration: `none`,
-              color: `inherit`,
+              color: mastheadColor,
             }}
             to={`/`}
           >
@@ -43,7 +47,7 @@ class Layout extends React.Component {
             style={{
               boxShadow: `none`,
               textDecoration: `none`,
-              color: `inherit`,
+              color: mastheadColor,
             }}
             to={`/`}
           >
@@ -54,10 +58,13 @@ class Layout extends React.Component {
     }
     return (
       <div
+        className="site-container"
         style={{
           marginLeft: `auto`,
           marginRight: `auto`,
-          maxWidth: rhythm(24),
+          // A measure, not a rhythm multiple: ~68 characters of Merriweather,
+          // which is where ft.com sets its body copy.
+          maxWidth: `38rem`,
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
