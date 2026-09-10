@@ -28,6 +28,16 @@ The `terminal` base theme takes the pane background and the ANSI palette from th
 
 `embed:herdr/ft-paper.toml`
 
+## btop: ft-paper
+
+A matching theme for [btop](https://github.com/aristocratos/btop), the resource monitor. It ships a good number of light themes, but none on this palette, and its default one washes out on the paper background.
+
+<a href="/artifacts/btop/ft-paper.theme" download="ft-paper.theme">Download the ft-paper theme for btop</a>
+
+Save it as `~/.config/btop/themes/ft-paper.theme`, then set `color_theme = "ft-paper"` in `~/.config/btop/btop.conf` — or pick it from Options with `Esc`, since btop rewrites its configuration when it exits.
+
+Every color rendered as text or as graph glyphs clears a 4.5:1 contrast ratio on the paper background, apart from the deliberately faint free-memory meter and inactive text.
+
 ## Homebrew
 
 My selection of packages for macOS.

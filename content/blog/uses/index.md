@@ -30,7 +30,7 @@ blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3lbzdtflqc225
 
 ## CLI tools
 * eza
-* btop
+* btop -- <small>[ft-paper theme](/artifacts/btop/ft-paper.theme)</small>
 * tldr
 * herdr -- <small>[ft-paper theme](/artifacts/herdr/ft-paper.toml)</small>
 

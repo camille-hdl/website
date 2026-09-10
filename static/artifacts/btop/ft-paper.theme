@@ -1,0 +1,105 @@
+# ft-paper — palette claire inspirée de ft.com, accordée au thème Ghostty ft-paper.
+# Couleurs issues de la palette officielle Financial Times (Origami o-colors).
+# Fond « paper » (#fff1e5), texte « slate », accent « claret ».
+# Tout ce qui est rendu en texte ou en glyphes de graphe garde un contraste
+# >= 4.5:1 sur le papier ; les tons clairs ne servent que de fonds ou de filets.
+
+# Fond principal
+theme[main_bg]="#fff1e5"
+
+# Texte principal
+theme[main_fg]="#262a33"
+
+# Titre des boîtes
+theme[title]="#262a33"
+
+# Surbrillance des raccourcis clavier — claret FT, comme le curseur du terminal
+theme[hi_fg]="#990f3d"
+
+# Fond de la ligne sélectionnée dans la boîte des processus
+theme[selected_bg]="#f2dfce"
+
+# Texte de la ligne sélectionnée
+theme[selected_fg]="#262a33"
+
+# Texte inactif / désactivé — volontairement estompé (~3.8:1)
+theme[inactive_fg]="#7d746b"
+
+# Texte superposé aux graphes (uptime, échelle réseau)
+theme[graph_text]="#6b6259"
+
+# Fond des jauges de pourcentage
+theme[meter_bg]="#efdcca"
+
+# Couleurs diverses de la boîte processus (mini-graphes CPU, mémoire détaillée, statut)
+theme[proc_misc]="#00733a"
+
+# Contour de la boîte CPU — oxford
+theme[cpu_box]="#0f5499"
+
+# Contour de la boîte mémoire/disques — jade foncé
+theme[mem_box]="#00733a"
+
+# Contour de la boîte réseau — velvet
+theme[net_box]="#593380"
+
+# Contour de la boîte processus — teal
+theme[proc_box]="#0d7680"
+
+# Filets de séparation et petites boîtes — gris chaud
+theme[div_line]="#b8afa5"
+
+# Graphe de température
+theme[temp_start]="#0f5499"
+theme[temp_mid]="#99521f"
+theme[temp_end]="#cc0000"
+
+# Graphe CPU
+theme[cpu_start]="#0d7680"
+theme[cpu_mid]="#99521f"
+theme[cpu_end]="#cc0000"
+
+# Jauge mémoire/disque libre
+theme[free_start]="#efdcca"
+theme[free_mid]="#b8afa5"
+theme[free_end]="#00733a"
+
+# Jauge mémoire/disque en cache
+theme[cached_start]="#1e6ec4"
+theme[cached_mid]="#0f5499"
+theme[cached_end]="#0d7680"
+
+# Jauge mémoire/disque disponible
+theme[available_start]="#99521f"
+theme[available_mid]="#990f3d"
+theme[available_end]="#cc0000"
+
+# Jauge mémoire/disque utilisé
+theme[used_start]="#00733a"
+theme[used_mid]="#99521f"
+theme[used_end]="#cc0000"
+
+# Graphe de téléchargement
+theme[download_start]="#1e6ec4"
+theme[download_mid]="#0f5499"
+theme[download_end]="#0d7680"
+
+# Graphe d'envoi
+theme[upload_start]="#990f3d"
+theme[upload_mid]="#593380"
+theme[upload_end]="#0f5499"
+
+# Dégradé des colonnes threads / mém / CPU de la boîte processus
+theme[process_start]="#00733a"
+theme[process_mid]="#99521f"
+theme[process_end]="#cc0000"
+
+# Bandeaux de la boîte processus
+theme[proc_pause_bg]="#cc0000"
+theme[proc_follow_bg]="#0f5499"
+theme[proc_banner_bg]="#593380"
+theme[proc_banner_fg]="#fff1e5"
+
+# Processus suivi
+theme[followed_bg]="#0f5499"
+theme[followed_fg]="#fff1e5"
