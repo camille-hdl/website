@@ -1,0 +1,178 @@
+.sheet {
+  font-family: Montserrat, sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  margin-bottom: 3rem;
+}
+
+.heading {
+  margin: 2rem 0 2.4rem;
+}
+
+.eyebrow {
+  color: var(--claret);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin: 0 0 0.4rem;
+}
+
+.heading h1 {
+  font-size: 2.2rem;
+  margin: 0 0 1.2rem;
+}
+
+.contents {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.2rem;
+  font-size: 0.72rem;
+}
+
+.contents a:focus-visible {
+  outline: 2px solid var(--oxford);
+  outline-offset: 4px;
+}
+
+.section {
+  margin: 0 0 2.4rem;
+}
+
+.section h2 {
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--ink);
+  scroll-margin-top: 1rem;
+}
+
+.section h3 {
+  font-size: 0.8rem;
+  margin: 1.5rem 0 0.6rem;
+}
+
+.sheet kbd {
+  display: inline-block;
+  font-family: "Fira Code", Consolas, Monaco, monospace;
+  font-size: 0.68rem;
+  font-weight: 400;
+  line-height: 1.6;
+  white-space: nowrap;
+  color: var(--ink);
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  box-shadow: 0 1px 0 var(--rule);
+  padding: 0.05rem 0.3rem;
+}
+
+.keys {
+  display: inline-block;
+}
+
+.then {
+  color: var(--ink-muted);
+  font-size: 0.65rem;
+}
+
+.shortcuts {
+  margin: 0 0 0.65rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.6rem 1rem;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--surface-2);
+}
+
+.row dt {
+  font-weight: 400;
+}
+
+.row dd {
+  margin: 0;
+  text-align: right;
+}
+
+.note,
+.detail {
+  color: var(--ink-muted);
+  font-size: 0.7rem;
+  line-height: 1.6;
+}
+
+.note {
+  margin: 0.6rem 0;
+}
+
+.splits {
+  width: 100%;
+  margin: 0.8rem 0;
+  font-size: inherit;
+}
+
+.splits th,
+.splits td {
+  padding: 0.65rem 0.4rem;
+  border-color: var(--surface-2);
+  vertical-align: top;
+}
+
+.splits th:first-child {
+  padding-left: 0;
+}
+
+.splits thead th {
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+}
+
+.splits tbody th {
+  font-weight: 400;
+}
+
+.detail {
+  display: block;
+  margin-top: 0.15rem;
+}
+
+.alias h3 {
+  margin-bottom: 0.55rem;
+}
+
+.alias code,
+.note code {
+  font-family: "Fira Code", Consolas, Monaco, monospace;
+}
+
+.alias pre {
+  background: var(--paper-raised);
+  border: 1px solid var(--surface-2);
+  border-left: 2px solid var(--claret);
+  border-radius: 0 4px 4px 0;
+  font-size: 0.72rem;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0.8rem 1rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+@media only screen and (max-width: 480px) {
+  .row {
+    column-gap: 0.6rem;
+  }
+
+  .splits .keys {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .alias pre {
+    padding: 0.65rem;
+  }
+}
