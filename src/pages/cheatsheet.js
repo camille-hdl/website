@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -74,6 +74,10 @@ const CheatsheetPage = ({ data, location }) => (
           <a href="#fish">Alias fish</a>
           <a href="#fzf">fzf</a>
         </nav>
+        <p className={styles.crossref}>
+          Sur la machine Omarchy :{" "}
+          <Link to="/cheatsheet-omarchy/">cheat sheet Omarchy</Link>.
+        </p>
       </header>
 
       <section className={styles.section} aria-labelledby="herdr">

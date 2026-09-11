@@ -161,6 +161,85 @@
   overflow-wrap: anywhere;
 }
 
+.crossref {
+  color: var(--ink-muted);
+  font-size: 0.72rem;
+  margin: 0.9rem 0 0;
+}
+
+/* Callouts carry the handful of facts that contradict what the tool itself
+   says on screen, so they have to stop the eye the way a note does not. */
+.callout {
+  background: var(--paper-raised);
+  border: 1px solid var(--surface-2);
+  border-left: 2px solid var(--claret);
+  border-radius: 0 4px 4px 0;
+  color: var(--ink-2);
+  font-size: 0.72rem;
+  line-height: 1.7;
+  margin: 0.9rem 0;
+  padding: 0.7rem 0.9rem;
+}
+
+.legend {
+  color: var(--ink-muted);
+  font-size: 0.7rem;
+  line-height: 1.6;
+  margin: 0.9rem 0 1.2rem;
+}
+
+.swatchClaret,
+.swatchOxford {
+  font-weight: 700;
+}
+
+.swatchClaret {
+  color: var(--claret);
+}
+
+.swatchOxford {
+  color: var(--oxford);
+}
+
+/* Two schemas fit the measure on a laptop; one fits a phone. */
+.schemas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1.1rem 1.4rem;
+  margin: 1rem 0 1.4rem;
+}
+
+.schema {
+  margin: 0;
+}
+
+.diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.diagram text {
+  font-family: Montserrat, sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.schema figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.2rem 0.6rem;
+  margin-top: 0.45rem;
+}
+
+.schemaAction {
+  color: var(--ink-2);
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
 @media only screen and (max-width: 480px) {
   .row {
     column-gap: 0.6rem;
@@ -172,7 +251,23 @@
     align-items: flex-start;
   }
 
+  /* Three columns of key combinations are wider than a phone. Tightening the
+     cells and letting a long combination break keeps the table on screen
+     rather than putting the page on a horizontal scrollbar. */
+  .splits th,
+  .splits td {
+    padding: 0.55rem 0.3rem;
+  }
+
+  .splits kbd {
+    white-space: normal;
+  }
+
   .alias pre {
     padding: 0.65rem;
+  }
+
+  .schemas {
+    gap: 1rem;
   }
 }
