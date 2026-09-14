@@ -511,8 +511,11 @@ const CheatsheetOmarchyPage = ({ data, location }) => (
             <tr>
               <th scope="row">Neovim</th>
               <td>
-                Configuration maison : <Keys keys={["⌘ P"]} />,{" "}
-                <Keys keys={["Espace", "f", "f"]} sequential />
+                LazyVim, thème ft-paper, <Keys keys={["("]} /> et{" "}
+                <Keys keys={[")"]} /> en alias de <kbd>[</kbd> et <kbd>]</kbd>
+                <span className={styles.detail}>
+                  Seul écart avec l’amont, pour un clavier AZERTY
+                </span>
               </td>
               <td>
                 LazyVim livré par Omarchy, aucun keymap personnel
@@ -1122,10 +1125,12 @@ const CheatsheetOmarchyPage = ({ data, location }) => (
       <section className={styles.section} aria-labelledby="neovim">
         <h2 id="neovim">Neovim</h2>
         <p className={styles.callout}>
-          <strong>Ce n’est pas la configuration du Mac.</strong> Ici, LazyVim
-          tel que livré par Omarchy, sans aucun keymap personnel : les
-          raccourcis sont ceux de LazyVim en amont, leader <kbd>Espace</kbd>.
-          Les raccourcis maison des projets Arko, eux, ne sont que sur le Mac.
+          Les deux machines tournent sous LazyVim depuis le 14 septembre 2026.
+          Ici, celui livré par Omarchy, sans aucun keymap personnel : les
+          raccourcis sont ceux de LazyVim en amont, leader <kbd>Espace</kbd>. Le
+          Mac y ajoute le thème ft-paper et les alias <kbd>(</kbd> et{" "}
+          <kbd>)</kbd>. Les raccourcis maison des projets Arko, eux, ne sont que
+          sur le Mac.
         </p>
         <p className={styles.note}>
           Deux réglages locaux seulement : numérotation absolue et formatage
