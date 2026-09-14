@@ -29,6 +29,25 @@ const contrastRatio = (hex, against) => {
 
 const INK = "#262a33"
 
+/**
+ * Some fills cannot come from the palette: a diff or search background needs a
+ * desaturated wash, and a bright tone laid flat behind text buries it. Those
+ * fills are mixed from a palette color over paper, and this module records the
+ * formula rather than a pasted hex — same rule as `rgb` and `contrast`, so a
+ * derived fill can never drift from the color it claims to come from.
+ */
+const blend = (hex, alpha, over = PAPER) => {
+  const source = toRgb(hex)
+  const base = toRgb(over)
+  return `#${source
+    .map((channel, i) =>
+      Math.round(channel * alpha + base[i] * (1 - alpha))
+        .toString(16)
+        .padStart(2, "0")
+    )
+    .join("")}`
+}
+
 const round = (n) => Math.round(n * 100) / 100
 
 /**
@@ -91,6 +110,14 @@ export const groups = [
     { role: "crimson", name: "Crimson", hex: "#cc0000", ansi: 9, note: "Error" },
     { role: "warm-grey", name: "Warm grey", hex: "#8a827a", ansi: 8, note: "Dim glyphs" },
   ]),
+  group("Derived fills", "Mixed from the palette, not part of it. A diff or search background has to sit behind text, which rules out the bright tones at full strength; each of these is one of them washed over paper at a fixed alpha. Every figure is how well body ink reads on the result.", [
+    { role: "fill-add", name: "Add", hex: blend("#00994d", 0.2), ansi: null, note: "Added line — jade-bright at 20% over paper" },
+    { role: "fill-remove", name: "Remove", hex: blend("#cc0000", 0.16), ansi: null, note: "Removed line — crimson at 16% over paper" },
+    { role: "fill-change", name: "Change", hex: blend("#1e6ec4", 0.16), ansi: null, note: "Changed line — oxford-bright at 16% over paper" },
+    { role: "fill-change-focus", name: "Change focus", hex: blend("#1e6ec4", 0.32), ansi: null, note: "The part that actually changed, inside a changed line — oxford-bright at 32% over paper" },
+    { role: "fill-match", name: "Match", hex: blend("#bf6626", 0.34), ansi: null, note: "Every hit of a search — mandarin-bright at 34% over paper" },
+    { role: "fill-target", name: "Target", hex: blend("#990f3d", 0.4), ansi: null, note: "The one hit being jumped to — claret at 40% over paper" },
+  ], { surfaces: true }),
 ]
 
 export const asJson = () => ({

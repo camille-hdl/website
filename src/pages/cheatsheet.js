@@ -30,36 +30,31 @@ const Shortcuts = ({ entries }) => (
   </dl>
 )
 
-const globalShortcuts = [
-  ["Ouvrir un fichier · projets Arko", ["⌘ P"]],
-  ["Arborescence", ["⌘ E"]],
-  ["Arborescence · autre raccourci", ["⌘ B"]],
-  ["Palette de commandes", ["⌘ ⇧ P"]],
-  ["Rechercher du texte · projets Arko", ["⌘ ⇧ F"]],
-  ["Ouvrir, focaliser ou masquer le terminal", ["Ctrl + `"]],
-  ["Enregistrer", ["⌘ S"]],
+const essentialShortcuts = [
+  ["Trouver un fichier dans le projet", ["Espace", "Espace"]],
+  ["Chercher du texte dans le projet", ["Espace", "/"]],
+  ["Arborescence du projet", ["Espace", "e"]],
+  ["Rechercher et remplacer dans le projet", ["Espace", "s", "r"]],
+  ["Tampons ouverts", ["Espace", "f", "b"]],
+  ["Fermer le tampon courant", ["Espace", "b", "d"]],
+  ["Enregistrer", ["Ctrl + s"]],
+  ["Tout quitter", ["Espace", "q", "q"]],
+  ["Raccourcis actifs dans ce tampon", ["Espace", "?"]],
 ]
 
-const leaderShortcuts = [
-  ["Fichiers · projets Arko", ["Espace", "f", "f"]],
-  ["Texte · projets Arko", ["Espace", "f", "g"]],
-  ["Texte · projet du fichier courant", ["Espace", "f", "p"]],
-  ["Marqueurs TODO / FIXME · Arko", ["Espace", "f", "t"]],
-  ["Buffers ouverts", ["Espace", "f", "b"]],
-  ["Arborescence", ["Espace", "e"]],
-  ["Arborescence · autre raccourci", ["Espace", "b"]],
-  ["Ouvrir, focaliser ou masquer le terminal", ["Espace", "t"]],
-  ["Palette de commandes", ["Espace", "p"]],
-  ["Rechercher un raccourci", ["Espace", "?"]],
+const navigationShortcuts = [
+  ["Bloc git suivant · précédent", [")", "h"]],
+  ["Diagnostic suivant · précédent", [")", "d"]],
+  ["Tampon suivant · précédent", [")", "b"]],
 ]
 
 const lspShortcuts = [
   ["Définition", ["g", "d"]],
-  ["Références", ["g", "r", "r"]],
+  ["Références", ["g", "r"]],
   ["Documentation du symbole", ["K"]],
-  ["Renommer le symbole", ["Espace", "r", "n"]],
+  ["Renommer le symbole", ["Espace", "c", "r"]],
   ["Actions de code", ["Espace", "c", "a"]],
-  ["Diagnostic sous le curseur", ["Espace", "d"]],
+  ["Diagnostic de la ligne", ["Espace", "c", "d"]],
 ]
 
 const CheatsheetPage = ({ data, location }) => (
@@ -128,30 +123,31 @@ const CheatsheetPage = ({ data, location }) => (
 
       <section className={styles.section} aria-labelledby="neovim">
         <h2 id="neovim">Neovim</h2>
-        <h3>Accès direct</h3>
         <p className={styles.note}>
-          Modes normal, insertion et terminal. <kbd>⌘</kbd> Commande ·{" "}
-          <kbd>⇧</kbd> Maj.
+          Installation LazyVim par défaut, leader <kbd>Espace</kbd>. Appuyer sur{" "}
+          <kbd>Espace</kbd> seul ouvre un menu qui liste la suite&nbsp;: rien
+          n’est à mémoriser, cette liste ne sert qu’au démarrage.
         </p>
-        <Shortcuts entries={globalShortcuts} />
 
-        <h3>
-          Leader <kbd>Espace</kbd>
-        </h3>
+        <h3>L’essentiel</h3>
         <p className={styles.note}>Mode normal · touches successives.</p>
-        <Shortcuts entries={leaderShortcuts} />
+        <Shortcuts entries={essentialShortcuts} />
+
+        <h3>Aller au suivant, au précédent</h3>
+        <p className={styles.note}>
+          Vim utilise la paire <kbd>[</kbd> et <kbd>]</kbd> pour
+          «&nbsp;précédent&nbsp;» et «&nbsp;suivant&nbsp;». En AZERTY elles
+          demandent deux modificateurs, elles sont donc doublées par{" "}
+          <kbd>(</kbd> et <kbd>)</kbd>, mêmes touches sans Option.{" "}
+          <Keys keys={[")", "h"]} /> avance, <Keys keys={["(", "h"]} /> recule.
+        </p>
+        <Shortcuts entries={navigationShortcuts} />
 
         <h3>Recherche</h3>
         <p className={styles.note}>Mode normal.</p>
         <Shortcuts
           entries={[["Effacer le surlignage de recherche", ["Échap"]]]}
         />
-
-        <h3>Sélection visuelle</h3>
-        <p className={styles.note}>
-          <Keys keys={["⌘ ⇧ P"]} /> ou <Keys keys={["Espace", "p"]} /> ouvre la
-          palette en conservant la sélection comme plage.
-        </p>
 
         <h3>LSP</h3>
         <p className={styles.note}>
