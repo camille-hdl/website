@@ -11,7 +11,18 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
  * @type {import('gatsby').GatsbyNode['createPages']}
  */
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
+
+  createRedirect({
+    fromPath: `/gh`,
+    toPath: `https://github.com/camille-hdl`,
+    isPermanent: true,
+  })
+  createRedirect({
+    fromPath: `/gh/`,
+    toPath: `https://github.com/camille-hdl`,
+    isPermanent: true,
+  })
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
   // Get all markdown blog posts sorted by date

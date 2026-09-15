@@ -352,6 +352,14 @@ h3.resume-heading {
   flex-wrap: wrap;
 }
 
+/* Skip gatsby-plugin-image's 250ms fade on the avatar only. The plugin
+   starts img[data-main-image] at opacity:0 (inline style + injected CSS)
+   and injects its wrapper CSS after this file, at equal specificity. */
+.bio-avatar.gatsby-image-wrapper [data-main-image] {
+  opacity: 1 !important;
+  transition: none;
+}
+
 
 /* @media (prefers-color-scheme: dark) {
   body {
