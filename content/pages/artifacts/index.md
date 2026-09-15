@@ -40,6 +40,22 @@ Save it as `~/.config/btop/themes/ft-paper.theme`, then set `color_theme = "ft-p
 
 Every color rendered as text or as graph glyphs clears a 4.5:1 contrast ratio on the paper background, apart from the deliberately faint free-memory meter and inactive text.
 
+## glow: ft-paper
+
+A matching theme for [glow](https://github.com/charmbracelet/glow), which renders Markdown in the terminal.
+
+<a href="/artifacts/glow/ft-paper.json" download="ft-paper.json">Download the ft-paper theme for glow</a>
+
+Save it anywhere, then point glow at it with the `style` key in its configuration. `glow config` opens that file, which lives in `~/Library/Preferences/glow/` on macOS and `~/.config/glow/` elsewhere:
+
+```yaml
+style: "/path/to/ft-paper.json"
+```
+
+For a one-off render, pass the path instead: `glow -s /path/to/ft-paper.json file.md`.
+
+Headings, links, quotes and tables use the exact palette values. Fenced code blocks go through Chroma, which glow renders in 256 colors rather than true color, so those hues are approximations.
+
 ## Homebrew
 
 My selection of packages for macOS.
