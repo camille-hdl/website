@@ -40,6 +40,7 @@ const Bio = () => {
         alt={author.name}
         layout="fixed"
         loading="eager"
+        placeholder="none"
         formats={["auto", "webp", "avif"]}
         style={{
           marginRight: rhythm(1 / 2),
