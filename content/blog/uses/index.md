@@ -2,11 +2,10 @@
 title: Software and hardware I use
 date: "2026-09-08T00:12:00.000Z"
 description: Productivity, Software development, Note-taking...
-image: desk2022.jpg
+image: screenshot.png
 blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3lbzdtflqc225
 ---
 
-![My desk](desk2022.jpg)
 ## Productivity
 * Alfred -- <small>better Spotlight</small>
 * Fantastical -- <small>calendar</small>
@@ -32,10 +31,16 @@ blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3lbzdtflqc225
 * eza
 * btop -- <small>[ft-paper theme](/artifacts/btop/ft-paper.theme)</small>
 * tldr
-* herdr -- <small>[ft-paper theme](/artifacts/herdr/ft-paper.toml)</small>
 * glow -- <small>markdown viewer -- [ft-paper theme](/artifacts/glow/ft-paper.json)</small>
 
 See my [Artifacts page](/artifacts/) or [download the Brewfile](/artifacts/homebrew/Brewfile).
+
+## AI stuff
+* Codex
+* Claude
+* Cursor
+* Grok bot
+* herdr -- <small>[ft-paper theme](/artifacts/herdr/ft-paper.toml)</small>
 
 ## Research / thinking about things
 * Kindle -- <small>to ctrl-f in books</small>
@@ -44,7 +49,7 @@ See my [Artifacts page](/artifacts/) or [download the Brewfile](/artifacts/homeb
 * Dictionary -- <small>to find names for things</small>
 
 ## Software development
-* VScode -- <small>code editor -- [settings](https://github.com/camille-hdl/configFiles/blob/master/vscode-settings.json)</small>
+* VScode -- <small>code editor -- [settings](https://github.com/camille-hdl/configFiles/blob/master/vscode-settings.json) -- [ft-paper theme](/artifacts/#vs-code-ft-paper)</small>
 * Querious -- <small>mysql client</small>
 * Pages -- <small>to write design docs</small>
 * Bitbucket -- <small>git repository & continuous integration</small>
@@ -66,13 +71,6 @@ See my [Artifacts page](/artifacts/) or [download the Brewfile](/artifacts/homeb
 * Debian -- <small>base OS</small>
 * Ansible -- <small>deployment</small>
 * monit -- <small>service monitoring and auto-restart, alerts</small>
-
-### Notable VScode extensions
-* Night Owl
-* GitLens
-* Github Copilot
-
-![VSCode and iTerm2](vscode_and_iterm.png)
 
 ## Media
 * imgOptim -- <small>better image compression</small>
@@ -107,7 +105,7 @@ See my [Artifacts page](/artifacts/) or [download the Brewfile](/artifacts/homeb
 * Backblaze -- <small>backup</small>
 * PurePaste -- <small>clear formatting from clipboard</small>
 * BetterDisplay -- <small>monitor configuration</small>
-* Ice -- <small>Menu bar configuration</small>
+* Thaw -- <small>Menu bar configuration</small>
 
 ## Fonts
 * Merriweather -- <small>for writing</small>

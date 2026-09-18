@@ -56,6 +56,12 @@ For a one-off render, pass the path instead: `glow -s /path/to/ft-paper.json fil
 
 Headings, links, quotes and tables use the exact palette values. Fenced code blocks go through Chroma, which glow renders in 256 colors rather than true color, so those hues are approximations.
 
+## VS Code: ft-paper
+
+A light color theme for Visual Studio Code, generated from the ft-paper palette. See the [source on GitHub](https://github.com/camille-hdl/vscode-ft-paper).
+
+Install it from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=CamilleHodoul.ft-paper), or run `code --install-extension CamilleHodoul.ft-paper`.
+
 ## Homebrew
 
 My selection of packages for macOS.
