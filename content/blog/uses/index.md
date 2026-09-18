@@ -6,6 +6,7 @@ image: screenshot.png
 blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3lbzdtflqc225
 ---
 
+![VS Code with the ft-paper theme](screenshot.png)
 ## Productivity
 * Alfred -- <small>better Spotlight</small>
 * Fantastical -- <small>calendar</small>
@@ -49,7 +50,7 @@ See my [Artifacts page](/artifacts/) or [download the Brewfile](/artifacts/homeb
 * Dictionary -- <small>to find names for things</small>
 
 ## Software development
-* VScode -- <small>code editor -- [settings](https://github.com/camille-hdl/configFiles/blob/master/vscode-settings.json) -- [ft-paper theme](/artifacts/#vs-code-ft-paper)</small>
+* VScode -- <small>code editor -- [settings](https://github.com/camille-hdl/configFiles/blob/master/vscode-settings.json) -- [ft-paper theme](https://github.com/camille-hdl/vscode-ft-paper)</small>
 * Querious -- <small>mysql client</small>
 * Pages -- <small>to write design docs</small>
 * Bitbucket -- <small>git repository & continuous integration</small>
