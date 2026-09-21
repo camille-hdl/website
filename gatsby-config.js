@@ -4,6 +4,8 @@
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
  */
 
+const { DEFAULT_ENDPOINT: goatcounter } = require(`./src/utils/goatcounter-endpoint`)
+
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
@@ -16,6 +18,7 @@ module.exports = {
     },
     description: `Links to things I do.`,
     siteUrl: `https://camillehdl.dev/`,
+    goatcounter,
     social: {
       twitter: `camille_hdl`,
       github: `camille-hdl`,

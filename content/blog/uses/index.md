@@ -65,7 +65,7 @@ See my [Artifacts page](/artifacts/) or [download the Brewfile](/artifacts/homeb
 * Podman -- <small>containers that support systemd</small>
 * Monodraw -- <small>Make ASCII diagrams in your code comments</small>
 * JuxtaText - <small>diff tool</small>
-* Fathom -- <small>analytics [affiliate link](https://usefathom.com/ref/HV9NG1)</small>
+* GoatCounter -- <small>privacy-friendly analytics</small>
 
 ## System administration
 * lnav -- <small>log exploration</small>
