@@ -31,6 +31,7 @@ blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3lbzdtflqc225
 ## CLI tools
 * eza
 * btop -- <small>[ft-paper theme](/artifacts/btop/ft-paper.theme)</small>
+* chafa -- <small>images in the terminal</small>
 * tldr
 * glow -- <small>markdown viewer -- [ft-paper theme](/artifacts/glow/ft-paper.json)</small>
 
