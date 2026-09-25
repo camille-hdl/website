@@ -53,7 +53,7 @@ const Bio = () => {
         }}
       />
       <p>
-        I'm a JavaScript and PHP developer living in Grenoble, France.
+        I'm a software developer (whatever that means now) living in Grenoble, France.
         <br />
         <Link to="/links">
           Links
