@@ -3,6 +3,7 @@ title: Hill charts
 date: "2026-09-25T08:00:00.000Z"
 description: A package and an agent skill that draw a hill chart to show a project's progress.
 image: system-architecture.png
+blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3mwdfutp6hs2a
 ---
 
 ![Hill chart titled System architecture. Service boundaries and Data ownership are uphill, Sync or async is at the top, Failure handling and Deploy topology are downhill.](system-architecture.png)
