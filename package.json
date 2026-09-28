@@ -52,7 +52,7 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "node --test tests/dependencies.test.cjs",
+    "test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/dependencies.test.cjs tests/palette.test.mjs",
     "test:browser": "playwright test",
     "postinstall": "patch-package --error-on-fail"
   },

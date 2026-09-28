@@ -37,6 +37,7 @@ const pages = [
   ["images", "/cooler-master-mk730-keyboard-on-macos/"],
   ["code", "/ship-modern-javascript-rollup/"],
   ["palette", "/palette/"],
+  ["palette-night", "/palette-night/"],
 ]
 
 for (const [name, path] of pages) {

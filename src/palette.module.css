@@ -73,11 +73,93 @@
   margin-top: 0.2rem;
 }
 
-.credit {
+.formula {
+  display: block;
+  font-style: italic;
+}
+
+.credit,
+.crossLink {
   font-size: 0.8rem;
   line-height: 1.6;
   color: var(--ink-muted);
   margin: 0;
+}
+
+.crossLink {
+  margin-top: 0.8rem;
+}
+
+/* A role is a pairing, so it is shown as one: the text color set on its
+   background, then what it is for and how well it reads. */
+.pairs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pair {
+  display: grid;
+  grid-template-columns: 2.6rem 1fr auto;
+  grid-template-areas:
+    "sample use contrast"
+    "sample roles contrast";
+  column-gap: 0.9rem;
+  align-items: center;
+  margin: 0;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--surface-2);
+}
+
+.sample {
+  grid-area: sample;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--rule);
+  font-family: Montserrat, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.pairUse {
+  grid-area: use;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.pairNote {
+  display: block;
+  font-family: Merriweather, Georgia, serif;
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: var(--ink-muted);
+}
+
+.pairRoles {
+  grid-area: roles;
+  font-family: "Fira Code", Consolas, Monaco, monospace;
+  font-size: 0.66rem;
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+
+.pairContrast {
+  grid-area: contrast;
+  font-family: "Fira Code", Consolas, Monaco, monospace;
+  font-size: 0.72rem;
+  color: var(--ink-2);
+}
+
+/* Eight to a row, like a terminal palette. */
+.ansi {
+  margin-top: 1.8rem;
+  grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
 }
 
 @media only screen and (max-width: 480px) {

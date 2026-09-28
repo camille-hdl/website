@@ -9,23 +9,9 @@
  * which is what lets the terminal themes and this stylesheet stay in step.
  */
 
+import { toRgb, contrastRatio, blend as blendOver, round } from "./color.js"
+
 const PAPER = "#fff1e5"
-
-const toRgb = (hex) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16))
-
-const relativeLuminance = (hex) => {
-  const [r, g, b] = toRgb(hex).map((channel) => {
-    const value = channel / 255
-    return value <= 0.03928 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4
-  })
-  return 0.2126 * r + 0.7152 * g + 0.0722 * b
-}
-
-const contrastRatio = (hex, against) => {
-  const a = relativeLuminance(hex)
-  const b = relativeLuminance(against)
-  return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05)
-}
 
 const INK = "#262a33"
 
@@ -36,19 +22,7 @@ const INK = "#262a33"
  * formula rather than a pasted hex — same rule as `rgb` and `contrast`, so a
  * derived fill can never drift from the color it claims to come from.
  */
-const blend = (hex, alpha, over = PAPER) => {
-  const source = toRgb(hex)
-  const base = toRgb(over)
-  return `#${source
-    .map((channel, i) =>
-      Math.round(channel * alpha + base[i] * (1 - alpha))
-        .toString(16)
-        .padStart(2, "0")
-    )
-    .join("")}`
-}
-
-const round = (n) => Math.round(n * 100) / 100
+const blend = (hex, alpha, over = PAPER) => blendOver(hex, alpha, over)
 
 /**
  * A surface is judged by whether body ink reads on it; every other color by
@@ -143,3 +117,8 @@ export const asJson = () => ({
     ),
   })),
 })
+
+/** Every day swatch by role, for palettes derived from this one. */
+export const hexOf = Object.fromEntries(
+  groups.flatMap(({ swatches }) => swatches.map(({ role, hex }) => [role, hex]))
+)
