@@ -94,7 +94,7 @@ test("client navigation and comments remain interactive", async ({ page }) => {
   const errors = []
   page.on("pageerror", (error) => errors.push(error.message))
   await page.goto("/")
-  await expect(page.locator("article")).toHaveCount(40)
+  await expect(page.locator("article")).toHaveCount(41)
   await page.evaluate(() => {
     window.navigationSentinel = true
   })
@@ -118,7 +118,7 @@ test("client navigation and comments remain interactive", async ({ page }) => {
     .first()
     .click()
   await expect(page).toHaveURL(/\/$/)
-  await expect(page.locator("article")).toHaveCount(40)
+  await expect(page.locator("article")).toHaveCount(41)
   expect(errors).toEqual([])
 })
 
