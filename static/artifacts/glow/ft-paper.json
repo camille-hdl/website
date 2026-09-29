@@ -115,22 +115,22 @@
         "color": "#990f3d"
       },
       "keyword": {
-        "color": "#593380"
+        "color": "#0f5499"
       },
       "keyword_reserved": {
-        "color": "#593380"
+        "color": "#0f5499"
       },
       "keyword_namespace": {
-        "color": "#990f3d"
+        "color": "#0f5499"
       },
       "keyword_type": {
-        "color": "#0d7680"
+        "color": "#593380"
       },
       "operator": {
-        "color": "#4a4f59"
+        "color": "#0d7680"
       },
       "punctuation": {
-        "color": "#6b6259"
+        "color": "#4a4f59"
       },
       "name": {
         "color": "#262a33"
@@ -139,17 +139,17 @@
         "color": "#990f3d"
       },
       "name_tag": {
-        "color": "#593380"
+        "color": "#990f3d"
       },
       "name_attribute": {
-        "color": "#0f5499"
+        "color": "#00733a"
       },
       "name_class": {
-        "color": "#0d7680",
+        "color": "#593380",
         "bold": true
       },
       "name_constant": {
-        "color": "#99521f"
+        "color": "#990f3d"
       },
       "name_decorator": {
         "color": "#990f3d"
@@ -158,7 +158,7 @@
         "color": "#cc0000"
       },
       "name_function": {
-        "color": "#0f5499"
+        "color": "#593380"
       },
       "name_other": {
         "color": "#262a33"
@@ -177,6 +177,9 @@
       },
       "literal_string_escape": {
         "color": "#990f3d"
+      },
+      "literal_string_regex": {
+        "color": "#cc0000"
       },
       "generic_deleted": {
         "color": "#262a33",

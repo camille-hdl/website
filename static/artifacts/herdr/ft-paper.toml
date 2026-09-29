@@ -31,16 +31,19 @@ sidebar_bg    = "#f7e7d8"
 surface_dim   = "#f7e7d8"
 surface0      = "#f2dfce"
 surface1      = "#efdcca"
-active_row_bg = "#f2dfce"
-selection_bg  = "#efdcca"
+# Selection is surface 2, as everywhere in ft-paper; the active row is
+# surface 3, like a current line.
+active_row_bg = "#efdcca"
+selection_bg  = "#f2dfce"
 
 # Slate ink. overlay0/overlay1 are dim *text* (sidebar section labels, hints),
-# not separators, so they are darkened versions of the palette's dim foreground
-# rather than the muted #b8afa5, which only reaches 1.5:1 on paper.
-text     = "#262a33"
-subtext0 = "#4a4f59"
-overlay1 = "#6b6259"  # ~4.9:1 on paper
-overlay0 = "#7d746b"  # ~3.8:1 on paper
+# not separators, so both are the palette's muted ink: every text stays above
+# 4.5:1. The faint ink (#7d746b) only reaches 4.14:1 on paper and the rule
+# (#b8afa5) 1.95:1.
+text     = "#262a33"  # 12.98:1 on paper
+subtext0 = "#4a4f59"  # 7.43:1 on paper
+overlay1 = "#6b6259"  # 5.39:1 on paper, 4.94:1 on the sidebar
+overlay0 = "#6b6259"  # same as overlay1
 
 # ft.com claret accent, plus status colors dark enough to read on paper.
 accent = "#990f3d"
