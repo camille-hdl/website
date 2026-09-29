@@ -28,6 +28,29 @@ const thread = {
   })),
 }
 
+// React's own record that it has taken over the page: the committed root is
+// no longer the server's dehydrated markup. Clicks and client navigations made
+// before that are lost, or break hydration; on a remote site the bundles land
+// well after the load event.
+const hydrated = (page) =>
+  page.waitForFunction(() => {
+    const container = document.getElementById("___gatsby")
+    const key =
+      container &&
+      Object.keys(container).find((name) =>
+        name.startsWith("__reactContainer$")
+      )
+    return key
+      ? container[key].stateNode?.current?.memoizedState?.isDehydrated === false
+      : false
+  })
+
+// A page loaded and running: what a reader can click.
+const open = async (page, path) => {
+  await page.goto(path)
+  await hydrated(page)
+}
+
 test.beforeEach(async ({ page }) => {
   await page.route("https://public.api.bsky.app/**", (route) =>
     route.fulfill({ json: { thread } })
@@ -47,7 +70,7 @@ const pages = [
 async function checkAppearance(page, name, path, snapshot) {
   const errors = []
   page.on("pageerror", (error) => errors.push(error.message))
-  await page.goto(path)
+  await open(page, path)
   await page.evaluate(() => document.fonts.ready)
   if (name === "comments")
     await expect(
@@ -108,7 +131,7 @@ for (const [name, path] of pages) {
 test("client navigation and comments remain interactive", async ({ page }) => {
   const errors = []
   page.on("pageerror", (error) => errors.push(error.message))
-  await page.goto("/")
+  await open(page, "/")
   await expect(page.locator("article")).toHaveCount(41)
   await page.evaluate(() => {
     window.navigationSentinel = true
@@ -141,7 +164,7 @@ test("comments display a request failure", async ({ page }) => {
   await page.route("https://public.api.bsky.app/**", (route) =>
     route.fulfill({ status: 503, body: "Unavailable" })
   )
-  await page.goto("/uninstall-podman-desktop-macos/")
+  await open(page, "/uninstall-podman-desktop-macos/")
   await expect(
     page.getByText("Error loading comments", { exact: true })
   ).toBeVisible()
@@ -168,7 +191,7 @@ const rememberChoice = (page, choice) =>
   }, choice)
 
 test("the site follows the system palette", async ({ page }) => {
-  await page.goto("/")
+  await open(page, "/")
   expect(await paperOf(page)).toBe(DAY_PAPER)
   await page.emulateMedia({ colorScheme: "dark" })
   expect(await paperOf(page)).toBe(NIGHT_PAPER)
@@ -180,7 +203,7 @@ test("the switch forces a palette, remembers it, and gives it back to the system
 }) => {
   const errors = []
   page.on("pageerror", (error) => errors.push(error.message))
-  await page.goto("/")
+  await open(page, "/")
   const group = page.getByRole("group", { name: "Theme" })
   await expect(group.getByRole("radio")).toHaveCount(3)
 
@@ -190,6 +213,7 @@ test("the switch forces a palette, remembers it, and gives it back to the system
   expect(await storedChoice(page)).toBe("night")
 
   await page.reload()
+  await hydrated(page)
   expect(await paperOf(page)).toBe(NIGHT_PAPER)
   await expect(group.getByRole("radio", { name: "Night" })).toBeChecked()
 
@@ -222,7 +246,7 @@ test("the switch forces a palette, remembers it, and gives it back to the system
 
 test("the switch works from the keyboard", async ({ page }, testInfo) => {
   test.skip(testInfo.project.name === "mobile", "no keyboard")
-  await page.goto("/")
+  await open(page, "/")
   await page.keyboard.press("Tab")
   const auto = page.getByRole("radio", { name: "Auto" })
   await expect(auto).toBeFocused()
@@ -255,7 +279,11 @@ test("a broken storage leaves the site on the system palette", async ({
   page,
 }) => {
   const errors = []
-  page.on("pageerror", (error) => errors.push(error.message))
+  // Only this site's scripts are under test. GoatCounter's count.js reads
+  // storage unguarded too, but only off localhost, so on the live site.
+  page.on("pageerror", (error) => {
+    if (!error.stack?.includes("gc.zgo.at/")) errors.push(error.message)
+  })
   await page.addInitScript(() => {
     Object.defineProperty(window, "localStorage", {
       get() {
@@ -264,7 +292,7 @@ test("a broken storage leaves the site on the system palette", async ({
     })
   })
   await page.emulateMedia({ colorScheme: "dark" })
-  await page.goto("/")
+  await open(page, "/")
   expect(await paperOf(page)).toBe(NIGHT_PAPER)
   await page
     .getByRole("group", { name: "Theme" })
@@ -338,7 +366,7 @@ for (const [path, against, setting, own] of paletteCases) {
     const errors = []
     page.on("pageerror", (error) => errors.push(error.message))
     await setUp(page, setting)
-    await page.goto(path)
+    await open(page, path)
     await expect(page.getByRole("group", { name: "Theme" })).toHaveCount(0)
     await expect.poll(() => rootOf(page)).toEqual(own)
     expect(errors).toEqual([])
@@ -384,7 +412,7 @@ for (const [path, against, setting, own, site] of paletteCases) {
     const errors = []
     page.on("pageerror", (error) => errors.push(error.message))
     await setUp(page, setting)
-    await page.goto("/")
+    await open(page, "/")
     await expect.poll(() => rootOf(page)).toEqual(site)
     const palette = own === DAY_ROOT ? "day" : "night"
     const paints = (root) => ({ scheme: root.scheme, html: root.html })
@@ -412,8 +440,8 @@ for (const [path, against, setting, own, site] of paletteCases) {
 
 test("another tab's choice applies here too", async ({ context }) => {
   const [first, second] = [await context.newPage(), await context.newPage()]
-  await first.goto("/")
-  await second.goto("/links/")
+  await open(first, "/")
+  await open(second, "/links/")
   await first
     .getByRole("group", { name: "Theme" })
     .getByText("Night", { exact: true })
@@ -438,17 +466,17 @@ for (const [path, before, label, after] of otherTabCases) {
     const errors = []
     const first = await context.newPage()
     first.on("pageerror", (error) => errors.push(error.message))
-    await first.goto("/")
+    await open(first, "/")
     await first.evaluate(
       (value) => localStorage.setItem("theme", value),
       before
     )
-    await first.goto(path)
+    await open(first, path)
     const own = path === "/palette/" ? DAY_ROOT : NIGHT_ROOT
     await expect.poll(() => rootOf(first)).toEqual(own)
 
     const second = await context.newPage()
-    await second.goto("/links/")
+    await open(second, "/links/")
     await second
       .getByRole("group", { name: "Theme" })
       .getByText(label, { exact: true })
@@ -478,7 +506,7 @@ for (const [path, before, label, after] of otherTabCases) {
 test("the palettes fade into each other, unless motion is reduced", async ({
   page,
 }) => {
-  await page.goto("/")
+  await open(page, "/")
   const group = page.getByRole("group", { name: "Theme" })
   const fading = () =>
     page.evaluate(() => [
@@ -516,7 +544,7 @@ for (const night of [false, true]) {
           "colors do not depend on the viewport"
         )
         if (night) await page.emulateMedia({ colorScheme: "dark" })
-        await page.goto(path)
+        await open(page, path)
         await page.evaluate(() => document.fonts.ready)
         const { measured, failures } = await page.evaluate(
           `(${measureContrast})()`
