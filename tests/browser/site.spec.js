@@ -1,6 +1,8 @@
-const { readFileSync } = require("node:fs")
+const { readFileSync, readdirSync } = require("node:fs")
+const { join } = require("node:path")
 const { test, expect } = require("@playwright/test")
 const { measureContrast } = require("./contrast")
+const { stylesheetsDigest } = require("../../src/build/stylesheets-digest")
 
 const thread = {
   $type: "app.bsky.feed.defs#threadViewPost",
@@ -335,3 +337,21 @@ for (const night of [false, true]) {
     }
   })
 }
+
+// ---------------------------------------------------------------- build
+
+// A stylesheet-only edit must rebuild every page (see gatsby-node.js): each
+// page's data carries the digest of the stylesheets it was built with.
+test("every built page carries the current stylesheets digest", () => {
+  const root = join(__dirname, "..", "..")
+  const digest = stylesheetsDigest(join(root, "src"))
+  const dir = join(root, "public", "page-data")
+  const files = readdirSync(dir, { recursive: true }).filter((file) =>
+    file.endsWith("page-data.json")
+  )
+  expect(files.length).toBeGreaterThan(allPaths.length)
+  for (const file of files) {
+    const { result } = JSON.parse(readFileSync(join(dir, file), "utf8"))
+    expect(result.pageContext.stylesheets, file).toBe(digest)
+  }
+})

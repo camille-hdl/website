@@ -6,6 +6,17 @@
 
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const { stylesheetsDigest } = require(`./src/build/stylesheets-digest`)
+
+/**
+ * Gatsby rebuilds a page's HTML when its data or its server renderer changes,
+ * and a stylesheet-only edit changes neither: the pages then keep the previous
+ * CSS, inlined and linked, on any build that reuses .cache and public
+ * (Netlify's Gatsby plugin does). Every page carries a digest of the
+ * stylesheets in its context, so such an edit changes every page's data and
+ * every page is rebuilt.
+ */
+const stylesheets = stylesheetsDigest(path.join(__dirname, `src`))
 
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
@@ -67,6 +78,7 @@ exports.createPages = async ({ graphql, actions }) => {
           id: post.id,
           previousPostId,
           nextPostId,
+          stylesheets,
         },
       })
     })
@@ -106,6 +118,7 @@ exports.createPages = async ({ graphql, actions }) => {
         component: pageTemplate,
         context: {
           id: page.id,
+          stylesheets,
         },
       });
     });
@@ -171,4 +184,16 @@ exports.createSchemaCustomization = ({ actions }) => {
       slug: String
     }
   `)
+}
+
+/**
+ * The same digest for the pages this file does not create: src/pages and
+ * other plugins' pages.
+ *
+ * @type {import('gatsby').GatsbyNode['onCreatePage']}
+ */
+exports.onCreatePage = ({ page, actions }) => {
+  if (page.context?.stylesheets === stylesheets) return
+  actions.deletePage(page)
+  actions.createPage({ ...page, context: { ...page.context, stylesheets } })
 }
