@@ -1,0 +1,70 @@
+/* A line of small capitals in the corner, like a masthead's edition switch:
+   present, but quieter than anything on the page. */
+.themeSwitch {
+  position: absolute;
+  top: 0.55rem;
+  left: 0.75rem;
+  display: flex;
+  gap: 0.15rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* Named for screen readers only: the three words say what they do. */
+.legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.option {
+  position: relative;
+  cursor: pointer;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+}
+
+.label {
+  display: block;
+  padding: 0.3rem 0.35rem;
+  border-radius: 3px;
+  color: var(--ink-muted);
+  box-shadow: none;
+}
+
+.option:hover .label {
+  color: var(--ink);
+}
+
+.input:checked + .label {
+  color: var(--ink);
+  box-shadow: inset 0 -1px 0 0 var(--claret);
+}
+
+.input:focus-visible + .label {
+  outline: 2px solid var(--oxford);
+  outline-offset: 1px;
+}
+
+@media only screen and (max-width: 600px) {
+  .themeSwitch {
+    left: 0.6rem;
+    top: 0.4rem;
+  }
+}

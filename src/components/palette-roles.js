@@ -16,7 +16,9 @@ const Pair = ({
   toolNames,
 }) => (
   <li className={styles.pair}>
+    {/* A specimen, not content: some pairs are shown because they fail. */}
     <span
+      aria-hidden="true"
       className={styles.sample}
       style={{ color: hexOf[text], backgroundColor: hexOf[background] }}
     >

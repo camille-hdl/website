@@ -1,12 +1,14 @@
 import Typography from "typography"
 import Wordpress2016 from "typography-theme-wordpress-2016"
 
-// Colors come from the ft-paper palette — see src/data/ft-paper.js and /palette.
-const ink = "#262a33"
-const inkMuted = "#6b6259"
-const rule = "#b8afa5"
-const oxford = "#0f5499"
-const claret = "#990f3d"
+// Colors are the palette tokens of layout.css, so they follow the day or night
+// palette — see src/data/ft-paper.js, /palette and /palette-night.
+const ink = "var(--ink)"
+const inkMuted = "var(--ink-muted)"
+const rule = "var(--rule)"
+const oxford = "var(--oxford)"
+const claret = "var(--claret)"
+const paperRaised = "var(--paper-raised)"
 
 Wordpress2016.overrideThemeStyles = () => {
   return {
@@ -32,7 +34,7 @@ Wordpress2016.overrideThemeStyles = () => {
     // The theme hardcodes its own blue on these.
     "mark,ins": {
       background: claret,
-      color: "#fff9f2",
+      color: paperRaised,
     },
     "blockquote cite": {
       color: inkMuted,

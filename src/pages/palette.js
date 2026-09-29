@@ -20,43 +20,50 @@ const PalettePage = ({ location }) => {
   `)
 
   return (
-    <Layout location={location} title={data.site.siteMetadata.title}>
-      <header>
-        <h1>ft-paper</h1>
-      </header>
+    <Layout
+      location={location}
+      title={data.site.siteMetadata.title}
+      themeSwitch={false}
+    >
+      {/* Sets the whole page in the palette it describes (see layout.css). */}
+      <div className="ft-paper">
+        <header>
+          <h1>ft-paper</h1>
+        </header>
 
-      <PaletteGroups groups={groups} />
+        <PaletteGroups groups={groups} />
 
-      <PaletteRoles
-        roles={roles}
-        terminal={terminal}
-        hexOf={hexOf}
-        tools={tools}
-      />
+        <PaletteRoles
+          roles={roles}
+          terminal={terminal}
+          hexOf={hexOf}
+          tools={tools}
+        />
 
-      <hr />
+        <hr />
 
-      <p className={styles.credit}>
-        Inspired by{" "}
-        <a href="https://www.ft.com/">the Financial Times</a> and its{" "}
-        <a href="https://registry.origami.ft.com/components/o-colors">
-          Origami o-colors
-        </a>{" "}
-        palette.
-      </p>
+        <p className={styles.credit}>
+          Inspired by <a href="https://www.ft.com/">the Financial Times</a> and
+          its{" "}
+          <a href="https://registry.origami.ft.com/components/o-colors">
+            Origami o-colors
+          </a>{" "}
+          palette.
+        </p>
 
-      <p className={styles.crossLink}>
-        After dark: <Link to="/palette-night/">ft-paper-night</Link>, the same
-        hues on a sepia night.
-      </p>
+        <p className={styles.crossLink}>
+          After dark: <Link to="/palette-night/">ft-paper-night</Link>, the same
+          hues on a sepia night.
+        </p>
 
-      {/* The same palette as structured data, so an agent deriving a theme for
+        {/* The same palette as structured data, so an agent deriving a theme for
           another tool reads exact values instead of scraping the markup. */}
-      <script
-        type="application/json"
-        id="ft-paper-palette"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(asJson()) }}
-      />
+        <script
+          type="application/json"
+          id="ft-paper-palette"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(asJson()) }}
+        />
+      </div>
     </Layout>
   )
 }
@@ -67,5 +74,7 @@ export const Head = () => (
   <Seo
     title="ft-paper palette"
     description="The ft-paper color palette: surfaces, ink, accents, semantic roles and terminal colors, with hex, rgb and contrast values, and where each is used."
-  />
+  >
+    <meta name="color-scheme" content="light" />
+  </Seo>
 )

@@ -119,6 +119,7 @@ export const groups = [
     { role: "fill-change-focus", name: "Change focus", ...wash("oxford-bright", 0.36), note: "The part that actually changed, inside a changed line" },
     { role: "fill-match", name: "Match", ...wash("mandarin-bright", 0.34), note: "Every hit of a search" },
     { role: "fill-target", name: "Target", ...wash("claret", 0.45), note: "The one hit being jumped to" },
+    { role: "crimson-wash", name: "Warning wash", ...wash("crimson", 0.1), note: "Warning callouts on the site" },
   ], { surfaces: true }),
 ]
 
@@ -197,6 +198,7 @@ export const roles = [
       pair("Changed part", "ink", "fill-change-focus"),
       pair("Search hit", "ink", "fill-match"),
       pair("Current search hit", "ink", "fill-target"),
+      pair("Warning callout", "ink", "crimson-wash"),
     ],
   },
 ]

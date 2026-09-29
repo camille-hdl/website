@@ -6,6 +6,14 @@ import "./src/fonts/montserrat.css"
 import "./src/fonts/fira-code.css"
 import "prismjs/themes/prism.css"
 import "prismjs/plugins/line-numbers/prism-line-numbers.css"
+import { syncThemeColor, watchTheme } from "./src/utils/theme"
+
+/**
+ * @type {import('gatsby').GatsbyBrowser['onClientEntry']}
+ */
+export const onClientEntry = () => {
+  watchTheme()
+}
 
 // count.js records the first pageview on load. Gatsby client navigations do
 // not reload the document, so record those here and skip the initial route to
@@ -16,6 +24,9 @@ let isInitialRoute = true
  * @type {import('gatsby').GatsbyBrowser['onRouteUpdate']}
  */
 export const onRouteUpdate = ({ location }) => {
+  // A palette page brings its own palette, and leaving one gives the choice
+  // back: the browser's color follows.
+  syncThemeColor()
   if (isInitialRoute) {
     isInitialRoute = false
     return
