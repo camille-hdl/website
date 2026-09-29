@@ -86,32 +86,34 @@ export const applyChoice = (choice) => {
 }
 
 /**
- * Notifies when the choice changes: from this page (the attribute) or from
- * another tab (the storage event, which the other tab's write fires here).
+ * Notifies when the choice changes on <html>, whoever changed it: the switch
+ * here, or watchTheme for another tab.
  */
 export const subscribe = (onChange) => {
-  const root = document.documentElement
   const observer = new MutationObserver(onChange)
-  observer.observe(root, { attributes: true, attributeFilter: ["data-theme"] })
-  const onStorage = (event) => {
-    if (event.key !== STORAGE_KEY && event.key !== null) return
-    if (isForced(event.newValue))
-      root.setAttribute("data-theme", event.newValue)
-    else root.removeAttribute("data-theme")
-  }
-  window.addEventListener("storage", onStorage)
-  return () => {
-    observer.disconnect()
-    window.removeEventListener("storage", onStorage)
-  }
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"],
+  })
+  return () => observer.disconnect()
 }
 
 /**
- * Keeps theme-color in step with a choice made here or in another tab; route
- * changes call syncThemeColor themselves (gatsby-browser.js).
+ * Runs once per document, on every page including the palette pages, which
+ * have no switch: a choice made in another tab (the storage event, which the
+ * other tab's write fires here) is applied to <html> at once, and theme-color
+ * follows every change of choice. Route changes call syncThemeColor
+ * themselves (gatsby-browser.js).
  */
-export const watchThemeColor = () => {
-  new MutationObserver(syncThemeColor).observe(document.documentElement, {
+export const watchTheme = () => {
+  const root = document.documentElement
+  window.addEventListener("storage", (event) => {
+    if (event.key !== STORAGE_KEY && event.key !== null) return
+    const value = event.key === null ? null : event.newValue
+    if (isForced(value)) root.setAttribute("data-theme", value)
+    else root.removeAttribute("data-theme")
+  })
+  new MutationObserver(syncThemeColor).observe(root, {
     attributes: true,
     attributeFilter: ["data-theme"],
   })

@@ -422,6 +422,59 @@ test("another tab's choice applies here too", async ({ context }) => {
   await expect(second.getByRole("radio", { name: "Night" })).toBeChecked()
 })
 
+// A palette page has no switch, yet a choice made meanwhile in another tab
+// must hold as soon as the reader navigates away from it.
+const otherTabCases = [
+  ["/palette/", "night", "Day", DAY_ROOT],
+  ["/palette/", "night", "Auto", DAY_ROOT],
+  ["/palette-night/", "day", "Night", NIGHT_ROOT],
+  ["/palette-night/", "day", "Auto", DAY_ROOT],
+]
+
+for (const [path, before, label, after] of otherTabCases) {
+  test(`${label} chosen in another tab while ${path} is open holds after a client navigation`, async ({
+    context,
+  }) => {
+    const errors = []
+    const first = await context.newPage()
+    first.on("pageerror", (error) => errors.push(error.message))
+    await first.goto("/")
+    await first.evaluate(
+      (value) => localStorage.setItem("theme", value),
+      before
+    )
+    await first.goto(path)
+    const own = path === "/palette/" ? DAY_ROOT : NIGHT_ROOT
+    await expect.poll(() => rootOf(first)).toEqual(own)
+
+    const second = await context.newPage()
+    await second.goto("/links/")
+    await second
+      .getByRole("group", { name: "Theme" })
+      .getByText(label, { exact: true })
+      .click()
+
+    // The choice reaches <html> at once; the palette page still wins.
+    const forced = label === "Auto" ? null : label.toLowerCase()
+    await expect
+      .poll(() =>
+        first.evaluate(() =>
+          document.documentElement.getAttribute("data-theme")
+        )
+      )
+      .toBe(forced)
+    expect(await rootOf(first)).toEqual(own)
+
+    await navigate(first, "/")
+    await expect(first).toHaveURL(/\/$/)
+    await expect.poll(() => rootOf(first)).toEqual(after)
+    await expect(
+      first.getByRole("radio", { name: label, exact: true })
+    ).toBeChecked()
+    expect(errors).toEqual([])
+  })
+}
+
 test("the palettes fade into each other, unless motion is reduced", async ({
   page,
 }) => {

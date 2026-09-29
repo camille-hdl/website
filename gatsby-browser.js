@@ -6,13 +6,13 @@ import "./src/fonts/montserrat.css"
 import "./src/fonts/fira-code.css"
 import "prismjs/themes/prism.css"
 import "prismjs/plugins/line-numbers/prism-line-numbers.css"
-import { syncThemeColor, watchThemeColor } from "./src/utils/theme"
+import { syncThemeColor, watchTheme } from "./src/utils/theme"
 
 /**
  * @type {import('gatsby').GatsbyBrowser['onClientEntry']}
  */
 export const onClientEntry = () => {
-  watchThemeColor()
+  watchTheme()
 }
 
 // count.js records the first pageview on load. Gatsby client navigations do
