@@ -1,18 +1,37 @@
 import React from "react"
 import typography from "./src/utils/typography"
 import { goatcounterEndpoint } from "./src/utils/goatcounter-endpoint"
-import { earlyScript } from "./src/utils/theme"
+import {
+  earlyScript,
+  PAGE_PALETTES,
+  PAPER,
+  THEME_COLORS,
+} from "./src/utils/theme"
 
 /**
  * @type {import('gatsby').GatsbySSR['onRenderBody']}
  */
 export const onRenderBody = ({
+  pathname,
   setHtmlAttributes,
   setHeadComponents,
   setPostBodyComponents,
 }) => {
   setHtmlAttributes({ lang: `en` })
+  // One theme-color per system scheme. A palette page sets both to its own
+  // paper, and the head script leaves them alone.
+  const pagePalette = PAGE_PALETTES[pathname]
   setHeadComponents([
+    ...THEME_COLORS.map(({ scheme, media }) => (
+      <meta
+        key={`theme-color-${scheme}`}
+        name="theme-color"
+        media={media}
+        content={PAPER[pagePalette ?? scheme]}
+        data-scheme={scheme}
+        data-page-palette={pagePalette}
+      />
+    )),
     // Applies a forced palette before the first paint (see src/utils/theme.js).
     <script key="theme" dangerouslySetInnerHTML={{ __html: earlyScript }} />,
     <style

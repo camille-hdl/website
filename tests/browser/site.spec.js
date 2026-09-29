@@ -64,9 +64,7 @@ async function checkAppearance(page, name, path, snapshot) {
     )
     window.scrollTo(0, 0)
   })
-  await expect(page.locator("main title, main meta, main html")).toHaveCount(
-    0
-  )
+  await expect(page.locator("main title, main meta, main html")).toHaveCount(0)
   await expect(page.locator("head title")).toHaveCount(1)
   await expect
     .poll(() =>
@@ -75,8 +73,7 @@ async function checkAppearance(page, name, path, snapshot) {
         .evaluateAll((images) =>
           images.every(
             (image) =>
-              image.naturalWidth > 0 &&
-              getComputedStyle(image).opacity === "1"
+              image.naturalWidth > 0 && getComputedStyle(image).opacity === "1"
           )
         )
     )
@@ -99,7 +96,8 @@ const fixedTheme = ["palette", "palette-night"]
 for (const [name, path] of pages) {
   for (const night of [false, true]) {
     const title = `appearance: ${name}${night ? " at night" : ""}`
-    const snapshot = night && !fixedTheme.includes(name) ? `${name}-night` : name
+    const snapshot =
+      night && !fixedTheme.includes(name) ? `${name}-night` : name
     test(title, async ({ page }) => {
       if (night) await page.emulateMedia({ colorScheme: "dark" })
       await checkAppearance(page, name, path, snapshot)
@@ -196,8 +194,16 @@ test("the switch forces a palette, remembers it, and gives it back to the system
   await expect(group.getByRole("radio", { name: "Night" })).toBeChecked()
 
   // A client-side navigation keeps the choice and shows it.
-  await page.getByRole("link", { name: "Camille Hodoul", exact: true }).first().click()
-  await page.getByRole("link", { name: "How to uninstall Podman Desktop on macos", exact: true }).click()
+  await page
+    .getByRole("link", { name: "Camille Hodoul", exact: true })
+    .first()
+    .click()
+  await page
+    .getByRole("link", {
+      name: "How to uninstall Podman Desktop on macos",
+      exact: true,
+    })
+    .click()
   await expect(page).toHaveURL(/\/uninstall-podman-desktop-macos\/$/)
   await expect(group.getByRole("radio", { name: "Night" })).toBeChecked()
   expect(await paperOf(page)).toBe(NIGHT_PAPER)
@@ -260,29 +266,158 @@ test("a broken storage leaves the site on the system palette", async ({
   await page.emulateMedia({ colorScheme: "dark" })
   await page.goto("/")
   expect(await paperOf(page)).toBe(NIGHT_PAPER)
-  await page.getByRole("group", { name: "Theme" }).getByText("Day", { exact: true }).click()
+  await page
+    .getByRole("group", { name: "Theme" })
+    .getByText("Day", { exact: true })
+    .click()
   await expect.poll(() => paperOf(page)).toBe(DAY_PAPER)
   expect(errors).toEqual([])
 })
 
-test("the palette pages keep their own palette and have no switch", async ({
-  page,
-}) => {
-  await rememberChoice(page, "night")
-  await page.goto("/palette/")
-  expect(await paperOf(page)).toBe(DAY_PAPER)
-  await expect(page.getByRole("group", { name: "Theme" })).toHaveCount(0)
-  await page.evaluate(() => localStorage.setItem("theme", "day"))
-  await page.goto("/palette-night/")
-  expect(await paperOf(page)).toBe(NIGHT_PAPER)
-  await expect(page.getByRole("group", { name: "Theme" })).toHaveCount(0)
-})
+// What the browser paints outside the page too: the root's color scheme
+// (scrollbars, native controls), its background, and theme-color.
+const rootOf = (page) =>
+  page.evaluate(() => {
+    const html = getComputedStyle(document.documentElement)
+    const themeColor = [
+      ...document.querySelectorAll('meta[name="theme-color"]'),
+    ].find((meta) => !meta.media || matchMedia(meta.media).matches)?.content
+    return {
+      scheme: html.colorScheme,
+      html: html.backgroundColor,
+      body: getComputedStyle(document.body).backgroundColor,
+      themeColor,
+    }
+  })
+
+const DAY_ROOT = {
+  scheme: "light",
+  html: DAY_PAPER,
+  body: DAY_PAPER,
+  themeColor: "#fff1e5",
+}
+const NIGHT_ROOT = {
+  scheme: "dark",
+  html: NIGHT_PAPER,
+  body: NIGHT_PAPER,
+  themeColor: "#1f1915",
+}
+
+// Each palette page against the choice, then the system, of the other palette.
+const paletteCases = [
+  ["/palette/", "a forced night", { choice: "night" }, DAY_ROOT, NIGHT_ROOT],
+  ["/palette/", "a dark system", { system: "dark" }, DAY_ROOT, NIGHT_ROOT],
+  ["/palette-night/", "a forced day", { choice: "day" }, NIGHT_ROOT, DAY_ROOT],
+  [
+    "/palette-night/",
+    "a light system",
+    { system: "light" },
+    NIGHT_ROOT,
+    DAY_ROOT,
+  ],
+]
+
+const setUp = async (page, { choice, system }) => {
+  await page.emulateMedia({ colorScheme: system ?? "light" })
+  if (choice) await rememberChoice(page, choice)
+}
+
+for (const [path, against, setting, own] of paletteCases) {
+  test(`${path} keeps its palette against ${against}, from the first paint`, async ({
+    page,
+  }) => {
+    await page.route(/\.js(\?|$)/, (route) => route.abort())
+    await setUp(page, setting)
+    await page.goto(path)
+    expect(await rootOf(page)).toEqual(own)
+  })
+
+  test(`${path} keeps its palette against ${against}, once running`, async ({
+    page,
+  }) => {
+    const errors = []
+    page.on("pageerror", (error) => errors.push(error.message))
+    await setUp(page, setting)
+    await page.goto(path)
+    await expect(page.getByRole("group", { name: "Theme" })).toHaveCount(0)
+    await expect.poll(() => rootOf(page)).toEqual(own)
+    expect(errors).toEqual([])
+  })
+}
+
+// Every frame the browser paints while a client navigation swaps the page.
+const recordFrames = (page) =>
+  page.evaluate(() => {
+    window.__frames = []
+    window.__recording = true
+    const frame = () => {
+      const html = getComputedStyle(document.documentElement)
+      window.__frames.push({
+        palette: document.querySelector(".ft-paper")
+          ? "day"
+          : document.querySelector(".ft-paper-night")
+            ? "night"
+            : null,
+        scheme: html.colorScheme,
+        html: html.backgroundColor,
+      })
+      if (window.__recording) requestAnimationFrame(frame)
+    }
+    requestAnimationFrame(frame)
+  })
+
+const recordedFrames = async (page) => {
+  await page.evaluate(() => new Promise((resolve) => setTimeout(resolve, 250)))
+  return page.evaluate(() => {
+    window.__recording = false
+    return window.__frames
+  })
+}
+
+const navigate = (page, path) =>
+  page.evaluate((to) => window.___navigate(to), path)
+
+for (const [path, against, setting, own, site] of paletteCases) {
+  test(`a client navigation to ${path} and back against ${against} never shows the other palette`, async ({
+    page,
+  }) => {
+    const errors = []
+    page.on("pageerror", (error) => errors.push(error.message))
+    await setUp(page, setting)
+    await page.goto("/")
+    await expect.poll(() => rootOf(page)).toEqual(site)
+    const palette = own === DAY_ROOT ? "day" : "night"
+    const paints = (root) => ({ scheme: root.scheme, html: root.html })
+
+    await recordFrames(page)
+    await navigate(page, path)
+    await expect(page).toHaveURL(new RegExp(`${path}$`))
+    let frames = await recordedFrames(page)
+    expect(frames.some((f) => f.palette === palette)).toBe(true)
+    for (const { palette: shown, ...painted } of frames)
+      expect(painted).toEqual(paints(shown === palette ? own : site))
+    await expect.poll(() => rootOf(page)).toEqual(own)
+
+    await recordFrames(page)
+    await navigate(page, "/")
+    await expect(page).toHaveURL(/\/$/)
+    frames = await recordedFrames(page)
+    expect(frames.some((f) => f.palette === null)).toBe(true)
+    for (const { palette: shown, ...painted } of frames)
+      expect(painted).toEqual(paints(shown === palette ? own : site))
+    await expect.poll(() => rootOf(page)).toEqual(site)
+    expect(errors).toEqual([])
+  })
+}
 
 test("another tab's choice applies here too", async ({ context }) => {
   const [first, second] = [await context.newPage(), await context.newPage()]
   await first.goto("/")
   await second.goto("/links/")
-  await first.getByRole("group", { name: "Theme" }).getByText("Night", { exact: true }).click()
+  await first
+    .getByRole("group", { name: "Theme" })
+    .getByText("Night", { exact: true })
+    .click()
   await expect.poll(() => paperOf(second)).toBe(NIGHT_PAPER)
   await expect(second.getByRole("radio", { name: "Night" })).toBeChecked()
 })
@@ -320,7 +455,9 @@ const allPaths = [
 for (const night of [false, true]) {
   test.describe(`contrast ${night ? "at night" : "by day"}`, () => {
     for (const path of allPaths) {
-      test(`every text reaches 4.5:1 on ${path}`, async ({ page }, testInfo) => {
+      test(`every text reaches 4.5:1 on ${path}`, async ({
+        page,
+      }, testInfo) => {
         test.skip(
           testInfo.project.name !== "desktop",
           "colors do not depend on the viewport"

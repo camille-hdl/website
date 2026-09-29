@@ -155,8 +155,11 @@ module.exports = {
         name: `Camille Hodoul - Blog`,
         short_name: `camille-hdl`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: '#fff1e5',
+        // Day paper for the installed app. The pages set theme-color themselves,
+        // per palette (see gatsby-ssr.js), so the plugin does not write one.
+        background_color: `#fff1e5`,
+        theme_color: `#fff1e5`,
+        theme_color_in_head: false,
         display: `minimal-ui`,
         icon: `content/assets/apple-touch-icon.png`,
       },

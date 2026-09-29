@@ -8,12 +8,12 @@ change one, change both (tests/palette.test.mjs fails otherwise).
 The site follows the system setting. A reader can force either palette with
 the switch in the top-left corner, which sets data-theme on <html> before the
 first paint (see gatsby-ssr.js). The palette pages keep their own palette
-whatever the reader chose: while a page's wrapper is on the page, <body> takes
-its values. A <body> class set from Head would outlive the page on client-side
-navigation; :has() cannot.
+whatever the system or the reader says, from <html> down (color-scheme,
+background, scrollbars, native controls): while a page's wrapper is in the
+document, the root takes its values. A class set from Head would outlive the
+page on client-side navigation; :has() cannot.
 **/
-:root,
-body:has(.ft-paper) {
+:root {
   color-scheme: light;
 
   --paper: #fff1e5;
@@ -48,9 +48,10 @@ body:has(.ft-paper) {
 
 /* The night values, twice: once for readers whose system is dark and who have
    not forced the day, once for a forced night and /palette-night. Both blocks
-   must stay identical; the tests check each against the module. */
+   must stay identical; the tests check each against the module. /palette is
+   left out of both, so it stays on the day values above. */
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="day"]) {
+  :root:not([data-theme="day"]):not(:has(.ft-paper)) {
     color-scheme: dark;
 
     --paper: #1f1915;
@@ -78,8 +79,8 @@ body:has(.ft-paper) {
   }
 }
 
-:root[data-theme="night"],
-body:has(.ft-paper-night) {
+:root[data-theme="night"]:not(:has(.ft-paper)),
+:root:has(.ft-paper-night) {
   color-scheme: dark;
 
   --paper: #1f1915;
@@ -123,8 +124,11 @@ body:has(.ft-paper-night) {
   }
 }
 
+html,
 body {
   background-color: var(--paper);
+}
+body {
   color: var(--ink);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
