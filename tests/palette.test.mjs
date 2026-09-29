@@ -69,8 +69,8 @@ const stylesheetTokens = async (selector) => {
 }
 
 const DAY = ":root,\nbody:has(.ft-paper)"
-const NIGHT_SYSTEM = ":root"
-const NIGHT_FORCED = "body:has(.ft-paper-night)"
+const NIGHT_SYSTEM = ':root:not([data-theme="day"])'
+const NIGHT_FORCED = ':root[data-theme="night"],\nbody:has(.ft-paper-night)'
 
 test("the night stylesheet tokens match the night palette", async () => {
   for (const selector of [NIGHT_SYSTEM, NIGHT_FORCED]) {

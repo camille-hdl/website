@@ -1,6 +1,7 @@
 import React from "react"
 import typography from "./src/utils/typography"
 import { goatcounterEndpoint } from "./src/utils/goatcounter-endpoint"
+import { earlyScript } from "./src/utils/theme"
 
 /**
  * @type {import('gatsby').GatsbySSR['onRenderBody']}
@@ -12,6 +13,8 @@ export const onRenderBody = ({
 }) => {
   setHtmlAttributes({ lang: `en` })
   setHeadComponents([
+    // Applies a forced palette before the first paint (see src/utils/theme.js).
+    <script key="theme" dangerouslySetInnerHTML={{ __html: earlyScript }} />,
     <style
       key="TypographyStyle"
       id="typography.js"

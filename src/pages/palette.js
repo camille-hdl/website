@@ -20,7 +20,11 @@ const PalettePage = ({ location }) => {
   `)
 
   return (
-    <Layout location={location} title={data.site.siteMetadata.title}>
+    <Layout
+      location={location}
+      title={data.site.siteMetadata.title}
+      themeSwitch={false}
+    >
       {/* Sets the whole page in the palette it describes (see layout.css). */}
       <div className="ft-paper">
         <header>

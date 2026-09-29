@@ -155,20 +155,153 @@ const NIGHT_PAPER = "rgb(31, 25, 21)"
 const paperOf = (page) =>
   page.evaluate(() => getComputedStyle(document.body).backgroundColor)
 
+const storedChoice = (page) =>
+  page.evaluate(() => localStorage.getItem("theme"))
+
+// A choice made on an earlier visit, in place before any page script runs.
+const rememberChoice = (page, choice) =>
+  page.addInitScript((value) => {
+    if (!sessionStorage.getItem("seeded")) {
+      localStorage.setItem("theme", value)
+      sessionStorage.setItem("seeded", "1")
+    }
+  }, choice)
+
 test("the site follows the system palette", async ({ page }) => {
   await page.goto("/")
   expect(await paperOf(page)).toBe(DAY_PAPER)
   await page.emulateMedia({ colorScheme: "dark" })
   expect(await paperOf(page)).toBe(NIGHT_PAPER)
+  await expect(page.getByRole("radio", { name: "Auto" })).toBeChecked()
 })
 
-test("the palette pages keep their own palette", async ({ page }) => {
+test("the switch forces a palette, remembers it, and gives it back to the system", async ({
+  page,
+}) => {
+  const errors = []
+  page.on("pageerror", (error) => errors.push(error.message))
+  await page.goto("/")
+  const group = page.getByRole("group", { name: "Theme" })
+  await expect(group.getByRole("radio")).toHaveCount(3)
+
+  await group.getByText("Night", { exact: true }).click()
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "night")
+  await expect.poll(() => paperOf(page)).toBe(NIGHT_PAPER)
+  expect(await storedChoice(page)).toBe("night")
+
+  await page.reload()
+  expect(await paperOf(page)).toBe(NIGHT_PAPER)
+  await expect(group.getByRole("radio", { name: "Night" })).toBeChecked()
+
+  // A client-side navigation keeps the choice and shows it.
+  await page.getByRole("link", { name: "Camille Hodoul", exact: true }).first().click()
+  await page.getByRole("link", { name: "How to uninstall Podman Desktop on macos", exact: true }).click()
+  await expect(page).toHaveURL(/\/uninstall-podman-desktop-macos\/$/)
+  await expect(group.getByRole("radio", { name: "Night" })).toBeChecked()
+  expect(await paperOf(page)).toBe(NIGHT_PAPER)
+
   await page.emulateMedia({ colorScheme: "dark" })
+  await group.getByText("Day", { exact: true }).click()
+  await expect.poll(() => paperOf(page)).toBe(DAY_PAPER)
+  expect(await storedChoice(page)).toBe("day")
+
+  await group.getByText("Auto", { exact: true }).click()
+  await expect(page.locator("html")).not.toHaveAttribute("data-theme", /.*/)
+  expect(await storedChoice(page)).toBeNull()
+  await expect.poll(() => paperOf(page)).toBe(NIGHT_PAPER)
+  expect(errors).toEqual([])
+})
+
+test("the switch works from the keyboard", async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name === "mobile", "no keyboard")
+  await page.goto("/")
+  await page.keyboard.press("Tab")
+  const auto = page.getByRole("radio", { name: "Auto" })
+  await expect(auto).toBeFocused()
+  await page.keyboard.press("ArrowRight")
+  await page.keyboard.press("ArrowRight")
+  await expect(page.getByRole("radio", { name: "Night" })).toBeFocused()
+  await expect(page.getByRole("radio", { name: "Night" })).toBeChecked()
+  await expect.poll(() => paperOf(page)).toBe(NIGHT_PAPER)
+  await expect(page.getByRole("group", { name: "Theme" })).toHaveScreenshot(
+    "theme-switch-focused.png",
+    { animations: "disabled", maxDiffPixels: 0 }
+  )
+})
+
+test("a remembered palette is painted first, before any bundle runs", async ({
+  page,
+}) => {
+  // With every script file refused, only the inline head script can set it.
+  await page.route(/\.js(\?|$)/, (route) => route.abort())
+  await rememberChoice(page, "night")
+  await page.goto("/")
+  expect(await paperOf(page)).toBe(NIGHT_PAPER)
+  await page.emulateMedia({ colorScheme: "dark" })
+  await page.evaluate(() => localStorage.setItem("theme", "day"))
+  await page.goto("/links/")
+  expect(await paperOf(page)).toBe(DAY_PAPER)
+})
+
+test("a broken storage leaves the site on the system palette", async ({
+  page,
+}) => {
+  const errors = []
+  page.on("pageerror", (error) => errors.push(error.message))
+  await page.addInitScript(() => {
+    Object.defineProperty(window, "localStorage", {
+      get() {
+        throw new Error("storage disabled")
+      },
+    })
+  })
+  await page.emulateMedia({ colorScheme: "dark" })
+  await page.goto("/")
+  expect(await paperOf(page)).toBe(NIGHT_PAPER)
+  await page.getByRole("group", { name: "Theme" }).getByText("Day", { exact: true }).click()
+  await expect.poll(() => paperOf(page)).toBe(DAY_PAPER)
+  expect(errors).toEqual([])
+})
+
+test("the palette pages keep their own palette and have no switch", async ({
+  page,
+}) => {
+  await rememberChoice(page, "night")
   await page.goto("/palette/")
   expect(await paperOf(page)).toBe(DAY_PAPER)
-  await page.emulateMedia({ colorScheme: "light" })
+  await expect(page.getByRole("group", { name: "Theme" })).toHaveCount(0)
+  await page.evaluate(() => localStorage.setItem("theme", "day"))
   await page.goto("/palette-night/")
   expect(await paperOf(page)).toBe(NIGHT_PAPER)
+  await expect(page.getByRole("group", { name: "Theme" })).toHaveCount(0)
+})
+
+test("another tab's choice applies here too", async ({ context }) => {
+  const [first, second] = [await context.newPage(), await context.newPage()]
+  await first.goto("/")
+  await second.goto("/links/")
+  await first.getByRole("group", { name: "Theme" }).getByText("Night", { exact: true }).click()
+  await expect.poll(() => paperOf(second)).toBe(NIGHT_PAPER)
+  await expect(second.getByRole("radio", { name: "Night" })).toBeChecked()
+})
+
+test("the palettes fade into each other, unless motion is reduced", async ({
+  page,
+}) => {
+  await page.goto("/")
+  const group = page.getByRole("group", { name: "Theme" })
+  const fading = () =>
+    page.evaluate(() => [
+      document.documentElement.classList.contains("theme-transition"),
+      getComputedStyle(document.body).transitionDuration,
+    ])
+  await group.getByText("Night", { exact: true }).click()
+  expect(await fading()).toEqual([true, "0.3s, 0.3s, 0.3s, 0.3s"])
+  await expect.poll(fading).toEqual([false, "0s"])
+
+  await page.emulateMedia({ reducedMotion: "reduce" })
+  await group.getByText("Day", { exact: true }).click()
+  expect(await fading()).toEqual([false, "0s"])
 })
 
 // ---------------------------------------------------------------- contrast

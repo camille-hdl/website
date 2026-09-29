@@ -5,8 +5,10 @@ night. The day roles mirror src/data/ft-paper.js and the night roles
 src/data/ft-paper-night.js, which is what /palette and /palette-night render —
 change one, change both (tests/palette.test.mjs fails otherwise).
 
-The site follows the system setting. The palette pages keep their own palette
-whatever the system says: while a page's wrapper is on the page, <body> takes
+The site follows the system setting. A reader can force either palette with
+the switch in the top-left corner, which sets data-theme on <html> before the
+first paint (see gatsby-ssr.js). The palette pages keep their own palette
+whatever the reader chose: while a page's wrapper is on the page, <body> takes
 its values. A <body> class set from Head would outlive the page on client-side
 navigation; :has() cannot.
 **/
@@ -44,11 +46,11 @@ body:has(.ft-paper) {
   --masthead: hsla(0, 0%, 0%, 0.9);
 }
 
-/* The night values, twice: once for readers whose system is dark, once for
-   /palette-night. Both blocks must stay identical; the tests check each
-   against the module. */
+/* The night values, twice: once for readers whose system is dark and who have
+   not forced the day, once for a forced night and /palette-night. Both blocks
+   must stay identical; the tests check each against the module. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="day"]) {
     color-scheme: dark;
 
     --paper: #1f1915;
@@ -76,6 +78,7 @@ body:has(.ft-paper) {
   }
 }
 
+:root[data-theme="night"],
 body:has(.ft-paper-night) {
   color-scheme: dark;
 
@@ -106,6 +109,18 @@ body:has(.ft-paper-night) {
 ::selection {
   background: var(--surface-2);
   color: var(--ink);
+}
+
+/* Switching palettes fades instead of cutting, unless the reader asked for
+   less motion. The class is only on <html> while the switch is changing it. */
+@media (prefers-reduced-motion: no-preference) {
+  html.theme-transition,
+  html.theme-transition *,
+  html.theme-transition *::before,
+  html.theme-transition *::after {
+    transition: color 0.3s ease, background-color 0.3s ease,
+      border-color 0.3s ease, box-shadow 0.3s ease !important;
+  }
 }
 
 body {
