@@ -1,10 +1,19 @@
 /**
 PALETTE
-Every color on this site comes from ft-paper. The roles below mirror
-src/data/ft-paper.js, which is what /palette renders — change one, change both
-(tests/palette.test.mjs fails otherwise).
+Every color on this site comes from ft-paper by day and ft-paper-night by
+night. The day roles mirror src/data/ft-paper.js and the night roles
+src/data/ft-paper-night.js, which is what /palette and /palette-night render —
+change one, change both (tests/palette.test.mjs fails otherwise).
+
+The site follows the system setting. The palette pages keep their own palette
+whatever the system says: while a page's wrapper is on the page, <body> takes
+its values. A <body> class set from Head would outlive the page on client-side
+navigation; :has() cannot.
 **/
-:root {
+:root,
+body:has(.ft-paper) {
+  color-scheme: light;
+
   --paper: #fff1e5;
   --paper-raised: #fff9f2;
   --surface-1: #f7e7d8;
@@ -26,19 +35,50 @@ src/data/ft-paper.js, which is what /palette renders — change one, change both
 
   /* Callout surface. Blue does not survive a low-strength mix with paper -- it
      just goes grey -- so notes reuse --surface-1 and let the border carry the
-     hue. Warm hues do survive: this is crimson at 8% over paper, derived in
+     hue. Warm hues do survive: this is crimson washed over paper, derived in
      the palette module like the other fills. */
   --crimson-wash: #fbded3;
+
+  /* The blog title keeps the exact color it has always rendered at by day,
+     independent of the body ink. */
+  --masthead: hsla(0, 0%, 0%, 0.9);
 }
 
-/**
-PALETTE — NIGHT
-/palette-night sets itself in the palette it describes: while its wrapper is
-on the page, <body> takes the night values. A <body> class set from Head would
-outlive the page on client-side navigation; :has() cannot. The roles mirror
-src/data/ft-paper-night.js — change one, change both.
-**/
+/* The night values, twice: once for readers whose system is dark, once for
+   /palette-night. Both blocks must stay identical; the tests check each
+   against the module. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --paper: #1f1915;
+    --paper-raised: #261f1a;
+    --surface-1: #2b231d;
+    --surface-2: #3a2f27;
+    --surface-3: #40342b;
+    --rule: #5c4f45;
+
+    --ink: #e3d1bf;
+    --ink-2: #c8b7a6;
+    --ink-muted: #b09f8f;
+
+    --claret: #d28e9b;
+    --oxford: #7da5d2;
+    --jade: #4db37b;
+    --teal: #4db4ba;
+    --mandarin: #d2905f;
+    --velvet: #b49cb8;
+    --crimson: #e8857e;
+
+    --crimson-wash: #301713;
+
+    --masthead: var(--ink);
+  }
+}
+
 body:has(.ft-paper-night) {
+  color-scheme: dark;
+
   --paper: #1f1915;
   --paper-raised: #261f1a;
   --surface-1: #2b231d;
@@ -58,31 +98,19 @@ body:has(.ft-paper-night) {
   --velvet: #b49cb8;
   --crimson: #e8857e;
 
-  color: var(--ink);
+  --crimson-wash: #301713;
+
+  --masthead: var(--ink);
 }
-/* Typography and the masthead hardcode their day colors. */
-body:has(.ft-paper-night) a {
-  color: var(--oxford);
-  box-shadow: 0 1px 0 0 var(--rule);
-}
-body:has(.ft-paper-night) a:hover,
-body:has(.ft-paper-night) a:focus {
-  color: var(--claret);
-  box-shadow: 0 1px 0 0 currentColor;
-}
-body:has(.ft-paper-night) .site-container > header a {
-  color: var(--ink) !important;
-}
-body:has(.ft-paper-night) hr {
-  background: var(--rule);
-}
-body:has(.ft-paper-night) ::selection {
+
+::selection {
   background: var(--surface-2);
   color: var(--ink);
 }
 
 body {
   background-color: var(--paper);
+  color: var(--ink);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -411,24 +439,3 @@ h3.resume-heading {
   opacity: 1 !important;
   transition: none;
 }
-
-
-/* @media (prefers-color-scheme: dark) {
-  body {
-    background-color: rgb(1, 22, 39);
-    color: rgb(214, 222, 235);
-  }
-  blockquote {
-      color: rgb(163, 187, 207);
-  }
-  a {
-    color: rgb(173, 219, 103);
-  }
-  img {
-    opacity: 0.85!important;
-    transition: opacity 0.5s ease-in-out;
-  }
-  img:hover {
-    opacity: 1;
-  }
-} */

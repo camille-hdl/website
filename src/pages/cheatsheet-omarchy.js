@@ -104,7 +104,8 @@ const Window = (window) => {
                   textAnchor="middle"
                   dominantBaseline="central"
                   style={{ fontSize: "4.6px" }}
-                  fill={selected ? "var(--paper)" : "var(--ink-muted)"}
+                  // ink-2: muted ink on surface-3 is 4.48:1 by day.
+                  fill={selected ? "var(--paper)" : "var(--ink-2)"}
                 >
                   {tab}
                 </text>

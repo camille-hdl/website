@@ -4,9 +4,9 @@ import "../layout.css"
 
 import { rhythm } from "../utils/typography"
 
-// The blog title keeps the exact color it has always rendered at, independent
-// of the body ink.
-const mastheadColor = `hsla(0,0%,0%,0.9)`
+// The blog title keeps the exact color it has always rendered at by day (see
+// --masthead in layout.css).
+const mastheadColor = `var(--masthead)`
 
 class Layout extends React.Component {
   render() {
