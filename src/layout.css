@@ -1,7 +1,8 @@
 /**
 PALETTE
 Every color on this site comes from ft-paper. The roles below mirror
-src/data/ft-paper.js, which is what /palette renders — change one, change both.
+src/data/ft-paper.js, which is what /palette renders — change one, change both
+(tests/palette.test.mjs fails otherwise).
 **/
 :root {
   --paper: #fff1e5;
@@ -25,7 +26,8 @@ src/data/ft-paper.js, which is what /palette renders — change one, change both
 
   /* Callout surface. Blue does not survive a low-strength mix with paper -- it
      just goes grey -- so notes reuse --surface-1 and let the border carry the
-     hue. Warm hues do survive: this is crimson at 8% over paper. */
+     hue. Warm hues do survive: this is crimson at 8% over paper, derived in
+     the palette module like the other fills. */
   --crimson-wash: #fbded3;
 }
 

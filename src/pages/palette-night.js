@@ -4,28 +4,9 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PaletteGroups from "../components/palette-groups"
+import PaletteRoles from "../components/palette-roles"
 import * as styles from "../palette.module.css"
 import { groups, roles, terminal, hexOf, asJson } from "../data/ft-paper-night"
-
-// One text role over one background role, shown as it renders.
-const Pair = ({ use, text, background, contrast, note }) => (
-  <li className={styles.pair}>
-    <span
-      className={styles.sample}
-      style={{ color: hexOf[text], backgroundColor: hexOf[background] }}
-    >
-      Aa
-    </span>
-    <span className={styles.pairUse}>
-      {use}
-      {note && <span className={styles.pairNote}>{note}</span>}
-    </span>
-    <code className={styles.pairRoles}>
-      {text} on {background}
-    </code>
-    <span className={styles.pairContrast}>{contrast.toFixed(2)}:1</span>
-  </li>
-)
 
 const PaletteNightPage = ({ location }) => {
   const data = useStaticQuery(graphql`
@@ -48,40 +29,7 @@ const PaletteNightPage = ({ location }) => {
 
         <PaletteGroups groups={groups} />
 
-        {roles.map(({ title, pairs }) => (
-          <section className={styles.group} key={title}>
-            <h2 className={styles.groupTitle}>Roles — {title}</h2>
-            <ul className={styles.pairs}>
-              {pairs.map((pair) => (
-                <Pair key={pair.use} {...pair} />
-              ))}
-            </ul>
-          </section>
-        ))}
-
-        <section className={styles.group}>
-          <h2 className={styles.groupTitle}>Terminal</h2>
-          <ul className={styles.pairs}>
-            {terminal.pairs.map((pair) => (
-              <Pair key={pair.use} {...pair} />
-            ))}
-          </ul>
-          <ul className={`${styles.swatches} ${styles.ansi}`}>
-            {terminal.ansi.map(({ name, role, hex, contrast }, index) => (
-              <li className={styles.swatch} key={index}>
-                <div className={styles.chip} style={{ backgroundColor: hex }} />
-                <span className={styles.name}>
-                  {index} · {name}
-                </span>
-                <code className={styles.role}>{role}</code>
-                <code className={styles.value}>{hex}</code>
-                <span className={styles.meta}>
-                  {contrast.toFixed(2)}:1 on paper
-                </span>
-              </li>
-            ))}
-          </ul>
-        </section>
+        <PaletteRoles roles={roles} terminal={terminal} hexOf={hexOf} />
 
         <hr />
 

@@ -4,8 +4,9 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PaletteGroups from "../components/palette-groups"
+import PaletteRoles from "../components/palette-roles"
 import * as styles from "../palette.module.css"
-import { groups, asJson } from "../data/ft-paper"
+import { groups, roles, terminal, hexOf, tools, asJson } from "../data/ft-paper"
 
 const PalettePage = ({ location }) => {
   const data = useStaticQuery(graphql`
@@ -25,6 +26,13 @@ const PalettePage = ({ location }) => {
       </header>
 
       <PaletteGroups groups={groups} />
+
+      <PaletteRoles
+        roles={roles}
+        terminal={terminal}
+        hexOf={hexOf}
+        tools={tools}
+      />
 
       <hr />
 
@@ -58,6 +66,6 @@ export default PalettePage
 export const Head = () => (
   <Seo
     title="ft-paper palette"
-    description="The ft-paper color palette: surfaces, ink and accents, with hex, rgb and contrast values."
+    description="The ft-paper color palette: surfaces, ink, accents, semantic roles and terminal colors, with hex, rgb and contrast values, and where each is used."
   />
 )

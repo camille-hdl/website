@@ -1,45 +1,92 @@
 /**
- * ft-paper — the palette shared by this site and the terminal themes published
- * on /artifacts/ (Ghostty, Herdr, btop).
+ * ft-paper — the palette shared by this site and the themes built from it:
+ * Ghostty, Herdr, Neovim, VS Code, glow and btop. /palette renders it.
  *
- * This module is the single source of truth. `rgb` and `contrast` are derived,
- * never hand-written, so a swatch can never disagree with its own label.
+ * This module is the single source of truth. Only the palette colors below are
+ * written as hex; `rgb`, every contrast figure and every derived fill are
+ * computed, so a swatch can never disagree with its own label and a fill can
+ * never drift from the color it claims to come from.
  *
  * `ansi` records the slot a color occupies in the 16-color terminal palette,
- * which is what lets the terminal themes and this stylesheet stay in step.
+ * which is what keeps the terminal themes and this page in step.
+ *
+ * `on` lists the surfaces a color is cleared for as text: it clears 4.5:1 on
+ * each of them, and the tests hold it there. A color with no `on` is not text.
  */
 
-import { toRgb, contrastRatio, blend as blendOver, round } from "./color.js"
+import { toRgb, contrastRatio, blend, round } from "./color.js"
 
-const PAPER = "#fff1e5"
+// The palette as published. Everything else in this module is derived from it.
+const HEX = {
+  paper: "#fff1e5",
+  "paper-raised": "#fff9f2",
+  "surface-1": "#f7e7d8",
+  "surface-2": "#f2dfce",
+  "surface-3": "#efdcca",
+  rule: "#b8afa5",
+  ink: "#262a33",
+  "ink-2": "#4a4f59",
+  "ink-muted": "#6b6259",
+  "ink-faint": "#7d746b",
+  claret: "#990f3d",
+  "claret-bright": "#bf5f80",
+  oxford: "#0f5499",
+  "oxford-bright": "#1e6ec4",
+  jade: "#00733a",
+  "jade-bright": "#00994d",
+  teal: "#0d7680",
+  "teal-bright": "#009aa8",
+  mandarin: "#99521f",
+  "mandarin-bright": "#bf6626",
+  velvet: "#593380",
+  crimson: "#cc0000",
+  "warm-grey": "#8a827a",
+}
 
-const INK = "#262a33"
+const PAPER = HEX.paper
+const INK = HEX.ink
+
+// Surfaces a text color may be set on, from the page up.
+const SURFACES = ["paper", "paper-raised", "surface-1", "surface-2", "surface-3"]
+const upTo = (last) => SURFACES.slice(0, SURFACES.indexOf(last) + 1)
+
+const own = (role) => ({ hex: HEX[role] })
 
 /**
  * Some fills cannot come from the palette: a diff or search background needs a
- * desaturated wash, and a bright tone laid flat behind text buries it. Those
- * fills are mixed from a palette color over paper, and this module records the
- * formula rather than a pasted hex — same rule as `rgb` and `contrast`, so a
- * derived fill can never drift from the color it claims to come from.
+ * desaturated wash, and a bright tone laid flat behind text buries it. Each is
+ * a palette color over paper at a fixed alpha, recorded as that formula.
  */
-const blend = (hex, alpha, over = PAPER) => blendOver(hex, alpha, over)
+const wash = (role, alpha) => ({
+  hex: blend(HEX[role], alpha, PAPER),
+  formula: `${role} at ${Math.round(alpha * 100)}% over paper`,
+})
 
 /**
  * A surface is judged by whether body ink reads on it; every other color by
- * whether it reads on paper. Same measure, opposite direction.
+ * whether it reads on paper, and — for anything that is text — by the worst
+ * surface it is cleared for.
  */
-const swatch = (isSurface) => ({ role, name, hex, ansi, note }) => ({
-  role,
-  name,
-  hex,
-  ansi,
-  note,
-  rgb: toRgb(hex),
-  contrast: isSurface
-    ? round(contrastRatio(INK, hex))
-    : round(contrastRatio(hex, PAPER)),
-  contrastLabel: isSurface ? "ink on this" : "on paper",
-})
+const swatch = (isSurface) => ({ role, name, hex, formula, ansi, note, on }) => {
+  const worst = on
+    ?.map((surface) => ({ surface, contrast: contrastRatio(hex, HEX[surface]) }))
+    .reduce((a, b) => (b.contrast < a.contrast ? b : a))
+  return {
+    role,
+    name,
+    hex,
+    formula: formula ?? null,
+    ansi: ansi ?? null,
+    note,
+    rgb: toRgb(hex),
+    contrast: isSurface
+      ? round(contrastRatio(INK, hex))
+      : round(contrastRatio(hex, PAPER)),
+    contrastLabel: isSurface ? "ink on this" : "on paper",
+    readsOn: on ?? [],
+    worst: worst ? { surface: worst.surface, contrast: round(worst.contrast) } : null,
+  }
+}
 
 const group = (title, purpose, entries, { surfaces = false } = {}) => ({
   title,
@@ -51,74 +98,238 @@ export const paper = PAPER
 
 export const groups = [
   group("Surfaces", "Backgrounds, from the page up. Each step is one shade deeper than the last, and each figure is how well body ink reads on it.", [
-    { role: "paper", name: "Paper", hex: "#fff1e5", ansi: null, note: "Page background" },
-    { role: "paper-raised", name: "Paper raised", hex: "#fff9f2", ansi: 15, note: "Code and quote blocks" },
-    { role: "surface-1", name: "Surface 1", hex: "#f7e7d8", ansi: null, note: "Panels" },
-    { role: "surface-2", name: "Surface 2", hex: "#f2dfce", ansi: null, note: "Selection, inline code" },
-    { role: "surface-3", name: "Surface 3", hex: "#efdcca", ansi: null, note: "Meters, highlighted lines" },
-    { role: "rule", name: "Rule", hex: "#b8afa5", ansi: 7, note: "Dividers and disabled ink" },
+    { role: "paper", name: "Paper", ...own("paper"), note: "Page, editor and terminal background" },
+    { role: "paper-raised", name: "Paper raised", ...own("paper-raised"), ansi: 15, note: "Code and quote blocks, popups, widgets" },
+    { role: "surface-1", name: "Surface 1", ...own("surface-1"), note: "Panels, side bars, status lines, notes" },
+    { role: "surface-2", name: "Surface 2", ...own("surface-2"), note: "Selection, inline code, active rows" },
+    { role: "surface-3", name: "Surface 3", ...own("surface-3"), note: "Current and highlighted lines, meters, Herdr panels" },
+    { role: "rule", name: "Rule", ...own("rule"), ansi: 7, note: "Dividers, borders, whitespace glyphs" },
   ], { surfaces: true }),
-  group("Ink", "Text, from primary down to faint. Each figure is the contrast against paper.", [
-    { role: "ink", name: "Slate", hex: "#262a33", ansi: 0, note: "Body text" },
-    { role: "ink-2", name: "Slate 2", hex: "#4a4f59", ansi: null, note: "Secondary text" },
-    { role: "ink-muted", name: "Muted", hex: "#6b6259", ansi: null, note: "Metadata, captions" },
-    { role: "ink-faint", name: "Faint", hex: "#7d746b", ansi: null, note: "Hints" },
-    { role: "ink-disabled", name: "Disabled", hex: "#b8afa5", ansi: 7, note: "Disabled text" },
+  group("Ink", "Text, from primary down to faint. Each figure is the contrast against paper, then against the deepest surface the ink is cleared for. Faint and disabled stay under 4.5:1: they are never content.", [
+    { role: "ink", name: "Slate", ...own("ink"), ansi: 0, note: "Body text, terminal foreground", on: SURFACES },
+    { role: "ink-2", name: "Slate 2", ...own("ink-2"), note: "Secondary text, parameters, properties, quotes", on: SURFACES },
+    { role: "ink-muted", name: "Muted", ...own("ink-muted"), note: "Metadata, captions, code comments, line numbers", on: upTo("surface-2") },
+    { role: "ink-faint", name: "Faint", ...own("ink-faint"), note: "Hints and inactive labels, under 4.5:1" },
+    { role: "ink-disabled", name: "Disabled", ...own("rule"), formula: "same as rule", ansi: 7, note: "Disabled text" },
   ]),
   group("Highlight 1 — Claret", "The identity color. One accent, used sparingly.", [
-    { role: "claret", name: "Claret", hex: "#990f3d", ansi: 1, note: "Accent, links on hover" },
-    { role: "claret-bright", name: "Candy", hex: "#bf5f80", ansi: 13, note: "Decorative only" },
+    { role: "claret", name: "Claret", ...own("claret"), ansi: 1, note: "Accent, links on hover, cursor, headings in editors", on: SURFACES },
+    { role: "claret-bright", name: "Candy", ...own("claret-bright"), ansi: 13, note: "Decorative only" },
   ]),
   group("Highlight 2 — Oxford", "The working accent: links, information, the calm counterweight to claret.", [
-    { role: "oxford", name: "Oxford", hex: "#0f5499", ansi: 4, note: "Links, notes" },
-    { role: "oxford-bright", name: "Oxford bright", hex: "#1e6ec4", ansi: 12, note: "Gradient starts" },
+    { role: "oxford", name: "Oxford", ...own("oxford"), ansi: 4, note: "Links, information, focus", on: SURFACES },
+    { role: "oxford-bright", name: "Oxford bright", ...own("oxford-bright"), ansi: 12, note: "Gradient starts, hovered buttons; base of the change fills", on: upTo("paper-raised") },
   ]),
-  group("Supporting", "Status and category hues. The deep tone reads on paper; the bright one is for fills.", [
-    { role: "jade", name: "Jade", hex: "#00733a", ansi: 2, note: "Success" },
-    { role: "jade-bright", name: "Jade bright", hex: "#00994d", ansi: 10, note: "Fills" },
-    { role: "teal", name: "Teal", hex: "#0d7680", ansi: 6, note: "Secondary category" },
-    { role: "teal-bright", name: "Teal bright", hex: "#009aa8", ansi: 14, note: "Fills" },
-    { role: "mandarin", name: "Mandarin", hex: "#99521f", ansi: 3, note: "Warning" },
-    { role: "mandarin-bright", name: "Mandarin bright", hex: "#bf6626", ansi: 11, note: "Fills" },
-    { role: "velvet", name: "Velvet", hex: "#593380", ansi: 5, note: "Tertiary category" },
-    { role: "crimson", name: "Crimson", hex: "#cc0000", ansi: 9, note: "Error" },
-    { role: "warm-grey", name: "Warm grey", hex: "#8a827a", ansi: 8, note: "Dim glyphs" },
+  group("Supporting", "Status and category hues. The deep tone is text on paper; the bright one is for fills and the bright terminal slots.", [
+    { role: "jade", name: "Jade", ...own("jade"), ansi: 2, note: "Success, strings, additions", on: upTo("surface-2") },
+    { role: "jade-bright", name: "Jade bright", ...own("jade-bright"), ansi: 10, note: "Bright green; base of the add fill" },
+    { role: "teal", name: "Teal", ...own("teal"), ansi: 6, note: "Secondary category: types in editors, hints", on: upTo("paper-raised") },
+    { role: "teal-bright", name: "Teal bright", ...own("teal-bright"), ansi: 14, note: "Bright cyan" },
+    { role: "mandarin", name: "Mandarin", ...own("mandarin"), ansi: 3, note: "Warning, numbers, constants", on: upTo("surface-2") },
+    { role: "mandarin-bright", name: "Mandarin bright", ...own("mandarin-bright"), ansi: 11, note: "Bright yellow; base of the match fill" },
+    { role: "velvet", name: "Velvet", ...own("velvet"), ansi: 5, note: "Tertiary category: keywords in editors", on: SURFACES },
+    { role: "crimson", name: "Crimson", ...own("crimson"), ansi: 9, note: "Error, deletions, exceptions", on: upTo("surface-2") },
+    { role: "warm-grey", name: "Warm grey", ...own("warm-grey"), ansi: 8, note: "Dim glyphs, under 4.5:1" },
   ]),
-  group("Derived fills", "Mixed from the palette, not part of it. A diff or search background has to sit behind text, which rules out the bright tones at full strength; each of these is one of them washed over paper at a fixed alpha. Every figure is how well body ink reads on the result.", [
-    { role: "fill-add", name: "Add", hex: blend("#00994d", 0.2), ansi: null, note: "Added line — jade-bright at 20% over paper" },
-    { role: "fill-remove", name: "Remove", hex: blend("#cc0000", 0.16), ansi: null, note: "Removed line — crimson at 16% over paper" },
-    { role: "fill-change", name: "Change", hex: blend("#1e6ec4", 0.16), ansi: null, note: "Changed line — oxford-bright at 16% over paper" },
-    { role: "fill-change-focus", name: "Change focus", hex: blend("#1e6ec4", 0.32), ansi: null, note: "The part that actually changed, inside a changed line — oxford-bright at 32% over paper" },
-    { role: "fill-match", name: "Match", hex: blend("#bf6626", 0.34), ansi: null, note: "Every hit of a search — mandarin-bright at 34% over paper" },
-    { role: "fill-target", name: "Target", hex: blend("#990f3d", 0.4), ansi: null, note: "The one hit being jumped to — claret at 40% over paper" },
+  group("Derived fills", "Mixed from the palette, not part of it. A diff or search background has to sit behind text, which rules out the bright tones at full strength; each of these is a palette color washed over paper at a fixed alpha. Every figure is how well body ink reads on the result.", [
+    { role: "fill-add", name: "Add", ...wash("jade-bright", 0.2), note: "Added line" },
+    { role: "fill-remove", name: "Remove", ...wash("crimson", 0.16), note: "Removed line" },
+    { role: "fill-change", name: "Change", ...wash("oxford-bright", 0.16), note: "Changed line" },
+    { role: "fill-change-focus", name: "Change focus", ...wash("oxford-bright", 0.32), note: "The part that actually changed, inside a changed line" },
+    { role: "fill-match", name: "Match", ...wash("mandarin-bright", 0.34), note: "Every hit of a search" },
+    { role: "fill-target", name: "Target", ...wash("claret", 0.4), note: "The one hit being jumped to" },
+    { role: "crimson-wash", name: "Warning wash", ...wash("crimson", 0.08), note: "Warning callouts on this site" },
   ], { surfaces: true }),
 ]
+
+/** Every day swatch by role, for this page and the palettes derived from it. */
+export const hexOf = Object.fromEntries(
+  groups.flatMap(({ swatches }) => swatches.map(({ role, hex }) => [role, hex]))
+)
+
+/** Where ft-paper is in use, as the roles below credit it. */
+export const tools = {
+  site: "camillehdl.dev",
+  ghostty: "Ghostty",
+  herdr: "Herdr",
+  neovim: "Neovim",
+  vscode: "VS Code",
+  glow: "glow",
+  btop: "btop",
+}
+
+/**
+ * What to use for what: each semantic role as a text role over a background
+ * role, and the tools that actually set it that way. Where the tools disagree,
+ * each choice is its own line. `contrast` is that pair; `exempt` says why a
+ * pair under 4.5:1 is not held to it.
+ */
+const pair = (use, text, background, { note, by, exempt } = {}) => ({
+  use,
+  text,
+  background,
+  note: note ?? null,
+  tools: by ?? Object.keys(tools),
+  exempt: exempt ?? null,
+  contrast: round(contrastRatio(hexOf[text], hexOf[background])),
+})
+
+const EDITORS = ["neovim", "vscode", "glow"]
+const NOT_CONTENT = "Never content: a hint sits beside what it describes"
+
+export const roles = [
+  {
+    title: "Text and accents",
+    pairs: [
+      pair("Body text", "ink", "paper"),
+      pair("Secondary text", "ink-2", "paper", { by: ["site", "herdr", "neovim", "vscode", "glow"] }),
+      pair("Metadata, captions", "ink-muted", "paper", { by: ["site", "herdr", "neovim", "vscode", "btop"] }),
+      pair("Hints, inactive labels", "ink-faint", "paper", { by: ["herdr", "neovim", "vscode", "btop"], exempt: NOT_CONTENT }),
+      pair("Link", "oxford", "paper", { by: ["site", "neovim", "vscode", "glow"] }),
+      pair("Link on hover", "claret", "paper", { by: ["site", "vscode"] }),
+      pair("Identity accent", "claret", "paper", { note: "Cursor, headings, the active tab, quote borders" }),
+      pair("Information", "oxford", "paper", { by: ["site", "neovim", "vscode"] }),
+      pair("Success", "jade", "paper", { by: ["herdr", "neovim", "vscode"] }),
+      pair("Warning", "mandarin", "paper", { by: ["herdr", "neovim", "vscode"] }),
+      pair("Error", "crimson", "paper", { by: ["site", "herdr", "neovim", "vscode"] }),
+      pair("Hint", "teal", "paper", { by: ["neovim", "vscode"] }),
+    ],
+  },
+  {
+    title: "Interface",
+    pairs: [
+      pair("Panel, side bar, note", "ink", "surface-1", { by: ["site", "herdr", "vscode"] }),
+      pair("Status line", "ink-2", "surface-1", { by: ["neovim", "vscode"] }),
+      pair("Inactive tab", "ink-muted", "surface-1", { by: ["neovim", "vscode"] }),
+      pair("Popup, widget", "ink", "paper-raised", { by: ["neovim", "vscode"] }),
+      pair("Selection", "ink", "surface-2", { by: ["site", "ghostty", "neovim", "vscode", "btop"] }),
+      pair("Selection in Herdr", "ink", "surface-3", { by: ["herdr"], note: "Herdr selects in surface 3 and marks the active row in surface 2" }),
+      pair("Current line", "ink", "surface-3", { by: ["neovim", "vscode"], note: "VS Code draws it as a border only" }),
+      pair("Cursor", "paper", "claret", { by: ["ghostty"], note: "Block cursor: claret, with paper as the character under it" }),
+      pair("Cursor in editors", "paper", "ink", { by: ["neovim", "vscode"] }),
+      pair("Label on the accent", "paper", "claret", { by: ["neovim", "glow"], note: "Current search hit and jump labels in Neovim, the title band in glow" }),
+      pair("Marked text", "paper-raised", "claret", { by: ["site"] }),
+      pair("Button, badge", "paper", "oxford", { by: ["vscode", "btop"] }),
+      pair("Line number", "ink-muted", "paper", { by: ["site", "vscode"] }),
+      pair("Line number in Neovim", "warm-grey", "paper", { by: ["neovim"], exempt: NOT_CONTENT }),
+      pair("Border, divider", "rule", "paper", { by: ["site", "neovim", "vscode", "glow", "btop"], exempt: "Not text: a line only has to be seen" }),
+      pair("Disabled", "ink-disabled", "paper", { by: ["vscode"], exempt: "Not content: disabled text is exempt" }),
+    ],
+  },
+  {
+    title: "Code",
+    pairs: [
+      pair("Comment (italic)", "ink-muted", "paper", { by: ["site", ...EDITORS] }),
+      pair("String, inserted", "jade", "paper", { by: ["site", ...EDITORS] }),
+      pair("Number, boolean", "mandarin", "paper", { by: ["site"] }),
+      pair("Number, boolean, constant", "mandarin", "paper", { by: EDITORS }),
+      pair("Keyword", "oxford", "paper", { by: ["site"] }),
+      pair("Keyword", "velvet", "paper", { by: EDITORS }),
+      pair("Function, class name", "velvet", "paper", { by: ["site"] }),
+      pair("Function, method", "oxford", "paper", { by: EDITORS }),
+      pair("Variable, operator, URL", "teal", "paper", { by: ["site"] }),
+      pair("Type, class, module", "teal", "paper", { by: EDITORS }),
+      pair("Variable", "ink", "paper", { by: ["neovim", "vscode"] }),
+      pair("Parameter, property, operator", "ink-2", "paper", { by: ["neovim", "vscode"] }),
+      pair("Punctuation", "ink-2", "paper", { by: ["site"] }),
+      pair("Punctuation", "ink-muted", "paper", { by: ["neovim", "vscode"] }),
+      pair("Tag, property, constant, deleted", "claret", "paper", { by: ["site"] }),
+      pair("Import, macro, escape, decorator", "claret", "paper", { by: EDITORS }),
+      pair("Regex, important", "crimson", "paper", { by: ["site"] }),
+      pair("Exception, error", "crimson", "paper", { by: EDITORS }),
+      pair("Regular expression", "teal", "paper", { by: ["vscode"] }),
+      pair("Regular expression in Neovim", "teal-bright", "paper", { by: ["neovim"], exempt: "A bright tone set as text, under 4.5:1" }),
+      pair("Code block", "ink", "paper-raised", { by: ["site", "neovim"] }),
+      pair("Inline code", "ink", "surface-2", { by: ["site", ...EDITORS] }),
+      pair("Highlighted line", "ink", "surface-3", { by: ["site"], note: "Marked by a claret left border" }),
+    ],
+  },
+  {
+    title: "Diff and search",
+    pairs: [
+      pair("Added line", "ink", "fill-add", { by: EDITORS }),
+      pair("Removed line", "ink", "fill-remove", { by: EDITORS }),
+      pair("Changed line", "ink", "fill-change", { by: ["neovim"] }),
+      pair("Changed part", "ink", "fill-change-focus", { by: ["neovim"] }),
+      pair("Search hit", "ink", "fill-match", { by: ["neovim", "vscode"] }),
+      pair("Current search hit", "ink", "fill-target", { by: ["neovim", "vscode"] }),
+      pair("Warning callout", "ink", "crimson-wash", { by: ["site"] }),
+    ],
+  },
+]
+
+/**
+ * The 16-color terminal palette, read off the `ansi` slots above — the slots
+ * the Ghostty theme and VS Code's integrated terminal set. On a light terminal
+ * the white slots (7, 15) are the light end, as ANSI expects.
+ */
+const ANSI_NAMES = [
+  "black", "red", "green", "yellow", "blue", "magenta", "cyan", "white",
+  "bright black", "bright red", "bright green", "bright yellow",
+  "bright blue", "bright magenta", "bright cyan", "bright white",
+]
+
+const swatches = groups.flatMap(({ swatches }) => swatches)
+
+export const terminal = {
+  background: "paper",
+  foreground: "ink",
+  cursor: "claret",
+  cursorText: "paper",
+  selectionBackground: "surface-2",
+  selectionForeground: "ink",
+  pairs: [
+    pair("Background and foreground", "ink", "paper", { by: ["ghostty", "vscode"] }),
+    pair("Cursor", "paper", "claret", { by: ["ghostty"], note: "cursor-color claret, cursor-text paper" }),
+    pair("Selection", "ink", "surface-2", { by: ["ghostty", "vscode"] }),
+  ],
+  ansi: ANSI_NAMES.map((name, index) => {
+    const { role, hex } = swatches.find(({ ansi }) => ansi === index)
+    return { name, role, hex, contrast: round(contrastRatio(hex, PAPER)) }
+  }),
+}
 
 export const asJson = () => ({
   name: "ft-paper",
   background: PAPER,
   inspiration: "Financial Times (ft.com) Origami o-colors",
+  nightPalette: "https://camillehdl.dev/palette-night/",
   contrastNote:
-    "Surfaces are measured as ink on the surface; every other color as the color on paper.",
+    "Surfaces are measured as ink on the surface; every other color as the color on paper, and text colors also at their worst on the surfaces listed in readsOn. A color with an empty readsOn is not cleared for text.",
+  tools,
   groups: groups.map(({ title, purpose, swatches }) => ({
     title,
     purpose,
     swatches: swatches.map(
-      ({ role, name, hex, rgb, ansi, contrast, contrastLabel, note }) => ({
+      ({ role, name, hex, formula, rgb, ansi, contrast, contrastLabel, readsOn, worst, note }) => ({
         role,
         name,
         hex,
         rgb: `rgb(${rgb.join(", ")})`,
+        formula,
         ansi,
         contrast,
         contrastMeans: contrastLabel,
+        readsOn,
+        worstContrast: worst,
         note,
       })
     ),
   })),
+  roles: roles.map(({ title, pairs }) => ({
+    title,
+    pairs: pairs.map((p) => ({
+      ...p,
+      textHex: hexOf[p.text],
+      backgroundHex: hexOf[p.background],
+    })),
+  })),
+  terminal: {
+    ...Object.fromEntries(
+      Object.entries(terminal)
+        .filter(([key]) => !["ansi", "pairs"].includes(key))
+        .map(([key, role]) => [key, { role, hex: hexOf[role] }])
+    ),
+    ansi: terminal.ansi.map((entry, index) => ({ index, ...entry })),
+  },
 })
-
-/** Every day swatch by role, for palettes derived from this one. */
-export const hexOf = Object.fromEntries(
-  groups.flatMap(({ swatches }) => swatches.map(({ role, hex }) => [role, hex]))
-)
