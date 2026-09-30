@@ -52,7 +52,7 @@ lang: fr
 * Monitoré et optimisé les performances, divisant le temps de chargement de composants essentiels par 2 alors que les requêtes ont été multipliées par 10 durant l'année passée
 * Mené les efforts de conformité RGPD
 * Créé des outils internes pour aider l'équipe à administrer l'application ainsi que faire de l'ETL vers ses bases de données, en utilisant Bash et d'autres outils en lignes de commandes
-* Créé [Cuisine EAD](https://cuisine-ead.netlify.app), un outil open-source de traitement de fichiers XML/EAD, d'abord comme un projet personnel puis professionnel du moment que des clients et collègues ont commencé à l'utiliser. C'est une Progressive Web App sans backend utilisant React, des Web Workers, de l'intégration continue sur Travis et du déploiement continu sur Netlify
+* Créé [Cuisine EAD](https://cuisine-ead.camillehdl.dev/), un outil open-source de traitement de fichiers XML/EAD, d'abord comme un projet personnel puis professionnel du moment que des clients et collègues ont commencé à l'utiliser. C'est une Progressive Web App sans backend utilisant React, des Web Workers, de l'intégration continue sur Travis et du déploiement continu sur Netlify
 * Aggrégé et analysé des métriques de différents outils: dépôts de code, tableaux Kanban et time trackers, en utilisant R et RStudio
 * Animé des réunions avec des clients et partenaires tiers pour des intégrations avec d'autres systèmes ou des lancements de projets
 * Animé des interviews d'utilisateurs dans le cadre du design ou re-design de fonctionnalités

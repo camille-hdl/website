@@ -4,7 +4,7 @@ date: "2019-06-14T20:00:00.000Z"
 description: Tool for batch editing xml-ead files in browser.
 ---
 
-[cuisine-ead](https://cuisine-ead.netlify.com) is a tool for batch editing xml-ead files in-browser.
+[cuisine-ead](https://cuisine-ead.camillehdl.dev/) is a tool for batch editing xml-ead files in-browser.
 
 <small>(At the moment, it is available in french only.)</small>
 
