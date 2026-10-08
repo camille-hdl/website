@@ -27,7 +27,7 @@ const HEX = {
   ink: "#262a33",
   "ink-2": "#4a4f59",
   "ink-muted": "#6b6259",
-  "ink-faint": "#7d746b",
+  "ink-faint": "#6f6862",
   claret: "#990f3d",
   "claret-bright": "#bf5f80",
   oxford: "#0f5499",
@@ -105,11 +105,11 @@ export const groups = [
     { role: "surface-3", name: "Surface 3", ...own("surface-3"), note: "Current and highlighted lines, meters, Herdr panels" },
     { role: "rule", name: "Rule", ...own("rule"), ansi: 7, note: "Dividers, borders, whitespace glyphs" },
   ], { surfaces: true }),
-  group("Ink", "Text, from primary down to faint. Each figure is the contrast against paper, then against the deepest surface the ink is cleared for. Faint and disabled stay under 4.5:1: they are never content.", [
+  group("Ink", "Text, from primary down to faint. Each figure is the contrast against paper, then against the deepest surface the ink is cleared for. Disabled stays under 4.5:1: it is never content.", [
     { role: "ink", name: "Slate", ...own("ink"), ansi: 0, note: "Body text, terminal foreground", on: SURFACES },
     { role: "ink-2", name: "Slate 2", ...own("ink-2"), note: "Secondary text, parameters, properties, quotes", on: SURFACES },
     { role: "ink-muted", name: "Muted", ...own("ink-muted"), note: "Metadata, captions, code comments, line numbers", on: upTo("surface-2") },
-    { role: "ink-faint", name: "Faint", ...own("ink-faint"), note: "Hints and inactive labels, under 4.5:1" },
+    { role: "ink-faint", name: "Faint", ...own("ink-faint"), note: "Hints and inactive labels; on paper, raised and surface 1", on: upTo("surface-1") },
     { role: "ink-disabled", name: "Disabled", ...own("rule"), formula: "same as rule", ansi: 7, note: "Disabled text" },
   ]),
   group("Highlight 1 — Claret", "The identity color. One accent, used sparingly.", [
@@ -177,7 +177,6 @@ const pair = (use, text, background, { note, by, exempt } = {}) => ({
 const EDITORS = ["neovim", "vscode", "glow"]
 // The editors color code the way this site does.
 const CODE = ["site", ...EDITORS]
-const NOT_CONTENT = "Never content: a hint sits beside what it describes"
 
 export const roles = [
   {
@@ -187,7 +186,7 @@ export const roles = [
       pair("Secondary text", "ink-2", "paper", { by: ["site", "herdr", "neovim", "vscode", "glow"] }),
       pair("Metadata, captions", "ink-muted", "paper", { by: ["site", "herdr", "neovim", "vscode", "btop"] }),
       pair("Hints, inactive labels", "ink-muted", "paper", { by: ["herdr", "neovim", "vscode"] }),
-      pair("Inactive labels in btop", "ink-faint", "paper", { by: ["btop"], exempt: NOT_CONTENT }),
+      pair("Inactive labels in btop", "ink-faint", "paper", { by: ["btop"] }),
       pair("Link", "oxford", "paper", { by: ["site", "neovim", "vscode", "glow"] }),
       pair("Link on hover", "claret", "paper", { by: ["site", "vscode"] }),
       pair("Identity accent", "claret", "paper", { note: "Cursor, headings, the active tab, quote borders" }),
