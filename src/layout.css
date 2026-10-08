@@ -231,6 +231,56 @@ MASTHEAD AND HEADLINES
   color: var(--ink-muted);
 }
 
+/* Previous and next posts: a label in the small print, then the title as a
+   link. Two columns side by side, stacked on a phone. */
+.blog-post-nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.blog-post-nav li:last-child {
+  text-align: right;
+}
+.blog-post-nav a,
+.blog-post-nav a:hover,
+.blog-post-nav a:focus {
+  display: block;
+  box-shadow: none;
+}
+.blog-post-nav-label {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.blog-post-nav-title {
+  box-shadow: 0 1px 0 0 var(--rule);
+}
+.blog-post-nav a:hover .blog-post-nav-title,
+.blog-post-nav a:focus .blog-post-nav-title {
+  box-shadow: 0 1px 0 0 currentColor;
+}
+@media only screen and (max-width: 600px) {
+  .blog-post-nav ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* The copyright line is small print, like the dates. */
+.site-container > footer {
+  margin-top: 3.24rem;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+}
+
 /**
 CODE
 **/

@@ -48,27 +48,29 @@ export default function BlogPostTemplate(props) {
         <footer>
           <Bio />
         </footer>
-        <nav className="blog-post-nav">
-          <ul
-            style={{
-              display: `flex`,
-              flexWrap: `wrap`,
-              justifyContent: `space-between`,
-              listStyle: `none`,
-              padding: 0,
-            }}
-          >
+        <nav className="blog-post-nav" aria-label="More posts">
+          <ul>
             <li>
               {previous && (
                 <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
+                  <span className="blog-post-nav-label">
+                    <span aria-hidden="true">←</span> Previous
+                  </span>
+                  <span className="blog-post-nav-title">
+                    {previous.frontmatter.title}
+                  </span>
                 </Link>
               )}
             </li>
             <li>
               {next && (
                 <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
+                  <span className="blog-post-nav-label">
+                    Next <span aria-hidden="true">→</span>
+                  </span>
+                  <span className="blog-post-nav-title">
+                    {next.frontmatter.title}
+                  </span>
                 </Link>
               )}
             </li>
