@@ -135,6 +135,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -ms-text-size-adjust: 100%;
 }
+/* Headlines break into lines of even length instead of leaving one word on
+   the last ("Software and hardware I / use"), and paragraphs avoid ending on
+   a lone word. Browsers without text-wrap keep the greedy breaks. */
+h1,
+h2,
+h3,
+h4,
+.site-title,
+.site-name {
+  text-wrap: balance;
+}
+p,
+li,
+blockquote,
+figcaption {
+  text-wrap: pretty;
+}
+
 /* Keep page-heading margins inside main when metadata is rendered in Head. */
 main::before {
   content: "";
