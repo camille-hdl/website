@@ -71,3 +71,10 @@ yarn-error.log
 # Browser test output
 test-results/
 playwright-report/
+
+# Impeccable: the engine binary is downloaded per machine (version in
+# scripts/VERSION), and session state stays local.
+.claude/skills/impeccable/scripts/bin/
+.agents/skills/impeccable/scripts/bin/
+.impeccable/*
+!.impeccable/config.json
