@@ -112,6 +112,19 @@ page on client-side navigation; :has() cannot.
   color: var(--ink);
 }
 
+/* The browser's own parts take the palette too. The focus ring is the one the
+   theme switch and the cheat sheet contents already draw; scrollbars (code
+   blocks, wide tables) sit on rule instead of the system grey. */
+:focus-visible {
+  outline: 2px solid var(--oxford);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+html {
+  scrollbar-color: var(--rule) transparent;
+  accent-color: var(--oxford);
+}
+
 /* Switching palettes fades instead of cutting, unless the reader asked for
    less motion. The class is only on <html> while the switch is changing it. */
 @media (prefers-reduced-motion: no-preference) {
@@ -330,7 +343,8 @@ code[class*="language-"] ::selection {
  .gatsby-highlight {
   background-color: var(--paper-raised);
   border: 1px solid var(--surface-2);
-  border-radius: 0.3em;
+  /* The radius of the other blocks: quotes, notes, warnings. */
+  border-radius: 10px;
   margin: 1.62rem 0;
   padding: 1em;
   overflow: auto;
