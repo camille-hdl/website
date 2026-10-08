@@ -68,3 +68,16 @@
     top: 0.4rem;
   }
 }
+
+/* Under a finger each word takes a target about 31px tall instead of 22px.
+   The words stay where they are on a phone: the padding grows by what the
+   top offset loses. */
+@media (pointer: coarse) {
+  .themeSwitch {
+    top: 0.15rem;
+  }
+  .label {
+    padding-top: 0.55rem;
+    padding-bottom: 0.55rem;
+  }
+}
