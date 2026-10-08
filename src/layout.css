@@ -162,18 +162,31 @@ MASTHEAD AND HEADLINES
   letter-spacing: -0.02em;
 }
 
+/* The site name on every page but the home page: set like the h3 it used to
+   be, without taking a place in the page's outline. */
+.site-name {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.4427rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  margin: 0 0 1.62rem;
+}
+
 /* Index headlines are headlines first and links second: they take the body ink
-   and only reveal the accent on hover, the way ft.com sets its story list. */
-.post-list-item h3 a {
+   and only reveal the accent on hover, the way ft.com sets its story list.
+   They are the h2s under the masthead, at the size of an h3. */
+.post-list-item h2 a {
   color: var(--ink);
   box-shadow: none;
 }
-.post-list-item h3 a:hover,
-.post-list-item h3 a:focus {
+.post-list-item h2 a:hover,
+.post-list-item h2 a:focus {
   color: var(--claret);
   box-shadow: none;
 }
-.post-list-item h3 {
+.post-list-item h2 {
+  font-size: 1.4427rem;
   line-height: 1.2;
 }
 

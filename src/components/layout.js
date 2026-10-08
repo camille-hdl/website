@@ -39,13 +39,10 @@ class Layout extends React.Component {
         </h1>
       )
     } else {
+      // Elsewhere the site name is a link home, not a heading: the page's own
+      // title is its first heading.
       header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
+        <p className="site-name">
           <Link
             style={{
               boxShadow: `none`,
@@ -56,7 +53,7 @@ class Layout extends React.Component {
           >
             {title}
           </Link>
-        </h3>
+        </p>
       )
     }
     return (
