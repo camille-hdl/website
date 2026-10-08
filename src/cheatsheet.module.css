@@ -108,6 +108,14 @@
   margin: 0.6rem 0;
 }
 
+/* The notes are prose in small print: across the full column they ran to
+   about 100 characters a line. Montserrat's zero is wide, so 60ch holds
+   about 75 of them. */
+.note,
+.legend {
+  max-width: 60ch;
+}
+
 .splits {
   width: 100%;
   margin: 0.8rem 0;
