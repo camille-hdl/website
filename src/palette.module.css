@@ -172,6 +172,17 @@
   grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
 }
 
+/* The root steps down to 18px on phones, which took these labels to 11.9px.
+   0.7rem keeps them at 12.6px. */
+@media only screen and (max-width: 600px) {
+  .role,
+  .value,
+  .pairTools,
+  .pairRoles {
+    font-size: 0.7rem;
+  }
+}
+
 @media only screen and (max-width: 480px) {
   .swatches {
     grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
