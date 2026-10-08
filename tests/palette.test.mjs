@@ -50,7 +50,8 @@ test("every semantic role that carries text meets 4.5:1", () => {
 })
 
 // The stylesheet repeats the palette as custom properties; every token must be
-// the module's value for that role. Non-hex tokens (--masthead) are not roles.
+// the module's value for that role. Non-hex tokens (--masthead at night, an
+// alias of --ink) are not checked.
 const readStylesheet = async () => {
   const { readFile } = await import("node:fs/promises")
   return readFile(new URL("../src/layout.css", import.meta.url), "utf8")

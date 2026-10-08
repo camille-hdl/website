@@ -47,9 +47,9 @@ page on client-side navigation; :has() cannot.
   --fill-change: #dbdce0;
   --fill-change-focus: #b7c7da;
 
-  /* The blog title keeps the exact color it has always rendered at by day,
-     independent of the body ink. */
-  --masthead: hsla(0, 0%, 0%, 0.9);
+  /* The blog title keeps the color it has always rendered at by day, black
+     at 90% over paper, now a palette role. By night it is the body ink. */
+  --masthead: #191817;
 }
 
 /* The night values, twice: once for readers whose system is dark and who have

@@ -107,6 +107,7 @@ export const groups = [
   ], { surfaces: true }),
   group("Ink", "Text, from primary down to faint. Each figure is the contrast against paper, then against the deepest surface the ink is cleared for. Disabled stays under 4.5:1: it is never content.", [
     { role: "ink", name: "Slate", ...own("ink"), ansi: 0, note: "Body text, terminal foreground", on: SURFACES },
+    { role: "masthead", name: "Masthead", hex: blend("#000000", 0.9, PAPER), formula: "black at 90% over paper", note: "The site's name, darker than body ink; the site only", on: ["paper"] },
     { role: "ink-2", name: "Slate 2", ...own("ink-2"), note: "Secondary text, parameters, properties, quotes", on: SURFACES },
     { role: "ink-muted", name: "Muted", ...own("ink-muted"), note: "Metadata, captions, code comments, line numbers", on: upTo("surface-2") },
     { role: "ink-faint", name: "Faint", ...own("ink-faint"), note: "Hints and inactive labels; on paper, raised and surface 1", on: upTo("surface-1") },
@@ -183,6 +184,7 @@ export const roles = [
     title: "Text and accents",
     pairs: [
       pair("Body text", "ink", "paper"),
+      pair("Site name", "masthead", "paper", { by: ["site"] }),
       pair("Secondary text", "ink-2", "paper", { by: ["site", "herdr", "neovim", "vscode", "glow"] }),
       pair("Metadata, captions", "ink-muted", "paper", { by: ["site", "herdr", "neovim", "vscode", "btop"] }),
       pair("Hints, inactive labels", "ink-muted", "paper", { by: ["herdr", "neovim", "vscode"] }),
