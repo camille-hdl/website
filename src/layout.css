@@ -41,6 +41,12 @@ page on client-side navigation; :has() cannot.
      the palette module like the other fills. */
   --crimson-wash: #fbded3;
 
+  /* Text selection (::selection below). surface-2 sat too close to paper to
+     show. fill-change, the lighter wash, is declared as well: switching to it
+     is one word in each ::selection rule. */
+  --fill-change: #dbdce0;
+  --fill-change-focus: #b7c7da;
+
   /* The blog title keeps the exact color it has always rendered at by day,
      independent of the body ink. */
   --masthead: hsla(0, 0%, 0%, 0.9);
@@ -75,6 +81,9 @@ page on client-side navigation; :has() cannot.
 
     --crimson-wash: #301713;
 
+    --fill-change: #1f2a38;
+    --fill-change-focus: #1f3854;
+
     --masthead: var(--ink);
   }
 }
@@ -104,11 +113,14 @@ page on client-side navigation; :has() cannot.
 
   --crimson-wash: #301713;
 
+  --fill-change: #1f2a38;
+  --fill-change-focus: #1f3854;
+
   --masthead: var(--ink);
 }
 
 ::selection {
-  background: var(--surface-2);
+  background: var(--fill-change-focus);
   color: var(--ink);
 }
 
@@ -304,13 +316,12 @@ code[class*="language-"], pre[class*="language-"] {
   text-shadow: none;
 }
 
-/* Prism's default selection is a cool blue. This is the same selection color
-   the Ghostty theme uses. */
+/* Prism's default selection is a cool blue. Code takes the page's. */
 pre[class*="language-"]::selection,
 pre[class*="language-"] ::selection,
 code[class*="language-"]::selection,
 code[class*="language-"] ::selection {
-  background: var(--surface-2);
+  background: var(--fill-change-focus);
 }
 /* Inline code sat on the page background, which made it invisible as code. */
 :not(pre) > code[class*="language-"] {

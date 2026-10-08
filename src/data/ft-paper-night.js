@@ -162,6 +162,7 @@ export const roles = [
     pairs: [
       pair("Panel, popup, status line", "ink", "surface-1"),
       pair("Selection", "ink", "surface-2"),
+      pair("Selection on camillehdl.dev", "ink", "fill-change-focus", "The site selects text on the change fill; surface-2 sits too close to paper to show on a page"),
       pair("Current line", "ink", "surface-3"),
       pair("Block cursor", "paper", "claret", "A thick cursor is claret, with paper as the character under it: the terminal, Neovim outside insert mode"),
       pair("Bar cursor", "ink", "paper", "A thin cursor is ink: Neovim in insert mode"),
