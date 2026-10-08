@@ -1,0 +1,17 @@
+{
+  "buildPath": "code",
+  "detector": {
+    "ignoreRules": [
+      "cream-palette"
+    ],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "montserrat",
+        "createdAt": "2026-10-08T11:53:25.463Z",
+        "reason": "Brand font, chosen with the palette (DESIGN.md)"
+      }
+    ]
+  }
+}
