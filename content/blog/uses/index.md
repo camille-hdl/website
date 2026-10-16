@@ -110,9 +110,9 @@ See my [Artifacts page](/artifacts/) or [download the Brewfile](/artifacts/homeb
 * Thaw -- <small>Menu bar configuration</small>
 
 ## Fonts
-* Merriweather -- <small>for writing</small>
-* Open Sans -- <small>for titles</small>
-* Fira Code -- <small>for code</small>
+* IBM Plex Sans -- <small>for writing and titles, on this site</small>
+* IBM Plex Mono -- <small>for code, on this site</small>
+* Fira Code -- <small>for code, in my editor</small>
 * EB Garamond -- <small>for fantasy</small>
 
 ## Hardware
