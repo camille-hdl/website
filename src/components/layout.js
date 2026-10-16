@@ -64,8 +64,8 @@ class Layout extends React.Component {
           style={{
             marginLeft: `auto`,
             marginRight: `auto`,
-            // Preserve the physical column width from the selected Plex trial.
-            maxWidth: `722px`,
+            // Keep the reading measure separate from the horizontal padding.
+            maxWidth: `calc(56ch + ${rhythm(1.5)})`,
             padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
           }}
         >
