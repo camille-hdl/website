@@ -87,12 +87,16 @@ html.type-plex[data-size="matched"] { --plex-size: 20.44px; }
 .type-plex .site-container { max-width: 722px !important; }
 /* Troisième composition : prose Sans, tous les titres Serif, code Mono.
    Les tailles, graisses et espacements sont ceux de la composition Serif. */
-.type-plex[data-variant="plex-sans"] body {
+.type-plex:is([data-variant="plex-sans"], [data-variant="plex-all-sans"]) body {
   font-family: "IBM Plex Sans Var", sans-serif;
 }
 .type-plex[data-variant="plex-sans"] h1,
 .type-plex[data-variant="plex-sans"] .site-name {
   font-family: "IBM Plex Serif Var", Georgia, serif;
+}
+/* Quatrième composition : titres et prose Sans, code Mono. */
+.type-plex[data-variant="plex-all-sans"] :is(h1, h2, h3, h4, h5, h6, .site-name) {
+  font-family: "IBM Plex Sans Var", sans-serif;
 }
 @media only screen and (max-width: 600px) {
   html.type-plex { --plex-size: 20px; }

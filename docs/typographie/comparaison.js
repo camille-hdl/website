@@ -1,7 +1,7 @@
 const fields = Object.fromEntries(["variant", "theme", "size", "viewport"].map(id => [id, document.getElementById(id)]))
 const preview = document.getElementById("preview")
-const variants = ["actuelle", "plex", "plex-sans"]
-const variantNames = { actuelle: "Actuelle", plex: "Plex Serif", "plex-sans": "Plex Sans" }
+const variants = ["actuelle", "plex", "plex-sans", "plex-all-sans"]
+const variantNames = { actuelle: "Actuelle", plex: "Plex Serif", "plex-sans": "Plex Sans", "plex-all-sans": "Plex tout Sans" }
 function updatePreview() {
   const { variant, theme, size, viewport } = Object.fromEntries(Object.entries(fields).map(([key, el]) => [key, el.value]))
   const url = `article.html?${new URLSearchParams({ variant, theme, size })}`

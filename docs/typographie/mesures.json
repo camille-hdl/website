@@ -530,6 +530,172 @@
       "viewport": "desktop",
       "width": 1280,
       "height": 900,
+      "theme": "day",
+      "variant": "plex-all-sans",
+      "styles": {
+        "body": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "25px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "40px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "title": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "62.5px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "75px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "heading": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "43.3215px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "51.9858px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "prose": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "25px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "40px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "code": {
+          "fontFamily": "\"IBM Plex Mono Var\", monospace",
+          "fontSize": "25px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "40px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "label": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "28.8px",
+          "color": "rgb(107, 98, 89)"
+        },
+        "siteName": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "36.0675px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "43.281px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "italic": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "25px",
+          "fontWeight": "400",
+          "fontStyle": "italic",
+          "lineHeight": "40px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "bold": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "25px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "40px",
+          "color": "rgb(38, 42, 51)"
+        }
+      },
+      "rootFontSize": "25px",
+      "paper": "rgb(255, 241, 229)",
+      "overflow": false,
+      "contentWidth": 661.25,
+      "platformFonts": {
+        "title": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 33
+          }
+        ],
+        "heading": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "prose": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Regular",
+            "isCustomFont": true,
+            "glyphCount": 96
+          }
+        ],
+        "code": [
+          {
+            "familyName": "IBM Plex Mono Var",
+            "postScriptName": "IBMPlexMonoVar-Regular",
+            "isCustomFont": true,
+            "glyphCount": 342
+          }
+        ],
+        "label": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Regular",
+            "isCustomFont": true,
+            "glyphCount": 14
+          }
+        ],
+        "siteName": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 14
+          }
+        ],
+        "italic": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Italic",
+            "isCustomFont": true,
+            "glyphCount": 19
+          }
+        ],
+        "bold": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 17
+          }
+        ]
+      },
+      "fonts": [
+        {
+          "file": "IBM Plex Mono Var-Roman-Latin1.woff2",
+          "bytes": 32576
+        },
+        {
+          "file": "IBM Plex Sans Var-Italic-Latin1.woff2",
+          "bytes": 80188
+        },
+        {
+          "file": "IBM Plex Sans Var-Roman-Latin1.woff2",
+          "bytes": 68988
+        }
+      ],
+      "fontBytes": 181752
+    },
+    {
+      "viewport": "desktop",
+      "width": 1280,
+      "height": 900,
       "theme": "night",
       "variant": "actuelle",
       "styles": {
@@ -1047,6 +1213,172 @@
         }
       ],
       "fontBytes": 232876
+    },
+    {
+      "viewport": "desktop",
+      "width": 1280,
+      "height": 900,
+      "theme": "night",
+      "variant": "plex-all-sans",
+      "styles": {
+        "body": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "25px",
+          "fontWeight": "450",
+          "fontStyle": "normal",
+          "lineHeight": "40px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "title": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "62.5px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "75px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "heading": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "43.3215px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "51.9858px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "prose": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "25px",
+          "fontWeight": "450",
+          "fontStyle": "normal",
+          "lineHeight": "40px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "code": {
+          "fontFamily": "\"IBM Plex Mono Var\", monospace",
+          "fontSize": "25px",
+          "fontWeight": "450",
+          "fontStyle": "normal",
+          "lineHeight": "40px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "label": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "18px",
+          "fontWeight": "450",
+          "fontStyle": "normal",
+          "lineHeight": "28.8px",
+          "color": "rgb(176, 159, 143)"
+        },
+        "siteName": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "36.0675px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "43.281px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "italic": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "25px",
+          "fontWeight": "450",
+          "fontStyle": "italic",
+          "lineHeight": "40px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "bold": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "25px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "40px",
+          "color": "rgb(227, 209, 191)"
+        }
+      },
+      "rootFontSize": "25px",
+      "paper": "rgb(31, 25, 21)",
+      "overflow": false,
+      "contentWidth": 661.25,
+      "platformFonts": {
+        "title": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 33
+          }
+        ],
+        "heading": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "prose": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Text",
+            "isCustomFont": true,
+            "glyphCount": 96
+          }
+        ],
+        "code": [
+          {
+            "familyName": "IBM Plex Mono Var",
+            "postScriptName": "IBMPlexMonoVar-Text",
+            "isCustomFont": true,
+            "glyphCount": 342
+          }
+        ],
+        "label": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Text",
+            "isCustomFont": true,
+            "glyphCount": 14
+          }
+        ],
+        "siteName": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 14
+          }
+        ],
+        "italic": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-TextIta",
+            "isCustomFont": true,
+            "glyphCount": 19
+          }
+        ],
+        "bold": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 17
+          }
+        ]
+      },
+      "fonts": [
+        {
+          "file": "IBM Plex Mono Var-Roman-Latin1.woff2",
+          "bytes": 32576
+        },
+        {
+          "file": "IBM Plex Sans Var-Italic-Latin1.woff2",
+          "bytes": 80188
+        },
+        {
+          "file": "IBM Plex Sans Var-Roman-Latin1.woff2",
+          "bytes": 68988
+        }
+      ],
+      "fontBytes": 181752
     },
     {
       "viewport": "mobile",
@@ -1574,6 +1906,172 @@
       "viewport": "mobile",
       "width": 390,
       "height": 844,
+      "theme": "day",
+      "variant": "plex-all-sans",
+      "styles": {
+        "body": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "32px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "title": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "50px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "60px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "heading": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "34.6572px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "41.5886px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "prose": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "32px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "code": {
+          "fontFamily": "\"IBM Plex Mono Var\", monospace",
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "32px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "label": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "14.4px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "23.04px",
+          "color": "rgb(107, 98, 89)"
+        },
+        "siteName": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "28.854px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "34.6248px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "italic": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "fontStyle": "italic",
+          "lineHeight": "32px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "bold": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "20px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "32px",
+          "color": "rgb(38, 42, 51)"
+        }
+      },
+      "rootFontSize": "20px",
+      "paper": "rgb(255, 241, 229)",
+      "overflow": false,
+      "contentWidth": 350,
+      "platformFonts": {
+        "title": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 32
+          }
+        ],
+        "heading": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "prose": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Regular",
+            "isCustomFont": true,
+            "glyphCount": 95
+          }
+        ],
+        "code": [
+          {
+            "familyName": "IBM Plex Mono Var",
+            "postScriptName": "IBMPlexMonoVar-Regular",
+            "isCustomFont": true,
+            "glyphCount": 342
+          }
+        ],
+        "label": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Regular",
+            "isCustomFont": true,
+            "glyphCount": 14
+          }
+        ],
+        "siteName": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 14
+          }
+        ],
+        "italic": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Italic",
+            "isCustomFont": true,
+            "glyphCount": 19
+          }
+        ],
+        "bold": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 16
+          }
+        ]
+      },
+      "fonts": [
+        {
+          "file": "IBM Plex Mono Var-Roman-Latin1.woff2",
+          "bytes": 32576
+        },
+        {
+          "file": "IBM Plex Sans Var-Italic-Latin1.woff2",
+          "bytes": 80188
+        },
+        {
+          "file": "IBM Plex Sans Var-Roman-Latin1.woff2",
+          "bytes": 68988
+        }
+      ],
+      "fontBytes": 181752
+    },
+    {
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
       "theme": "night",
       "variant": "actuelle",
       "styles": {
@@ -2091,20 +2589,187 @@
         }
       ],
       "fontBytes": 232876
+    },
+    {
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "theme": "night",
+      "variant": "plex-all-sans",
+      "styles": {
+        "body": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "20px",
+          "fontWeight": "450",
+          "fontStyle": "normal",
+          "lineHeight": "32px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "title": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "50px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "60px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "heading": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "34.6572px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "41.5886px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "prose": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "20px",
+          "fontWeight": "450",
+          "fontStyle": "normal",
+          "lineHeight": "32px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "code": {
+          "fontFamily": "\"IBM Plex Mono Var\", monospace",
+          "fontSize": "20px",
+          "fontWeight": "450",
+          "fontStyle": "normal",
+          "lineHeight": "32px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "label": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "14.4px",
+          "fontWeight": "450",
+          "fontStyle": "normal",
+          "lineHeight": "23.04px",
+          "color": "rgb(176, 159, 143)"
+        },
+        "siteName": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "28.854px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "34.6248px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "italic": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "20px",
+          "fontWeight": "450",
+          "fontStyle": "italic",
+          "lineHeight": "32px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "bold": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "20px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "32px",
+          "color": "rgb(227, 209, 191)"
+        }
+      },
+      "rootFontSize": "20px",
+      "paper": "rgb(31, 25, 21)",
+      "overflow": false,
+      "contentWidth": 350,
+      "platformFonts": {
+        "title": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 32
+          }
+        ],
+        "heading": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "prose": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Text",
+            "isCustomFont": true,
+            "glyphCount": 95
+          }
+        ],
+        "code": [
+          {
+            "familyName": "IBM Plex Mono Var",
+            "postScriptName": "IBMPlexMonoVar-Text",
+            "isCustomFont": true,
+            "glyphCount": 342
+          }
+        ],
+        "label": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Text",
+            "isCustomFont": true,
+            "glyphCount": 14
+          }
+        ],
+        "siteName": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 14
+          }
+        ],
+        "italic": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-TextIta",
+            "isCustomFont": true,
+            "glyphCount": 19
+          }
+        ],
+        "bold": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 16
+          }
+        ]
+      },
+      "fonts": [
+        {
+          "file": "IBM Plex Mono Var-Roman-Latin1.woff2",
+          "bytes": 32576
+        },
+        {
+          "file": "IBM Plex Sans Var-Italic-Latin1.woff2",
+          "bytes": 80188
+        },
+        {
+          "file": "IBM Plex Sans Var-Roman-Latin1.woff2",
+          "bytes": 68988
+        }
+      ],
+      "fontBytes": 181752
     }
   ],
   "checks": [
     "Plex SHA-256 matches IBM source manifest",
-    "Same complete Gatsby article in all twelve renders",
+    "Same complete Gatsby article in all sixteen renders",
     "Current typography matches computed styles of the actual local Gatsby production page",
     "Correct web fonts rendered, verified by Chromium CDP",
     "Plex Sans variant renders headings in Serif, prose and italics in Sans, code in Mono",
-    "Each Plex variant downloads only its four required font files",
+    "Plex all Sans variant renders headings, prose and italics in Sans, code in Mono",
+    "Each Plex variant downloads only its required font files, three for all Sans and four for the others",
     "Identical palette in each group",
     "No document horizontal overflow",
-    "Both Plex variants use night body and code weight 450",
+    "All three Plex variants use night body and code weight 450",
     "Plex code at body size",
-    "Matched and large sizes work via file URL for both Plex variants"
+    "Matched and large sizes work via file URL for all three Plex variants"
   ],
   "productionReferenceStyles": {
     "body": {

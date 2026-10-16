@@ -1,6 +1,6 @@
 const options = new URLSearchParams(location.search)
 const root = document.documentElement
-const variant = ["plex", "plex-sans"].includes(options.get("variant"))
+const variant = ["plex", "plex-sans", "plex-all-sans"].includes(options.get("variant"))
   ? options.get("variant") : "actuelle"
 const theme = options.get("theme") === "night" ? "night" : "day"
 const size = ["matched", "large"].includes(options.get("size"))
@@ -15,5 +15,5 @@ const link = document.createElement("link")
 link.rel = "stylesheet"
 link.href = variant === "actuelle" ? "fonts-actuelle.css" : "plex.css"
 document.head.append(link)
-const variantTitle = { actuelle: "Typographie actuelle", plex: "Plex Serif", "plex-sans": "Plex Sans" }
+const variantTitle = { actuelle: "Typographie actuelle", plex: "Plex Serif", "plex-sans": "Plex Sans", "plex-all-sans": "Plex tout Sans" }
 document.title = `${variantTitle[variant]} · Rollup`
