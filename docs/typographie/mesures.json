@@ -1,0 +1,1350 @@
+{
+  "browser": "153.0.8010.12",
+  "deviceScaleFactor": 1,
+  "cache": "empty context per render",
+  "includes": "complete article and supplementary French specimen",
+  "cases": [
+    {
+      "viewport": "desktop",
+      "width": 1280,
+      "height": 900,
+      "theme": "day",
+      "variant": "actuelle",
+      "styles": {
+        "body": {
+          "fontFamily": "Merriweather, Georgia, serif",
+          "fontSize": "19px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "30.78px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "title": {
+          "fontFamily": "Montserrat, sans-serif",
+          "fontSize": "47.5px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "57px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "heading": {
+          "fontFamily": "Merriweather, Georgia, serif",
+          "fontSize": "32.9243px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "39.5092px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "prose": {
+          "fontFamily": "Merriweather, Georgia, serif",
+          "fontSize": "19px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "30.78px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "code": {
+          "fontFamily": "\"Fira Code\", Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace",
+          "fontSize": "13.7275px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "21.964px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "label": {
+          "fontFamily": "Montserrat, sans-serif",
+          "fontSize": "13.68px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "22.1616px",
+          "color": "rgb(107, 98, 89)"
+        },
+        "italic": {
+          "fontFamily": "Merriweather, Georgia, serif",
+          "fontSize": "19px",
+          "fontWeight": "400",
+          "fontStyle": "italic",
+          "lineHeight": "30.78px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "bold": {
+          "fontFamily": "Merriweather, Georgia, serif",
+          "fontSize": "19px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "30.78px",
+          "color": "rgb(38, 42, 51)"
+        }
+      },
+      "rootFontSize": "19px",
+      "paper": "rgb(255, 241, 229)",
+      "overflow": false,
+      "contentWidth": 675.84375,
+      "platformFonts": {
+        "title": [
+          {
+            "familyName": "Montserrat",
+            "postScriptName": "Montserrat-Bold",
+            "isCustomFont": true,
+            "glyphCount": 33
+          }
+        ],
+        "heading": [
+          {
+            "familyName": "Merriweather",
+            "postScriptName": "Merriweather-Bold",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "prose": [
+          {
+            "familyName": "Merriweather",
+            "postScriptName": "Merriweather-Regular",
+            "isCustomFont": true,
+            "glyphCount": 96
+          }
+        ],
+        "code": [
+          {
+            "familyName": "Fira Code Light",
+            "postScriptName": "FiraCodeLight-Regular",
+            "isCustomFont": true,
+            "glyphCount": 342
+          }
+        ],
+        "label": [
+          {
+            "familyName": "Montserrat",
+            "postScriptName": "Montserrat-Regular",
+            "isCustomFont": true,
+            "glyphCount": 14
+          }
+        ],
+        "italic": [
+          {
+            "familyName": "Merriweather",
+            "postScriptName": "Merriweather-Italic",
+            "isCustomFont": true,
+            "glyphCount": 19
+          }
+        ],
+        "bold": [
+          {
+            "familyName": "Merriweather",
+            "postScriptName": "Merriweather-Bold",
+            "isCustomFont": true,
+            "glyphCount": 16
+          }
+        ]
+      },
+      "fonts": [
+        {
+          "file": "fira-code-latin-400.woff2",
+          "bytes": 21316
+        },
+        {
+          "file": "merriweather-latin-400.woff2",
+          "bytes": 19300
+        },
+        {
+          "file": "merriweather-latin-400italic.woff2",
+          "bytes": 19152
+        },
+        {
+          "file": "merriweather-latin-700.woff2",
+          "bytes": 18924
+        },
+        {
+          "file": "merriweather-latin-700italic.woff2",
+          "bytes": 19240
+        },
+        {
+          "file": "montserrat-latin-400.woff2",
+          "bytes": 19172
+        },
+        {
+          "file": "montserrat-latin-700.woff2",
+          "bytes": 19480
+        }
+      ],
+      "fontBytes": 136584
+    },
+    {
+      "viewport": "desktop",
+      "width": 1280,
+      "height": 900,
+      "theme": "day",
+      "variant": "plex",
+      "styles": {
+        "body": {
+          "fontFamily": "\"IBM Plex Serif Var\", Georgia, serif",
+          "fontSize": "25px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "40px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "title": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "62.5px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "75px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "heading": {
+          "fontFamily": "\"IBM Plex Serif Var\", Georgia, serif",
+          "fontSize": "43.3215px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "51.9858px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "prose": {
+          "fontFamily": "\"IBM Plex Serif Var\", Georgia, serif",
+          "fontSize": "25px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "40px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "code": {
+          "fontFamily": "\"IBM Plex Mono Var\", monospace",
+          "fontSize": "25px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "40px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "label": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "28.8px",
+          "color": "rgb(107, 98, 89)"
+        },
+        "italic": {
+          "fontFamily": "\"IBM Plex Serif Var\", Georgia, serif",
+          "fontSize": "25px",
+          "fontWeight": "400",
+          "fontStyle": "italic",
+          "lineHeight": "40px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "bold": {
+          "fontFamily": "\"IBM Plex Serif Var\", Georgia, serif",
+          "fontSize": "25px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "40px",
+          "color": "rgb(38, 42, 51)"
+        }
+      },
+      "rootFontSize": "25px",
+      "paper": "rgb(255, 241, 229)",
+      "overflow": false,
+      "contentWidth": 661.25,
+      "platformFonts": {
+        "title": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 33
+          }
+        ],
+        "heading": [
+          {
+            "familyName": "IBM Plex Serif Var",
+            "postScriptName": "IBMPlexSerifVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "prose": [
+          {
+            "familyName": "IBM Plex Serif Var",
+            "postScriptName": "IBMPlexSerifVar-Regular",
+            "isCustomFont": true,
+            "glyphCount": 96
+          }
+        ],
+        "code": [
+          {
+            "familyName": "IBM Plex Mono Var",
+            "postScriptName": "IBMPlexMonoVar-Regular",
+            "isCustomFont": true,
+            "glyphCount": 342
+          }
+        ],
+        "label": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Regular",
+            "isCustomFont": true,
+            "glyphCount": 14
+          }
+        ],
+        "italic": [
+          {
+            "familyName": "IBM Plex Serif Var",
+            "postScriptName": "IBMPlexSerifVar-Italic",
+            "isCustomFont": true,
+            "glyphCount": 19
+          }
+        ],
+        "bold": [
+          {
+            "familyName": "IBM Plex Serif Var",
+            "postScriptName": "IBMPlexSerifVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 17
+          }
+        ]
+      },
+      "fonts": [
+        {
+          "file": "IBM Plex Mono Var-Roman-Latin1.woff2",
+          "bytes": 32576
+        },
+        {
+          "file": "IBM Plex Sans Var-Roman-Latin1.woff2",
+          "bytes": 68988
+        },
+        {
+          "file": "IBM Plex Serif Var-Italic-Latin1.woff2",
+          "bytes": 54748
+        },
+        {
+          "file": "IBM Plex Serif Var-Roman-Latin1.woff2",
+          "bytes": 51124
+        }
+      ],
+      "fontBytes": 207436
+    },
+    {
+      "viewport": "desktop",
+      "width": 1280,
+      "height": 900,
+      "theme": "night",
+      "variant": "actuelle",
+      "styles": {
+        "body": {
+          "fontFamily": "Merriweather, Georgia, serif",
+          "fontSize": "19px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "30.78px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "title": {
+          "fontFamily": "Montserrat, sans-serif",
+          "fontSize": "47.5px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "57px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "heading": {
+          "fontFamily": "Merriweather, Georgia, serif",
+          "fontSize": "32.9243px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "39.5092px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "prose": {
+          "fontFamily": "Merriweather, Georgia, serif",
+          "fontSize": "19px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "30.78px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "code": {
+          "fontFamily": "\"Fira Code\", Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace",
+          "fontSize": "13.7275px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "21.964px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "label": {
+          "fontFamily": "Montserrat, sans-serif",
+          "fontSize": "13.68px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "22.1616px",
+          "color": "rgb(176, 159, 143)"
+        },
+        "italic": {
+          "fontFamily": "Merriweather, Georgia, serif",
+          "fontSize": "19px",
+          "fontWeight": "400",
+          "fontStyle": "italic",
+          "lineHeight": "30.78px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "bold": {
+          "fontFamily": "Merriweather, Georgia, serif",
+          "fontSize": "19px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "30.78px",
+          "color": "rgb(227, 209, 191)"
+        }
+      },
+      "rootFontSize": "19px",
+      "paper": "rgb(31, 25, 21)",
+      "overflow": false,
+      "contentWidth": 675.84375,
+      "platformFonts": {
+        "title": [
+          {
+            "familyName": "Montserrat",
+            "postScriptName": "Montserrat-Bold",
+            "isCustomFont": true,
+            "glyphCount": 33
+          }
+        ],
+        "heading": [
+          {
+            "familyName": "Merriweather",
+            "postScriptName": "Merriweather-Bold",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "prose": [
+          {
+            "familyName": "Merriweather",
+            "postScriptName": "Merriweather-Regular",
+            "isCustomFont": true,
+            "glyphCount": 96
+          }
+        ],
+        "code": [
+          {
+            "familyName": "Fira Code Light",
+            "postScriptName": "FiraCodeLight-Regular",
+            "isCustomFont": true,
+            "glyphCount": 342
+          }
+        ],
+        "label": [
+          {
+            "familyName": "Montserrat",
+            "postScriptName": "Montserrat-Regular",
+            "isCustomFont": true,
+            "glyphCount": 14
+          }
+        ],
+        "italic": [
+          {
+            "familyName": "Merriweather",
+            "postScriptName": "Merriweather-Italic",
+            "isCustomFont": true,
+            "glyphCount": 19
+          }
+        ],
+        "bold": [
+          {
+            "familyName": "Merriweather",
+            "postScriptName": "Merriweather-Bold",
+            "isCustomFont": true,
+            "glyphCount": 16
+          }
+        ]
+      },
+      "fonts": [
+        {
+          "file": "fira-code-latin-400.woff2",
+          "bytes": 21316
+        },
+        {
+          "file": "merriweather-latin-400.woff2",
+          "bytes": 19300
+        },
+        {
+          "file": "merriweather-latin-400italic.woff2",
+          "bytes": 19152
+        },
+        {
+          "file": "merriweather-latin-700.woff2",
+          "bytes": 18924
+        },
+        {
+          "file": "merriweather-latin-700italic.woff2",
+          "bytes": 19240
+        },
+        {
+          "file": "montserrat-latin-400.woff2",
+          "bytes": 19172
+        },
+        {
+          "file": "montserrat-latin-700.woff2",
+          "bytes": 19480
+        }
+      ],
+      "fontBytes": 136584
+    },
+    {
+      "viewport": "desktop",
+      "width": 1280,
+      "height": 900,
+      "theme": "night",
+      "variant": "plex",
+      "styles": {
+        "body": {
+          "fontFamily": "\"IBM Plex Serif Var\", Georgia, serif",
+          "fontSize": "25px",
+          "fontWeight": "450",
+          "fontStyle": "normal",
+          "lineHeight": "40px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "title": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "62.5px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "75px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "heading": {
+          "fontFamily": "\"IBM Plex Serif Var\", Georgia, serif",
+          "fontSize": "43.3215px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "51.9858px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "prose": {
+          "fontFamily": "\"IBM Plex Serif Var\", Georgia, serif",
+          "fontSize": "25px",
+          "fontWeight": "450",
+          "fontStyle": "normal",
+          "lineHeight": "40px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "code": {
+          "fontFamily": "\"IBM Plex Mono Var\", monospace",
+          "fontSize": "25px",
+          "fontWeight": "450",
+          "fontStyle": "normal",
+          "lineHeight": "40px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "label": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "18px",
+          "fontWeight": "450",
+          "fontStyle": "normal",
+          "lineHeight": "28.8px",
+          "color": "rgb(176, 159, 143)"
+        },
+        "italic": {
+          "fontFamily": "\"IBM Plex Serif Var\", Georgia, serif",
+          "fontSize": "25px",
+          "fontWeight": "450",
+          "fontStyle": "italic",
+          "lineHeight": "40px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "bold": {
+          "fontFamily": "\"IBM Plex Serif Var\", Georgia, serif",
+          "fontSize": "25px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "40px",
+          "color": "rgb(227, 209, 191)"
+        }
+      },
+      "rootFontSize": "25px",
+      "paper": "rgb(31, 25, 21)",
+      "overflow": false,
+      "contentWidth": 661.25,
+      "platformFonts": {
+        "title": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 33
+          }
+        ],
+        "heading": [
+          {
+            "familyName": "IBM Plex Serif Var",
+            "postScriptName": "IBMPlexSerifVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "prose": [
+          {
+            "familyName": "IBM Plex Serif Var",
+            "postScriptName": "IBMPlexSerifVar-Text",
+            "isCustomFont": true,
+            "glyphCount": 96
+          }
+        ],
+        "code": [
+          {
+            "familyName": "IBM Plex Mono Var",
+            "postScriptName": "IBMPlexMonoVar-Text",
+            "isCustomFont": true,
+            "glyphCount": 342
+          }
+        ],
+        "label": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Text",
+            "isCustomFont": true,
+            "glyphCount": 14
+          }
+        ],
+        "italic": [
+          {
+            "familyName": "IBM Plex Serif Var",
+            "postScriptName": "IBMPlexSerifVar-TextItalic",
+            "isCustomFont": true,
+            "glyphCount": 19
+          }
+        ],
+        "bold": [
+          {
+            "familyName": "IBM Plex Serif Var",
+            "postScriptName": "IBMPlexSerifVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 17
+          }
+        ]
+      },
+      "fonts": [
+        {
+          "file": "IBM Plex Mono Var-Roman-Latin1.woff2",
+          "bytes": 32576
+        },
+        {
+          "file": "IBM Plex Sans Var-Roman-Latin1.woff2",
+          "bytes": 68988
+        },
+        {
+          "file": "IBM Plex Serif Var-Italic-Latin1.woff2",
+          "bytes": 54748
+        },
+        {
+          "file": "IBM Plex Serif Var-Roman-Latin1.woff2",
+          "bytes": 51124
+        }
+      ],
+      "fontBytes": 207436
+    },
+    {
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "theme": "day",
+      "variant": "actuelle",
+      "styles": {
+        "body": {
+          "fontFamily": "Merriweather, Georgia, serif",
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "29.16px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "title": {
+          "fontFamily": "Montserrat, sans-serif",
+          "fontSize": "45px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "54px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "heading": {
+          "fontFamily": "Merriweather, Georgia, serif",
+          "fontSize": "31.1915px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "37.4298px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "prose": {
+          "fontFamily": "Merriweather, Georgia, serif",
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "29.16px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "code": {
+          "fontFamily": "\"Fira Code\", Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace",
+          "fontSize": "13.005px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "20.808px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "label": {
+          "fontFamily": "Montserrat, sans-serif",
+          "fontSize": "12.96px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "20.9952px",
+          "color": "rgb(107, 98, 89)"
+        },
+        "italic": {
+          "fontFamily": "Merriweather, Georgia, serif",
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "fontStyle": "italic",
+          "lineHeight": "29.16px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "bold": {
+          "fontFamily": "Merriweather, Georgia, serif",
+          "fontSize": "18px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "29.16px",
+          "color": "rgb(38, 42, 51)"
+        }
+      },
+      "rootFontSize": "18px",
+      "paper": "rgb(255, 241, 229)",
+      "overflow": false,
+      "contentWidth": 354,
+      "platformFonts": {
+        "title": [
+          {
+            "familyName": "Montserrat",
+            "postScriptName": "Montserrat-Bold",
+            "isCustomFont": true,
+            "glyphCount": 32
+          }
+        ],
+        "heading": [
+          {
+            "familyName": "Merriweather",
+            "postScriptName": "Merriweather-Bold",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "prose": [
+          {
+            "familyName": "Merriweather",
+            "postScriptName": "Merriweather-Regular",
+            "isCustomFont": true,
+            "glyphCount": 95
+          }
+        ],
+        "code": [
+          {
+            "familyName": "Fira Code Light",
+            "postScriptName": "FiraCodeLight-Regular",
+            "isCustomFont": true,
+            "glyphCount": 342
+          }
+        ],
+        "label": [
+          {
+            "familyName": "Montserrat",
+            "postScriptName": "Montserrat-Regular",
+            "isCustomFont": true,
+            "glyphCount": 14
+          }
+        ],
+        "italic": [
+          {
+            "familyName": "Merriweather",
+            "postScriptName": "Merriweather-Italic",
+            "isCustomFont": true,
+            "glyphCount": 19
+          }
+        ],
+        "bold": [
+          {
+            "familyName": "Merriweather",
+            "postScriptName": "Merriweather-Bold",
+            "isCustomFont": true,
+            "glyphCount": 17
+          }
+        ]
+      },
+      "fonts": [
+        {
+          "file": "fira-code-latin-400.woff2",
+          "bytes": 21316
+        },
+        {
+          "file": "merriweather-latin-400.woff2",
+          "bytes": 19300
+        },
+        {
+          "file": "merriweather-latin-400italic.woff2",
+          "bytes": 19152
+        },
+        {
+          "file": "merriweather-latin-700.woff2",
+          "bytes": 18924
+        },
+        {
+          "file": "merriweather-latin-700italic.woff2",
+          "bytes": 19240
+        },
+        {
+          "file": "montserrat-latin-400.woff2",
+          "bytes": 19172
+        },
+        {
+          "file": "montserrat-latin-700.woff2",
+          "bytes": 19480
+        }
+      ],
+      "fontBytes": 136584
+    },
+    {
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "theme": "day",
+      "variant": "plex",
+      "styles": {
+        "body": {
+          "fontFamily": "\"IBM Plex Serif Var\", Georgia, serif",
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "32px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "title": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "50px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "60px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "heading": {
+          "fontFamily": "\"IBM Plex Serif Var\", Georgia, serif",
+          "fontSize": "34.6572px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "41.5886px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "prose": {
+          "fontFamily": "\"IBM Plex Serif Var\", Georgia, serif",
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "32px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "code": {
+          "fontFamily": "\"IBM Plex Mono Var\", monospace",
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "32px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "label": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "14.4px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "23.04px",
+          "color": "rgb(107, 98, 89)"
+        },
+        "italic": {
+          "fontFamily": "\"IBM Plex Serif Var\", Georgia, serif",
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "fontStyle": "italic",
+          "lineHeight": "32px",
+          "color": "rgb(38, 42, 51)"
+        },
+        "bold": {
+          "fontFamily": "\"IBM Plex Serif Var\", Georgia, serif",
+          "fontSize": "20px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "32px",
+          "color": "rgb(38, 42, 51)"
+        }
+      },
+      "rootFontSize": "20px",
+      "paper": "rgb(255, 241, 229)",
+      "overflow": false,
+      "contentWidth": 350,
+      "platformFonts": {
+        "title": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 32
+          }
+        ],
+        "heading": [
+          {
+            "familyName": "IBM Plex Serif Var",
+            "postScriptName": "IBMPlexSerifVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "prose": [
+          {
+            "familyName": "IBM Plex Serif Var",
+            "postScriptName": "IBMPlexSerifVar-Regular",
+            "isCustomFont": true,
+            "glyphCount": 95
+          }
+        ],
+        "code": [
+          {
+            "familyName": "IBM Plex Mono Var",
+            "postScriptName": "IBMPlexMonoVar-Regular",
+            "isCustomFont": true,
+            "glyphCount": 342
+          }
+        ],
+        "label": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Regular",
+            "isCustomFont": true,
+            "glyphCount": 14
+          }
+        ],
+        "italic": [
+          {
+            "familyName": "IBM Plex Serif Var",
+            "postScriptName": "IBMPlexSerifVar-Italic",
+            "isCustomFont": true,
+            "glyphCount": 19
+          }
+        ],
+        "bold": [
+          {
+            "familyName": "IBM Plex Serif Var",
+            "postScriptName": "IBMPlexSerifVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 17
+          }
+        ]
+      },
+      "fonts": [
+        {
+          "file": "IBM Plex Mono Var-Roman-Latin1.woff2",
+          "bytes": 32576
+        },
+        {
+          "file": "IBM Plex Sans Var-Roman-Latin1.woff2",
+          "bytes": 68988
+        },
+        {
+          "file": "IBM Plex Serif Var-Italic-Latin1.woff2",
+          "bytes": 54748
+        },
+        {
+          "file": "IBM Plex Serif Var-Roman-Latin1.woff2",
+          "bytes": 51124
+        }
+      ],
+      "fontBytes": 207436
+    },
+    {
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "theme": "night",
+      "variant": "actuelle",
+      "styles": {
+        "body": {
+          "fontFamily": "Merriweather, Georgia, serif",
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "29.16px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "title": {
+          "fontFamily": "Montserrat, sans-serif",
+          "fontSize": "45px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "54px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "heading": {
+          "fontFamily": "Merriweather, Georgia, serif",
+          "fontSize": "31.1915px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "37.4298px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "prose": {
+          "fontFamily": "Merriweather, Georgia, serif",
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "29.16px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "code": {
+          "fontFamily": "\"Fira Code\", Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace",
+          "fontSize": "13.005px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "20.808px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "label": {
+          "fontFamily": "Montserrat, sans-serif",
+          "fontSize": "12.96px",
+          "fontWeight": "400",
+          "fontStyle": "normal",
+          "lineHeight": "20.9952px",
+          "color": "rgb(176, 159, 143)"
+        },
+        "italic": {
+          "fontFamily": "Merriweather, Georgia, serif",
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "fontStyle": "italic",
+          "lineHeight": "29.16px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "bold": {
+          "fontFamily": "Merriweather, Georgia, serif",
+          "fontSize": "18px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "29.16px",
+          "color": "rgb(227, 209, 191)"
+        }
+      },
+      "rootFontSize": "18px",
+      "paper": "rgb(31, 25, 21)",
+      "overflow": false,
+      "contentWidth": 354,
+      "platformFonts": {
+        "title": [
+          {
+            "familyName": "Montserrat",
+            "postScriptName": "Montserrat-Bold",
+            "isCustomFont": true,
+            "glyphCount": 32
+          }
+        ],
+        "heading": [
+          {
+            "familyName": "Merriweather",
+            "postScriptName": "Merriweather-Bold",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "prose": [
+          {
+            "familyName": "Merriweather",
+            "postScriptName": "Merriweather-Regular",
+            "isCustomFont": true,
+            "glyphCount": 95
+          }
+        ],
+        "code": [
+          {
+            "familyName": "Fira Code Light",
+            "postScriptName": "FiraCodeLight-Regular",
+            "isCustomFont": true,
+            "glyphCount": 342
+          }
+        ],
+        "label": [
+          {
+            "familyName": "Montserrat",
+            "postScriptName": "Montserrat-Regular",
+            "isCustomFont": true,
+            "glyphCount": 14
+          }
+        ],
+        "italic": [
+          {
+            "familyName": "Merriweather",
+            "postScriptName": "Merriweather-Italic",
+            "isCustomFont": true,
+            "glyphCount": 19
+          }
+        ],
+        "bold": [
+          {
+            "familyName": "Merriweather",
+            "postScriptName": "Merriweather-Bold",
+            "isCustomFont": true,
+            "glyphCount": 17
+          }
+        ]
+      },
+      "fonts": [
+        {
+          "file": "fira-code-latin-400.woff2",
+          "bytes": 21316
+        },
+        {
+          "file": "merriweather-latin-400.woff2",
+          "bytes": 19300
+        },
+        {
+          "file": "merriweather-latin-400italic.woff2",
+          "bytes": 19152
+        },
+        {
+          "file": "merriweather-latin-700.woff2",
+          "bytes": 18924
+        },
+        {
+          "file": "merriweather-latin-700italic.woff2",
+          "bytes": 19240
+        },
+        {
+          "file": "montserrat-latin-400.woff2",
+          "bytes": 19172
+        },
+        {
+          "file": "montserrat-latin-700.woff2",
+          "bytes": 19480
+        }
+      ],
+      "fontBytes": 136584
+    },
+    {
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "theme": "night",
+      "variant": "plex",
+      "styles": {
+        "body": {
+          "fontFamily": "\"IBM Plex Serif Var\", Georgia, serif",
+          "fontSize": "20px",
+          "fontWeight": "450",
+          "fontStyle": "normal",
+          "lineHeight": "32px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "title": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "50px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "60px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "heading": {
+          "fontFamily": "\"IBM Plex Serif Var\", Georgia, serif",
+          "fontSize": "34.6572px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "41.5886px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "prose": {
+          "fontFamily": "\"IBM Plex Serif Var\", Georgia, serif",
+          "fontSize": "20px",
+          "fontWeight": "450",
+          "fontStyle": "normal",
+          "lineHeight": "32px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "code": {
+          "fontFamily": "\"IBM Plex Mono Var\", monospace",
+          "fontSize": "20px",
+          "fontWeight": "450",
+          "fontStyle": "normal",
+          "lineHeight": "32px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "label": {
+          "fontFamily": "\"IBM Plex Sans Var\", sans-serif",
+          "fontSize": "14.4px",
+          "fontWeight": "450",
+          "fontStyle": "normal",
+          "lineHeight": "23.04px",
+          "color": "rgb(176, 159, 143)"
+        },
+        "italic": {
+          "fontFamily": "\"IBM Plex Serif Var\", Georgia, serif",
+          "fontSize": "20px",
+          "fontWeight": "450",
+          "fontStyle": "italic",
+          "lineHeight": "32px",
+          "color": "rgb(227, 209, 191)"
+        },
+        "bold": {
+          "fontFamily": "\"IBM Plex Serif Var\", Georgia, serif",
+          "fontSize": "20px",
+          "fontWeight": "700",
+          "fontStyle": "normal",
+          "lineHeight": "32px",
+          "color": "rgb(227, 209, 191)"
+        }
+      },
+      "rootFontSize": "20px",
+      "paper": "rgb(31, 25, 21)",
+      "overflow": false,
+      "contentWidth": 350,
+      "platformFonts": {
+        "title": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 32
+          }
+        ],
+        "heading": [
+          {
+            "familyName": "IBM Plex Serif Var",
+            "postScriptName": "IBMPlexSerifVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "prose": [
+          {
+            "familyName": "IBM Plex Serif Var",
+            "postScriptName": "IBMPlexSerifVar-Text",
+            "isCustomFont": true,
+            "glyphCount": 95
+          }
+        ],
+        "code": [
+          {
+            "familyName": "IBM Plex Mono Var",
+            "postScriptName": "IBMPlexMonoVar-Text",
+            "isCustomFont": true,
+            "glyphCount": 342
+          }
+        ],
+        "label": [
+          {
+            "familyName": "IBM Plex Sans Var",
+            "postScriptName": "IBMPlexSansVar-Text",
+            "isCustomFont": true,
+            "glyphCount": 14
+          }
+        ],
+        "italic": [
+          {
+            "familyName": "IBM Plex Serif Var",
+            "postScriptName": "IBMPlexSerifVar-TextItalic",
+            "isCustomFont": true,
+            "glyphCount": 19
+          }
+        ],
+        "bold": [
+          {
+            "familyName": "IBM Plex Serif Var",
+            "postScriptName": "IBMPlexSerifVar-Bold",
+            "isCustomFont": true,
+            "glyphCount": 16
+          }
+        ]
+      },
+      "fonts": [
+        {
+          "file": "IBM Plex Mono Var-Roman-Latin1.woff2",
+          "bytes": 32576
+        },
+        {
+          "file": "IBM Plex Sans Var-Roman-Latin1.woff2",
+          "bytes": 68988
+        },
+        {
+          "file": "IBM Plex Serif Var-Italic-Latin1.woff2",
+          "bytes": 54748
+        },
+        {
+          "file": "IBM Plex Serif Var-Roman-Latin1.woff2",
+          "bytes": 51124
+        }
+      ],
+      "fontBytes": 207436
+    }
+  ],
+  "checks": [
+    "Plex SHA-256 matches IBM source manifest",
+    "Same complete Gatsby article in all eight renders",
+    "Current typography matches computed styles of the actual local Gatsby production page",
+    "Correct web fonts rendered, verified by Chromium CDP",
+    "No mixed font families downloaded",
+    "Identical palette in each pair",
+    "No document horizontal overflow",
+    "Plex night body and code weight 450",
+    "Plex code at body size",
+    "Matched and large sizes work via file URL"
+  ],
+  "productionReferenceStyles": {
+    "body": {
+      "fontFamily": "Merriweather, Georgia, serif",
+      "fontSize": "19px",
+      "fontWeight": "400",
+      "fontStyle": "normal",
+      "lineHeight": "30.78px",
+      "color": "rgb(38, 42, 51)"
+    },
+    "title": {
+      "fontFamily": "Montserrat, sans-serif",
+      "fontSize": "47.5px",
+      "fontWeight": "700",
+      "fontStyle": "normal",
+      "lineHeight": "57px",
+      "color": "rgb(38, 42, 51)"
+    },
+    "heading": {
+      "fontFamily": "Merriweather, Georgia, serif",
+      "fontSize": "32.9243px",
+      "fontWeight": "700",
+      "fontStyle": "normal",
+      "lineHeight": "39.5092px",
+      "color": "rgb(38, 42, 51)"
+    },
+    "prose": {
+      "fontFamily": "Merriweather, Georgia, serif",
+      "fontSize": "19px",
+      "fontWeight": "400",
+      "fontStyle": "normal",
+      "lineHeight": "30.78px",
+      "color": "rgb(38, 42, 51)"
+    },
+    "code": {
+      "fontFamily": "\"Fira Code\", Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace",
+      "fontSize": "13.7275px",
+      "fontWeight": "400",
+      "fontStyle": "normal",
+      "lineHeight": "21.964px",
+      "color": "rgb(38, 42, 51)"
+    },
+    "label": {
+      "fontFamily": "Montserrat, sans-serif",
+      "fontSize": "13.68px",
+      "fontWeight": "400",
+      "fontStyle": "normal",
+      "lineHeight": "22.1616px",
+      "color": "rgb(107, 98, 89)"
+    }
+  }
+}

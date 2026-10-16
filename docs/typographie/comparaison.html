@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Le blog, avec IBM Plex</title>
+  <link rel="stylesheet" href="comparaison.css">
+  <script src="mesures.js" defer></script>
+  <script src="comparaison.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">camillehdl.dev · Essai local · 16 octobre 2026</p>
+      <h1>Le blog, avec IBM Plex</h1>
+      <p class="intro">Merriweather, Montserrat et Fira Code face à Plex Serif, Sans et Mono.
+        Le même article, les mêmes palettes, deux compositions à lire.</p>
+      <nav aria-label="Dans cette comparaison">
+        <a href="#lecture">Essayer</a><a href="#captures">Comparer les captures</a><a href="#poids">Poids des polices</a>
+      </nav>
+    </header>
+
+    <section class="note" aria-labelledby="distance-title">
+      <h2 id="distance-title">À 80 à 85 cm, commencer à 25 px</h2>
+      <p>Le poste mesuré donne environ 0,233 mm par point logique macOS.
+        Avec une hauteur d'x de 0,516 em, Plex à 25 px donne un angle d'environ 0,203° à 0,215°.
+        Cela approche le seuil de 0,2° décrit par
+        <a href="https://doi.org/10.1167/11.5.8">Legge et Bigelow</a>.
+        C'est un point de départ à essayer, pas une garantie individuelle.</p>
+      <p>Le calcul suppose un zoom du navigateur à 100 %, soit un pixel CSS par point logique de l'écran.
+        Les points macOS de la recherche ne sont pas des unités CSS <code>pt</code>.
+        L'option 30 px offre plus de marge, environ 0,243° à 0,258°.
+        Sur téléphone, cet essai utilise 20 px, ou 22 px avec le réglage plus grand.</p>
+      <p>Le texte Plex passe de 400 le jour à 450 la nuit, y compris le code et les labels.
+        Les titres et le gras restent à 700. Plex Mono garde la taille du texte,
+        car les trois familles Plex ont la même hauteur d'x.</p>
+      <p>Le code de référence conserve le rendu actuel. Les règles de taille à 0,85 em sur
+        <code>pre</code> et <code>code</code> se cumulent dans les blocs, soit environ 13,73 px sur bureau.
+        La variante Plex augmente donc aussi la taille du code. Les captures comparent ces compositions complètes.</p>
+    </section>
+
+    <section id="lecture" aria-labelledby="lecture-title">
+      <h2 id="lecture-title">Lire et changer de version</h2>
+      <p>La référence garde ses réglages actuels, 19 px sur bureau et 18 px sur téléphone.
+        Pour comparer le dessin des lettres, choisir « Hauteur d'x comparable ».
+        Plex passe alors à 20,44 px sur bureau et 19,36 px sur téléphone.
+        La colonne conserve sa largeur maximale de 722 px sur bureau.</p>
+      <form class="controls" aria-label="Réglages de l'aperçu">
+        <label>Typographie
+          <select id="variant"><option value="actuelle">Actuelle</option><option value="plex" selected>IBM Plex</option></select>
+        </label>
+        <label>Palette
+          <select id="theme"><option value="day">Clair</option><option value="night">Sombre</option></select>
+        </label>
+        <label>Taille Plex
+          <select id="size"><option value="distance">Distance : 25 px / mobile 20 px</option><option value="large">Plus grand : 30 px / mobile 22 px</option><option value="matched">Hauteur d'x comparable</option></select>
+        </label>
+        <label>Largeur de l'aperçu
+          <select id="viewport"><option value="desktop">Bureau</option><option value="mobile">Mobile : 390 px</option></select>
+        </label>
+      </form>
+      <p id="preview-status" role="status"></p>
+      <p><a id="direct" href="article.html?variant=plex&amp;theme=day">Lire cette version en pleine page</a>.
+        L'aperçu se réduit à la largeur disponible. Les captures ci-dessous fixent les dimensions de référence.</p>
+      <div class="preview-wrap"><iframe id="preview" title="Article Rollup, aperçu typographique" src="article.html?variant=plex&amp;theme=day"></iframe></div>
+      <noscript><p>Les captures et <a href="article.html">l'article de référence</a> restent consultables sans JavaScript.</p></noscript>
+    </section>
+
+    <section id="captures" aria-labelledby="captures-title">
+      <h2 id="captures-title">Actuelle à gauche, Plex à droite</h2>
+      <p>Captures Chromium par Playwright, zoom à 100 %, échelle 1. Chaque moitié mesure
+        1 280 × 900 px sur bureau ou 390 × 844 px sur mobile.
+        Plex utilise le réglage distance, 25 px et 20 px.
+        Le début du texte apparaît ici. Chaque lien ouvre la capture intégrale de l'article et de l'échantillon complémentaire.</p>
+      <div class="gallery">
+        <figure><figcaption><h3>Bureau · Clair</h3><span data-case="desktop-day"></span></figcaption><a href="captures/desktop-day-integral.png"><img src="captures/desktop-day.png" width="2560" height="900" alt="Article sur bureau en clair, typographie actuelle à gauche et IBM Plex à droite" loading="lazy"></a><a href="captures/desktop-day-integral.png">Voir l'article entier en clair sur bureau</a></figure>
+        <figure><figcaption><h3>Bureau · Sombre</h3><span data-case="desktop-night"></span></figcaption><a href="captures/desktop-night-integral.png"><img src="captures/desktop-night.png" width="2560" height="900" alt="Article sur bureau en sombre, typographie actuelle à gauche et IBM Plex à droite" loading="lazy"></a><a href="captures/desktop-night-integral.png">Voir l'article entier en sombre sur bureau</a></figure>
+        <figure class="mobile"><figcaption><h3>Mobile · Clair</h3><span data-case="mobile-day"></span></figcaption><a href="captures/mobile-day-integral.png"><img src="captures/mobile-day.png" width="780" height="844" alt="Article sur mobile en clair, typographie actuelle à gauche et IBM Plex à droite" loading="lazy"></a><a href="captures/mobile-day-integral.png">Voir l'article entier en clair sur mobile</a></figure>
+        <figure class="mobile"><figcaption><h3>Mobile · Sombre</h3><span data-case="mobile-night"></span></figcaption><a href="captures/mobile-night-integral.png"><img src="captures/mobile-night.png" width="780" height="844" alt="Article sur mobile en sombre, typographie actuelle à gauche et IBM Plex à droite" loading="lazy"></a><a href="captures/mobile-night-integral.png">Voir l'article entier en sombre sur mobile</a></figure>
+      </div>
+    </section>
+
+    <section id="poids" aria-labelledby="poids-title">
+      <h2 id="poids-title">Les fichiers réellement chargés</h2>
+      <p>Mesure sur cache vide pour chaque version, jusqu'au chargement de toutes les polices de l'article
+        et de l'échantillon. Les tailles sont celles des corps WOFF2, hors en-têtes HTTP.
+        Un Kio vaut 1 024 octets. Le total du dossier des polices actuelles n'est pas le poids d'une lecture.</p>
+      <div class="table-wrap"><table><caption>Chargement par viewport et palette</caption><thead><tr><th>Rendu</th><th>Actuelle</th><th>IBM Plex</th></tr></thead><tbody id="totals"></tbody></table></div>
+      <p id="weight-summary"></p>
+      <div id="font-details"></div>
+      <p>L'article anglais ne contient pas d'italique. L'échantillon français ajouté après l'article
+        déclenche les italiques et le gras italique. Il est identique dans les deux versions et reste hors du contenu d'origine.</p>
+    </section>
+
+    <footer>
+      <h2>Sources et reproduction</h2>
+      <p><a href="article.html">Ship modern JavaScript with Rollup</a> est repris intégralement du HTML Gatsby local.
+        <a href="source.json">Provenance de l'article et empreinte</a>.
+        La feuille <a href="plex.css">plex.css</a> s'active avec la classe <code>type-plex</code> sur <code>html</code>,
+        uniquement dans cet essai. Les styles de référence sont extraits du même build.
+        La recherche fournie mesure les hauteurs d'x à 0,555 pour Merriweather et 0,516 pour Plex.</p>
+      <p>Les WOFF2 Latin1 viennent du dépôt <a href="https://github.com/IBM/plex">IBM/plex</a>, sans modification.
+        <a href="fonts/sources.json">URLs figées et empreintes SHA-256</a>.
+        Licences OFL livrées pour <a href="fonts/LICENSE-serif.txt">Serif</a>,
+        <a href="fonts/LICENSE-sans.txt">Sans</a> et <a href="fonts/LICENSE-mono.txt">Mono</a>.</p>
+      <p>Depuis la racine du dépôt, après <code>npm ci</code> et l'installation de Chromium pour Playwright :</p>
+      <pre><code>GATSBY_FEEDBACK_DISABLED=1 GATSBY_TELEMETRY_DISABLED=1 npm run build
+node docs/typographie/preparer.cjs
+node docs/typographie/capturer.cjs</code></pre>
+      <p>Ouvrir ensuite <code>docs/typographie/comparaison.html</code> directement, ou servir le dépôt localement.
+        <a href="mesures.json">Mesures, polices rendues et contrôles automatiques</a>.
+        Aucun fichier de cet essai n'est importé par Gatsby.</p>
+      <p class="small">Relecture appliquée : technical-writing et unslop.</p>
+    </footer>
+  </main>
+</body>
+</html>

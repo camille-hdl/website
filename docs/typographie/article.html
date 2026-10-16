@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en" data-theme="day"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Comparaison typographique · Rollup</title>
+<link rel="stylesheet" href="typography.css"><link rel="stylesheet" href="actuelle.css">
+<script src="article.js"></script></head><body>
+<div class="site-container" style="margin-left:auto;margin-right:auto;max-width:38rem;padding:2.43rem 1.215rem">
+<header><p class="site-name"><a style="box-shadow:none;text-decoration:none;color:var(--masthead)" href="/">Camille Hodoul</a></p></header><main><header><h1 style="margin-top:1.62rem;margin-bottom:0">Ship modern JavaScript with Rollup</h1><p class="post-date" style="display:block;margin-bottom:1.62rem">April 07, 2020</p></header><section itemprop="articleBody"><section class="warning">
+<p>
+    This article is now (thankfully) out-of-date.<br>
+    If you are using babel 8, you can safely use <code>@babel/preset-env</code> configured with <code>assumptions</code> and <code>bugfixes: true</code>. You don't need <code>preset-modules</code> anymore.<br>
+    Moreover, unless you wish to support IE11, you don't need the systemjs fallback.<br>
+    See:<br>
+    </p><ul>
+        <li><a href="https://babeljs.io/docs/assumptions#migrating-from-babelpreset-envs-loose-and-spec-modes" rel="noopener noreferrer" target="_blank">https://babeljs.io/docs/assumptions#migrating-from-babelpreset-envs-loose-and-spec-modes</a></li>
+        <li><a href="https://babeljs.io/docs/babel-preset-env" rel="noopener noreferrer" target="_blank">https://babeljs.io/docs/babel-preset-env</a></li>
+    </ul>
+<p></p>
+</section>
+<p>Using ES2017 (and newer) syntax in our codebase is one thing, sending it to our users is another.</p>
+<p>Chances are, if we have to support IE11 and/or use <code class="language-text">@babel/preset-env</code> and/or ship a single bundle (even with code-splitting), we’re probably sending ES5 to everybody, even if their browser is perfectly capable of understanding <a href="https://caniuse.com/#feat=es6-class" target="_blank" rel="noopener noreferrer">classes</a> or <a href="https://caniuse.com/#feat=mdn-javascript_operators_await" target="_blank" rel="noopener noreferrer">async/await</a>.</p>
+<p>This is suboptimal, because <strong>we’re sending more code than needed</strong> and, long term, <strong>we’ll miss out on some “free” performance gains</strong>.</p>
+<p>You can read more about the peformance of ES6 features compared to their ES5 transpiled versions on the <a href="http://incaseofstairs.com/six-speed/" target="_blank" rel="noopener noreferrer">Six Speed project</a>. The status quo isn’t set in stone, as browser vendors regularly improve the performance of new syntax (see <a href="https://v8.dev/blog/high-performance-es2015" target="_blank" rel="noopener noreferrer">this</a> and <a href="https://v8.dev/blog/spread-elements" target="_blank" rel="noopener noreferrer">this</a>).</p>
+<p>Moreover, even if all our <code class="language-text">preset-env</code> targets are up-to-date, Babel <a href="https://podcast.babeljs.io/preset-env/" target="_blank" rel="noopener noreferrer">may still be transpiling some syntax because of edge-cases</a>. Besides, our dependencies are probably transpiled to ES5 anyway.</p>
+<p>A better thing to do would be to <strong>ship transpiled ES5 to legacy browsers</strong> and <strong>as much ES2017 as possible to modern browsers</strong>.</p>
+<p>The steps we need to take to achieve this are:</p>
+<ol>
+<li>create 2 distinct bundles
+<ol>
+<li>use <code class="language-text">preset-modules</code> instead of <code class="language-text">preset-env</code> for our modern build,</li>
+<li>configure terser to output ES2017</li>
+</ol>
+</li>
+<li>load each bundle in the correct browsers.</li>
+</ol>
+<p>You can see a working example <a href="https://github.com/camille-hdl/rollup-react-example" target="_blank" rel="noopener noreferrer">in this repo</a>.</p>
+<h2>Bundling</h2>
+<p>If you’re using Rollup, you can already output ES modules or a fallback out-of-the-box.<br>
+To create each build with a different config however, we have to add a bit of configuration.</p>
+<p>One way to do this could be to use an environment variable <code class="language-text">ROLLUP_BUILD_TYPE</code>, in npm scripts.</p>
+<h3>Rollup and Terser configuration</h3>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// package.json</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">/** ... **/</span>
+    <span class="token string-property property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string-property property">"build"</span><span class="token operator">:</span> <span class="token string">"npm-run-all --parallel \"build:*\""</span><span class="token punctuation">,</span>
+        <span class="token string-property property">"build:legacy"</span><span class="token operator">:</span> <span class="token string">"env ROLLUP_BUILD_TYPE=\"legacy\" rollup -c"</span><span class="token punctuation">,</span>
+        <span class="token string-property property">"build:modern"</span><span class="token operator">:</span> <span class="token string">"env ROLLUP_BUILD_TYPE=\"modern\" rollup -c"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"devDependencies"</span> <span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string-property property">"npm-run-all"</span><span class="token operator">:</span> <span class="token string">"..."</span><span class="token punctuation">,</span>
+        <span class="token string-property property">"rollup"</span><span class="token operator">:</span> <span class="token string">"..."</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">/** ... **/</span>
+<span class="token punctuation">}</span></code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// rollup.config.js</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> buildType <span class="token operator">=</span> <span class="token keyword">typeof</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">ROLLUP_BUILD_TYPE</span> <span class="token operator">!==</span> <span class="token string">"undefined"</span> <span class="token operator">?</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">ROLLUP_BUILD_TYPE</span> <span class="token operator">:</span> <span class="token string">"modern"</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">input</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/index.jsx"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">output</span><span class="token operator">:</span> buildType <span class="token operator">===</span> <span class="token string">"modern"</span> <span class="token operator">?</span>
+        <span class="token punctuation">{</span>
+            <span class="token literal-property property">dir</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/public/js/system/</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+            <span class="token literal-property property">format</span><span class="token operator">:</span> <span class="token string">"system"</span>
+        <span class="token punctuation">}</span> <span class="token operator">:</span>
+        <span class="token punctuation">{</span>
+            <span class="token literal-property property">dir</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/public/js/esm/</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+            <span class="token literal-property property">format</span><span class="token operator">:</span> <span class="token string">"esm"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token comment">/** ... **/</span>
+            <span class="token function">babel</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                <span class="token comment">/**
+                * Uncomment to ignore node_modules. This will accelerate yur build,
+                * but prevent you from using modern syntax in your dependencies
+                */</span>
+                <span class="token comment">// exclude: "node_modules/**"</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token function">terser</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                <span class="token literal-property property">compress</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token literal-property property">unused</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+                    <span class="token literal-property property">collapse_vars</span><span class="token operator">:</span> <span class="token boolean">false</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">sourcemap</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">ecma</span><span class="token operator">:</span> buildType <span class="token operator">===</span> <span class="token string">"legacy"</span> <span class="token operator">?</span> <span class="token number">5</span> <span class="token operator">:</span> <span class="token number">2017</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">safari10</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token comment">/** ... **/</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
+<p>Notice how <strong>we didn’t exclude node_modules/</strong> from Babel. This will let us optimally transpile our dependencies if they export modern syntax. More on that later.</p>
+<p><a href="https://github.com/terser/terser" target="_blank" rel="noopener noreferrer">Terser</a> is a minifier which needs to be told which version of the language we are using.</p>
+<h3>Babel configuration</h3>
+<p>Babel 7 can be configured with a function instead of a static object. We can take advantage of this feature in order to write conditional and annotated code.</p>
+<p>Remember that our goal is to transpile as little as possible. In this example, I include a preset for react as well as plugins for <a href="https://tc39.es/ecma262/2020/" target="_blank" rel="noopener noreferrer">ES2020 features</a>, that will still be used for a while even in modern browsers.</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// in babel.config.cjs</span>
+module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">api</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    api<span class="token punctuation">.</span>cache<span class="token punctuation">.</span><span class="token function">invalidate</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">[</span>
+        process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span><span class="token punctuation">,</span> 
+        process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">ROLLUP_BUILD_TYPE</span>
+    <span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">"-"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> environment <span class="token operator">=</span> api<span class="token punctuation">.</span><span class="token function">env</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> modern <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">ROLLUP_BUILD_TYPE</span> <span class="token operator">===</span> <span class="token string">"modern"</span><span class="token punctuation">;</span>
+    <span class="token comment">/**
+     * Will be used for the legacy build
+     */</span>
+    <span class="token keyword">const</span> presetEnv <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token string">"@babel/preset-env"</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token literal-property property">modules</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">targets</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token literal-property property">browsers</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"&gt;0.25%"</span><span class="token punctuation">,</span> <span class="token string">"not op_mini all"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token comment">/**
+     * Will be used for the modern build
+     */</span>
+    <span class="token keyword">const</span> presetModule <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token string">"@babel/preset-modules"</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token literal-property property">loose</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> alwaysUsedPresets <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"@babel/preset-react"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> alwaysUsedPlugins <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token string">"@babel/plugin-syntax-dynamic-import"</span><span class="token punctuation">,</span>
+        <span class="token string">"@babel/plugin-proposal-optional-chaining"</span><span class="token punctuation">,</span>
+        <span class="token string">"@babel/plugin-proposal-nullish-coalescing-operator"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token comment">/**
+     * Only loaded in the legacy build
+     */</span>
+    <span class="token keyword">const</span> legacyPlugins <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token string">"@babel/plugin-proposal-object-rest-spread"</span>
+    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> productionConfig <span class="token operator">=</span>
+        modern <span class="token operator">===</span> <span class="token string">"modern"</span>
+            <span class="token operator">?</span> <span class="token punctuation">{</span>
+                  <span class="token comment">/**
+                   * Modern build
+                   */</span>
+                  <span class="token literal-property property">presets</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                      presetModule<span class="token punctuation">,</span> 
+                      <span class="token operator">...</span>alwaysUsedPresets
+                    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+                  <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token operator">...</span>alwaysUsedPlugins<span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">}</span>
+            <span class="token operator">:</span> <span class="token punctuation">{</span>
+                  <span class="token comment">/**
+                   * Legacy build
+                   */</span>
+                  <span class="token literal-property property">presets</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                      presetEnv<span class="token punctuation">,</span>
+                      <span class="token operator">...</span>alwaysUsedPresets
+                    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+                  <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                      <span class="token operator">...</span>alwaysUsedPlugins<span class="token punctuation">,</span>
+                      <span class="token operator">...</span>legacyPlugins
+                    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> developmentConfig <span class="token operator">=</span>
+        modern <span class="token operator">===</span> <span class="token string">"modern"</span>
+            <span class="token operator">?</span> <span class="token punctuation">{</span>
+                  <span class="token comment">/**
+                   * Modern build
+                   */</span>
+                  <span class="token literal-property property">presets</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                      presetModule<span class="token punctuation">,</span>
+                      <span class="token operator">...</span>alwaysUsedPresets
+                    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+                  <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                      <span class="token operator">...</span>alwaysUsedPlugins
+                    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">}</span>
+            <span class="token operator">:</span> <span class="token punctuation">{</span>
+                  <span class="token comment">/**
+                   * Legacy build
+                   */</span>
+                  <span class="token literal-property property">presets</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                      presetEnv<span class="token punctuation">,</span> 
+                      <span class="token operator">...</span>alwaysUsedPresets
+                    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+                  <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                      <span class="token operator">...</span>alwaysUsedPlugins<span class="token punctuation">,</span> 
+                      <span class="token operator">...</span>legacyPlugins
+                      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">env</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">production</span><span class="token operator">:</span> productionConfig<span class="token punctuation">,</span>
+            <span class="token literal-property property">development</span><span class="token operator">:</span> developmentConfig<span class="token punctuation">,</span>
+            <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token comment">/**
+                 * Chances are tests will run in node
+                **/</span>
+                <span class="token literal-property property">presets</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                    <span class="token string">"@babel/preset-env"</span><span class="token punctuation">,</span>
+                    <span class="token operator">...</span>alwaysUsedPresets
+                <span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                    <span class="token operator">...</span>alwaysUsedPlugins<span class="token punctuation">,</span> 
+                    <span class="token operator">...</span>legacyPlugins
+                <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
+<p>We didn’t use the .mjs alternative because it only works when babel is loaded asynchonously.</p>
+<p><code class="language-text">preset-modules</code> will transpile less code than <code class="language-text">preset-env</code>. Read <a href="https://github.com/babel/preset-modules" target="_blank" rel="noopener noreferrer">the documentation</a> to understand why.</p>
+<p>Now that we have our bundles, we need a way to load them in their targets.</p>
+<h2>The module/nomodule pattern</h2>
+<p>This technique (from <a href="https://philipwalton.com/articles/deploying-es2015-code-in-production-today/" target="_blank" rel="noopener noreferrer">2017</a>) utilizes <code class="language-text">&lt;script type="module"&gt;</code> support as a breakpoint between legacy browsers (mostly IE nowadays) and “evergreen” browsers (Chrome, Firefox, Safari, Edge, …).<br>
+This gives us a way to send a modern bundle to modern browsers, and a legacy bundle to old browsers.</p>
+<p>For a long time, things weren’t as simple as <a href="/dynamic-import-esm-fallback">some browsers did support modules, but didn’t support <code class="language-text">import()</code></a>. This has now been delt wih though, and <code class="language-text">&lt;script type="module"&gt;</code> can be safely used.</p>
+<p>The pattern:</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">"/js/esm/main.js"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">module</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">/** ... **/</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">nomodule</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/js/legacy/main.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre></div>
+<h2>The future</h2>
+<p>While this post talks about ES2017, the techniques explained here can be updated later to use newer versions of the language, as long as browser support keeps up.<br>
+One important limitation to note is that most third-party libraries still <a href="https://podcast.babeljs.io/dependencies/" target="_blank" rel="noopener noreferrer">don’t export untranspiled code</a>. Unfortunately, this means the majority of the code you ship will still be ES5 for now.<br>
+However, if you stop excluding node_modules/ from your Babel config, and more people do the same, things might improve soon enough.</p></section><section class="specimen" lang="fr" aria-labelledby="specimen-title">
+  <hr><h2 id="specimen-title">Échantillon complémentaire</h2>
+  <p>Hors article. Accents, italiques et graisses pour compléter le texte anglais.</p>
+  <p>À Noël, Éléonore vérifie les requêtes : <em>une lecture précise</em>,
+    <strong>une réponse fiable</strong> et <strong><em>un résultat vérifié</em></strong>.</p>
+  <p><code class="language-text">I l 1 | O 0 · != !== =&gt; &lt;= · café / élève</code></p>
+</section></main></div>
+</body></html>

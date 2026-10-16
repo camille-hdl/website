@@ -1,0 +1,84 @@
+/* Alternative locale. Activer avec .type-plex sur <html> et charger cette
+   feuille après les styles actuels. Aucun fichier du site ne l'importe. */
+@font-face {
+  font-family: "IBM Plex Serif Var";
+  src: url("fonts/IBM Plex Serif Var-Roman-Latin1.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Serif Var";
+  src: url("fonts/IBM Plex Serif Var-Italic-Latin1.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 100 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Sans Var";
+  src: url("fonts/IBM Plex Sans Var-Roman-Latin1.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 700;
+  font-stretch: 85% 100%;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Mono Var";
+  src: url("fonts/IBM Plex Mono Var-Roman-Latin1.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: swap;
+}
+html.type-plex {
+  --plex-body-weight: 400;
+  --plex-code-weight: 400;
+  --plex-label-weight: 400;
+  --plex-size: 25px;
+  font-size: var(--plex-size);
+  line-height: 1.6;
+}
+html.type-plex[data-theme="night"] {
+  --plex-body-weight: 450;
+  --plex-code-weight: 450;
+  --plex-label-weight: 450;
+}
+html.type-plex[data-size="large"] { --plex-size: 30px; }
+/* Merriweather 19 × 0,555 / Plex 0,516 ≈ 20,44 px. */
+html.type-plex[data-size="matched"] { --plex-size: 20.44px; }
+.type-plex body {
+  font-family: "IBM Plex Serif Var", Georgia, serif;
+  font-weight: var(--plex-body-weight);
+}
+.type-plex h1,
+.type-plex .site-name,
+.type-plex .post-date {
+  font-family: "IBM Plex Sans Var", sans-serif;
+}
+.type-plex h2,
+.type-plex h3,
+.type-plex h4,
+.type-plex h5,
+.type-plex h6 {
+  font-family: "IBM Plex Serif Var", Georgia, serif;
+}
+.type-plex .post-date { font-weight: var(--plex-label-weight); }
+.type-plex :is(code, pre, kbd, samp),
+.type-plex code[class*="language-"],
+.type-plex pre[class*="language-"] {
+  font-family: "IBM Plex Mono Var", monospace;
+  font-weight: var(--plex-code-weight);
+  font-variant-ligatures: none;
+  font-size: 1em;
+  line-height: 1.6;
+}
+.type-plex :not(pre) > code[class*="language-"] {
+  font-weight: var(--plex-code-weight);
+}
+.type-plex strong, .type-plex b { font-weight: 700; }
+/* Garder la largeur physique de la colonne du site, même si le corps change. */
+.type-plex .site-container { max-width: 722px !important; }
+@media only screen and (max-width: 600px) {
+  html.type-plex { --plex-size: 20px; }
+  html.type-plex[data-size="large"] { --plex-size: 22px; }
+  html.type-plex[data-size="matched"] { --plex-size: 19.36px; }
+}

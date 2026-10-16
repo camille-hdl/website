@@ -1,0 +1,35 @@
+{
+  "repository": "https://github.com/IBM/plex",
+  "commit": "39276912b05f700ee1dd491950c35d8697214208",
+  "files": [
+    {
+      "file": "IBM Plex Serif Var-Roman-Latin1.woff2",
+      "bytes": 51124,
+      "sha256": "22f0e4dea794df82ae86e68b3b94c09e7fc277683841b0fd475b86b479cf2211",
+      "source": "https://raw.githubusercontent.com/IBM/plex/39276912b05f700ee1dd491950c35d8697214208/packages/plex-serif-variable/fonts/split/woff2/IBM%20Plex%20Serif%20Var-Roman-Latin1.woff2"
+    },
+    {
+      "file": "IBM Plex Serif Var-Italic-Latin1.woff2",
+      "bytes": 54748,
+      "sha256": "828804e2494bc7e77d8f914f2ab40593ea4324dbcba22b591ad1fd7abed0ba26",
+      "source": "https://raw.githubusercontent.com/IBM/plex/39276912b05f700ee1dd491950c35d8697214208/packages/plex-serif-variable/fonts/split/woff2/IBM%20Plex%20Serif%20Var-Italic-Latin1.woff2"
+    },
+    {
+      "file": "IBM Plex Sans Var-Roman-Latin1.woff2",
+      "bytes": 68988,
+      "sha256": "a18d94ea83c93f0a465d0976d8bc8ecbb031225dbaf76fd201d4e724a972034f",
+      "source": "https://raw.githubusercontent.com/IBM/plex/39276912b05f700ee1dd491950c35d8697214208/packages/plex-sans-variable/fonts/split/woff2/IBM%20Plex%20Sans%20Var-Roman-Latin1.woff2"
+    },
+    {
+      "file": "IBM Plex Mono Var-Roman-Latin1.woff2",
+      "bytes": 32576,
+      "sha256": "632cb6cee5e90d89bd4354ff362bcffcef1384c19b603ddd2830561716e1f440",
+      "source": "https://raw.githubusercontent.com/IBM/plex/39276912b05f700ee1dd491950c35d8697214208/packages/plex-mono-variable/fonts/split/woff2/IBM%20Plex%20Mono%20Var-Roman-Latin1.woff2"
+    }
+  ],
+  "licences": [
+    "LICENSE-serif.txt",
+    "LICENSE-sans.txt",
+    "LICENSE-mono.txt"
+  ]
+}
