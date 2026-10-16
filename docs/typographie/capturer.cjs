@@ -6,11 +6,12 @@ const assert = require("node:assert/strict")
 const { chromium } = require("@playwright/test")
 const sharp = require("sharp")
 const repo = path.resolve(__dirname, "../..")
+const variants = ["actuelle", "plex", "plex-sans"]
 const types = { ".html": "text/html", ".css": "text/css", ".js": "text/javascript", ".woff2": "font/woff2", ".woff": "font/woff", ".png": "image/png", ".json": "application/json" }
 const selectors = {
   body: "body", title: "main > header h1", heading: '[itemprop="articleBody"] h2',
   prose: '[itemprop="articleBody"] > p', code: ".gatsby-highlight code",
-  label: ".post-date", italic: ".specimen em", bold: ".specimen strong",
+  label: ".post-date", siteName: ".site-name", italic: ".specimen em", bold: ".specimen strong",
 }
 async function inspect(page) {
   return page.evaluate(selectors => {
@@ -37,17 +38,17 @@ async function renderedFonts(page) {
   await session.send("CSS.enable")
   const { root } = await session.send("DOM.getDocument")
   const fonts = {}
-  for (const key of ["title", "heading", "prose", "code", "label", "italic", "bold"]) {
+  for (const key of Object.keys(selectors).filter(key => key !== "body")) {
     const { nodeId } = await session.send("DOM.querySelector", { nodeId: root.nodeId, selector: selectors[key] })
     fonts[key] = (await session.send("CSS.getPlatformFontsForNode", { nodeId })).fonts
   }
   await session.detach()
   return fonts
 }
-async function pairImages(images, output, width, theme) {
+async function combineImages(images, output, width, theme) {
   const metadata = await Promise.all(images.map(buffer => sharp(buffer).metadata()))
   const height = Math.max(...metadata.map(meta => meta.height))
-  await sharp({ create: { width: width * 2, height, channels: 3, background: theme === "day" ? "#fff1e5" : "#1f1915" } })
+  await sharp({ create: { width: width * images.length, height, channels: 3, background: theme === "day" ? "#fff1e5" : "#1f1915" } })
     .composite(images.map((input, i) => ({ input, top: 0, left: i * width })))
     .png().toFile(path.join(__dirname, "captures", output))
 }
@@ -83,7 +84,8 @@ async function main() {
       const size = viewport === "desktop" ? { width: 1280, height: 900 } : { width: 390, height: 844 }
       for (const theme of ["day", "night"]) {
         const crops = [], full = []
-        for (const variant of ["actuelle", "plex"]) {
+        for (const variant of variants) {
+          const isPlex = variant !== "actuelle"
           const context = await browser.newContext({ viewport: size, deviceScaleFactor: 1, isMobile: viewport === "mobile", colorScheme: theme === "day" ? "light" : "dark", serviceWorkers: "block" })
           await context.route("**/*", route => new URL(route.request().url()).origin === origin ? route.continue() : route.abort())
           const page = await context.newPage()
@@ -108,29 +110,43 @@ async function main() {
           }
           fonts.sort((a, b) => a.file.localeCompare(b.file))
           assert.ok(fonts.length > 0)
-          assert.ok(fonts.every(font => variant === "plex" ? font.file.startsWith("IBM Plex") : !font.file.startsWith("IBM Plex")), "Une variante charge les polices de l'autre")
+          assert.ok(fonts.every(font => isPlex ? font.file.startsWith("IBM Plex") : !font.file.startsWith("IBM Plex")), "Une variante charge les polices de l'autre")
+          if (isPlex) {
+            const italicFamily = variant === "plex-sans" ? "Sans" : "Serif"
+            assert.deepEqual(fonts.map(font => font.file).sort(), [
+              "IBM Plex Serif Var-Roman-Latin1.woff2", "IBM Plex Sans Var-Roman-Latin1.woff2",
+              "IBM Plex Mono Var-Roman-Latin1.woff2", `IBM Plex ${italicFamily} Var-Italic-Latin1.woff2`,
+            ].sort(), "Seuls les quatre fichiers nécessaires doivent être chargés")
+          }
           const platformFonts = await renderedFonts(page)
           for (const [key, fonts] of Object.entries(platformFonts)) {
             assert.ok(fonts.some(font => font.isCustomFont), `Police web absente pour ${key}`)
-            const expected = variant === "plex" ? (key === "code" ? "Plex Mono" : ["title", "label"].includes(key) ? "Plex Sans" : "Plex Serif") : (key === "code" ? "Fira Code" : ["title", "label"].includes(key) ? "Montserrat" : "Merriweather")
+            const expected = isPlex
+              ? key === "code" ? "Plex Mono"
+                : key === "label" ? "Plex Sans"
+                  : ["title", "siteName"].includes(key) ? variant === "plex-sans" ? "Plex Serif" : "Plex Sans"
+                    : key === "heading" || variant === "plex" ? "Plex Serif" : "Plex Sans"
+              : key === "code" ? "Fira Code" : ["title", "label", "siteName"].includes(key) ? "Montserrat" : "Merriweather"
             assert.ok(fonts.some(font => font.familyName.includes(expected)), `${key} attend ${expected}, reçu ${JSON.stringify(fonts)}`)
           }
-          assert.equal(info.styles.body.fontSize, variant === "plex" ? (viewport === "desktop" ? "25px" : "20px") : (viewport === "desktop" ? "19px" : "18px"))
-          assert.equal(info.styles.body.fontWeight, variant === "plex" && theme === "night" ? "450" : "400")
-          if (variant === "plex") {
+          assert.equal(info.styles.body.fontSize, isPlex ? (viewport === "desktop" ? "25px" : "20px") : (viewport === "desktop" ? "19px" : "18px"))
+          assert.equal(info.styles.body.fontWeight, isPlex && theme === "night" ? "450" : "400")
+          if (isPlex) {
             assert.equal(info.styles.code.fontSize, info.styles.body.fontSize)
             assert.equal(info.styles.code.fontWeight, info.styles.body.fontWeight)
+            assert.equal(info.styles.label.fontWeight, info.styles.body.fontWeight)
+            assert.equal(info.styles.title.fontWeight, "700")
           }
           crops.push(await page.screenshot())
           full.push(await page.screenshot({ fullPage: true }))
           report.cases.push({ viewport, width: size.width, height: size.height, theme, variant, ...info, platformFonts, fonts, fontBytes: fonts.reduce((sum, font) => sum + font.bytes, 0) })
           await context.close()
         }
-        const pair = report.cases.slice(-2)
-        assert.equal(pair[0].paper, pair[1].paper)
-        await pairImages(crops, `${viewport}-${theme}.png`, size.width, theme)
-        await pairImages(full, `${viewport}-${theme}-integral.png`, size.width, theme)
-        console.log(`${viewport} ${theme} : ${pair.map(item => `${item.variant} ${item.fontBytes} octets, ${item.fonts.length} fichiers`).join(" ; ")}`)
+        const group = report.cases.slice(-variants.length)
+        for (const item of group) assert.equal(group[0].paper, item.paper)
+        await combineImages(crops, `${viewport}-${theme}.png`, size.width, theme)
+        await combineImages(full, `${viewport}-${theme}-integral.png`, size.width, theme)
+        console.log(`${viewport} ${theme} : ${group.map(item => `${item.variant} ${item.fontBytes} octets, ${item.fonts.length} fichiers`).join(" ; ")}`)
       }
     }
     // Comparer les styles de la référence à la vraie page de production locale.
@@ -150,32 +166,41 @@ async function main() {
     // Vérifier les réglages secondaires et le fonctionnement depuis file://.
     const context = await browser.newContext({ viewport: { width: 1280, height: 900 } })
     const page = await context.newPage()
-    for (const [size, expected] of [["matched", "20.44px"], ["large", "30px"]]) {
-      await page.goto(`file://${path.join(__dirname, "article.html")}?variant=plex&theme=night&size=${size}`)
-      await page.evaluate(() => document.fonts.ready)
-      assert.equal((await inspect(page)).styles.body.fontSize, expected)
+    for (const variant of variants.slice(1)) {
+      for (const [size, expected] of [["matched", "20.44px"], ["large", "30px"]]) {
+        await page.goto(`file://${path.join(__dirname, "article.html")}?variant=${variant}&theme=night&size=${size}`)
+        await page.evaluate(() => document.fonts.ready)
+        assert.equal((await inspect(page)).styles.body.fontSize, expected)
+      }
     }
-    report.checks = ["Plex SHA-256 matches IBM source manifest", "Same complete Gatsby article in all eight renders", "Current typography matches computed styles of the actual local Gatsby production page", "Correct web fonts rendered, verified by Chromium CDP", "No mixed font families downloaded", "Identical palette in each pair", "No document horizontal overflow", "Plex night body and code weight 450", "Plex code at body size", "Matched and large sizes work via file URL"]
+    report.checks = ["Plex SHA-256 matches IBM source manifest", "Same complete Gatsby article in all twelve renders", "Current typography matches computed styles of the actual local Gatsby production page", "Correct web fonts rendered, verified by Chromium CDP", "Plex Sans variant renders headings in Serif, prose and italics in Sans, code in Mono", "Each Plex variant downloads only its four required font files", "Identical palette in each group", "No document horizontal overflow", "Both Plex variants use night body and code weight 450", "Plex code at body size", "Matched and large sizes work via file URL for both Plex variants"]
     const json = JSON.stringify(report, null, 2) + "\n"
     await fs.writeFile(path.join(__dirname, "mesures.json"), json)
     await fs.writeFile(path.join(__dirname, "mesures.js"), "window.typographyMeasurements = " + json)
     await page.goto(`file://${path.join(__dirname, "comparaison.html")}`)
     await page.locator("#totals tr").nth(3).waitFor()
+    assert.equal(await page.locator("#variant").inputValue(), "plex-sans")
+    assert.equal(await page.locator("#totals tr:first-child td").count(), 4)
+    assert.equal(await page.locator("#font-details details").count(), 3)
     await page.selectOption("#theme", "night")
     await page.selectOption("#size", "matched")
     await page.selectOption("#viewport", "mobile")
     const frame = page.frameLocator("#preview")
-    await frame.locator("html.type-plex[data-theme=night][data-size=matched]").waitFor()
+    await frame.locator('html.type-plex[data-variant="plex-sans"][data-theme=night][data-size=matched]').waitFor()
     assert.equal(await frame.locator("body").evaluate(el => getComputedStyle(el).fontSize), "19.36px")
+    assert.ok((await frame.locator("body").evaluate(el => getComputedStyle(el).fontFamily)).includes("Plex Sans"))
     await page.selectOption("#variant", "actuelle")
     assert.equal(await page.locator("#size").isDisabled(), true)
     await frame.locator("html:not(.type-plex)").waitFor()
     await page.setViewportSize({ width: 390, height: 844 })
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false)
     await page.selectOption("#variant", "plex")
+    await frame.locator('html[data-variant="plex"]').waitFor()
+    assert.ok((await frame.locator("body").evaluate(el => getComputedStyle(el).fontFamily)).includes("Plex Serif"))
+    await page.selectOption("#variant", "plex-sans")
     await page.selectOption("#theme", "day")
     await page.selectOption("#size", "distance")
-    await frame.locator("html.type-plex[data-theme=day][data-size=distance]").waitFor()
+    await frame.locator('html.type-plex[data-variant="plex-sans"][data-theme=day][data-size=distance]').waitFor()
     await page.locator("#preview").scrollIntoViewIfNeeded()
     await frame.locator("body").evaluate(() => document.fonts.ready)
     await frame.locator("main h1").waitFor({ state: "visible" })
@@ -191,7 +216,7 @@ async function main() {
     await page.screenshot({ path: "/private/tmp/blog-plex-preview-desktop.png" })
     await page.screenshot({ path: "/private/tmp/blog-plex-comparaison-desktop.png", fullPage: true })
     await context.close()
-    console.log("Huit rendus, huit images assemblées, polices et contrôles file:// vérifiés.")
+    console.log("Douze rendus, huit images à trois colonnes, polices et contrôles file:// vérifiés.")
   } finally {
     await browser?.close()
     await new Promise(resolve => server.close(resolve))

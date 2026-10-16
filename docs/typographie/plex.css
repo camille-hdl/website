@@ -23,6 +23,14 @@
   font-display: swap;
 }
 @font-face {
+  font-family: "IBM Plex Sans Var";
+  src: url("fonts/IBM Plex Sans Var-Italic-Latin1.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 100 700;
+  font-stretch: 85% 100%;
+  font-display: swap;
+}
+@font-face {
   font-family: "IBM Plex Mono Var";
   src: url("fonts/IBM Plex Mono Var-Roman-Latin1.woff2") format("woff2");
   font-style: normal;
@@ -77,6 +85,15 @@ html.type-plex[data-size="matched"] { --plex-size: 20.44px; }
 .type-plex strong, .type-plex b { font-weight: 700; }
 /* Garder la largeur physique de la colonne du site, même si le corps change. */
 .type-plex .site-container { max-width: 722px !important; }
+/* Troisième composition : prose Sans, tous les titres Serif, code Mono.
+   Les tailles, graisses et espacements sont ceux de la composition Serif. */
+.type-plex[data-variant="plex-sans"] body {
+  font-family: "IBM Plex Sans Var", sans-serif;
+}
+.type-plex[data-variant="plex-sans"] h1,
+.type-plex[data-variant="plex-sans"] .site-name {
+  font-family: "IBM Plex Serif Var", Georgia, serif;
+}
 @media only screen and (max-width: 600px) {
   html.type-plex { --plex-size: 20px; }
   html.type-plex[data-size="large"] { --plex-size: 22px; }

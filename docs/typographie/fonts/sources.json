@@ -25,6 +25,12 @@
       "bytes": 32576,
       "sha256": "632cb6cee5e90d89bd4354ff362bcffcef1384c19b603ddd2830561716e1f440",
       "source": "https://raw.githubusercontent.com/IBM/plex/39276912b05f700ee1dd491950c35d8697214208/packages/plex-mono-variable/fonts/split/woff2/IBM%20Plex%20Mono%20Var-Roman-Latin1.woff2"
+    },
+    {
+      "file": "IBM Plex Sans Var-Italic-Latin1.woff2",
+      "bytes": 80188,
+      "sha256": "4dbb53a002b701005c7eb5d0fc049a3abd7c31821714ab5fdc33c189ceadeb75",
+      "source": "https://raw.githubusercontent.com/IBM/plex/39276912b05f700ee1dd491950c35d8697214208/packages/plex-sans-variable/fonts/split/woff2/IBM%20Plex%20Sans%20Var-Italic-Latin1.woff2"
     }
   ],
   "licences": [
