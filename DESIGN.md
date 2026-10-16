@@ -3,43 +3,43 @@ name: camillehdl.dev
 description: A reading column on ft-paper, with a night edition.
 typography:
   masthead:
-    fontFamily: "Montserrat, sans-serif"
+    fontFamily: "IBM Plex Sans Var, sans-serif"
     fontSize: "clamp(2.2rem, 9vw, 3.6rem)"
     fontWeight: 700
     lineHeight: 1.05
     letterSpacing: "-0.02em"
   headline:
-    fontFamily: "Montserrat, sans-serif"
+    fontFamily: "IBM Plex Sans Var, sans-serif"
     fontSize: "2.5rem"
     fontWeight: 700
     lineHeight: 1.2
     letterSpacing: "-0.005em"
   title:
-    fontFamily: "Merriweather, Georgia, serif"
+    fontFamily: "IBM Plex Sans Var, sans-serif"
     fontSize: "1.4427rem"
     fontWeight: 700
     lineHeight: 1.2
   body:
-    fontFamily: "Merriweather, Georgia, serif"
-    fontSize: "19px"
+    fontFamily: "IBM Plex Sans Var, sans-serif"
+    fontSize: "25px"
     fontWeight: 400
-    lineHeight: 1.62
+    lineHeight: 1.6
   label:
-    fontFamily: "Montserrat, sans-serif"
+    fontFamily: "IBM Plex Sans Var, sans-serif"
     fontSize: "0.72rem"
     fontWeight: 400
     letterSpacing: "0.06em"
   code:
-    fontFamily: "Fira Code, Consolas, Monaco, monospace"
-    fontSize: "0.85em"
+    fontFamily: "IBM Plex Mono Var, monospace"
+    fontSize: "1em"
     lineHeight: 1.6
 rounded:
   inline: "4px"
   block: "10px"
   image: "16px"
 spacing:
-  rhythm: "1.62rem"
-  measure: "38rem"
+  rhythm: "1.6rem"
+  measure: "722px"
   gutter-phone: "1rem"
 ---
 
@@ -50,18 +50,18 @@ spacing:
 **Creative North Star: "The Pink Paper"**
 
 A personal site set like a broadsheet's opinion page: salmon paper, slate ink,
-a serif reading column and a geometric sans for the masthead and the small
-print. The palette is the identity. Everything else is quiet so that the
+IBM Plex Sans for the reading column, headings and small print, and Plex
+Mono for code. The palette is the identity. Everything else is quiet so that the
 column reads well for a long article, on a phone, by day or night.
 
 The night edition is the same paper in the dark, not a different theme: warm
 brown ground, wheat ink, the same accents lightened until they pass 4.5:1.
 
 **Key Characteristics:**
-- one column, about 68 characters of Merriweather;
+- one reading column, at most 722px wide;
 - flat surfaces, depth by tone (paper, paper-raised, surface-1 to 3);
 - links in oxford that turn claret on hover;
-- Montserrat in small capitals for dates, labels and the theme switch.
+- Plex Sans in small capitals for dates, labels and the theme switch.
 
 ## Colors
 
@@ -94,32 +94,40 @@ applies them. Palette changes go through the palette modules and their tests.
 
 ## Typography
 
-**Display Font:** Montserrat (with sans-serif)
-**Body Font:** Merriweather (with Georgia, serif)
-**Label/Mono Font:** Fira Code for code and keys only
+**Display and body font:** IBM Plex Sans Var, with sans-serif fallback.
+**Code and keys:** IBM Plex Mono Var, with monospace fallback.
 
-**Character:** a broad geometric sans for the masthead against a sturdy
-screen serif for reading.
+Camille selected the all-Sans comparison on 2026-10-16. The three official IBM
+Latin1 WOFF2 files are served unchanged from `src/fonts/files/`, with OFL and
+pinned source URLs and SHA-256 hashes in `src/fonts/`. No font is preloaded.
+The Roman Sans file covers headings, prose and labels, including the heavier
+night weights. Sans italic loads only when used; Mono loads for code and keys.
 
 ### Hierarchy
 - **Masthead** (700, `clamp(2.2rem, 9vw, 3.6rem)`, 1.05): the site name on the
   home page.
-- **Headline** (700, 2.5rem, 1.2): article titles, in Montserrat.
+- **Headline** (700, 2.5rem, 1.2): article titles, in Plex Sans.
 - **Title** (700, 1.4427rem, 1.2): article list titles and section headings,
-  in Merriweather.
-- **Body** (400, 19px, 1.62; 18px under 600px): the reading column, 38rem
-  wide.
-- **Label** (400, 0.72rem, 0.06em, uppercase): dates and small print.
+  in Plex Sans.
+- **Body** (400 by day, 450 by night; 25px, 1.6; 20px under 600px): the
+  reading column, at most 722px wide.
+- **Label** (400 by day, 450 by night; 0.72rem, 0.06em, uppercase): dates and
+  small print. Explicit bold labels and headings retain weight 700.
+- **Code** (400 by day, 450 by night; 1em, 1.6): Plex Mono keeps the same
+  x-height as prose. Code ligatures are disabled.
 
 ### Named Rules
-**The One Column Rule.** Body text stays in the 38rem column; only quotes,
+**The One Column Rule.** Body text stays in the 722px column; only quotes,
 notes and warnings bleed slightly into the gutter.
 
 ## Layout
 
-A single centered column, `max-width: 38rem`, padded by 1.5 rhythm units top
-and bottom and 1rem on the sides under 600px. The root size steps from 19px to
-18px under 600px and everything else is in rem, so the page scales with it.
+A single centered column, `max-width: 722px`, padded by 1.5 rhythm units top
+and bottom and 1rem on the sides under 600px. The root size steps from 25px to
+20px under 600px. The column keeps its physical maximum width while rem-based
+text and spacing scale. At 80–85cm and about 0.233mm per logical screen point,
+25px Plex gives an x-height angle of about 0.203–0.215° at browser zoom 100%.
+This is the distance setting Camille chose in the local comparison.
 The theme switch sits in the top-left corner, outside the column.
 
 ## Elevation & Depth
@@ -138,7 +146,7 @@ warnings, code), 16px for article images. Quotes, notes and warnings carry a
 
 ### Theme switch
 - Three native radio buttons in a `fieldset` named "Theme": Auto, Day, Night.
-- Montserrat small capitals in ink-muted; the checked one in ink with a
+- Plex Sans small capitals in ink-muted; the checked one in ink with a
   claret underline; focus ring 2px oxford.
 
 ### Callouts
@@ -147,7 +155,7 @@ warnings, code), 16px for article images. Quotes, notes and warnings carry a
 - **Warning** (`section.warning`): crimson-wash, crimson rule and ⚠ sign.
 
 ### Code
-- Fira Code on paper-raised, Prism tokens mapped onto the palette (keywords
+- Plex Mono on paper-raised, Prism tokens mapped onto the palette (keywords
   oxford, functions velvet, strings jade, numbers mandarin, properties claret).
 
 ## Do's and Don'ts
@@ -159,5 +167,5 @@ warnings, code), 16px for article images. Quotes, notes and warnings carry a
 
 ### Don't:
 - **Don't** change a palette value outside `src/data/` and its tests.
-- **Don't** replace Montserrat or Merriweather, or the ft-paper ground.
+- **Don't** replace the chosen Plex families or the ft-paper ground.
 - **Don't** edit `content/`: articles, images and front matter.

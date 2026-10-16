@@ -64,9 +64,8 @@ class Layout extends React.Component {
           style={{
             marginLeft: `auto`,
             marginRight: `auto`,
-            // A measure, not a rhythm multiple: ~68 characters of Merriweather,
-            // which is where ft.com sets its body copy.
-            maxWidth: `38rem`,
+            // Preserve the physical column width from the selected Plex trial.
+            maxWidth: `722px`,
             padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
           }}
         >

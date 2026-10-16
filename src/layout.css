@@ -160,6 +160,26 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -ms-text-size-adjust: 100%;
 }
+
+/* Slightly heavier prose, labels and code in the night edition. Headings and
+   explicit bold text retain their weight. Fixed palette pages follow their
+   own palette, just as their colors do. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="day"]):not(:has(.ft-paper)) body {
+    font-weight: 450;
+  }
+}
+:root[data-theme="night"]:not(:has(.ft-paper)) body,
+:root:has(.ft-paper-night) body {
+  font-weight: 450;
+}
+
+code, pre, kbd, samp {
+  font-family: "IBM Plex Mono Var", monospace;
+  font-size: 1em;
+  font-weight: inherit;
+  font-variant-ligatures: none;
+}
 /* Headlines break into lines of even length instead of leaving one word on
    the last ("Software and hardware I / use"), and paragraphs avoid ending on
    a lone word. Browsers without text-wrap keep the greedy breaks. */
@@ -208,7 +228,7 @@ MASTHEAD AND HEADLINES
 /* The site name on every page but the home page: set like the h3 it used to
    be, without taking a place in the page's outline. */
 .site-name {
-  font-family: Montserrat, sans-serif;
+  font-family: "IBM Plex Sans Var", sans-serif;
   font-size: 1.4427rem;
   font-weight: 700;
   line-height: 1.2;
@@ -236,7 +256,7 @@ MASTHEAD AND HEADLINES
 /* Dates and standfirsts step back from the headline. */
 .post-list-item small,
 .post-date {
-  font-family: Montserrat, sans-serif;
+  font-family: "IBM Plex Sans Var", sans-serif;
   font-size: 0.72rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -265,7 +285,7 @@ MASTHEAD AND HEADLINES
 .blog-post-nav-label {
   display: block;
   margin-bottom: 0.2rem;
-  font-family: Montserrat, sans-serif;
+  font-family: "IBM Plex Sans Var", sans-serif;
   font-size: 0.72rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -287,7 +307,7 @@ MASTHEAD AND HEADLINES
 /* The copyright line is small print, like the dates. */
 .site-container > footer {
   margin-top: 3.24rem;
-  font-family: Montserrat, sans-serif;
+  font-family: "IBM Plex Sans Var", sans-serif;
   font-size: 0.72rem;
   letter-spacing: 0.06em;
   color: var(--ink-muted);
@@ -307,10 +327,10 @@ code[class*="language-"] {
   padding-right: 0.5em !important;
 }
 code[class*="language-"], pre[class*="language-"] {
-  font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-weight: normal;
+  font-family: "IBM Plex Mono Var", monospace;
+  font-weight: inherit;
   color: var(--ink);
-  font-size: 0.85em;
+  font-size: 1em;
   line-height: 1.6;
   /* Prism embosses its text with a white shadow, meant for its own grey ground. */
   text-shadow: none;
@@ -327,7 +347,7 @@ code[class*="language-"] ::selection {
 :not(pre) > code[class*="language-"] {
   background-color: var(--surface-2);
   border-radius: 4px;
-  font-weight: normal;
+  font-weight: inherit;
 }
 
 /**
@@ -541,7 +561,7 @@ section.warning p {
  SPECIFIC
  **/
 .resume-table tbody tr th {
-  font-weight: normal;
+  font-weight: inherit;
   display: list-item;
   list-style: disc;
   list-style-position: inside;

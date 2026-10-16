@@ -50,8 +50,10 @@ or night, and a reference page shows everything without interaction.
   `/palette` and `/palette-night`, from `src/data/ft-paper.js` and
   `src/data/ft-paper-night.js`. Design work may suggest palette changes; it
   does not apply them.
-- Montserrat for the masthead, headlines on the cheat sheets and small labels;
-  Merriweather for reading; Fira Code for code. All three are self-hosted.
+- IBM Plex Sans for all headings, prose and labels; IBM Plex Mono for code and
+  keys. Camille selected this system on 2026-10-16. Both families are self-hosted
+  using unchanged IBM files. Prose is 25px on desktop, 20px on phones, with
+  weight 400 by day and 450 by night.
 
 ## Evidence on Hand
 

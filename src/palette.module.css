@@ -7,7 +7,7 @@
 }
 
 .groupTitle {
-  font-family: Montserrat, sans-serif;
+  font-family: "IBM Plex Sans Var", sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -44,7 +44,7 @@
 
 .name {
   display: block;
-  font-family: Montserrat, sans-serif;
+  font-family: "IBM Plex Sans Var", sans-serif;
   font-size: 0.78rem;
   font-weight: 700;
   line-height: 1.35;
@@ -55,7 +55,7 @@
 .role,
 .value {
   display: block;
-  font-family: "Fira Code", Consolas, Monaco, monospace;
+  font-family: "IBM Plex Mono Var", monospace;
   font-size: 0.66rem;
   line-height: 1.7;
   color: var(--ink-2);
@@ -119,14 +119,14 @@
   height: 2.6rem;
   border-radius: 6px;
   border: 1px solid var(--rule);
-  font-family: Montserrat, sans-serif;
+  font-family: "IBM Plex Sans Var", sans-serif;
   font-size: 0.85rem;
   font-weight: 700;
 }
 
 .pairUse {
   grid-area: use;
-  font-family: Montserrat, sans-serif;
+  font-family: "IBM Plex Sans Var", sans-serif;
   font-size: 0.78rem;
   font-weight: 700;
   line-height: 1.35;
@@ -135,25 +135,25 @@
 
 .pairNote {
   display: block;
-  font-family: Merriweather, Georgia, serif;
+  font-family: "IBM Plex Sans Var", sans-serif;
   font-size: 0.68rem;
-  font-weight: 400;
+  font-weight: inherit;
   color: var(--ink-muted);
 }
 
 /* Which tools set a role this way, when the palette records it. */
 .pairTools {
   display: block;
-  font-family: Montserrat, sans-serif;
+  font-family: "IBM Plex Sans Var", sans-serif;
   font-size: 0.66rem;
-  font-weight: 400;
+  font-weight: inherit;
   letter-spacing: 0.04em;
   color: var(--ink-muted);
 }
 
 .pairRoles {
   grid-area: roles;
-  font-family: "Fira Code", Consolas, Monaco, monospace;
+  font-family: "IBM Plex Mono Var", monospace;
   font-size: 0.66rem;
   line-height: 1.7;
   color: var(--ink-2);
@@ -161,7 +161,7 @@
 
 .pairContrast {
   grid-area: contrast;
-  font-family: "Fira Code", Consolas, Monaco, monospace;
+  font-family: "IBM Plex Mono Var", monospace;
   font-size: 0.72rem;
   color: var(--ink-2);
 }
@@ -172,8 +172,7 @@
   grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
 }
 
-/* The root steps down to 18px on phones, which took these labels to 11.9px.
-   0.7rem keeps them at 12.6px. */
+/* At the 20px mobile root, these labels remain at 14px. */
 @media only screen and (max-width: 600px) {
   .role,
   .value,

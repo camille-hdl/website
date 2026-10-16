@@ -42,8 +42,12 @@ Wordpress2016.overrideThemeStyles = () => {
     "hr": {
       background: rule,
     },
+    "h1": {
+      fontFamily: '"IBM Plex Sans Var", sans-serif',
+    },
     // FT headlines are bold, not black, and they set tighter than the body.
     "h1, h2, h3, h4, h5, h6": {
+      fontFamily: '"IBM Plex Sans Var", sans-serif',
       fontWeight: 700,
       letterSpacing: "-0.005em",
       lineHeight: 1.2,
@@ -55,7 +59,7 @@ Wordpress2016.overrideThemeStyles = () => {
     // so the whole page scales with it.
     "@media only screen and (max-width: 600px)": {
       html: {
-        fontSize: "112.5%",
+        fontSize: "125%",
       },
       "blockquote": {
         marginLeft: "-1rem",
@@ -66,10 +70,11 @@ Wordpress2016.overrideThemeStyles = () => {
 }
 
 delete Wordpress2016.googleFonts
-Wordpress2016.baseFontSize = "19px";
-// 1.8 left the measure airy to the point of drifting; 1.62 is closer to the
-// leading ft.com sets its body copy at.
-Wordpress2016.baseLineHeight = 1.62;
+Wordpress2016.headerFontFamily = ["IBM Plex Sans Var", "sans-serif"];
+Wordpress2016.bodyFontFamily = ["IBM Plex Sans Var", "sans-serif"];
+// Camille's distance setting: 25px at 80–85cm, 20px on phones.
+Wordpress2016.baseFontSize = "25px";
+Wordpress2016.baseLineHeight = 1.6;
 Wordpress2016.bodyWeight = 400;
 Wordpress2016.boldWeight = 700;
 Wordpress2016.bodyColor = ink;
