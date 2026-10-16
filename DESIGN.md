@@ -39,7 +39,8 @@ rounded:
   image: "16px"
 spacing:
   rhythm: "1.6rem"
-  measure: "722px"
+  measure: "56ch"
+  media-measure: "90ch"
   gutter-phone: "1rem"
 ---
 
@@ -58,7 +59,7 @@ The night edition is the same paper in the dark, not a different theme: warm
 brown ground, wheat ink, the same accents lightened until they pass 4.5:1.
 
 **Key Characteristics:**
-- one reading column, at most 722px wide;
+- one reading column of `56ch`, about 70 characters per line in Plex Sans;
 - flat surfaces, depth by tone (paper, paper-raised, surface-1 to 3);
 - links in oxford that turn claret on hover;
 - Plex Sans in small capitals for dates, labels and the theme switch.
@@ -110,25 +111,38 @@ night weights. Sans italic loads only when used; Mono loads for code and keys.
 - **Title** (700, 1.4427rem, 1.2): article list titles and section headings,
   in Plex Sans.
 - **Body** (400 by day, 450 by night; 25px, 1.6; 20px under 600px): the
-  reading column, at most 722px wide.
+  reading column, at most `56ch` wide.
 - **Label** (400 by day, 450 by night; 0.72rem, 0.06em, uppercase): dates and
   small print. Explicit bold labels and headings retain weight 700.
 - **Code** (400 by day, 450 by night; 1em, 1.6): Plex Mono keeps the same
   x-height as prose. Code ligatures are disabled.
 
 ### Named Rules
-**The One Column Rule.** Body text stays in the 722px column; only quotes,
-notes and warnings bleed slightly into the gutter.
+**The One Column Rule.** Body text stays in the `56ch` column. Code blocks and
+images can extend to about 90 characters, within the viewport. Quotes, notes
+and warnings bleed slightly into the gutter.
 
 ## Layout
 
-A single centered column, `max-width: 722px`, padded by 1.5 rhythm units top
-and bottom and 1rem on the sides under 600px. The root size steps from 25px to
-20px under 600px. The column keeps its physical maximum width while rem-based
-text and spacing scale. At 80–85cm and about 0.233mm per logical screen point,
+A single centered column contains up to `56ch` of body text, excluding its
+horizontal padding. Camille selected this width on 2026-10-16 after comparing
+62, 70 and 78 characters per line. At 25px, the text is 840px wide and the
+container is 900px wide, including 1.2rem padding on each side. The measured
+mean is 70.1 characters per complete line in `/ship-modern-javascript-rollup/`.
+The `ch` unit measures the zero glyph, so other texts have different counts.
+
+The container is padded by 1.5 rhythm units top and bottom and 1rem on the
+sides under 600px. The root size steps from 25px to 20px under 600px. A 390px
+phone retains 350px of body text. At 80–85cm and about 0.233mm per logical screen point,
 25px Plex gives an x-height angle of about 0.203–0.215° at browser zoom 100%.
 This is the distance setting Camille chose in the local comparison.
 The theme switch sits in the top-left corner, outside the column.
+
+Article code blocks allow 90 Plex Mono characters plus padding and borders.
+Responsive images allow `90ch` of Plex Sans, up to their original size.
+Gatsby generates image sources for a 1350px maximum and sets `sizes` at build
+time. Both kinds of block keep at least `1rem` between them and the viewport
+edge. Long code lines scroll inside their block.
 
 ## Elevation & Depth
 

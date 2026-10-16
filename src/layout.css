@@ -207,6 +207,22 @@ main p img, main p .gatsby-resp-image-background-image {
   border-radius: 16px;
 }
 
+/* Code and images can extend beyond the reading column, within the viewport. */
+[itemprop="articleBody"] .gatsby-highlight,
+[itemprop="articleBody"] > pre {
+  font-family: "IBM Plex Mono Var", monospace;
+  width: min(calc(90ch + 2em + 2px), calc(100vw - 2rem));
+  max-width: none;
+  margin-inline: calc((100% - min(calc(90ch + 2em + 2px), calc(100vw - 2rem))) / 2);
+}
+[itemprop="articleBody"] .gatsby-resp-image-wrapper {
+  width: min(90ch, calc(100vw - 2rem));
+  /* Keep Gatsby's inline max-width so small originals are never stretched. */
+  margin-inline: 0 !important;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 /* Phones get the measure back that the side padding takes away. */
 @media only screen and (max-width: 600px) {
   .site-container {
