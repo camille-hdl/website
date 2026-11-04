@@ -21,10 +21,13 @@ Cloudflare.
 ## Rule limits
 
 Cloudflare applies at most 100 `_headers` rules, 2,000 static redirects and
-100 dynamic redirects. `gatsby-plugin-netlify` writes one header rule per
-hashed file, so the count grows with the number of JavaScript chunks and
-fonts. `scripts/check-cloudflare-rules.mjs` fails the deploy above a limit;
-run it after `npm run build`.
+100 dynamic redirects. A `_headers` line holds at most 2,000 characters, a
+redirect 1,000, and static redirects must come before dynamic ones.
+`gatsby-plugin-netlify` writes one header rule per hashed file, so the count
+grows with the number of JavaScript chunks and fonts.
+`scripts/check-cloudflare-rules.mjs` fails the build when `public/_headers` or
+`public/_redirects` is missing or breaks one of these rules; run it after
+`npm run build`.
 
 ## Known differences from Netlify
 
