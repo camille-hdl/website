@@ -1,0 +1,102 @@
+# Builds the blog and deploys it to the Cloudflare Worker camillehdl-blog.
+#
+# Security: public repository. Runs only on pushes to master and on manual runs
+# of master in this repository, never on pull requests, so a fork cannot reach
+# the secret. Actions are pinned by SHA.
+#
+# Two jobs, so that the dependencies of the site never run next to the token:
+# - build installs the project, tests, builds and checks the rule limits,
+#   without any secret, then uploads public/ as an artifact;
+# - deploy installs only Wrangler from deploy/package-lock.json, without
+#   install scripts, downloads public/ and deploys. It alone reads the token.
+
+name: Deploy to Cloudflare
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-cloudflare
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.repository == 'camille-hdl/website' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - name: Install
+        run: npm ci --no-audit --no-fund
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Check Cloudflare rule limits
+        run: node scripts/check-cloudflare-rules.mjs
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: public
+          path: public/
+          if-no-files-found: error
+          retention-days: 1
+
+  deploy:
+    needs: build
+    if: github.repository == 'camille-hdl/website' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      # No npm cache: the build job ran third-party code and could have written it.
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .node-version
+          package-manager-cache: false
+
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: public
+          path: public/
+
+      # The artifact comes from the build job: it may only add public/.
+      - name: Check the artifact stayed in public/
+        run: |
+          unexpected="$(git status --porcelain --ignored=matching --untracked-files=all | grep -v '^!! public/' || true)"
+          if [ -n "$unexpected" ]; then
+            printf 'Unexpected files outside public/:\n%s\n' "$unexpected"
+            exit 1
+          fi
+
+      - name: Install Wrangler
+        working-directory: deploy
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      # --no: fail instead of downloading Wrangler if it is missing.
+      - name: Deploy
+        working-directory: deploy
+        run: npm exec --no -- wrangler deploy --config ../wrangler.jsonc
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          WRANGLER_SEND_METRICS: "false"

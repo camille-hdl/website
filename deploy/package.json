@@ -1,0 +1,8 @@
+{
+  "name": "camillehdl-blog-deploy",
+  "private": true,
+  "description": "Wrangler alone, for the deploy job of .github/workflows/deploy-cloudflare.yml",
+  "devDependencies": {
+    "wrangler": "4.151.3"
+  }
+}
