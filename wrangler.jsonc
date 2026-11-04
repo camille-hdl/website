@@ -1,0 +1,17 @@
+{
+  // Assets-only Worker: no server code, only the files Gatsby writes to ./public.
+  // No routes or custom domain yet: the site is served on workers.dev until
+  // camillehdl.dev moves to Cloudflare DNS (see docs/deployment.md).
+  // No account_id: Wrangler reads CLOUDFLARE_ACCOUNT_ID from the environment.
+  "name": "camillehdl-blog",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  "preview_urls": false,
+  "assets": {
+    "directory": "./public",
+    // Gatsby writes each page as <path>/index.html; Netlify serves it at
+    // <path>/ and redirects <path> there. auto-trailing-slash does the same.
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

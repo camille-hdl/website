@@ -1,0 +1,47 @@
+# Deployment
+
+Netlify still serves `camillehdl.dev`. Each push to `master` also deploys the
+site to the Cloudflare Worker `camillehdl-blog`, on
+<https://camillehdl-blog.camilleh.workers.dev>, until the domain moves to
+Cloudflare.
+
+## Cloudflare Worker
+
+- `wrangler.jsonc` describes an assets-only Worker: no server code, only the
+  files in `public/`. It has no route and no custom domain.
+- `public/_redirects` and `public/_headers` come from `gatsby-plugin-netlify`.
+  Workers Static Assets reads the same format.
+- `.github/workflows/deploy-cloudflare.yml` tests, builds and deploys on each
+  push to `master`, or when run by hand on `master`. Pull requests never
+  deploy.
+- The workflow reads the `CLOUDFLARE_API_TOKEN` secret and the
+  `CLOUDFLARE_ACCOUNT_ID` variable. The token only grants "Workers Scripts
+  Write" on the account.
+
+## Rule limits
+
+Cloudflare applies at most 100 `_headers` rules, 2,000 static redirects and
+100 dynamic redirects. `gatsby-plugin-netlify` writes one header rule per
+hashed file, so the count grows with the number of JavaScript chunks and
+fonts. `scripts/check-cloudflare-rules.mjs` fails the deploy above a limit;
+run it after `npm run build`.
+
+## Known differences from Netlify
+
+- Paths without a trailing slash redirect with 307, not 301.
+- `/index.html` redirects to `/` instead of serving the page.
+- The Worker does not send `Strict-Transport-Security`; Netlify does. Add it
+  when the domain moves.
+- `Content-Type` of HTML pages has no `charset`; each page declares
+  `<meta charSet="utf-8">`.
+
+## Deploying by hand
+
+```sh
+npm ci
+npm run build
+node scripts/check-cloudflare-rules.mjs
+CLOUDFLARE_API_TOKEN=… CLOUDFLARE_ACCOUNT_ID=… npx wrangler deploy
+```
+
+Read the token from a local file rather than typing it on the command line.
