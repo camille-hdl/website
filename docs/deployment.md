@@ -11,12 +11,16 @@ Cloudflare.
   files in `public/`. It has no route and no custom domain.
 - `public/_redirects` and `public/_headers` come from `gatsby-plugin-netlify`.
   Workers Static Assets reads the same format.
-- `.github/workflows/deploy-cloudflare.yml` tests, builds and deploys on each
-  push to `master`, or when run by hand on `master`. Pull requests never
-  deploy.
-- The workflow reads the `CLOUDFLARE_API_TOKEN` secret and the
-  `CLOUDFLARE_ACCOUNT_ID` variable. The token only grants "Workers Scripts
-  Write" on the account.
+- `.github/workflows/deploy-cloudflare.yml` runs on each push to `master`, or
+  when run by hand on `master`. Pull requests never deploy. It has two jobs:
+  - `build` installs the project, tests, builds and checks the rule limits,
+    without any secret, then uploads `public/` as an artifact;
+  - `deploy` installs only Wrangler, from `deploy/package-lock.json` and
+    without install scripts, downloads `public/` and deploys. It alone reads
+    the `CLOUDFLARE_API_TOKEN` secret and the `CLOUDFLARE_ACCOUNT_ID`
+    variable, so the dependencies of the site never run next to the token.
+- `deploy/package.json` pins Wrangler. Update it there: the site itself does
+  not depend on Wrangler.
 
 ## Rule limits
 
@@ -44,7 +48,9 @@ grows with the number of JavaScript chunks and fonts.
 npm ci
 npm run build
 node scripts/check-cloudflare-rules.mjs
-CLOUDFLARE_API_TOKEN=… CLOUDFLARE_ACCOUNT_ID=… npx wrangler deploy
+npm ci --prefix deploy --ignore-scripts
+cd deploy
+CLOUDFLARE_API_TOKEN=… CLOUDFLARE_ACCOUNT_ID=… npm exec --no -- wrangler deploy --config ../wrangler.jsonc
 ```
 
 Read the token from a local file rather than typing it on the command line.
