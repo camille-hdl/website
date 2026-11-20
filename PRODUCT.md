@@ -30,8 +30,8 @@ or night, and a reference page shows everything without interaction.
 
 ## Capabilities and Constraints
 
-- Gatsby static site, deployed by Netlify. A push to `master` publishes the
-  site; work happens on branches.
+- Gatsby static site, served by a Cloudflare Worker. A push to `master`
+  publishes the site; work happens on branches.
 - Articles and their images live in `content/` and are not to be edited by
   design work: text, images, front matter.
 - Day and night palettes follow the system, and a reader can force either one
