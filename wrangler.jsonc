@@ -1,7 +1,7 @@
 {
   // Assets-only Worker: no server code, only the files Gatsby writes to ./public.
-  // No routes or custom domain yet: the site is served on workers.dev until
-  // camillehdl.dev moves to Cloudflare DNS (see docs/deployment.md).
+  // No routes or custom domain here: camillehdl.dev is attached to this Worker
+  // as a Custom Domain in Cloudflare (see docs/deployment.md).
   // No account_id: Wrangler reads CLOUDFLARE_ACCOUNT_ID from the environment.
   "name": "camillehdl-blog",
   "compatibility_date": "2026-10-01",
