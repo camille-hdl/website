@@ -73,11 +73,12 @@ for (const theme of ["day", "night"]) {
     expect(contrast.measured).toBeGreaterThan(0)
     expect(contrast.failures).toEqual([])
     await page.waitForFunction(
-      () => !!document.querySelector(".clockify-recap").onkeydown
+      () => !!document.querySelector(".clockify-recap")?.onkeydown
     )
     await expect(figure.locator('[tabindex="0"]')).toHaveCount(1)
     const day = figure.locator('[data-date="2020-07-10"]')
     await day.focus()
+    await expect(figure).toHaveCSS("mask-image", "none")
     await expect(day).toHaveAttribute("aria-label", /10\/07\/2020/)
     expect(
       await day.evaluate((el) => getComputedStyle(el, "::after").content)
@@ -86,6 +87,11 @@ for (const theme of ["day", "night"]) {
     await expect(figure.locator('[data-date="2020-07-11"]')).toBeFocused()
     await page.keyboard.press("Home")
     await expect(day).toBeFocused()
+    // A clicked day need not be the day in the Tab order.
+    await figure.locator('[data-date="2020-07-14"]').click()
+    await page.keyboard.press("ArrowRight")
+    await expect(figure.locator('[data-date="2020-07-15"]')).toBeFocused()
+    await expect(figure.locator('[tabindex="0"]')).toHaveCount(1)
     await page.keyboard.press("Tab")
     await expect(figure.locator(":focus")).toHaveCount(0)
     const directory =
@@ -108,11 +114,18 @@ for (const theme of ["day", "night"]) {
       .getByRole("link", { name: "bye bye time-tracking", exact: true })
       .click()
     await page.waitForFunction(
-      () => !!document.querySelector(".clockify-recap").onkeydown
+      () => !!document.querySelector(".clockify-recap")?.onkeydown
     )
     await day.focus()
     await day.press("End")
     await expect(figure.locator(".cr-day").last()).toBeFocused()
+    await expect(figure).toHaveCSS("mask-image", "none")
+    await page.screenshot({
+      path: join(
+        directory,
+        `${testInfo.project.name}-${theme}-keyboard-end.png`
+      ),
+    })
     await page.keyboard.press("Home")
     await expect(day).toBeFocused()
     expect(errors).toEqual([])

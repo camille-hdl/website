@@ -677,6 +677,10 @@ h3.resume-heading {
     rgb(0 0 0 / 0) 100%
   );
 }
+/* Reveal the faded months while a reader explores them with the keyboard. */
+.clockify-recap:focus-within {
+  mask-image: none;
+}
 .clockify-recap .cr-day:hover,
 .clockify-recap .cr-day:focus-visible {
   outline: 2px solid var(--oxford);
@@ -696,7 +700,7 @@ h3.resume-heading {
   padding: 0.4em 0.6em;
   width: max-content;
   max-width: 80vw;
-  font-size: 12px;
+  font-size: 0.72rem;
   line-height: 1.4;
   z-index: 2;
   pointer-events: none;
@@ -714,4 +718,9 @@ h3.resume-heading {
   .clockify-recap .cr-day {
     forced-color-adjust: none;
   }
+}
+
+.clockify-recap .cr-year:first-child .cr-days:first-child .cr-day::after {
+  top: calc(100% + 5px);
+  bottom: auto;
 }

@@ -24,7 +24,7 @@ export function enableClockifyKeyboard() {
         return
     }
     event.preventDefault()
-    days[current].tabIndex = -1
+    days.find((day) => day.tabIndex === 0).tabIndex = -1
     days[next].tabIndex = 0
     days[next].focus()
   }
