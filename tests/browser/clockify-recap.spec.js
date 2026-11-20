@@ -22,6 +22,15 @@ for (const theme of ["day", "night"]) {
     await page.evaluate(() => document.fonts.ready)
     const figure = page.locator(".clockify-recap")
     await expect(figure).toBeVisible()
+    await expect(figure).toHaveAttribute("lang", "en")
+    await expect(figure).toHaveAttribute(
+      "aria-label",
+      "Time tracked in Clockify, one square per day"
+    )
+    await expect(figure).toHaveAttribute(
+      "aria-description",
+      "Use the Left and Right arrow keys to move between days, and Home and End to jump to the first and last day."
+    )
     await expect(page.locator("h1")).toHaveText("bye bye time-tracking")
     await expect(page.locator("[itemprop=articleBody] h1")).toHaveCount(0)
     await expect(figure.locator(".cr-day")).toHaveCount(2305)
@@ -75,14 +84,27 @@ for (const theme of ["day", "night"]) {
     await page.waitForFunction(
       () => !!document.querySelector(".clockify-recap")?.onkeydown
     )
+    for (const [date, label] of [
+      ["2025-05-14", "May 14, 2025 · 5 h 48 min"],
+      ["2020-12-14", "Dec 14, 2020 · 8 h 44 min 58 s"],
+      ["2020-07-11", "Jul 11, 2020 · No time tracked"],
+      ["2026-10-31", "Oct 31, 2026 · Outside tracked period"],
+    ]) {
+      const cell = figure.locator(`[data-date="${date}"]`)
+      await expect(cell).toHaveAttribute("aria-label", label)
+      await cell.focus()
+      expect(
+        await cell.evaluate((el) => getComputedStyle(el, "::after").content)
+      ).toBe(JSON.stringify(label))
+    }
     await expect(figure.locator('[tabindex="0"]')).toHaveCount(1)
     const day = figure.locator('[data-date="2020-07-10"]')
     await day.focus()
     await expect(figure).toHaveCSS("mask-image", "none")
-    await expect(day).toHaveAttribute("aria-label", /10\/07\/2020/)
+    await expect(day).toHaveAttribute("aria-label", "Jul 10, 2020 · 1 h 28 min")
     expect(
       await day.evaluate((el) => getComputedStyle(el, "::after").content)
-    ).toContain("10/07/2020")
+    ).toContain("Jul 10, 2020 · 1 h 28 min")
     await day.press("ArrowRight")
     await expect(figure.locator('[data-date="2020-07-11"]')).toBeFocused()
     await page.keyboard.press("Home")
