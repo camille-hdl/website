@@ -99,7 +99,7 @@ test("the night blocks set every token the day block sets", async () => {
   }
 })
 
-test("every token the site uses is set by the palette", async () => {
+test("every CSS variable is a palette token or a local layout property", async () => {
   const { readFile, readdir } = await import("node:fs/promises")
   const { names } = await stylesheetTokens(DAY)
   const src = new URL("../src/", import.meta.url)
@@ -108,8 +108,10 @@ test("every token the site uses is set by the palette", async () => {
   )
   for (const file of files) {
     const text = await readFile(new URL(file, src), "utf8")
+    // Clockify layout values are defined in its CSS and generated HTML.
+    const localLayout = new Set(["cr-gap", "cr-fade-start"])
     for (const [, name] of text.matchAll(/var\(--([\w-]+)\)/g)) {
-      assert.ok(names.includes(name), `${file}: --${name}`)
+      assert.ok(names.includes(name) || localLayout.has(name), `${file}: --${name}`)
     }
   }
 })

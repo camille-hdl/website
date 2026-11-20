@@ -1,3 +1,4 @@
+import { enableClockifyKeyboard } from "./src/utils/clockify-recap"
 // Official IBM WOFF2 files, unchanged, with provenance and OFL in src/fonts.
 import "./src/fonts/plex.css"
 import "prismjs/themes/prism.css"
@@ -23,6 +24,7 @@ export const onRouteUpdate = ({ location }) => {
   // A palette page brings its own palette, and leaving one gives the choice
   // back: the browser's color follows.
   syncThemeColor()
+  enableClockifyKeyboard()
   if (isInitialRoute) {
     isInitialRoute = false
     return

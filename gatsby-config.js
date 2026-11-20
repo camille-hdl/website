@@ -66,6 +66,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          { resolve: require.resolve(`./plugins/gatsby-remark-clockify-recap`) },
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -125,7 +126,12 @@ module.exports = {
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{
+                    "content:encoded": node.html.replace(
+                      /<figure class="clockify-recap[\s\S]*?<\/figure>/g,
+                      `<p><a href="${site.siteMetadata.siteUrl}${node.fields.slug}">View the time-tracking chart</a></p>`
+                    ),
+                  }],
                 })
               })
             },

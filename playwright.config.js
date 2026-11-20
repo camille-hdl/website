@@ -7,6 +7,7 @@ module.exports = defineConfig({
   use: {
     baseURL: process.env.SITE_URL || "http://127.0.0.1:9000",
     serviceWorkers: "block",
+    channel: process.env.PLAYWRIGHT_CHANNEL,
   },
   projects: [
     { name: "desktop", use: { viewport: { width: 1280, height: 900 } } },
