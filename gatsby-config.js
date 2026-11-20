@@ -66,6 +66,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          { resolve: require.resolve(`./plugins/gatsby-remark-clockify-recap`) },
           {
             resolve: `gatsby-remark-images`,
             options: {

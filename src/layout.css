@@ -600,3 +600,23 @@ h3.resume-heading {
   opacity: 1 !important;
   transition: none;
 }
+
+/* Clockify daily mosaic, inserted into Markdown at build time. */
+.clockify-recap { --cr-gap:clamp(1px,.3vw,3px); width:100%; max-width:100%; margin:0; display:grid; gap:var(--cr-gap); color:var(--ink); font-family:"IBM Plex Sans Var",sans-serif; font-weight:inherit; }
+.clockify-recap * { box-sizing:border-box; }
+.clockify-recap [data-level="0"] { background:var(--paper); border:1px solid var(--rule); }
+.clockify-recap [data-level="1"] { background:color-mix(in srgb,var(--jade) 25%,var(--paper)); }
+.clockify-recap [data-level="2"] { background:color-mix(in srgb,var(--jade) 50%,var(--paper)); }
+.clockify-recap [data-level="3"] { background:color-mix(in srgb,var(--jade) 75%,var(--paper)); }
+.clockify-recap [data-level="4"] { background:var(--jade); }
+.clockify-recap .cr-year { display:grid; grid-template-columns:1em minmax(0,1fr); column-gap:.3em; margin:0; padding:0; border:0; }
+.clockify-recap .cr-year-label { writing-mode:vertical-rl; transform:rotate(180deg); text-orientation:mixed; display:flex; align-items:center; justify-content:center; font-size:.48em; letter-spacing:.1em; color:var(--ink-muted); font-weight:400; }
+.clockify-recap .cr-months { display:grid; gap:var(--cr-gap); min-width:0; }
+.clockify-recap .cr-days { display:grid; grid-template-columns:repeat(31,minmax(0,1fr)); gap:var(--cr-gap); min-width:0; }
+.clockify-recap .cr-day, .clockify-recap .cr-blank { display:block; aspect-ratio:1; min-width:0; padding:0; position:relative; }
+.clockify-recap.cr-fade { mask-image:linear-gradient(to bottom,rgb(0 0 0) var(--cr-fade-start),rgb(0 0 0 / 0) 100%); }
+.clockify-recap .cr-day:hover, .clockify-recap .cr-day:focus-visible { outline:2px solid var(--jade); outline-offset:1px; z-index:1; }
+.clockify-recap .cr-day:hover::after, .clockify-recap .cr-day:focus-visible::after { content:attr(aria-label); position:absolute; left:50%; bottom:calc(100% + 5px); transform:translateX(-50%); background:var(--paper-raised); color:var(--ink); border:1px solid var(--rule); padding:.4em .6em; width:max-content; max-width:80vw; font-size:12px; line-height:1.4; z-index:2; pointer-events:none; }
+.clockify-recap .cr-day:nth-child(-n+12)::after { left:0; transform:none; }
+.clockify-recap .cr-day:nth-child(n+21)::after { left:auto; right:0; transform:none; }
+@media (forced-colors:active) { .clockify-recap .cr-day { forced-color-adjust:none; } }
