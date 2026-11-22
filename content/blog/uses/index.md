@@ -144,4 +144,10 @@ See my [Artifacts page](/artifacts/) or [download the Brewfile](/artifacts/homeb
 * UGREEN Nexode 140W 25000mAh -- <small>Power Bank</small>
 * UGREEN Cables (Thunderbolt 4 to displayport, etc.)
 
+## Home network
+* UniFi Cloud Gateway Fiber (UCG Fiber) -- <small>gateway</small>
+* UniFi U7 Lite -- <small>Wi-Fi access point</small>
+* UniFi USW Flex 2.5G -- <small>switch</small>
+* [NextDNS](https://nextdns.io/?from=8w2t422e) -- <small>DNS service (affiliate link)</small>
+
 See other `/uses` pages here : https://uses.tech
