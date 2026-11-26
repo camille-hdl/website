@@ -3,6 +3,7 @@ title: How I work with agents
 date: "2026-11-20T18:00:00.000Z"
 description: "My agent setup as of November 2026: an orchestrator, a home repo, Herdr, and a software factory."
 image: ./thumbnail-a.png
+blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3n37adkuqgs2p
 ---
 
 This is how I currently work with agents for software engineering as of November 2026.
