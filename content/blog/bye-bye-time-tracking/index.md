@@ -1,7 +1,8 @@
 ---
-title: bye bye time-tracking
+title: Bye-bye time-tracking
 date: "2026-11-20T12:00:00.000Z"
 image: thumbnail-day.png
+blueskyLink: https://bsky.app/profile/camillehdl.dev/post/3n377zyxgms2p
 ---
 
 I started using time-tracking in 2020, when I started working remotely full-time.  
